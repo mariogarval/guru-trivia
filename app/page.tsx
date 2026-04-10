@@ -158,55 +158,63 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Live Matches */}
-      {(liveMatches.length > 0 || !loadingMatches) && (
-        <section className="px-4 mb-5">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#ff2047] live-pulse" />
-            <h2 className="font-semibold text-[#f0f0f0]">Live Matches</h2>
-          </div>
-          {loadingMatches ? (
-            <div className="space-y-3">
-              {[1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="h-28 bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl animate-pulse"
-                />
-              ))}
-            </div>
-          ) : liveMatches.length > 0 ? (
-            <div className="space-y-3">
-              {liveMatches.map((match) => (
-                <MatchCard key={match.id} match={match} activeGurus={Math.floor(Math.random() * 2000 + 100)} />
-              ))}
-            </div>
-          ) : (
-            <div className="bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-4 text-center">
-              <p className="text-[#464a4d] text-sm">No live matches right now</p>
-            </div>
-          )}
-        </section>
-      )}
-
-      {/* Upcoming Matches */}
-      {upcomingMatches.length > 0 && (
-        <section className="px-4 mb-5">
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="font-semibold text-[#f0f0f0]">Upcoming</h2>
-            <Link
-              href="/matches"
-              className="text-xs text-[#11ff99] font-medium"
-            >
-              See all
-            </Link>
-          </div>
+      {/* Today's Matches */}
+      <section className="px-4 mb-5">
+        {loadingMatches ? (
           <div className="space-y-3">
-            {upcomingMatches.slice(0, 3).map((match) => (
-              <MatchCard key={match.id} match={match} />
+            <div className="h-6 w-32 bg-white/[0.03] rounded animate-pulse mb-3" />
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="h-28 bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl animate-pulse"
+              />
             ))}
           </div>
-        </section>
-      )}
+        ) : (
+          <>
+            {/* Live Matches */}
+            {liveMatches.length > 0 && (
+              <div className="mb-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-2 h-2 rounded-full bg-[#ff2047] live-pulse" />
+                  <h2 className="font-semibold text-[#f0f0f0]">{t("home.liveMatches")}</h2>
+                </div>
+                <div className="space-y-3">
+                  {liveMatches.map((match) => (
+                    <MatchCard key={match.id} match={match} activeGurus={Math.floor(Math.random() * 2000 + 100)} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Upcoming Matches */}
+            {upcomingMatches.length > 0 && (
+              <div className="mb-2">
+                <div className="flex items-center justify-between mb-3">
+                  <h2 className="font-semibold text-[#f0f0f0]">{t("home.upcoming")}</h2>
+                  <Link
+                    href="/matches"
+                    className="text-xs text-[#11ff99] font-medium"
+                  >
+                    {t("home.seeAll")}
+                  </Link>
+                </div>
+                <div className="space-y-3">
+                  {upcomingMatches.slice(0, 5).map((match) => (
+                    <MatchCard key={match.id} match={match} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {liveMatches.length === 0 && upcomingMatches.length === 0 && (
+              <div className="bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-4 text-center">
+                <p className="text-[#464a4d] text-sm">{t("home.noMatches")}</p>
+              </div>
+            )}
+          </>
+        )}
+      </section>
 
       {/* Leaderboard peek */}
       <section className="px-4 mb-4">
