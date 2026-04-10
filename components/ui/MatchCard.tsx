@@ -34,6 +34,7 @@ function formatKickoff(iso: string): string {
   }
 
   return date.toLocaleDateString([], {
+    weekday: "short",
     month: "short",
     day: "numeric",
     hour: "numeric",
@@ -45,14 +46,24 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   const isLive = match.status === "live";
   const isFinished = match.status === "finished";
 
+  // Build play link with team names for question context
+  const playParams = new URLSearchParams();
+  playParams.set("match", match.id);
+  playParams.set("teams", `${match.home_team},${match.away_team}`);
+
   return (
     <Link
-      href={`/play?match=${match.id}`}
+      href={`/play?${playParams}`}
       className="block bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-2xl p-4 hover:border-[#11ff99]/30 transition-all active:scale-[0.98]"
     >
-      {/* Status row */}
+      {/* League + Status row */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
+          {match.league && (
+            <span className="text-[10px] text-[#a1a4a5] font-medium uppercase tracking-wider">
+              {match.league}
+            </span>
+          )}
           {isLive && (
             <span className="flex items-center gap-1.5 bg-[#ff2047]/15 text-[#ff2047] text-xs font-semibold px-2.5 py-0.5 rounded-full border border-[#ff2047]/20">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse" />
@@ -60,7 +71,7 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
             </span>
           )}
           {isFinished && (
-            <span className="text-xs text-[#464a4d] font-medium uppercase tracking-wider">Finished</span>
+            <span className="text-xs text-[#464a4d] font-medium uppercase tracking-wider">FT</span>
           )}
           {!isLive && !isFinished && (
             <span className="flex items-center gap-1 text-xs text-[#a1a4a5]">
@@ -72,7 +83,7 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
         {activeGurus > 0 && (
           <span className="flex items-center gap-1 text-xs text-[#464a4d]">
             <Users size={12} />
-            {activeGurus.toLocaleString()} gurus
+            {activeGurus.toLocaleString()}
           </span>
         )}
       </div>
@@ -81,25 +92,29 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-lg">
-              🏳️
-            </div>
+            {match.home_team_crest ? (
+              <img
+                src={match.home_team_crest}
+                alt=""
+                className="w-8 h-8 object-contain"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+              />
+            ) : (
+              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-sm">
+                ⚽
+              </div>
+            )}
             <div>
-              <p className="font-semibold text-[#f0f0f0] text-base">
+              <p className="font-semibold text-[#f0f0f0] text-sm leading-tight">
                 {match.home_team}
               </p>
-              {isLive && match.current_score && (
-                <p className="text-[#11ff99] font-mono text-sm font-bold">
-                  {match.current_score.split("-")[0]}
-                </p>
-              )}
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col items-center px-3">
-          {isLive && match.current_score ? (
-            <span className="text-2xl font-black text-[#f0f0f0] font-mono tracking-wider">
+        <div className="flex flex-col items-center px-3 min-w-[60px]">
+          {(isLive || isFinished) && match.current_score ? (
+            <span className={`text-xl font-black font-mono tracking-wider ${isLive ? "text-[#11ff99]" : "text-[#f0f0f0]"}`}>
               {match.current_score}
             </span>
           ) : (
@@ -109,30 +124,31 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
 
         <div className="flex-1">
           <div className="flex items-center gap-3 flex-row-reverse">
-            <div className="w-10 h-10 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-lg">
-              🏳️
-            </div>
+            {match.away_team_crest ? (
+              <img
+                src={match.away_team_crest}
+                alt=""
+                className="w-8 h-8 object-contain"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+              />
+            ) : (
+              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-sm">
+                ⚽
+              </div>
+            )}
             <div className="text-right">
-              <p className="font-semibold text-[#f0f0f0] text-base">
+              <p className="font-semibold text-[#f0f0f0] text-sm leading-tight">
                 {match.away_team}
               </p>
-              {isLive && match.current_score && (
-                <p className="text-[#11ff99] font-mono text-sm font-bold">
-                  {match.current_score.split("-")[1]}
-                </p>
-              )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Venue + CTA */}
-      <div className="flex items-center justify-between mt-3 pt-3 border-t border-[rgba(214,235,253,0.10)]">
-        <span className="text-xs text-[#464a4d] truncate">
-          {match.venue ?? "TBD"}
-        </span>
+      {/* CTA */}
+      <div className="flex items-center justify-end mt-3 pt-3 border-t border-[rgba(214,235,253,0.10)]">
         <span className="flex items-center gap-1 text-xs font-semibold text-[#11ff99]">
-          Start Trivia <ChevronRight size={14} />
+          Play Trivia <ChevronRight size={14} />
         </span>
       </div>
     </Link>

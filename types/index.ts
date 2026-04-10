@@ -47,6 +47,7 @@ export interface Match {
   kickoff_time: string;
   venue: string | null;
   current_score: string | null;
+  league?: string | null;
   active_gurus?: number;
 }
 

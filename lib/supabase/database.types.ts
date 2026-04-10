@@ -107,6 +107,7 @@ export interface Database {
           kickoff_time: string;
           venue: string | null;
           current_score: string | null;
+          league: string | null;
         };
         Insert: {
           id: string;
@@ -118,11 +119,13 @@ export interface Database {
           kickoff_time: string;
           venue?: string | null;
           current_score?: string | null;
+          league?: string | null;
         };
         Update: {
           status?: string;
           current_score?: string | null;
           venue?: string | null;
+          league?: string | null;
         };
       };
       leagues: {
