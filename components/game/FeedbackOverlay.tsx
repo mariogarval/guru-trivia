@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, XCircle } from "lucide-react";
+import { CheckCircle, XCircle, Flag } from "lucide-react";
 
 interface FeedbackOverlayProps {
   show: boolean;
@@ -10,6 +11,7 @@ interface FeedbackOverlayProps {
   explanation: string | null;
   speedLabel: "fast" | "medium" | "slow" | null;
   streakBonus: number;
+  questionId?: string;
 }
 
 export default function FeedbackOverlay({
@@ -19,13 +21,30 @@ export default function FeedbackOverlay({
   explanation,
   speedLabel,
   streakBonus,
+  questionId,
 }: FeedbackOverlayProps) {
+  const [reported, setReported] = useState(false);
+
   const multiplierLabel =
     speedLabel === "fast"
       ? "2x speed bonus!"
       : speedLabel === "medium"
       ? "1.25x speed bonus"
       : null;
+
+  const handleReport = async () => {
+    if (!questionId || reported) return;
+    try {
+      await fetch("/api/questions/report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ questionId, reason: "incorrect_answer" }),
+      });
+      setReported(true);
+    } catch {
+      // silent fail
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -85,6 +104,18 @@ export default function FeedbackOverlay({
                 <p className="text-sm text-[#a1a4a5] mt-2 leading-relaxed">
                   {explanation}
                 </p>
+              )}
+
+              {/* Report button */}
+              {questionId && (
+                <button
+                  onClick={handleReport}
+                  disabled={reported}
+                  className="flex items-center gap-1.5 mt-3 text-xs text-[#464a4d] hover:text-[#a1a4a5] transition-colors disabled:opacity-50"
+                >
+                  <Flag size={12} />
+                  {reported ? "Reported — thanks!" : "Report wrong answer"}
+                </button>
               )}
             </div>
           </div>

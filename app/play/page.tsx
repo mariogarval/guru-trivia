@@ -414,6 +414,7 @@ function PlayContent() {
           explanation={feedback.explanation}
           speedLabel={feedback.speedLabel}
           streakBonus={feedback.streakBonus}
+          questionId={currentQuestion?.id}
         />
       )}
     </div>

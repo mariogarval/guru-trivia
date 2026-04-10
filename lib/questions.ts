@@ -279,10 +279,11 @@ export async function fetchQuestionsForGame(
   const keywords = buildSearchKeywords(teams, league);
   const hasMatchContext = keywords.length > 0;
 
-  // Fetch a large pool of questions
+  // Fetch a large pool of verified questions only
   let query = supabase
     .from("questions")
     .select("*")
+    .neq("verified", false)
     .order("created_at", { ascending: false });
 
   if (matchId) {
