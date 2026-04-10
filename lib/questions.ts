@@ -62,7 +62,7 @@ Return ONLY a valid JSON array (no markdown, no extra text):
   const stream = await getClient().messages.stream({
     model: "claude-opus-4-6",
     max_tokens: 64000,
-    thinking: { type: "adaptive" },
+    thinking: { type: "enabled", budget_tokens: 10000 },
     messages: [{ role: "user", content: prompt }],
   });
 
@@ -113,7 +113,7 @@ Return ONLY a valid JSON array:
   const stream = await getClient().messages.stream({
     model: "claude-opus-4-6",
     max_tokens: 64000,
-    thinking: { type: "adaptive" },
+    thinking: { type: "enabled", budget_tokens: 10000 },
     messages: [{ role: "user", content: prompt }],
   });
 
@@ -171,7 +171,7 @@ Return ONLY a valid JSON array (no markdown, no extra text):
   const stream = await getClient().messages.stream({
     model: "claude-opus-4-6",
     max_tokens: 64000,
-    thinking: { type: "adaptive" },
+    thinking: { type: "enabled", budget_tokens: 10000 },
     messages: [{ role: "user", content: prompt }],
   });
 
@@ -218,9 +218,9 @@ export async function fetchQuestionsForGame(
       .select("question_id")
       .eq("user_id", userId);
 
-    const answeredIds = new Set((answered ?? []).map((a) => a.question_id));
-    const unanswered = allQuestions.filter(
-      (q) => !answeredIds.has(q.id)
+    const answeredIds = new Set((answered as any[] ?? []).map((a: any) => a.question_id));
+    const unanswered = (allQuestions as any[]).filter(
+      (q: any) => !answeredIds.has(q.id)
     );
 
     const pool = unanswered.length >= count ? unanswered : allQuestions;

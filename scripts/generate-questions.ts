@@ -46,7 +46,7 @@ async function insertQuestions(
     language: "en" as const,
   }));
 
-  const { error } = await supabase.from("questions").insert(rows);
+  const { error } = await (supabase.from("questions") as any).insert(rows);
   if (error) {
     console.error("Insert error:", error.message);
   } else {

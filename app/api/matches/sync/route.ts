@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
     const { error } = await supabase
       .from("matches")
-      .upsert(matches, { onConflict: "id" });
+      .upsert(matches as any, { onConflict: "id" });
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });

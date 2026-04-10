@@ -26,7 +26,7 @@ export async function GET() {
     .eq("user_id", session.user.id);
 
   const totalAnswered = stats?.length ?? 0;
-  const totalCorrect = stats?.filter((s) => s.is_correct).length ?? 0;
+  const totalCorrect = stats?.filter((s: any) => s.is_correct).length ?? 0;
   const accuracy =
     totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
 
@@ -42,8 +42,8 @@ export async function GET() {
       totalAnswered,
       totalCorrect,
       accuracy,
-      globalRank: rankData?.global_rank ?? null,
-      countryRank: rankData?.country_rank ?? null,
+      globalRank: (rankData as any)?.global_rank ?? null,
+      countryRank: (rankData as any)?.country_rank ?? null,
     },
   });
 }
@@ -72,8 +72,8 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ error: "Nothing to update" }, { status: 400 });
   }
 
-  const { error } = await supabase
-    .from("profiles")
+  const { error } = await (supabase
+    .from("profiles") as any)
     .update(update)
     .eq("id", session.user.id);
 

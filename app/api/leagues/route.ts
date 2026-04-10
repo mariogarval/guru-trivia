@@ -39,16 +39,16 @@ export async function POST(request: NextRequest) {
         name: name.trim(),
         code,
         created_by: session.user.id,
-      })
+      } as any)
       .select()
       .single();
 
     if (data) {
       // Auto-join the creator
       await supabase.from("league_members").insert({
-        league_id: data.id,
+        league_id: (data as any).id,
         user_id: session.user.id,
-      });
+      } as any);
       return NextResponse.json({ league: data });
     }
 
@@ -95,8 +95,8 @@ export async function GET(request: NextRequest) {
     .select("league_id, leagues(id, name, code, created_by, created_at)")
     .eq("user_id", session.user.id);
 
-  const leagues = (memberships ?? [])
-    .map((m) => m.leagues)
+  const leagues = (memberships as any[] ?? [])
+    .map((m: any) => m.leagues)
     .filter(Boolean);
 
   return NextResponse.json({ leagues });
@@ -125,9 +125,9 @@ export async function PATCH(request: NextRequest) {
   }
 
   const { error } = await supabase.from("league_members").insert({
-    league_id: league.id,
+    league_id: (league as any).id,
     user_id: session.user.id,
-  });
+  } as any);
 
   if (error && error.message.includes("unique")) {
     return NextResponse.json({ message: "Already a member" });
@@ -136,5 +136,5 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true, leagueId: league.id });
+  return NextResponse.json({ success: true, leagueId: (league as any).id });
 }

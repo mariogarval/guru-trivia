@@ -20,7 +20,7 @@ export function calculatePoints(
 ): PointsResult {
   const base = POINTS_BY_DIFFICULTY[difficulty];
 
-  let multiplier = SPEED_BONUS.SLOW.multiplier;
+  let multiplier: number = SPEED_BONUS.SLOW.multiplier;
   let speedLabel: "fast" | "medium" | "slow" = "slow";
 
   if (timeTaken < SPEED_BONUS.FAST.maxSeconds) {

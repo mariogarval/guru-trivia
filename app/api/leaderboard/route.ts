@@ -44,7 +44,7 @@ export async function GET(request: NextRequest) {
       .eq("league_id", leagueId);
 
     if (members) {
-      entries = members
+      entries = (members as any[])
         .map((m) => {
           const p = m.profiles as {
             id: string;

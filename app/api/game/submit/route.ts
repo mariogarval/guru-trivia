@@ -55,14 +55,20 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Already answered" }, { status: 409 });
   }
 
+  const q = question as unknown as {
+    correct_answer_index: number;
+    difficulty: string;
+    explanation: string | null;
+  };
+
   const isCorrect =
     selectedIndex !== null &&
-    selectedIndex === question.correct_answer_index;
+    selectedIndex === q.correct_answer_index;
 
   let pointsEarned = 0;
   if (isCorrect) {
     const result = calculatePoints(
-      question.difficulty as "easy" | "medium" | "hard",
+      q.difficulty as "easy" | "medium" | "hard",
       timeTaken,
       streak
     );
@@ -88,7 +94,7 @@ export async function POST(request: NextRequest) {
   const livesLost = profile.lives - newLives;
 
   // Persist answer
-  await supabase.from("user_answers").insert({
+  await (supabase.from("user_answers") as any).insert({
     user_id: session.user.id,
     question_id: questionId,
     is_correct: isCorrect,
@@ -97,21 +103,19 @@ export async function POST(request: NextRequest) {
   });
 
   // Update profile
-  const profileUpdate: Partial<Profile> = {
-    total_points: profile.total_points + pointsEarned,
-    lives: newLives,
-    last_life_regen: profile.last_life_regen,
-  };
-
-  await supabase
-    .from("profiles")
-    .update(profileUpdate)
+  await (supabase
+    .from("profiles") as any)
+    .update({
+      total_points: profile.total_points + pointsEarned,
+      lives: newLives,
+      last_life_regen: profile.last_life_regen,
+    })
     .eq("id", session.user.id);
 
   return NextResponse.json({
     isCorrect,
-    correctIndex: question.correct_answer_index,
-    explanation: question.explanation,
+    correctIndex: q.correct_answer_index,
+    explanation: q.explanation,
     pointsEarned,
     livesLost,
     newLives,

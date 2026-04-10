@@ -32,7 +32,7 @@ export interface UseGameReturn {
   totalPoints: number;
   lives: number;
   feedback: FeedbackState | null;
-  startGame: (matchId: string | null) => Promise<void>;
+  startGame: (matchId: string | null, category?: string | null) => Promise<void>;
   submitAnswer: (selectedIndex: number | null, timeTaken: number) => Promise<void>;
   nextQuestion: () => void;
   restartGame: () => void;

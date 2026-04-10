@@ -236,7 +236,7 @@ export default function PlayPage() {
   if (!currentQuestion) return null;
 
   const progressPct =
-    ((currentIndex + (phase === "results" ? 1 : 0)) / QUESTIONS_PER_SET) * 100;
+    ((currentIndex + (phase === "feedback" ? 1 : 0)) / QUESTIONS_PER_SET) * 100;
 
   const getButtonState = (i: number) => {
     if (phase === "playing" || !feedback) return "idle";

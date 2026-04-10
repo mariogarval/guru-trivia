@@ -25,12 +25,12 @@ export async function GET() {
     return NextResponse.json({ error: "Profile not found" }, { status: 404 });
   }
 
-  const profile = calculateLivesRegen(profileRow as Profile);
+  const profile = calculateLivesRegen(profileRow as unknown as Profile);
 
   // Persist regen if lives changed
-  if (profile.lives !== profileRow.lives) {
-    await supabase
-      .from("profiles")
+  if (profile.lives !== (profileRow as unknown as Profile).lives) {
+    await (supabase
+      .from("profiles") as any)
       .update({
         lives: profile.lives,
         last_life_regen: profile.last_life_regen,
