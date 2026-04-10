@@ -129,5 +129,5 @@ export const POINTS_BY_DIFFICULTY: Record<Difficulty, number> = {
 
 export const QUESTION_TIME_LIMIT = 12; // seconds
 export const QUESTIONS_PER_SET = 10;
-export const MAX_LIVES = 3;
+export const MAX_LIVES = 5;
 export const LIFE_REGEN_HOURS = 4;

@@ -11,7 +11,7 @@ CREATE TABLE profiles (
   country TEXT,
   preferred_language TEXT DEFAULT 'en',
   total_points INTEGER DEFAULT 0,
-  lives INTEGER DEFAULT 3,
+  lives INTEGER DEFAULT 5,
   last_life_regen TIMESTAMPTZ DEFAULT NOW(),
   created_at TIMESTAMPTZ DEFAULT NOW()
 );

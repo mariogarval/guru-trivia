@@ -46,7 +46,7 @@ export function useGame(userId: string | null): UseGameReturn {
   const [answers, setAnswers] = useState<AnsweredQuestion[]>([]);
   const [streak, setStreak] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
-  const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(5);
   const [feedback, setFeedback] = useState<FeedbackState | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const matchIdRef = useRef<string | null>(null);

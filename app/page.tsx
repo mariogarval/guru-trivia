@@ -21,7 +21,7 @@ export default function HomePage() {
   const { t } = useLanguage();
   const [liveMatches, setLiveMatches] = useState<Match[]>([]);
   const [upcomingMatches, setUpcomingMatches] = useState<Match[]>([]);
-  const [livesData, setLivesData] = useState<LivesData>({ lives: 3, nextLifeInMs: null });
+  const [livesData, setLivesData] = useState<LivesData>({ lives: 5, nextLifeInMs: null });
   const [totalPoints, setTotalPoints] = useState(0);
   const [loadingMatches, setLoadingMatches] = useState(true);
 
