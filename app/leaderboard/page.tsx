@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Globe, Flag, Users, Plus, Copy, Check, Share2, X, ChevronDown } from "lucide-react";
 import BottomNav from "@/components/layout/BottomNav";
 import { useAuth } from "@/hooks/useAuth";
+import { useLanguage } from "@/hooks/useLanguage";
 import type { LeaderboardEntry } from "@/types";
 
 type TabType = "global" | "country" | "friends";
@@ -32,6 +33,7 @@ function RankBadge({ rank }: { rank: number }) {
 
 export default function LeaderboardPage() {
   const { isLoggedIn } = useAuth();
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<TabType>("global");
   const [entries, setEntries] = useState<LeaderboardEntry[]>([]);
   const [userRank, setUserRank] = useState<LeaderboardEntry | null>(null);
@@ -182,9 +184,9 @@ export default function LeaderboardPage() {
   const activeLeague = leagues.find((l) => l.id === activeLeagueId);
 
   const tabs = [
-    { id: "global" as const, label: "Global", icon: Globe },
-    { id: "country" as const, label: "Country", icon: Flag },
-    { id: "friends" as const, label: "Friends", icon: Users },
+    { id: "global" as const, label: t("lb.global"), icon: Globe },
+    { id: "country" as const, label: t("lb.country"), icon: Flag },
+    { id: "friends" as const, label: t("lb.friends"), icon: Users },
   ];
 
   return (
@@ -192,7 +194,7 @@ export default function LeaderboardPage() {
       {/* Header */}
       <div className="px-4 pt-8 pb-2">
         <h1 className="text-2xl font-black text-[#f0f0f0] mb-5 tracking-tight">
-          Leaderboard
+          {t("lb.title")}
         </h1>
 
         {/* Tabs */}
@@ -223,7 +225,7 @@ export default function LeaderboardPage() {
                   className="w-full flex items-center justify-between bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-xl px-4 py-3"
                 >
                   <span className="text-sm font-medium text-[#f0f0f0]">
-                    {activeLeague?.name ?? "Select league"}
+                    {activeLeague?.name ?? t("lb.selectLeague")}
                   </span>
                   <div className="flex items-center gap-2">
                     {activeLeague && (
@@ -279,13 +281,13 @@ export default function LeaderboardPage() {
                 className="flex-1 flex items-center justify-center gap-2 bg-transparent border border-[#11ff99]/30 text-[#11ff99] rounded-full py-2.5 text-sm font-semibold hover:bg-[#11ff99]/5 transition-colors"
               >
                 <Plus size={16} />
-                Create
+                {t("lb.create")}
               </button>
               <button
                 onClick={() => openModal("join")}
                 className="flex-1 bg-transparent border border-[rgba(214,235,253,0.19)] text-[#a1a4a5] rounded-full py-2.5 text-sm font-semibold hover:bg-white/5 transition-colors"
               >
-                Join by Code
+                {t("lb.joinByCode")}
               </button>
             </div>
           </div>
@@ -306,9 +308,9 @@ export default function LeaderboardPage() {
             <p className="text-[#464a4d] text-sm">
               {activeTab === "friends"
                 ? leagues.length === 0
-                  ? "Create or join a league to compete with friends"
-                  : "No scores yet in this league"
-                : "No rankings yet. Be the first!"}
+                  ? t("lb.createOrJoin")
+                  : t("lb.noScores")
+                : t("lb.noRankings")}
             </p>
           </div>
         ) : (
@@ -388,7 +390,7 @@ export default function LeaderboardPage() {
               {/* Modal header */}
               <div className="flex items-center justify-between mb-5">
                 <h3 className="text-lg font-bold text-[#f0f0f0]">
-                  {createdLeague ? "League Created!" : modalMode === "create" ? "Create League" : "Join League"}
+                  {createdLeague ? t("lb.leagueCreated") : modalMode === "create" ? t("lb.createLeague") : t("lb.joinLeague")}
                 </h3>
                 <button
                   onClick={() => setShowLeagueModal(false)}
@@ -402,7 +404,7 @@ export default function LeaderboardPage() {
               {createdLeague ? (
                 <div className="space-y-4">
                   <div className="bg-[#11ff99]/5 border border-[#11ff99]/20 rounded-2xl p-4 text-center">
-                    <p className="text-sm text-[#a1a4a5] mb-1">Share this code with friends</p>
+                    <p className="text-sm text-[#a1a4a5] mb-1">{t("lb.shareCode")}</p>
                     <p className="text-3xl font-mono font-bold text-[#11ff99] tracking-wider mb-3">
                       {createdLeague.code}
                     </p>
@@ -412,14 +414,14 @@ export default function LeaderboardPage() {
                         className="flex-1 flex items-center justify-center gap-2 bg-white/[0.06] border border-[rgba(214,235,253,0.19)] rounded-full py-2.5 text-sm font-medium text-[#f0f0f0] hover:bg-white/10 transition-colors"
                       >
                         {codeCopied ? <Check size={15} className="text-[#11ff99]" /> : <Copy size={15} />}
-                        {codeCopied ? "Copied!" : "Copy Code"}
+                        {codeCopied ? t("play.copied") : t("lb.copyCode")}
                       </button>
                       <button
                         onClick={() => shareLeague(createdLeague)}
                         className="flex-1 flex items-center justify-center gap-2 bg-[#11ff99] text-black rounded-full py-2.5 text-sm font-bold active:scale-[0.98] transition-transform"
                       >
                         <Share2 size={15} />
-                        Invite Friends
+                        {t("lb.inviteFriends")}
                       </button>
                     </div>
                   </div>
@@ -432,7 +434,7 @@ export default function LeaderboardPage() {
                     }}
                     className="w-full text-center text-sm text-[#a1a4a5] hover:text-[#f0f0f0] py-2 transition-colors"
                   >
-                    Go to league leaderboard
+                    {t("lb.goToLeague")}
                   </button>
                 </div>
               ) : modalMode === "create" ? (
@@ -440,7 +442,7 @@ export default function LeaderboardPage() {
                 <div className="space-y-3">
                   <div>
                     <label className="text-[11px] text-[#464a4d] mb-1.5 block uppercase tracking-wider font-medium">
-                      League name
+                      {t("lb.leagueName")}
                     </label>
                     <input
                       type="text"
@@ -459,13 +461,13 @@ export default function LeaderboardPage() {
                     disabled={creatingLeague || !leagueName.trim()}
                     className="w-full bg-[#11ff99] text-black font-bold py-3 rounded-full text-sm active:scale-[0.98] transition-transform disabled:opacity-50"
                   >
-                    {creatingLeague ? "Creating..." : "Create League"}
+                    {creatingLeague ? t("lb.creating") : t("lb.createLeague")}
                   </button>
                   <button
                     onClick={() => { setModalMode("join"); setLeagueError(null); }}
                     className="w-full text-center text-sm text-[#464a4d] hover:text-[#a1a4a5] py-1 transition-colors"
                   >
-                    Have a code? Join instead
+                    {t("lb.haveCode")}
                   </button>
                 </div>
               ) : (
@@ -473,7 +475,7 @@ export default function LeaderboardPage() {
                 <div className="space-y-3">
                   <div>
                     <label className="text-[11px] text-[#464a4d] mb-1.5 block uppercase tracking-wider font-medium">
-                      League code
+                      {t("lb.leagueCode")}
                     </label>
                     <input
                       type="text"
@@ -488,20 +490,20 @@ export default function LeaderboardPage() {
                     <p className="text-xs text-[#ff2047]">{leagueError}</p>
                   )}
                   {joinSuccess && (
-                    <p className="text-xs text-[#11ff99]">Joined successfully!</p>
+                    <p className="text-xs text-[#11ff99]">{t("lb.joinedSuccess")}</p>
                   )}
                   <button
                     onClick={handleJoinLeague}
                     disabled={joiningLeague || leagueCode.length < 9}
                     className="w-full bg-[#11ff99] text-black font-bold py-3 rounded-full text-sm active:scale-[0.98] transition-transform disabled:opacity-50"
                   >
-                    {joiningLeague ? "Joining..." : "Join League"}
+                    {joiningLeague ? t("lb.joining") : t("lb.joinLeague")}
                   </button>
                   <button
                     onClick={() => { setModalMode("create"); setLeagueError(null); }}
                     className="w-full text-center text-sm text-[#464a4d] hover:text-[#a1a4a5] py-1 transition-colors"
                   >
-                    Want to create one instead?
+                    {t("lb.wantCreate")}
                   </button>
                 </div>
               )}

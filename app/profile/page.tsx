@@ -17,6 +17,7 @@ import {
 import Link from "next/link";
 import BottomNav from "@/components/layout/BottomNav";
 import { useAuth } from "@/hooks/useAuth";
+import { useLanguage } from "@/hooks/useLanguage";
 import type { Profile, Language } from "@/types";
 
 interface ProfileStats {
@@ -75,6 +76,13 @@ export default function ProfilePage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showModal, setShowModal] = useState<"language" | "country" | null>(null);
   const [saving, setSaving] = useState(false);
+  const { t, language, setLanguage, syncFromProfile } = useLanguage();
+
+  useEffect(() => {
+    if (profile?.preferred_language) {
+      syncFromProfile(profile.preferred_language);
+    }
+  }, [profile?.preferred_language, syncFromProfile]);
 
   useEffect(() => {
     fetch("/api/profile")
@@ -128,27 +136,26 @@ export default function ProfilePage() {
     return (
       <div className="flex-1 flex flex-col pb-20">
         <div className="px-4 pt-8">
-          <h1 className="text-2xl font-black text-[#f0f0f0] mb-2 tracking-tight">Profile</h1>
+          <h1 className="text-2xl font-black text-[#f0f0f0] mb-2 tracking-tight">{t("profile.title")}</h1>
         </div>
         <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
           <div className="w-20 h-20 rounded-full bg-white/[0.03] border border-[rgba(214,235,253,0.19)] flex items-center justify-center mb-5">
             <User size={36} className="text-[#464a4d]" />
           </div>
           <h2 className="text-xl font-bold text-[#f0f0f0] mb-2">
-            Join the Competition
+            {t("profile.joinCompetition")}
           </h2>
           <p className="text-[#a1a4a5] text-sm mb-8 max-w-xs leading-relaxed">
-            Sign in to save your progress, climb the leaderboard, and compete
-            with friends worldwide.
+            {t("profile.joinDesc")}
           </p>
           <Link
             href="/auth/login"
             className="bg-[#11ff99] text-black font-bold py-4 px-8 rounded-full w-full max-w-xs text-center active:scale-[0.98] transition-transform"
           >
-            Sign In with Google
+            {t("profile.signIn")}
           </Link>
           <p className="text-xs text-[#464a4d] mt-4">
-            Free forever. No spam.
+            {t("profile.free")}
           </p>
         </div>
         <BottomNav />
@@ -158,25 +165,25 @@ export default function ProfilePage() {
 
   const statCards = [
     {
-      label: "Total Points",
+      label: t("profile.totalPoints"),
       value: profile?.total_points?.toLocaleString() ?? "0",
       icon: Trophy,
       color: "text-[#ffc53d]",
     },
     {
-      label: "Questions",
+      label: t("profile.questions"),
       value: stats?.totalAnswered?.toLocaleString() ?? "0",
       icon: Target,
       color: "text-[#11ff99]",
     },
     {
-      label: "Accuracy",
+      label: t("profile.accuracy"),
       value: `${stats?.accuracy ?? 0}%`,
       icon: Flame,
       color: "text-[#ff801f]",
     },
     {
-      label: "Global Rank",
+      label: t("profile.globalRank"),
       value: stats?.globalRank ? `#${stats.globalRank.toLocaleString()}` : "—",
       icon: Globe,
       color: "text-[#3b9eff]",
@@ -186,7 +193,7 @@ export default function ProfilePage() {
   return (
     <div className="flex-1 flex flex-col pb-20">
       <div className="px-4 pt-8">
-        <h1 className="text-2xl font-black text-[#f0f0f0] mb-6 tracking-tight">Profile</h1>
+        <h1 className="text-2xl font-black text-[#f0f0f0] mb-6 tracking-tight">{t("profile.title")}</h1>
 
         {/* Avatar & name */}
         <motion.div
@@ -242,7 +249,7 @@ export default function ProfilePage() {
         <div className="mb-6">
           <h2 className="font-semibold text-[#f0f0f0] mb-3 flex items-center gap-2">
             <Star size={18} className="text-[#ffc53d]" />
-            Badges
+            {t("profile.badges")}
           </h2>
           <div className="grid grid-cols-3 gap-3">
             {BADGES.map((badge) => (
@@ -266,14 +273,14 @@ export default function ProfilePage() {
 
         {/* Settings */}
         <div className="space-y-2">
-          <h2 className="font-semibold text-[#f0f0f0] mb-2">Settings</h2>
+          <h2 className="font-semibold text-[#f0f0f0] mb-2">{t("profile.settings")}</h2>
           <button
             onClick={() => setShowModal("language")}
             className="w-full flex items-center justify-between bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-xl px-4 py-3 hover:bg-white/[0.06] transition-colors"
           >
-            <span className="text-sm text-[#f0f0f0]">Language</span>
+            <span className="text-sm text-[#f0f0f0]">{t("profile.language")}</span>
             <div className="flex items-center gap-2 text-[#a1a4a5] text-sm">
-              {LANGUAGES.find((l) => l.code === (profile?.preferred_language ?? "en"))?.label ?? "English"}
+              {LANGUAGES.find((l) => l.code === language)?.label ?? "English"}
               <ChevronRight size={16} className="text-[#464a4d]" />
             </div>
           </button>
@@ -281,9 +288,9 @@ export default function ProfilePage() {
             onClick={() => setShowModal("country")}
             className="w-full flex items-center justify-between bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-xl px-4 py-3 hover:bg-white/[0.06] transition-colors"
           >
-            <span className="text-sm text-[#f0f0f0]">Country</span>
+            <span className="text-sm text-[#f0f0f0]">{t("profile.country")}</span>
             <div className="flex items-center gap-2 text-[#a1a4a5] text-sm">
-              {profile?.country ? `${COUNTRY_FLAGS[profile.country] ?? "🌍"} ${profile.country}` : "Not set"}
+              {profile?.country ? `${COUNTRY_FLAGS[profile.country] ?? "🌍"} ${profile.country}` : t("profile.notSet")}
               <ChevronRight size={16} className="text-[#464a4d]" />
             </div>
           </button>
@@ -293,7 +300,7 @@ export default function ProfilePage() {
             className="w-full flex items-center gap-3 bg-[#ff2047]/5 border border-[#ff2047]/15 rounded-xl px-4 py-3 text-[#ff2047] mt-4 hover:bg-[#ff2047]/10 transition-colors"
           >
             <LogOut size={18} />
-            <span className="text-sm font-medium">Sign Out</span>
+            <span className="text-sm font-medium">{t("profile.signOut")}</span>
           </button>
         </div>
       </div>
@@ -315,7 +322,7 @@ export default function ProfilePage() {
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-bold text-[#f0f0f0]">
-                  {showModal === "language" ? "Select Language" : "Select Country"}
+                  {showModal === "language" ? t("profile.selectLanguage") : t("profile.selectCountry")}
                 </h3>
                 <button
                   onClick={() => setShowModal(null)}
@@ -328,12 +335,11 @@ export default function ProfilePage() {
               <div className="space-y-1 overflow-y-auto flex-1 -mx-2 px-2">
                 {showModal === "language"
                   ? LANGUAGES.map((lang) => {
-                      const isActive = (profile?.preferred_language ?? "en") === lang.code;
+                      const isActive = language === lang.code;
                       return (
                         <button
                           key={lang.code}
-                          disabled={saving}
-                          onClick={() => updateProfile("preferred_language", lang.code)}
+                          onClick={() => { setLanguage(lang.code); setShowModal(null); }}
                           className={`w-full flex items-center justify-between rounded-xl px-4 py-3.5 transition-colors ${
                             isActive
                               ? "bg-[#11ff99]/5 border border-[#11ff99]/25"

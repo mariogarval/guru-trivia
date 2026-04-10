@@ -8,6 +8,7 @@ import MatchCard from "@/components/ui/MatchCard";
 import LivesDisplay from "@/components/ui/LivesDisplay";
 import BottomNav from "@/components/layout/BottomNav";
 import { useAuth } from "@/hooks/useAuth";
+import { useLanguage } from "@/hooks/useLanguage";
 import type { Match } from "@/types";
 
 interface LivesData {
@@ -17,6 +18,7 @@ interface LivesData {
 
 export default function HomePage() {
   const { isLoggedIn, loading: authLoading, avatarUrl } = useAuth();
+  const { t } = useLanguage();
   const [liveMatches, setLiveMatches] = useState<Match[]>([]);
   const [upcomingMatches, setUpcomingMatches] = useState<Match[]>([]);
   const [livesData, setLivesData] = useState<LivesData>({ lives: 3, nextLifeInMs: null });
@@ -71,7 +73,7 @@ export default function HomePage() {
             )}
           </Link>
         </div>
-        <p className="text-xs text-[#464a4d] mb-6 tracking-wider uppercase">World Cup 2026 Trivia</p>
+        <p className="text-xs text-[#464a4d] mb-6 tracking-wider uppercase">{t("home.subtitle")}</p>
 
         {/* Stats card */}
         <motion.div
@@ -81,14 +83,14 @@ export default function HomePage() {
         >
           <div className="flex items-center justify-between mb-3">
             <div>
-              <p className="text-[11px] text-[#464a4d] mb-1.5 uppercase tracking-wider font-medium">Your Lives</p>
+              <p className="text-[11px] text-[#464a4d] mb-1.5 uppercase tracking-wider font-medium">{t("home.yourLives")}</p>
               <LivesDisplay
                 lives={livesData.lives}
                 nextLifeInMs={livesData.nextLifeInMs}
               />
             </div>
             <div className="text-right">
-              <p className="text-[11px] text-[#464a4d] mb-1.5 uppercase tracking-wider font-medium">Total Points</p>
+              <p className="text-[11px] text-[#464a4d] mb-1.5 uppercase tracking-wider font-medium">{t("home.totalPoints")}</p>
               <p className="text-2xl font-black text-[#ffc53d]">
                 {totalPoints.toLocaleString()}
               </p>
@@ -99,7 +101,7 @@ export default function HomePage() {
               href="/auth/login"
               className="text-xs text-[#a1a4a5] hover:text-[#f0f0f0] transition-colors"
             >
-              Sign in to save progress →
+              {t("home.signInPrompt")}
             </Link>
           )}
         </motion.div>
@@ -118,9 +120,9 @@ export default function HomePage() {
             <div className="flex items-center gap-3">
               <Zap size={22} className="fill-black" />
               <div>
-                <p className="text-base font-black">Quick Play</p>
+                <p className="text-base font-black">{t("home.quickPlay")}</p>
                 <p className="text-xs opacity-60 font-medium">
-                  All categories mixed
+                  {t("home.quickPlaySub")}
                 </p>
               </div>
             </div>
@@ -131,12 +133,12 @@ export default function HomePage() {
         {/* Category grid */}
         <div className="grid grid-cols-2 gap-2">
           {[
-            { id: "player", label: "Players", icon: "⚽", color: "#11ff99" },
-            { id: "team", label: "Teams", icon: "🏟️", color: "#3b9eff" },
-            { id: "world_cup", label: "World Cup", icon: "🏆", color: "#ffc53d" },
-            { id: "champions_league", label: "Champions League", icon: "⭐", color: "#ff801f" },
-            { id: "nations", label: "National Teams", icon: "🌍", color: "#11ff99" },
-            { id: "historical", label: "History", icon: "📜", color: "#a1a4a5" },
+            { id: "player", label: t("cat.player"), icon: "⚽", color: "#11ff99" },
+            { id: "team", label: t("cat.team"), icon: "🏟️", color: "#3b9eff" },
+            { id: "world_cup", label: t("cat.world_cup"), icon: "🏆", color: "#ffc53d" },
+            { id: "champions_league", label: t("cat.champions_league"), icon: "⭐", color: "#ff801f" },
+            { id: "nations", label: t("cat.nations"), icon: "🌍", color: "#11ff99" },
+            { id: "historical", label: t("cat.historical"), icon: "📜", color: "#a1a4a5" },
           ].map((cat, i) => (
             <motion.div
               key={cat.id}

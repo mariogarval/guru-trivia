@@ -10,6 +10,7 @@ import AnswerButton from "@/components/game/AnswerButton";
 import FeedbackOverlay from "@/components/game/FeedbackOverlay";
 import { useGame } from "@/hooks/useGame";
 import { useAuth } from "@/hooks/useAuth";
+import { useLanguage } from "@/hooks/useLanguage";
 import { getDifficultyColor, getDifficultyLabel } from "@/lib/scoring";
 import { QUESTIONS_PER_SET, MAX_LIVES } from "@/types";
 
@@ -34,6 +35,7 @@ function PlayContent() {
   const category = searchParams.get("category") ?? null;
 
   const { userId } = useAuth();
+  const { t, language } = useLanguage();
 
   const {
     phase,
@@ -96,7 +98,7 @@ function PlayContent() {
       <div className="flex-1 flex items-center justify-center p-6">
         <div className="text-center">
           <div className="w-10 h-10 border-2 border-[#11ff99]/20 border-t-[#11ff99] rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-[#464a4d] text-sm">Loading questions...</p>
+          <p className="text-[#464a4d] text-sm">{t("play.loading")}</p>
         </div>
       </div>
     );
@@ -166,14 +168,14 @@ function PlayContent() {
           <h1 className="text-4xl font-black text-[#f0f0f0] mb-1 tracking-tight">
             {totalPoints.toLocaleString()}
           </h1>
-          <p className="text-[#464a4d] text-sm">points earned</p>
+          <p className="text-[#464a4d] text-sm">{t("play.pointsEarned")}</p>
         </div>
 
         <div className="grid grid-cols-3 gap-3 mb-8">
           {[
-            { label: "Correct", value: `${correctCount}/${answers.length}` },
-            { label: "Accuracy", value: `${accuracy}%` },
-            { label: "Best Streak", value: bestStreak.toString() },
+            { label: t("play.correct"), value: `${correctCount}/${answers.length}` },
+            { label: t("play.accuracy"), value: `${accuracy}%` },
+            { label: t("play.bestStreak"), value: bestStreak.toString() },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -190,23 +192,23 @@ function PlayContent() {
             onClick={restartGame}
             className="w-full bg-[#11ff99] text-black font-bold py-4 rounded-full text-base active:scale-[0.98] transition-transform"
           >
-            Play Again
+            {t("play.playAgain")}
           </button>
           <Link
             href="/leaderboard"
             className="block w-full text-center bg-transparent border border-[rgba(214,235,253,0.19)] font-semibold py-4 rounded-full text-[#f0f0f0] hover:bg-white/5 transition-colors"
           >
-            View Leaderboard
+            {t("play.viewLeaderboard")}
           </Link>
           <button
             onClick={async () => {
               const scoreCard = [
                 "⚽ GURU Trivia",
-                `🏆 ${totalPoints.toLocaleString()} pts`,
+                `🏆 ${totalPoints.toLocaleString()} ${t("play.pts")}`,
                 `🎯 ${accuracy}% accuracy`,
                 bestStreak >= 3 ? `🔥 ${bestStreak} streak` : "",
                 "",
-                "Can you beat me? Play now!",
+                t("share.challenge"),
               ]
                 .filter(Boolean)
                 .join("\n");
@@ -232,12 +234,12 @@ function PlayContent() {
             {shareCopied ? (
               <>
                 <Check size={16} className="text-[#11ff99]" />
-                <span className="text-[#11ff99]">Copied!</span>
+                <span className="text-[#11ff99]">{t("play.copied")}</span>
               </>
             ) : (
               <>
                 <Share2 size={16} />
-                Share Score
+                {t("play.shareScore")}
               </>
             )}
           </button>
@@ -273,7 +275,7 @@ function PlayContent() {
             <ArrowLeft size={20} strokeWidth={1.5} />
           </Link>
           <span className="text-sm font-medium text-[#464a4d]">
-            {currentIndex + 1} / {QUESTIONS_PER_SET}
+            {t("play.question")} {currentIndex + 1} / {QUESTIONS_PER_SET}
           </span>
           <div className="flex items-center gap-3">
             {streak >= 3 && (
@@ -342,10 +344,10 @@ function PlayContent() {
                   : currentQuestion.difficulty === "medium"
                   ? "2–3"
                   : "3–4.5"}{" "}
-                pts
+                {t("play.pts")}
               </span>
               <span className="text-xs text-[#464a4d] ml-auto">
-                {totalPoints.toLocaleString()} pts
+                {totalPoints.toLocaleString()} {t("play.pts")}
               </span>
             </div>
 
