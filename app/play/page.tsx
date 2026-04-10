@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useCallback, useRef, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Heart, Flame, Trophy, Share2, Check } from "lucide-react";
+import { ArrowLeft, Heart, Flame, Trophy, Share2, Check, Home } from "lucide-react";
 import Link from "next/link";
 import CountdownBar from "@/components/game/CountdownBar";
 import AnswerButton from "@/components/game/AnswerButton";
@@ -254,6 +254,13 @@ function PlayContent() {
               </>
             )}
           </button>
+          <Link
+            href="/"
+            className="w-full flex items-center justify-center gap-2 border border-[rgba(214,235,253,0.12)] font-medium py-4 rounded-full text-[#464a4d] hover:text-[#a1a4a5] hover:border-[rgba(214,235,253,0.19)] transition-all"
+          >
+            <Home size={16} />
+            {t("play.goHome")}
+          </Link>
         </div>
       </div>
     );

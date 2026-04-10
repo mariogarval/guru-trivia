@@ -220,28 +220,25 @@ export default function LeaderboardPage() {
             {/* League selector */}
             {leagues.length > 0 && (
               <div className="relative">
-                <button
-                  onClick={() => setShowLeagueSelector(!showLeagueSelector)}
-                  className="w-full flex items-center justify-between bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-xl px-4 py-3"
-                >
-                  <span className="text-sm font-medium text-[#f0f0f0]">
-                    {activeLeague?.name ?? t("lb.selectLeague")}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    {activeLeague && (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          shareLeague(activeLeague);
-                        }}
-                        className="p-1 text-[#a1a4a5] hover:text-[#11ff99] transition-colors"
-                      >
-                        <Share2 size={14} />
-                      </button>
-                    )}
-                    <ChevronDown size={16} className={`text-[#464a4d] transition-transform ${showLeagueSelector ? "rotate-180" : ""}`} />
-                  </div>
-                </button>
+                <div className="w-full flex items-center justify-between bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-xl px-4 py-3">
+                  <button
+                    onClick={() => setShowLeagueSelector(!showLeagueSelector)}
+                    className="flex-1 flex items-center justify-between min-w-0"
+                  >
+                    <span className="text-sm font-medium text-[#f0f0f0] truncate">
+                      {activeLeague?.name ?? t("lb.selectLeague")}
+                    </span>
+                    <ChevronDown size={16} className={`text-[#464a4d] transition-transform shrink-0 ${showLeagueSelector ? "rotate-180" : ""}`} />
+                  </button>
+                  {activeLeague && (
+                    <button
+                      onClick={() => shareLeague(activeLeague)}
+                      className="ml-2 p-1.5 text-[#a1a4a5] hover:text-[#11ff99] transition-colors shrink-0"
+                    >
+                      <Share2 size={16} />
+                    </button>
+                  )}
+                </div>
 
                 <AnimatePresence>
                   {showLeagueSelector && (
