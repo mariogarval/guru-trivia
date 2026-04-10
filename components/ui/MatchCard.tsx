@@ -46,10 +46,13 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   const isLive = match.status === "live";
   const isFinished = match.status === "finished";
 
-  // Build play link with team names for question context
+  // Build play link with team names + league for question context
   const playParams = new URLSearchParams();
   playParams.set("match", match.id);
   playParams.set("teams", `${match.home_team},${match.away_team}`);
+  if (match.league) playParams.set("league", match.league);
+  if (match.home_team_crest) playParams.set("homeCrest", match.home_team_crest);
+  if (match.away_team_crest) playParams.set("awayCrest", match.away_team_crest);
 
   return (
     <Link

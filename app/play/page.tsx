@@ -8,6 +8,7 @@ import Link from "next/link";
 import CountdownBar from "@/components/game/CountdownBar";
 import AnswerButton from "@/components/game/AnswerButton";
 import FeedbackOverlay from "@/components/game/FeedbackOverlay";
+import MatchBanner from "@/components/game/MatchBanner";
 import { useGame } from "@/hooks/useGame";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -33,6 +34,16 @@ function PlayContent() {
   const router = useRouter();
   const matchId = searchParams.get("match") ?? null;
   const category = searchParams.get("category") ?? null;
+  const teams = searchParams.get("teams") ?? null;
+  const league = searchParams.get("league") ?? null;
+  const homeCrest = searchParams.get("homeCrest") ?? undefined;
+  const awayCrest = searchParams.get("awayCrest") ?? undefined;
+
+  // Parse team names from "Home Team,Away Team" format
+  const teamNames = teams?.split(",").map((t) => t.trim()) ?? [];
+  const homeTeam = teamNames[0] ?? "";
+  const awayTeam = teamNames[1] ?? "";
+  const hasMatchContext = !!matchId && !!teams;
 
   const { userId } = useAuth();
   const { t, language } = useLanguage();
@@ -59,8 +70,8 @@ function PlayContent() {
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    startGame(matchId, category);
-  }, [matchId, category]); // eslint-disable-line react-hooks/exhaustive-deps
+    startGame(matchId, category, teams, league);
+  }, [matchId, category, teams, league]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (phase === "playing") {
@@ -265,6 +276,20 @@ function PlayContent() {
 
   return (
     <div className="flex-1 flex flex-col relative no-select">
+      {/* Match context banner */}
+      {hasMatchContext && (
+        <div className="pt-2">
+          <MatchBanner
+            matchId={matchId!}
+            homeTeam={homeTeam}
+            awayTeam={awayTeam}
+            homeCrest={homeCrest}
+            awayCrest={awayCrest}
+            league={league ?? undefined}
+          />
+        </div>
+      )}
+
       {/* Header */}
       <div className="px-4 pt-4 pb-3 space-y-3">
         <div className="flex items-center justify-between">

@@ -11,6 +11,8 @@ export async function GET(request: NextRequest) {
   const matchId = searchParams.get("match_id");
   const count = Math.min(parseInt(searchParams.get("count") ?? "10"), 10);
   const category = searchParams.get("category");
+  const teams = searchParams.get("teams"); // "Team A,Team B"
+  const league = searchParams.get("league"); // "Premier League"
 
   const supabase = createRouteHandlerClient<Database>({ cookies });
   const {
@@ -19,14 +21,15 @@ export async function GET(request: NextRequest) {
 
   const userId = session?.user?.id ?? null;
 
-  // Use a server-side client directly for question fetching
   const serverSupabase = supabase as ReturnType<typeof createClient>;
   const questions = await fetchQuestionsForGame(
     serverSupabase,
     userId,
     matchId,
     count,
-    category
+    category,
+    teams ?? undefined,
+    league ?? undefined
   );
 
   // Sanitize: never expose correct_answer_index to client until answered

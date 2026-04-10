@@ -21,7 +21,7 @@ export interface GeneratedQuestion {
 export async function generateQuestionsForMatch(
   homeTeam: string,
   awayTeam: string,
-  count = 50,
+  count = 10,
   language: Language = "en"
 ): Promise<GeneratedQuestion[]> {
   const languageInstructions: Record<Language, string> = {
@@ -37,22 +37,28 @@ export async function generateQuestionsForMatch(
   const mediumCount = Math.round(count * 0.4);
   const hardCount = count - easyCount - mediumCount;
 
-  const prompt = `Generate ${count} unique World Cup trivia questions about ${homeTeam} vs ${awayTeam}.
+  const prompt = `Generate ${count} unique football/soccer trivia questions specifically about ${homeTeam} and ${awayTeam}.
 
 Requirements:
 - Language: ${langName}
 - Mix of difficulty: ${easyCount} easy, ${mediumCount} medium, ${hardCount} hard
-- Categories: historical facts, player records, tournament stats, team achievements
+- Topics to cover (mix of these):
+  * Head-to-head history between ${homeTeam} and ${awayTeam}
+  * Famous players (past and current) from both clubs
+  * Stadium and venue facts for both teams
+  * Recent season performance, transfers, and managers
+  * Historical achievements, records, and trophies
+  * Iconic moments between these teams
+  * League-specific questions relevant to both teams
 - Multiple choice format with exactly 4 options (one correct)
 - Include brief explanation for correct answer (1-2 sentences)
-- Questions should be engaging, accurate, and varied
-- Avoid overly obscure facts for easy/medium difficulty
-- Cover both teams equally
+- Questions must be factually accurate and up to date (as of 2025-2026 season)
+- Cover both teams roughly equally
 
 Return ONLY a valid JSON array (no markdown, no extra text):
 [{
   "difficulty": "easy|medium|hard",
-  "category": "historical|player|team|tournament",
+  "category": "player|team|historical|tournament",
   "question": "Question text?",
   "options": ["Option A", "Option B", "Option C", "Option D"],
   "correctIndex": 0,
@@ -60,9 +66,8 @@ Return ONLY a valid JSON array (no markdown, no extra text):
 }]`;
 
   const stream = await getClient().messages.stream({
-    model: "claude-opus-4-6",
-    max_tokens: 64000,
-    thinking: { type: "enabled", budget_tokens: 10000 },
+    model: "claude-sonnet-4-20250514",
+    max_tokens: 16000,
     messages: [{ role: "user", content: prompt }],
   });
 
@@ -74,7 +79,9 @@ Return ONLY a valid JSON array (no markdown, no extra text):
   }
 
   const jsonStr = textBlock.text.trim();
-  const parsed = JSON.parse(jsonStr) as GeneratedQuestion[];
+  // Handle potential markdown code blocks
+  const cleaned = jsonStr.replace(/^```json?\n?/i, "").replace(/\n?```$/i, "");
+  const parsed = JSON.parse(cleaned) as GeneratedQuestion[];
   return parsed;
 }
 
@@ -111,9 +118,8 @@ Return ONLY a valid JSON array:
 }]`;
 
   const stream = await getClient().messages.stream({
-    model: "claude-opus-4-6",
+    model: "claude-sonnet-4-20250514",
     max_tokens: 64000,
-    thinking: { type: "enabled", budget_tokens: 10000 },
     messages: [{ role: "user", content: prompt }],
   });
 
@@ -123,7 +129,8 @@ Return ONLY a valid JSON array:
     throw new Error("No text content in response");
   }
 
-  return JSON.parse(textBlock.text.trim()) as GeneratedQuestion[];
+  const cleaned = textBlock.text.trim().replace(/^```json?\n?/i, "").replace(/\n?```$/i, "");
+  return JSON.parse(cleaned) as GeneratedQuestion[];
 }
 
 export async function generateCategoryQuestions(
@@ -169,9 +176,8 @@ Return ONLY a valid JSON array (no markdown, no extra text):
 }]`;
 
   const stream = await getClient().messages.stream({
-    model: "claude-opus-4-6",
+    model: "claude-sonnet-4-20250514",
     max_tokens: 64000,
-    thinking: { type: "enabled", budget_tokens: 10000 },
     messages: [{ role: "user", content: prompt }],
   });
 
@@ -181,20 +187,99 @@ Return ONLY a valid JSON array (no markdown, no extra text):
     throw new Error("No text content in response");
   }
 
-  return JSON.parse(textBlock.text.trim()) as GeneratedQuestion[];
+  const cleaned = textBlock.text.trim().replace(/^```json?\n?/i, "").replace(/\n?```$/i, "");
+  return JSON.parse(cleaned) as GeneratedQuestion[];
 }
 
 /**
- * Fetch questions from Supabase for a user, excluding already-answered ones.
- * Falls back to random selection from available questions.
+ * Build keyword search terms from team names and league.
+ * E.g., "Real Madrid" → ["real", "madrid"]
+ * "Premier League" → ["premier", "league"]
+ */
+function buildSearchKeywords(teams?: string, league?: string): string[] {
+  const keywords: string[] = [];
+  const stopWords = new Set([
+    "fc", "cf", "sc", "ac", "as", "us", "ss", "cd", "ud", "sd",
+    "the", "de", "del", "di", "von", "van", "le", "la", "los",
+    "and", "united", "city", "club", "sporting", "athletic",
+  ]);
+
+  if (teams) {
+    const teamNames = teams.split(",").map((t) => t.trim());
+    for (const name of teamNames) {
+      // Add full team name and individual significant words
+      keywords.push(name.toLowerCase());
+      const words = name.toLowerCase().split(/\s+/);
+      for (const word of words) {
+        if (word.length > 2 && !stopWords.has(word)) {
+          keywords.push(word);
+        }
+      }
+    }
+  }
+
+  if (league) {
+    keywords.push(league.toLowerCase());
+    // Map common league names to their countries/related terms
+    const leagueKeywords: Record<string, string[]> = {
+      "premier league": ["english", "england", "epl", "premier"],
+      "la liga": ["spanish", "spain", "liga"],
+      "serie a": ["italian", "italy", "serie"],
+      "bundesliga": ["german", "germany", "bundesliga"],
+    };
+    const extra = leagueKeywords[league.toLowerCase()];
+    if (extra) keywords.push(...extra);
+  }
+
+  return Array.from(new Set(keywords));
+}
+
+/**
+ * Score a question by how many keywords it matches.
+ * Looks at question text, options, and explanation.
+ */
+function scoreQuestionRelevance(row: any, keywords: string[]): number {
+  if (!keywords.length) return 0;
+
+  const searchText = [
+    row.question_text ?? "",
+    ...(Array.isArray(row.options) ? row.options : []),
+    row.explanation ?? "",
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  let score = 0;
+  for (const kw of keywords) {
+    if (searchText.includes(kw)) {
+      // Full team name match is worth more
+      score += kw.includes(" ") ? 3 : 1;
+    }
+  }
+  return score;
+}
+
+/**
+ * Fetch questions from Supabase for a user, with smart team/league matching.
+ *
+ * Priority order:
+ * 1. Questions matching teams/league keywords (scored by relevance)
+ * 2. If not enough, try AI generation (if API key configured)
+ * 3. Fall back to general questions from the pool
  */
 export async function fetchQuestionsForGame(
   supabase: ReturnType<typeof import("@/lib/supabase/client").createClient>,
   userId: string | null,
   matchId: string | null,
   count = 10,
-  category: string | null = null
+  category: string | null = null,
+  teams?: string,
+  league?: string
 ): Promise<Question[]> {
+  const keywords = buildSearchKeywords(teams, league);
+  const hasMatchContext = keywords.length > 0;
+
+  // Fetch a large pool of questions
   let query = supabase
     .from("questions")
     .select("*")
@@ -204,30 +289,112 @@ export async function fetchQuestionsForGame(
     query = query.or(`match_id.eq.${matchId},match_id.is.null`);
   }
 
-  if (category) {
+  // Don't filter by category when we have match context — we want to search across all categories
+  if (category && !hasMatchContext) {
     query = query.eq("category", category);
   }
 
   const { data: allQuestions } = await query.limit(500);
   if (!allQuestions || allQuestions.length === 0) return [];
 
-  // Filter out previously answered questions for logged-in users
+  // Get previously answered questions for logged-in users
+  let answeredIds = new Set<string>();
   if (userId) {
     const { data: answered } = await supabase
       .from("user_answers")
       .select("question_id")
       .eq("user_id", userId);
-
-    const answeredIds = new Set((answered as any[] ?? []).map((a: any) => a.question_id));
-    const unanswered = (allQuestions as any[]).filter(
-      (q: any) => !answeredIds.has(q.id)
-    );
-
-    const pool = unanswered.length >= count ? unanswered : allQuestions;
-    return pickRandomN(pool, count).map(dbRowToQuestion);
+    answeredIds = new Set((answered as any[] ?? []).map((a: any) => a.question_id));
   }
 
-  return pickRandomN(allQuestions, count).map(dbRowToQuestion);
+  const availableQuestions = (allQuestions as any[]).filter(
+    (q: any) => !answeredIds.has(q.id) || answeredIds.size === 0
+  );
+
+  // If we have match context, score and sort by relevance
+  if (hasMatchContext) {
+    const scored = availableQuestions.map((q) => ({
+      question: q,
+      relevance: scoreQuestionRelevance(q, keywords),
+    }));
+
+    // Sort by relevance (highest first)
+    scored.sort((a, b) => b.relevance - a.relevance);
+
+    // Get questions with any relevance
+    const relevant = scored.filter((s) => s.relevance > 0);
+
+    if (relevant.length >= count) {
+      // Enough relevant questions — pick top ones with some randomness
+      const topPool = relevant.slice(0, Math.min(relevant.length, count * 3));
+      const selected = pickRandomN(topPool, count);
+      return selected.map((s) => dbRowToQuestion(s.question));
+    }
+
+    // Not enough relevant questions in DB — try AI generation
+    if (teams && process.env.ANTHROPIC_API_KEY) {
+      try {
+        const teamNames = teams.split(",").map((t) => t.trim());
+        const homeTeam = teamNames[0] ?? "Home Team";
+        const awayTeam = teamNames[1] ?? "Away Team";
+
+        console.log(`Generating ${count} match-specific questions for ${homeTeam} vs ${awayTeam}...`);
+        const generated = await generateQuestionsForMatch(homeTeam, awayTeam, count);
+
+        // Save generated questions to DB for future use
+        const rows = generated.map((q) => ({
+          match_id: matchId,
+          category: q.category as any,
+          difficulty: q.difficulty as any,
+          question_text: q.question,
+          options: q.options,
+          correct_answer_index: q.correctIndex,
+          explanation: q.explanation,
+          language: "en",
+        }));
+
+        const { data: inserted } = await (supabase
+          .from("questions") as any)
+          .insert(rows)
+          .select();
+
+        if (inserted && inserted.length > 0) {
+          return pickRandomN(inserted, count).map(dbRowToQuestion);
+        }
+
+        // If insert failed, return directly
+        return generated.slice(0, count).map((q, i) => ({
+          id: `gen-${Date.now()}-${i}`,
+          match_id: matchId,
+          category: q.category,
+          difficulty: q.difficulty,
+          question_text: q.question,
+          options: q.options,
+          correct_answer_index: q.correctIndex,
+          explanation: q.explanation,
+          language: "en",
+          created_at: new Date().toISOString(),
+        }));
+      } catch (err) {
+        console.error("AI question generation failed:", err);
+        // Fall through to fallback
+      }
+    }
+
+    // Fallback: mix whatever relevant we found with random general questions
+    const relevantQuestions = relevant.map((s) => dbRowToQuestion(s.question));
+    const remaining = count - relevantQuestions.length;
+    const nonRelevant = scored
+      .filter((s) => s.relevance === 0)
+      .map((s) => s.question);
+    const filler = pickRandomN(nonRelevant, remaining).map(dbRowToQuestion);
+
+    return [...relevantQuestions, ...filler];
+  }
+
+  // No match context — standard random selection
+  const pool = availableQuestions.length >= count ? availableQuestions : (allQuestions as any[]);
+  return pickRandomN(pool, count).map(dbRowToQuestion);
 }
 
 function pickRandomN<T>(arr: T[], n: number): T[] {

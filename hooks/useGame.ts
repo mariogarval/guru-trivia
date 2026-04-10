@@ -32,7 +32,7 @@ export interface UseGameReturn {
   totalPoints: number;
   lives: number;
   feedback: FeedbackState | null;
-  startGame: (matchId: string | null, category?: string | null) => Promise<void>;
+  startGame: (matchId: string | null, category?: string | null, teams?: string | null, league?: string | null) => Promise<void>;
   submitAnswer: (selectedIndex: number | null, timeTaken: number) => Promise<void>;
   nextQuestion: () => void;
   restartGame: () => void;
@@ -51,14 +51,18 @@ export function useGame(userId: string | null): UseGameReturn {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const matchIdRef = useRef<string | null>(null);
   const categoryRef = useRef<string | null>(null);
+  const teamsRef = useRef<string | null>(null);
+  const leagueRef = useRef<string | null>(null);
 
   const currentQuestion = questions[currentIndex] ?? null;
 
-  const startGame = useCallback(async (matchId: string | null, category: string | null = null) => {
+  const startGame = useCallback(async (matchId: string | null, category: string | null = null, teams: string | null = null, league: string | null = null) => {
     setPhase("loading");
     setErrorMessage(null);
     matchIdRef.current = matchId;
     categoryRef.current = category;
+    teamsRef.current = teams;
+    leagueRef.current = league;
 
     try {
       // Check lives first
@@ -77,6 +81,8 @@ export function useGame(userId: string | null): UseGameReturn {
       const params = new URLSearchParams({ count: String(QUESTIONS_PER_SET) });
       if (matchId) params.set("match_id", matchId);
       if (category) params.set("category", category);
+      if (teams) params.set("teams", teams);
+      if (league) params.set("league", league);
       const url = `/api/questions?${params}`;
 
       const res = await fetch(url);
@@ -211,7 +217,7 @@ export function useGame(userId: string | null): UseGameReturn {
 
   const restartGame = useCallback(() => {
     setPhase("loading");
-    startGame(matchIdRef.current, categoryRef.current);
+    startGame(matchIdRef.current, categoryRef.current, teamsRef.current, leagueRef.current);
   }, [startGame]);
 
   return {
