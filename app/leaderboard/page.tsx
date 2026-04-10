@@ -158,18 +158,28 @@ export default function LeaderboardPage() {
     }
   };
 
+  const [shareSuccess, setShareSuccess] = useState(false);
+
   const shareLeague = async (league: League) => {
     const text = `Join my GURU Trivia league "${league.name}"! Use code: ${league.code}`;
-    if (navigator.share) {
-      try {
+    try {
+      if (typeof navigator.share === "function") {
         await navigator.share({ title: "GURU Trivia League", text });
-      } catch {
-        // user cancelled
+      } else {
+        await navigator.clipboard.writeText(text);
       }
-    } else {
-      await navigator.clipboard.writeText(text);
-      setCodeCopied(true);
-      setTimeout(() => setCodeCopied(false), 2000);
+      setShareSuccess(true);
+      setTimeout(() => setShareSuccess(false), 2000);
+    } catch {
+      // Fallback: copy to clipboard if share fails
+      try {
+        await navigator.clipboard.writeText(text);
+        setShareSuccess(true);
+        setTimeout(() => setShareSuccess(false), 2000);
+      } catch {
+        // Last resort fallback
+        window.prompt("Copy this code:", league.code);
+      }
     }
   };
 
@@ -232,10 +242,15 @@ export default function LeaderboardPage() {
                   </button>
                   {activeLeague && (
                     <button
-                      onClick={() => shareLeague(activeLeague)}
-                      className="ml-2 p-1.5 text-[#a1a4a5] hover:text-[#11ff99] transition-colors shrink-0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        shareLeague(activeLeague);
+                      }}
+                      className="ml-2 p-2 -mr-1 text-[#a1a4a5] hover:text-[#11ff99] active:text-[#11ff99] transition-colors shrink-0"
+                      aria-label="Share league"
                     >
-                      <Share2 size={16} />
+                      {shareSuccess ? <Check size={16} className="text-[#11ff99]" /> : <Share2 size={16} />}
                     </button>
                   )}
                 </div>
