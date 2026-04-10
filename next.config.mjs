@@ -5,7 +5,7 @@ const nextConfig = {
       { protocol: "https", hostname: "**.githubusercontent.com" },
       { protocol: "https", hostname: "crests.football-data.org" },
       { protocol: "https", hostname: "media.api-sports.io" },
-      { protocol: "https", hostname: "images.fotmob.com" },
+      { protocol: "https", hostname: "a.espncdn.com" },
     ],
   },
 };
