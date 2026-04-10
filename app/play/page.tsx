@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback, useRef, useState } from "react";
+import { Suspense, useEffect, useCallback, useRef, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Heart, Flame, Trophy, Share2, Check } from "lucide-react";
@@ -14,6 +14,20 @@ import { getDifficultyColor, getDifficultyLabel } from "@/lib/scoring";
 import { QUESTIONS_PER_SET, MAX_LIVES } from "@/types";
 
 export default function PlayPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-[#11ff99]/20 border-t-[#11ff99] rounded-full animate-spin" />
+        </div>
+      }
+    >
+      <PlayContent />
+    </Suspense>
+  );
+}
+
+function PlayContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const matchId = searchParams.get("match") ?? null;
