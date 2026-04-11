@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Users, ChevronRight, Clock } from "lucide-react";
+import { Users, Clock, Zap, Calendar } from "lucide-react";
 import type { Match } from "@/types";
 
 interface MatchCardProps {
@@ -45,6 +45,7 @@ function formatKickoff(iso: string): string {
 export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   const isLive = match.status === "live";
   const isFinished = match.status === "finished";
+  const isPreGame = !isLive && !isFinished;
 
   // Build play link with team names + league for question context
   const playParams = new URLSearchParams();
@@ -57,18 +58,23 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   return (
     <Link
       href={`/play?${playParams}`}
-      className="block bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-2xl p-4 hover:border-[#11ff99]/30 transition-all active:scale-[0.98]"
+      className={[
+        "block rounded-2xl p-4 transition-all active:scale-[0.98]",
+        isLive
+          ? "bg-[#ff2047]/[0.06] border border-[#ff2047]/40 hover:border-[#ff2047]/70 hover:bg-[#ff2047]/[0.09]"
+          : "bg-white/[0.03] border border-[rgba(214,235,253,0.19)] hover:border-[#11ff99]/30",
+      ].join(" ")}
     >
       {/* League + Status row */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           {match.league && (
-            <span className="text-[10px] text-[#a1a4a5] font-medium uppercase tracking-wider">
+            <span className={`text-[10px] font-medium uppercase tracking-wider ${isLive ? "text-[#ff2047]/70" : "text-[#a1a4a5]"}`}>
               {match.league}
             </span>
           )}
           {isLive && (
-            <span className="flex items-center gap-1.5 bg-[#ff2047]/15 text-[#ff2047] text-xs font-semibold px-2.5 py-0.5 rounded-full border border-[#ff2047]/20">
+            <span className="flex items-center gap-1.5 bg-[#ff2047]/15 text-[#ff2047] text-xs font-semibold px-2.5 py-0.5 rounded-full border border-[#ff2047]/30">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse" />
               LIVE
             </span>
@@ -76,7 +82,7 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
           {isFinished && (
             <span className="text-xs text-[#464a4d] font-medium uppercase tracking-wider">FT</span>
           )}
-          {!isLive && !isFinished && (
+          {isPreGame && (
             <span className="flex items-center gap-1 text-xs text-[#a1a4a5]">
               <Clock size={12} />
               {formatKickoff(match.kickoff_time)}
@@ -84,7 +90,7 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
           )}
         </div>
         {activeGurus > 0 && (
-          <span className="flex items-center gap-1 text-xs text-[#464a4d]">
+          <span className={`flex items-center gap-1 text-xs ${isLive ? "text-[#ff2047]/50" : "text-[#464a4d]"}`}>
             <Users size={12} />
             {activeGurus.toLocaleString()}
           </span>
@@ -107,17 +113,15 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
                 ⚽
               </div>
             )}
-            <div>
-              <p className="font-semibold text-[#f0f0f0] text-sm leading-tight">
-                {match.home_team}
-              </p>
-            </div>
+            <p className="font-semibold text-[#f0f0f0] text-sm leading-tight">
+              {match.home_team}
+            </p>
           </div>
         </div>
 
         <div className="flex flex-col items-center px-3 min-w-[60px]">
           {(isLive || isFinished) && match.current_score ? (
-            <span className={`text-xl font-black font-mono tracking-wider ${isLive ? "text-[#11ff99]" : "text-[#f0f0f0]"}`}>
+            <span className={`text-xl font-black font-mono tracking-wider ${isLive ? "text-[#ff6b7a]" : "text-[#f0f0f0]"}`}>
               {match.current_score}
             </span>
           ) : (
@@ -139,20 +143,27 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
                 ⚽
               </div>
             )}
-            <div className="text-right">
-              <p className="font-semibold text-[#f0f0f0] text-sm leading-tight">
-                {match.away_team}
-              </p>
-            </div>
+            <p className="font-semibold text-[#f0f0f0] text-sm leading-tight text-right">
+              {match.away_team}
+            </p>
           </div>
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="flex items-center justify-end mt-3 pt-3 border-t border-[rgba(214,235,253,0.10)]">
-        <span className="flex items-center gap-1 text-xs font-semibold text-[#11ff99]">
-          Play Trivia <ChevronRight size={14} />
-        </span>
+      {/* CTA — visually distinct for live vs pre-game */}
+      <div className={`mt-3 pt-3 border-t ${isLive ? "border-[#ff2047]/20" : "border-[rgba(214,235,253,0.10)]"}`}>
+        {isLive ? (
+          <div className="w-full flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold text-sm py-2.5 rounded-xl">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
+            Play Live Trivia
+            <Zap size={13} className="fill-white" />
+          </div>
+        ) : (
+          <div className="w-full flex items-center justify-center gap-2 bg-[#11ff99]/10 border border-[#11ff99]/25 text-[#11ff99] font-bold text-sm py-2.5 rounded-xl">
+            <Calendar size={13} />
+            Play Trivia
+          </div>
+        )}
       </div>
     </Link>
   );

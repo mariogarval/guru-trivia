@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { Difficulty, Category, Language, Question } from "@/types";
+import type { LiveMatchContext, PreGameContext } from "@/lib/sports-data";
 
 let _client: Anthropic | null = null;
 function getClient(): Anthropic {
@@ -83,6 +84,239 @@ Return ONLY a valid JSON array (no markdown, no extra text):
   const cleaned = jsonStr.replace(/^```json?\n?/i, "").replace(/\n?```$/i, "");
   const parsed = JSON.parse(cleaned) as GeneratedQuestion[];
   return parsed;
+}
+
+/**
+ * Generate pre-game trivia grounded in real league data.
+ *
+ * When `context` is provided, the prompt includes verified standings and top
+ * scorer data so Claude can only write questions it can answer accurately.
+ * Questions about current-season stats use the API data; historical questions
+ * are explicitly constrained to well-known facts Claude is confident about.
+ */
+export async function generatePreGameQuestions(
+  homeTeam: string,
+  awayTeam: string,
+  context: PreGameContext | null,
+  count = 10,
+  language: Language = "en"
+): Promise<GeneratedQuestion[]> {
+  const languageInstructions: Record<Language, string> = {
+    en: "English", es: "Spanish", fr: "French", de: "German", pt: "Portuguese",
+  };
+  const langName = languageInstructions[language];
+  const easyCount = Math.round(count * 0.4);
+  const mediumCount = Math.round(count * 0.4);
+  const hardCount = count - easyCount - mediumCount;
+
+  // Build a verified-data block to inject into the prompt
+  let verifiedDataBlock = "";
+  if (context) {
+    const lines: string[] = [`VERIFIED REAL DATA FOR ${context.leagueName.toUpperCase()}:`];
+
+    if (context.homeStanding) {
+      const s = context.homeStanding;
+      lines.push(
+        `${homeTeam} — Position: ${s.position}, Points: ${s.points}, ` +
+        `Record: ${s.won}W-${s.drawn}D-${s.lost}L, ` +
+        `Goals: ${s.goalsFor} scored / ${s.goalsAgainst} conceded` +
+        (s.form ? `, Recent form: ${s.form}` : "")
+      );
+    }
+    if (context.awayStanding) {
+      const s = context.awayStanding;
+      lines.push(
+        `${awayTeam} — Position: ${s.position}, Points: ${s.points}, ` +
+        `Record: ${s.won}W-${s.drawn}D-${s.lost}L, ` +
+        `Goals: ${s.goalsFor} scored / ${s.goalsAgainst} conceded` +
+        (s.form ? `, Recent form: ${s.form}` : "")
+      );
+    }
+
+    if (context.standings && context.standings.length > 0) {
+      lines.push("\nFULL LEAGUE TABLE (top 10):");
+      context.standings.slice(0, 10).forEach((s) => {
+        lines.push(
+          `${s.position}. ${s.team} — ${s.points} pts (${s.won}W ${s.drawn}D ${s.lost}L, GF:${s.goalsFor} GA:${s.goalsAgainst})`
+        );
+      });
+    }
+
+    if (context.topScorers && context.topScorers.length > 0) {
+      lines.push("\nTOP SCORERS THIS SEASON:");
+      context.topScorers.slice(0, 10).forEach((sc, i) => {
+        lines.push(
+          `${i + 1}. ${sc.player} (${sc.team}) — ${sc.goals} goals` +
+          (sc.assists !== null ? `, ${sc.assists} assists` : "")
+        );
+      });
+    }
+
+    verifiedDataBlock = lines.join("\n");
+  }
+
+  const prompt = `You are generating pre-match football trivia for ${homeTeam} vs ${awayTeam}.
+Language: ${langName}
+Difficulty mix: ${easyCount} easy, ${mediumCount} medium, ${hardCount} hard
+
+${verifiedDataBlock ? verifiedDataBlock + "\n\n" : ""}INSTRUCTIONS:
+${verifiedDataBlock
+  ? `- You MUST write at least ${Math.ceil(count * 0.5)} questions directly based on the verified data above (standings, scorers, form, goals scored/conceded). These are factually guaranteed to be correct.
+- For remaining questions, cover historical facts about ${homeTeam} and ${awayTeam} (famous players, trophies, stadiums, rivalries) — but ONLY include facts you are highly confident are correct. If uncertain, skip the topic.`
+  : `- Cover facts about ${homeTeam} and ${awayTeam}: famous players, trophies, stadiums, head-to-head history, rivalries.
+- IMPORTANT: Only include questions where you are highly confident the answer is correct. Do not guess or approximate statistics.`}
+- Multiple choice, exactly 4 options (one correct)
+- Brief explanation for the correct answer (1–2 sentences)
+- Distribute questions roughly equally between both teams
+
+Return ONLY a valid JSON array (no markdown):
+[{
+  "difficulty": "easy|medium|hard",
+  "category": "player|team|historical|tournament",
+  "question": "Question text?",
+  "options": ["A", "B", "C", "D"],
+  "correctIndex": 0,
+  "explanation": "Why this answer is correct"
+}]`;
+
+  const stream = await getClient().messages.stream({
+    model: "claude-sonnet-4-20250514",
+    max_tokens: 16000,
+    messages: [{ role: "user", content: prompt }],
+  });
+  const response = await stream.finalMessage();
+  const textBlock = response.content.find((b) => b.type === "text");
+  if (!textBlock || textBlock.type !== "text") throw new Error("No text in response");
+  const cleaned = textBlock.text.trim().replace(/^```json?\n?/i, "").replace(/\n?```$/i, "");
+  return JSON.parse(cleaned) as GeneratedQuestion[];
+}
+
+/**
+ * Generate live-match trivia grounded in real match events.
+ *
+ * Questions are based ONLY on what has actually happened in the match so far:
+ * goals scored, scorers, cards, current stats. Claude is explicitly told not to
+ * invent events. If no goals have been scored yet, it generates valid questions
+ * about match facts (score, teams) and prediction-style questions.
+ */
+export async function generateLiveMatchQuestions(
+  homeTeam: string,
+  awayTeam: string,
+  context: LiveMatchContext,
+  count = 10,
+  language: Language = "en"
+): Promise<GeneratedQuestion[]> {
+  const languageInstructions: Record<Language, string> = {
+    en: "English", es: "Spanish", fr: "French", de: "German", pt: "Portuguese",
+  };
+  const langName = languageInstructions[language];
+
+  // Build match event summary
+  const statusLabel =
+    context.matchStatus === "live"
+      ? `LIVE — ${context.minute || "in progress"}`
+      : context.matchStatus === "finished"
+      ? "FULL TIME"
+      : "UPCOMING";
+
+  const scoreStr = `${context.homeTeam} ${context.homeScore}–${context.awayScore} ${context.awayTeam}`;
+
+  const goalLines =
+    context.goals.length > 0
+      ? context.goals
+          .map(
+            (g) =>
+              `  ${g.minute} — ${g.player} (${g.team})` +
+              (g.isPenalty ? " [Penalty]" : "") +
+              (g.isOwnGoal ? " [Own Goal]" : "")
+          )
+          .join("\n")
+      : "  No goals scored yet";
+
+  const yellowLines =
+    context.yellowCards.length > 0
+      ? context.yellowCards.map((c) => `  ${c.minute} — ${c.player} (${c.team})`).join("\n")
+      : "  None";
+
+  const redLines =
+    context.redCards.length > 0
+      ? context.redCards.map((c) => `  ${c.minute} — ${c.player} (${c.team})`).join("\n")
+      : "  None";
+
+  const homeStatsStr = context.homeStats
+    ? [
+        context.homeStats.possession !== null ? `Possession: ${context.homeStats.possession}%` : null,
+        context.homeStats.shots !== null ? `Shots: ${context.homeStats.shots}` : null,
+        context.homeStats.shotsOnTarget !== null ? `On target: ${context.homeStats.shotsOnTarget}` : null,
+        context.homeStats.corners !== null ? `Corners: ${context.homeStats.corners}` : null,
+      ]
+        .filter(Boolean)
+        .join(", ")
+    : null;
+
+  const awayStatsStr = context.awayStats
+    ? [
+        context.awayStats.possession !== null ? `Possession: ${context.awayStats.possession}%` : null,
+        context.awayStats.shots !== null ? `Shots: ${context.awayStats.shots}` : null,
+        context.awayStats.shotsOnTarget !== null ? `On target: ${context.awayStats.shotsOnTarget}` : null,
+        context.awayStats.corners !== null ? `Corners: ${context.awayStats.corners}` : null,
+      ]
+        .filter(Boolean)
+        .join(", ")
+    : null;
+
+  const easyCount = Math.round(count * 0.5);
+  const mediumCount = Math.round(count * 0.3);
+  const hardCount = count - easyCount - mediumCount;
+
+  const prompt = `You are generating live-match trivia for fans watching this football match RIGHT NOW.
+Language: ${langName}
+Difficulty mix: ${easyCount} easy, ${mediumCount} medium, ${hardCount} hard
+
+MATCH STATUS: ${statusLabel}
+SCORE: ${scoreStr}
+
+GOALS:
+${goalLines}
+
+YELLOW CARDS:
+${yellowLines}
+
+RED CARDS:
+${redLines}
+
+MATCH STATS:
+${homeTeam}: ${homeStatsStr ?? "not available"}
+${awayTeam}: ${awayStatsStr ?? "not available"}
+
+INSTRUCTIONS:
+- Base questions STRICTLY on the verified match data above. Do NOT invent goals, cards, or statistics.
+- Prioritise questions about events that have actually happened (who scored, what minute, which team leads, etc.)
+- If no goals have occurred yet, ask questions about the current score, possession stats, or prediction-style questions like "If [team] scores next, what would the score be?"
+- Avoid questions that require knowledge of events not listed above.
+- Multiple choice, exactly 4 options (one correct), brief explanation.
+- Mix question styles: factual recall, calculation (e.g. total goals), prediction.
+
+Return ONLY a valid JSON array (no markdown):
+[{
+  "difficulty": "easy|medium|hard",
+  "category": "player|team|historical|tournament",
+  "question": "Question text?",
+  "options": ["A", "B", "C", "D"],
+  "correctIndex": 0,
+  "explanation": "Why this answer is correct"
+}]`;
+
+  const stream = await getClient().messages.stream({
+    model: "claude-sonnet-4-20250514",
+    max_tokens: 16000,
+    messages: [{ role: "user", content: prompt }],
+  });
+  const response = await stream.finalMessage();
+  const textBlock = response.content.find((b) => b.type === "text");
+  if (!textBlock || textBlock.type !== "text") throw new Error("No text in response");
+  const cleaned = textBlock.text.trim().replace(/^```json?\n?/i, "").replace(/\n?```$/i, "");
+  return JSON.parse(cleaned) as GeneratedQuestion[];
 }
 
 export async function generateGeneralQuestions(
@@ -274,7 +508,13 @@ export async function fetchQuestionsForGame(
   count = 10,
   category: string | null = null,
   teams?: string,
-  league?: string
+  league?: string,
+  /**
+   * Optional generation function override.
+   * When provided, replaces the default generateQuestionsForMatch() call.
+   * Use this to inject context-aware (live or pre-game) generation.
+   */
+  generateFn?: (homeTeam: string, awayTeam: string) => Promise<GeneratedQuestion[]>
 ): Promise<Question[]> {
   const keywords = buildSearchKeywords(teams, league);
   const hasMatchContext = keywords.length > 0;
@@ -340,7 +580,9 @@ export async function fetchQuestionsForGame(
         const awayTeam = teamNames[1] ?? "Away Team";
 
         console.log(`Generating ${count} match-specific questions for ${homeTeam} vs ${awayTeam}...`);
-        const generated = await generateQuestionsForMatch(homeTeam, awayTeam, count);
+        const generated = generateFn
+          ? await generateFn(homeTeam, awayTeam)
+          : await generateQuestionsForMatch(homeTeam, awayTeam, count);
 
         // Save generated questions to DB for future use
         const rows = generated.map((q) => ({
