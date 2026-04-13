@@ -10,6 +10,9 @@ import AnswerButton from "@/components/game/AnswerButton";
 import FeedbackOverlay from "@/components/game/FeedbackOverlay";
 import MatchBanner from "@/components/game/MatchBanner";
 import PredictionsScreen from "@/components/game/PredictionsScreen";
+import AdBanner from "@/components/paywall/AdBanner";
+import UpsellModal from "@/components/paywall/UpsellModal";
+import WaitlistSheet from "@/components/paywall/WaitlistSheet";
 import { useGame } from "@/hooks/useGame";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -46,8 +49,9 @@ function PlayContent() {
   const awayTeam = teamNames[1] ?? "";
   const hasMatchContext = !!matchId && !!teams;
 
-  const { userId } = useAuth();
+  const { userId, tier } = useAuth();
   const { t, language } = useLanguage();
+  const isFree = tier === "free";
 
   const {
     phase,
@@ -68,6 +72,11 @@ function PlayContent() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [shareCopied, setShareCopied] = useState(false);
   const startTimeRef = useRef<number>(0);
+
+  // Paywall state
+  const [showUpsellModal, setShowUpsellModal] = useState(false);
+  const [showWaitlist, setShowWaitlist] = useState(false);
+  const upsellShownRef = useRef(false); // only show once per session
 
   // Predictions gate — show before trivia for live matches that have predictions
   const [predictionsPhase, setPredictionsPhase] = useState<"checking" | "show" | "done">("checking");
@@ -103,6 +112,19 @@ function PlayContent() {
       body: JSON.stringify({ matchId, triviaPoints: totalPoints }),
     }).catch(() => {});
   }, [phase]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Q5 upsell: show modal for free users between question 4→5 (index 4 = Q5)
+  useEffect(() => {
+    if (
+      phase === "playing" &&
+      currentIndex === 4 &&
+      isFree &&
+      !upsellShownRef.current
+    ) {
+      upsellShownRef.current = true;
+      setShowUpsellModal(true);
+    }
+  }, [phase, currentIndex, isFree]);
 
   useEffect(() => {
     if (phase === "playing") {
@@ -141,6 +163,7 @@ function PlayContent() {
         matchId={matchId!}
         homeTeam={homeTeam}
         awayTeam={awayTeam}
+        userTier={tier}
         onComplete={() => setPredictionsPhase("done")}
       />
     );
@@ -445,6 +468,11 @@ function PlayContent() {
         </AnimatePresence>
       </div>
 
+      {/* Ad banner — shown between questions for free users (phase = feedback) */}
+      {isFree && phase === "feedback" && (
+        <AdBanner onUpgrade={() => { setShowUpsellModal(true); }} />
+      )}
+
       {/* Feedback overlay */}
       {feedback && (
         <FeedbackOverlay
@@ -456,6 +484,30 @@ function PlayContent() {
           streakBonus={feedback.streakBonus}
           questionId={currentQuestion?.id}
           onNext={nextQuestion}
+        />
+      )}
+
+      {/* Q5 upsell modal */}
+      {showUpsellModal && (
+        <UpsellModal
+          onUpgrade={() => { setShowUpsellModal(false); setShowWaitlist(true); }}
+          onDismiss={() => setShowUpsellModal(false)}
+        />
+      )}
+
+      {/* Waitlist sheet (opened from upsell modal) */}
+      {showWaitlist && (
+        <WaitlistSheet
+          tierName="Ad-Free Pass"
+          tierPrice="$2.99/month"
+          tierDescription="Play without interruptions for the full World Cup."
+          tierPerks={[
+            "Zero ads between questions",
+            "Same great trivia, cleaner experience",
+            "Cancel anytime",
+          ]}
+          tierInterest="ad_free"
+          onDismiss={() => setShowWaitlist(false)}
         />
       )}
     </div>

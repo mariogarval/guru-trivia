@@ -18,6 +18,7 @@ export interface Database {
           total_points: number;
           lives: number;
           last_life_regen: string;
+          tier: string;
           created_at: string;
         };
         Insert: {
@@ -28,6 +29,7 @@ export interface Database {
           total_points?: number;
           lives?: number;
           last_life_regen?: string;
+          tier?: string;
           created_at?: string;
         };
         Update: {
@@ -37,6 +39,24 @@ export interface Database {
           total_points?: number;
           lives?: number;
           last_life_regen?: string;
+          tier?: string;
+        };
+      };
+      waitlist_emails: {
+        Row: {
+          id: string;
+          email: string;
+          tier_interest: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          email: string;
+          tier_interest?: string;
+          created_at?: string;
+        };
+        Update: {
+          tier_interest?: string;
         };
       };
       questions: {

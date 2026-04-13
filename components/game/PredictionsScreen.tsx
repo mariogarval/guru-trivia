@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { TrendingUp, Lock, ChevronRight, Zap } from "lucide-react";
+import { Lock, ChevronRight, Zap } from "lucide-react";
+import WaitlistSheet from "@/components/paywall/WaitlistSheet";
 
 interface Prediction {
   id: string;
@@ -18,6 +19,7 @@ interface PredictionsScreenProps {
   matchId: string;
   homeTeam: string;
   awayTeam: string;
+  userTier?: "free" | "ad_free" | "pro";
   onComplete: () => void;
 }
 
@@ -25,6 +27,7 @@ export default function PredictionsScreen({
   matchId,
   homeTeam,
   awayTeam,
+  userTier = "free",
   onComplete,
 }: PredictionsScreenProps) {
   const [predictions, setPredictions] = useState<Prediction[]>([]);
@@ -32,6 +35,8 @@ export default function PredictionsScreen({
   const [lockedVotes, setLockedVotes] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState<string | null>(null);
+  const [showIntelWaitlist, setShowIntelWaitlist] = useState(false);
+  const intelLocked = userTier === "free";
 
   useEffect(() => {
     async function load() {
@@ -188,42 +193,55 @@ export default function PredictionsScreen({
                   })}
                 </div>
 
-                {/* Community vote bars — shown after locking */}
+                {/* Community vote bars — shown after locking; blurred for free users */}
                 {locked && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     transition={{ duration: 0.25 }}
-                    className="space-y-1.5"
+                    className="relative"
                   >
-                    {[
-                      { label: "YES", pct: yesPct, color: "#11ff99", isUser: userAnswer === true },
-                      { label: "NO", pct: noPct, color: "#ff2047", isUser: userAnswer === false },
-                    ].map(({ label, pct, color, isUser }) => (
-                      <div key={label} className="flex items-center gap-2">
-                        <span className="text-[10px] font-semibold w-6 text-[#464a4d]">{label}</span>
-                        <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: `${pct}%` }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="h-full rounded-full"
-                            style={{ backgroundColor: color, opacity: isUser ? 1 : 0.35 }}
-                          />
+                    <div className={`space-y-1.5 ${intelLocked ? "blur-sm select-none pointer-events-none" : ""}`}>
+                      {[
+                        { label: "YES", pct: yesPct, color: "#11ff99", isUser: userAnswer === true },
+                        { label: "NO", pct: noPct, color: "#ff2047", isUser: userAnswer === false },
+                      ].map(({ label, pct, color, isUser }) => (
+                        <div key={label} className="flex items-center gap-2">
+                          <span className="text-[10px] font-semibold w-6 text-[#464a4d]">{label}</span>
+                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <motion.div
+                              initial={{ width: 0 }}
+                              animate={{ width: `${pct}%` }}
+                              transition={{ duration: 0.5, ease: "easeOut" }}
+                              className="h-full rounded-full"
+                              style={{ backgroundColor: color, opacity: isUser ? 1 : 0.35 }}
+                            />
+                          </div>
+                          <span
+                            className={`text-[10px] font-bold w-7 text-right ${isUser ? "" : "text-[#464a4d]"}`}
+                            style={{ color: isUser ? color : undefined }}
+                          >
+                            {pct}%
+                          </span>
                         </div>
-                        <span
-                          className={`text-[10px] font-bold w-7 text-right ${
-                            isUser ? "" : "text-[#464a4d]"
-                          }`}
-                          style={{ color: isUser ? color : undefined }}
-                        >
-                          {pct}%
+                      ))}
+                      <p className="text-[10px] text-[#464a4d] text-right">
+                        {total} {total === 1 ? "vote" : "votes"}
+                      </p>
+                    </div>
+
+                    {/* Lock overlay for free users */}
+                    {intelLocked && (
+                      <button
+                        onClick={() => setShowIntelWaitlist(true)}
+                        className="absolute inset-0 flex items-center justify-center gap-1.5"
+                      >
+                        <Lock size={11} className="text-[#ffc53d]" />
+                        <span className="text-[10px] font-bold text-[#ffc53d]">
+                          Unlock community vote — $0.99
                         </span>
-                      </div>
-                    ))}
-                    <p className="text-[10px] text-[#464a4d] text-right">
-                      {total} {total === 1 ? "vote" : "votes"}
-                    </p>
+                      </button>
+                    )}
                   </motion.div>
                 )}
               </motion.div>
@@ -260,6 +278,21 @@ export default function PredictionsScreen({
           </div>
         )}
       </div>
+
+      {/* Prediction Intel waitlist sheet */}
+      {showIntelWaitlist && (
+        <WaitlistSheet
+          tierName="Prediction Intel"
+          tierPrice="$0.99 per match"
+          tierDescription="See how the community is voting on every prediction before you lock in."
+          tierPerks={[
+            "Community vote percentages revealed instantly",
+            "Included in World Cup Season Pass",
+          ]}
+          tierInterest="prediction_intel"
+          onDismiss={() => setShowIntelWaitlist(false)}
+        />
+      )}
     </div>
   );
 }
