@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Users, Clock, Zap, Calendar } from "lucide-react";
+import { Users, Clock, Zap, Calendar, TrendingUp } from "lucide-react";
 import type { Match } from "@/types";
 
 interface MatchCardProps {
@@ -47,17 +47,21 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   const isFinished = match.status === "finished";
   const isPreGame = !isLive && !isFinished;
 
-  // Build play link with team names + league for question context
-  const playParams = new URLSearchParams();
-  playParams.set("match", match.id);
-  playParams.set("teams", `${match.home_team},${match.away_team}`);
-  if (match.league) playParams.set("league", match.league);
-  if (match.home_team_crest) playParams.set("homeCrest", match.home_team_crest);
-  if (match.away_team_crest) playParams.set("awayCrest", match.away_team_crest);
+  // Build shared params used for both predict and play links
+  const sharedParams = new URLSearchParams();
+  sharedParams.set("match", match.id);
+  sharedParams.set("teams", `${match.home_team},${match.away_team}`);
+  if (match.league) sharedParams.set("league", match.league);
+  if (match.home_team_crest) sharedParams.set("homeCrest", match.home_team_crest);
+  if (match.away_team_crest) sharedParams.set("awayCrest", match.away_team_crest);
+  if (match.current_score) sharedParams.set("score", match.current_score);
+
+  // Live matches go to the predict page; others go directly to trivia
+  const href = isLive ? `/predict?${sharedParams}` : `/play?${sharedParams}`;
 
   return (
     <Link
-      href={`/play?${playParams}`}
+      href={href}
       className={[
         "block rounded-2xl p-4 transition-all active:scale-[0.98]",
         isLive
@@ -153,10 +157,10 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
       {/* CTA — visually distinct for live vs pre-game */}
       <div className={`mt-3 pt-3 border-t ${isLive ? "border-[#ff2047]/20" : "border-[rgba(214,235,253,0.10)]"}`}>
         {isLive ? (
-          <div className="w-full flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold text-sm py-2.5 rounded-xl">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
-            Play Live Trivia
-            <Zap size={13} className="fill-white" />
+          <div className="w-full flex items-center justify-center gap-2 bg-[#ff2047]/15 border border-[#ff2047]/40 text-[#ff2047] font-bold text-sm py-2.5 rounded-xl">
+            <TrendingUp size={13} />
+            Predict + Play
+            <Zap size={13} className="fill-[#ff2047]" />
           </div>
         ) : (
           <div className="w-full flex items-center justify-center gap-2 bg-[#11ff99]/10 border border-[#11ff99]/25 text-[#11ff99] font-bold text-sm py-2.5 rounded-xl">

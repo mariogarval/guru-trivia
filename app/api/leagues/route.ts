@@ -7,7 +7,7 @@ import type { Database } from "@/lib/supabase/database.types";
 function generateCode(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   return (
-    "GURU-" +
+    "FUTGURU-" +
     Array.from({ length: 4 }, () =>
       chars[Math.floor(Math.random() * chars.length)]
     ).join("")

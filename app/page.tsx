@@ -7,6 +7,7 @@ import { Zap, ChevronRight, Trophy, Settings } from "lucide-react";
 import MatchCard from "@/components/ui/MatchCard";
 import LivesDisplay from "@/components/ui/LivesDisplay";
 import BottomNav from "@/components/layout/BottomNav";
+import SeasonPassBanner from "@/components/paywall/SeasonPassBanner";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { Match } from "@/types";
@@ -26,7 +27,7 @@ const TABS = [
 type TabId = (typeof TABS)[number]["id"];
 
 export default function HomePage() {
-  const { isLoggedIn, loading: authLoading, avatarUrl } = useAuth();
+  const { isLoggedIn, loading: authLoading, avatarUrl, tier } = useAuth();
   const { t } = useLanguage();
   const [liveMatches, setLiveMatches] = useState<Match[]>([]);
   const [upcomingMatches, setUpcomingMatches] = useState<Match[]>([]);
@@ -100,7 +101,7 @@ export default function HomePage() {
       <div className="px-4 pt-8 pb-3">
         <div className="flex items-center justify-between mb-1">
           <h1 className="text-3xl font-black tracking-tighter text-[#11ff99]">
-            GURU
+            FUTGURU
           </h1>
           <Link href="/profile" className="-mr-1">
             {avatarUrl ? (
@@ -180,6 +181,9 @@ export default function HomePage() {
             </Link>
           )}
         </motion.div>
+
+        {/* World Cup Season Pass banner (shows only during WC window) */}
+        <SeasonPassBanner userTier={tier} />
 
         {/* Quick Play CTA */}
         <motion.div

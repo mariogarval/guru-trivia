@@ -4,6 +4,10 @@
     {
       "path": "/api/matches/sync",
       "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/check-matches",
+      "schedule": "*/5 * * * *"
     }
   ]
 }

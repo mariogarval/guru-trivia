@@ -35,7 +35,7 @@ export default function LoginPage() {
       >
         {/* Logo */}
         <div className="text-6xl font-black text-[#11ff99] mb-2 tracking-tighter">
-          GURU
+          FUTGURU
         </div>
         <p className="text-[#464a4d] text-sm mb-12 tracking-wider uppercase">
           World Cup 2026 AI Trivia

@@ -9,6 +9,9 @@ import CountdownBar from "@/components/game/CountdownBar";
 import AnswerButton from "@/components/game/AnswerButton";
 import FeedbackOverlay from "@/components/game/FeedbackOverlay";
 import MatchBanner from "@/components/game/MatchBanner";
+import AdBanner from "@/components/paywall/AdBanner";
+import UpsellModal from "@/components/paywall/UpsellModal";
+import WaitlistSheet from "@/components/paywall/WaitlistSheet";
 import { useGame } from "@/hooks/useGame";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -45,8 +48,9 @@ function PlayContent() {
   const awayTeam = teamNames[1] ?? "";
   const hasMatchContext = !!matchId && !!teams;
 
-  const { userId } = useAuth();
+  const { userId, tier } = useAuth();
   const { t, language } = useLanguage();
+  const isFree = tier === "free";
 
   const {
     phase,
@@ -67,26 +71,45 @@ function PlayContent() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [shareCopied, setShareCopied] = useState(false);
   const startTimeRef = useRef<number>(0);
-  const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Paywall state
+  const [showUpsellModal, setShowUpsellModal] = useState(false);
+  const [showWaitlist, setShowWaitlist] = useState(false);
+  const upsellShownRef = useRef(false); // only show once per session
 
   useEffect(() => {
     startGame(matchId, category, teams, league);
-  }, [matchId, category, teams, league]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Record session score for 2× bonus resolution when trivia finishes
+  useEffect(() => {
+    if (phase !== "results" || !hasMatchContext || !matchId || !userId || totalPoints === 0) return;
+    fetch("/api/predictions/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ matchId, triviaPoints: totalPoints }),
+    }).catch(() => {});
+  }, [phase]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Q5 upsell: show modal for free users between question 4→5 (index 4 = Q5)
+  useEffect(() => {
+    if (
+      phase === "playing" &&
+      currentIndex === 4 &&
+      isFree &&
+      !upsellShownRef.current
+    ) {
+      upsellShownRef.current = true;
+      setShowUpsellModal(true);
+    }
+  }, [phase, currentIndex, isFree]);
 
   useEffect(() => {
     if (phase === "playing") {
       setSelectedIndex(null);
       startTimeRef.current = performance.now();
     }
-    if (phase === "feedback") {
-      feedbackTimerRef.current = setTimeout(() => {
-        nextQuestion();
-      }, 2500);
-    }
-    return () => {
-      if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
-    };
-  }, [phase, nextQuestion]);
+  }, [phase]);
 
   const handleAnswer = useCallback(
     (index: number) => {
@@ -214,7 +237,7 @@ function PlayContent() {
           <button
             onClick={async () => {
               const scoreCard = [
-                "⚽ GURU Trivia",
+                "⚽ FUTGURU Trivia",
                 `🏆 ${totalPoints.toLocaleString()} ${t("play.pts")}`,
                 `🎯 ${accuracy}% accuracy`,
                 bestStreak >= 3 ? `🔥 ${bestStreak} streak` : "",
@@ -226,7 +249,7 @@ function PlayContent() {
 
               if (navigator.share) {
                 try {
-                  await navigator.share({ title: "GURU Trivia", text: scoreCard });
+                  await navigator.share({ title: "FUTGURU Trivia", text: scoreCard });
                 } catch {
                   // user cancelled
                 }
@@ -332,14 +355,6 @@ function PlayContent() {
           </div>
         </div>
 
-        {/* Progress bar */}
-        <div className="w-full h-0.5 bg-white/5 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-[#11ff99] rounded-full transition-all duration-300"
-            style={{ width: `${progressPct}%` }}
-          />
-        </div>
-
         {/* Timer bar */}
         <CountdownBar
           running={phase === "playing"}
@@ -378,18 +393,23 @@ function PlayContent() {
                   : "3–4.5"}{" "}
                 {t("play.pts")}
               </span>
-              <span className="text-xs text-[#464a4d] ml-auto">
-                {totalPoints.toLocaleString()} {t("play.pts")}
-              </span>
+              {(totalPoints > 0 || currentIndex > 0) && (
+                <span className="text-xs text-[#464a4d] ml-auto">
+                  {totalPoints.toLocaleString()} {t("play.pts")}
+                </span>
+              )}
             </div>
 
             {/* Question text */}
-            <p className="text-xl font-semibold text-[#f0f0f0] leading-snug mb-6">
+            <p className="text-xl font-semibold text-[#f0f0f0] leading-snug mb-4">
               {currentQuestion.question_text}
             </p>
 
+            {/* Spacer — pushes answer buttons to bottom of available area */}
+            <div className="flex-1" />
+
             {/* Answer buttons */}
-            <div className="space-y-3">
+            <div className={`space-y-3 ${phase === "feedback" ? "pb-52" : "pb-4"}`}>
               {currentQuestion.options.map((option, i) => (
                 <AnswerButton
                   key={i}
@@ -405,6 +425,11 @@ function PlayContent() {
         </AnimatePresence>
       </div>
 
+      {/* Ad banner — shown between questions for free users (phase = feedback) */}
+      {isFree && phase === "feedback" && (
+        <AdBanner onUpgrade={() => { setShowUpsellModal(true); }} />
+      )}
+
       {/* Feedback overlay */}
       {feedback && (
         <FeedbackOverlay
@@ -415,6 +440,31 @@ function PlayContent() {
           speedLabel={feedback.speedLabel}
           streakBonus={feedback.streakBonus}
           questionId={currentQuestion?.id}
+          onNext={nextQuestion}
+        />
+      )}
+
+      {/* Q5 upsell modal */}
+      {showUpsellModal && (
+        <UpsellModal
+          onUpgrade={() => { setShowUpsellModal(false); setShowWaitlist(true); }}
+          onDismiss={() => setShowUpsellModal(false)}
+        />
+      )}
+
+      {/* Waitlist sheet (opened from upsell modal) */}
+      {showWaitlist && (
+        <WaitlistSheet
+          tierName="Ad-Free Pass"
+          tierPrice="$2.99/month"
+          tierDescription="Play without interruptions for the full World Cup."
+          tierPerks={[
+            "Zero ads between questions",
+            "Same great trivia, cleaner experience",
+            "Cancel anytime",
+          ]}
+          tierInterest="ad_free"
+          onDismiss={() => setShowWaitlist(false)}
         />
       )}
     </div>
