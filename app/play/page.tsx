@@ -9,6 +9,7 @@ import CountdownBar from "@/components/game/CountdownBar";
 import AnswerButton from "@/components/game/AnswerButton";
 import FeedbackOverlay from "@/components/game/FeedbackOverlay";
 import MatchBanner from "@/components/game/MatchBanner";
+import PredictionsScreen from "@/components/game/PredictionsScreen";
 import { useGame } from "@/hooks/useGame";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -67,9 +68,41 @@ function PlayContent() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [shareCopied, setShareCopied] = useState(false);
   const startTimeRef = useRef<number>(0);
+
+  // Predictions gate — show before trivia for live matches that have predictions
+  const [predictionsPhase, setPredictionsPhase] = useState<"checking" | "show" | "done">("checking");
+
   useEffect(() => {
+    if (!hasMatchContext || !matchId) {
+      setPredictionsPhase("done");
+      return;
+    }
+    fetch(`/api/predictions?matchId=${encodeURIComponent(matchId)}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.predictions?.length > 0) {
+          setPredictionsPhase("show");
+        } else {
+          setPredictionsPhase("done");
+        }
+      })
+      .catch(() => setPredictionsPhase("done"));
+  }, [matchId, hasMatchContext]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (predictionsPhase !== "done") return;
     startGame(matchId, category, teams, league);
-  }, [matchId, category, teams, league]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [predictionsPhase]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Record session score for 2× bonus resolution when trivia finishes
+  useEffect(() => {
+    if (phase !== "results" || !hasMatchContext || !matchId || !userId || totalPoints === 0) return;
+    fetch("/api/predictions/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ matchId, triviaPoints: totalPoints }),
+    }).catch(() => {});
+  }, [phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (phase === "playing") {
@@ -92,6 +125,26 @@ function PlayContent() {
     if (phase !== "playing" || selectedIndex !== null) return;
     submitAnswer(null, 12);
   }, [phase, selectedIndex, submitAnswer]);
+
+  // ---- Predictions gate ----
+  if (predictionsPhase === "checking") {
+    return (
+      <div className="flex-1 flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-[#11ff99]/20 border-t-[#11ff99] rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (predictionsPhase === "show") {
+    return (
+      <PredictionsScreen
+        matchId={matchId!}
+        homeTeam={homeTeam}
+        awayTeam={awayTeam}
+        onComplete={() => setPredictionsPhase("done")}
+      />
+    );
+  }
 
   // ---- Loading ----
   if (phase === "loading") {

@@ -108,6 +108,8 @@ export interface Database {
           venue: string | null;
           current_score: string | null;
           league: string | null;
+          predictions_status: string | null;
+          predictions_last_attempt: string | null;
         };
         Insert: {
           id: string;
@@ -120,12 +122,90 @@ export interface Database {
           venue?: string | null;
           current_score?: string | null;
           league?: string | null;
+          predictions_status?: string | null;
+          predictions_last_attempt?: string | null;
         };
         Update: {
           status?: string;
           current_score?: string | null;
           venue?: string | null;
           league?: string | null;
+          predictions_status?: string | null;
+          predictions_last_attempt?: string | null;
+        };
+      };
+      match_predictions: {
+        Row: {
+          id: string;
+          match_id: string;
+          question_text: string;
+          resolves_on: string;
+          yes_votes: number;
+          no_votes: number;
+          correct_answer: boolean | null;
+          resolved_at: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          match_id: string;
+          question_text: string;
+          resolves_on: string;
+          yes_votes?: number;
+          no_votes?: number;
+          correct_answer?: boolean | null;
+          resolved_at?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          yes_votes?: number;
+          no_votes?: number;
+          correct_answer?: boolean | null;
+          resolved_at?: string | null;
+        };
+      };
+      user_predictions: {
+        Row: {
+          id: string;
+          user_id: string;
+          prediction_id: string;
+          match_id: string;
+          answer: boolean;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          prediction_id: string;
+          match_id: string;
+          answer: boolean;
+          created_at?: string;
+        };
+        Update: never;
+      };
+      user_match_sessions: {
+        Row: {
+          id: string;
+          user_id: string;
+          match_id: string;
+          trivia_points: number;
+          bonus_points: number;
+          bonus_applied: boolean;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          match_id: string;
+          trivia_points?: number;
+          bonus_points?: number;
+          bonus_applied?: boolean;
+          created_at?: string;
+        };
+        Update: {
+          trivia_points?: number;
+          bonus_points?: number;
+          bonus_applied?: boolean;
         };
       };
       leagues: {
