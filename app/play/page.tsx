@@ -9,7 +9,6 @@ import CountdownBar from "@/components/game/CountdownBar";
 import AnswerButton from "@/components/game/AnswerButton";
 import FeedbackOverlay from "@/components/game/FeedbackOverlay";
 import MatchBanner from "@/components/game/MatchBanner";
-import PredictionsScreen from "@/components/game/PredictionsScreen";
 import AdBanner from "@/components/paywall/AdBanner";
 import UpsellModal from "@/components/paywall/UpsellModal";
 import WaitlistSheet from "@/components/paywall/WaitlistSheet";
@@ -78,30 +77,9 @@ function PlayContent() {
   const [showWaitlist, setShowWaitlist] = useState(false);
   const upsellShownRef = useRef(false); // only show once per session
 
-  // Predictions gate — show before trivia for live matches that have predictions
-  const [predictionsPhase, setPredictionsPhase] = useState<"checking" | "show" | "done">("checking");
-
   useEffect(() => {
-    if (!hasMatchContext || !matchId) {
-      setPredictionsPhase("done");
-      return;
-    }
-    fetch(`/api/predictions?matchId=${encodeURIComponent(matchId)}`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.predictions?.length > 0) {
-          setPredictionsPhase("show");
-        } else {
-          setPredictionsPhase("done");
-        }
-      })
-      .catch(() => setPredictionsPhase("done"));
-  }, [matchId, hasMatchContext]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    if (predictionsPhase !== "done") return;
     startGame(matchId, category, teams, league);
-  }, [predictionsPhase]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Record session score for 2× bonus resolution when trivia finishes
   useEffect(() => {
@@ -147,27 +125,6 @@ function PlayContent() {
     if (phase !== "playing" || selectedIndex !== null) return;
     submitAnswer(null, 12);
   }, [phase, selectedIndex, submitAnswer]);
-
-  // ---- Predictions gate ----
-  if (predictionsPhase === "checking") {
-    return (
-      <div className="flex-1 flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-[#11ff99]/20 border-t-[#11ff99] rounded-full animate-spin" />
-      </div>
-    );
-  }
-
-  if (predictionsPhase === "show") {
-    return (
-      <PredictionsScreen
-        matchId={matchId!}
-        homeTeam={homeTeam}
-        awayTeam={awayTeam}
-        userTier={tier}
-        onComplete={() => setPredictionsPhase("done")}
-      />
-    );
-  }
 
   // ---- Loading ----
   if (phase === "loading") {
