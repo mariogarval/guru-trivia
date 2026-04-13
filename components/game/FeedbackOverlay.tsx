@@ -56,7 +56,7 @@ export default function FeedbackOverlay({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className={`absolute inset-x-0 bottom-0 rounded-t-3xl px-4 pt-4 pb-6 z-20 backdrop-blur-md ${
+          className={`fixed inset-x-0 bottom-0 rounded-t-3xl px-4 pt-4 pb-6 z-20 backdrop-blur-md ${
             isCorrect
               ? "bg-[#11ff99]/10 border-t border-[#11ff99]/40"
               : "bg-[#ff2047]/10 border-t border-[#ff2047]/40"
