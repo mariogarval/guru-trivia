@@ -161,10 +161,10 @@ export default function LeaderboardPage() {
   const [shareSuccess, setShareSuccess] = useState(false);
 
   const shareLeague = async (league: League) => {
-    const text = `Join my GURU Trivia league "${league.name}"! Use code: ${league.code}`;
+    const text = `Join my FUTGURU Trivia league "${league.name}"! Use code: ${league.code}`;
     try {
       if (typeof navigator.share === "function") {
-        await navigator.share({ title: "GURU Trivia League", text });
+        await navigator.share({ title: "FUTGURU Trivia League", text });
       } else {
         await navigator.clipboard.writeText(text);
       }
@@ -491,10 +491,10 @@ export default function LeaderboardPage() {
                     </label>
                     <input
                       type="text"
-                      placeholder="GURU-XXXX"
+                      placeholder="FUTGURU-XXXX"
                       value={leagueCode}
                       onChange={(e) => setLeagueCode(e.target.value.toUpperCase())}
-                      maxLength={9}
+                      maxLength={12}
                       className="w-full bg-transparent border border-[rgba(214,235,253,0.19)] rounded-xl px-4 py-3 text-sm text-[#f0f0f0] placeholder-[#464a4d] uppercase font-mono tracking-widest text-center text-lg focus:outline-none focus:border-[#11ff99]/50"
                     />
                   </div>

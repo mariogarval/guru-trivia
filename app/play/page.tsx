@@ -67,8 +67,6 @@ function PlayContent() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [shareCopied, setShareCopied] = useState(false);
   const startTimeRef = useRef<number>(0);
-  const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   useEffect(() => {
     startGame(matchId, category, teams, league);
   }, [matchId, category, teams, league]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -78,15 +76,7 @@ function PlayContent() {
       setSelectedIndex(null);
       startTimeRef.current = performance.now();
     }
-    if (phase === "feedback") {
-      feedbackTimerRef.current = setTimeout(() => {
-        nextQuestion();
-      }, 2500);
-    }
-    return () => {
-      if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
-    };
-  }, [phase, nextQuestion]);
+  }, [phase]);
 
   const handleAnswer = useCallback(
     (index: number) => {
@@ -214,7 +204,7 @@ function PlayContent() {
           <button
             onClick={async () => {
               const scoreCard = [
-                "⚽ GURU Trivia",
+                "⚽ FUTGURU Trivia",
                 `🏆 ${totalPoints.toLocaleString()} ${t("play.pts")}`,
                 `🎯 ${accuracy}% accuracy`,
                 bestStreak >= 3 ? `🔥 ${bestStreak} streak` : "",
@@ -226,7 +216,7 @@ function PlayContent() {
 
               if (navigator.share) {
                 try {
-                  await navigator.share({ title: "GURU Trivia", text: scoreCard });
+                  await navigator.share({ title: "FUTGURU Trivia", text: scoreCard });
                 } catch {
                   // user cancelled
                 }
@@ -332,14 +322,6 @@ function PlayContent() {
           </div>
         </div>
 
-        {/* Progress bar */}
-        <div className="w-full h-0.5 bg-white/5 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-[#11ff99] rounded-full transition-all duration-300"
-            style={{ width: `${progressPct}%` }}
-          />
-        </div>
-
         {/* Timer bar */}
         <CountdownBar
           running={phase === "playing"}
@@ -378,18 +360,23 @@ function PlayContent() {
                   : "3–4.5"}{" "}
                 {t("play.pts")}
               </span>
-              <span className="text-xs text-[#464a4d] ml-auto">
-                {totalPoints.toLocaleString()} {t("play.pts")}
-              </span>
+              {(totalPoints > 0 || currentIndex > 0) && (
+                <span className="text-xs text-[#464a4d] ml-auto">
+                  {totalPoints.toLocaleString()} {t("play.pts")}
+                </span>
+              )}
             </div>
 
             {/* Question text */}
-            <p className="text-xl font-semibold text-[#f0f0f0] leading-snug mb-6">
+            <p className="text-xl font-semibold text-[#f0f0f0] leading-snug mb-4">
               {currentQuestion.question_text}
             </p>
 
+            {/* Spacer — pushes answer buttons to bottom of available area */}
+            <div className="flex-1" />
+
             {/* Answer buttons */}
-            <div className="space-y-3">
+            <div className={`space-y-3 ${phase === "feedback" ? "pb-52" : "pb-4"}`}>
               {currentQuestion.options.map((option, i) => (
                 <AnswerButton
                   key={i}
@@ -415,6 +402,7 @@ function PlayContent() {
           speedLabel={feedback.speedLabel}
           streakBonus={feedback.streakBonus}
           questionId={currentQuestion?.id}
+          onNext={nextQuestion}
         />
       )}
     </div>

@@ -100,7 +100,7 @@ export default function HomePage() {
       <div className="px-4 pt-8 pb-3">
         <div className="flex items-center justify-between mb-1">
           <h1 className="text-3xl font-black tracking-tighter text-[#11ff99]">
-            GURU
+            FUTGURU
           </h1>
           <Link href="/profile" className="-mr-1">
             {avatarUrl ? (
