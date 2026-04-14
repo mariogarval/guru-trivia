@@ -22,6 +22,9 @@ export async function GET(request: NextRequest) {
   const category = searchParams.get("category");
   const teams = searchParams.get("teams"); // "Home Team,Away Team"
   const league = searchParams.get("league"); // "Premier League"
+  // force=1: skip DB cache and always generate fresh match-specific questions via Claude.
+  // Set by MatchCard Trivia links so players always get questions about the actual game.
+  const forceGenerate = searchParams.get("force") === "1";
 
   const supabase = createRouteHandlerClient<Database>({ cookies });
   const {
@@ -76,6 +79,35 @@ export async function GET(request: NextRequest) {
       // Non-ESPN match ID — use pre-game generation with no context
       generateFn = (_ht, _at) =>
         generatePreGameQuestions(homeTeam, awayTeam, null, count);
+    }
+  }
+
+  // ── Force-generate: skip DB entirely, return fresh Claude questions ──────────
+  if (forceGenerate && generateFn && teams) {
+    try {
+      const teamNames = teams.split(",").map((t) => t.trim());
+      const homeTeam = teamNames[0] ?? "";
+      const awayTeam = teamNames[1] ?? "";
+      const generated = await generateFn(homeTeam, awayTeam);
+
+      if (generated.length > 0) {
+        const now = new Date().toISOString();
+        const questions = generated.slice(0, count).map((g, i) => ({
+          id: `gen-${Date.now()}-${i}`,
+          match_id: matchId ?? null,
+          category: g.category,
+          difficulty: g.difficulty,
+          question_text: g.question,
+          options: g.options,
+          correct_answer_index: -1, // hidden from client
+          explanation: g.explanation,
+          language: "en" as const,
+          created_at: now,
+        }));
+        return NextResponse.json({ questions });
+      }
+    } catch (err) {
+      console.error("[questions] force-generate failed, falling through to DB:", err);
     }
   }
 
