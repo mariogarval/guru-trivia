@@ -5,11 +5,15 @@
  */
 
 export const LEAGUES = {
+  "uefa.champions": { name: "UEFA Champions League", country: "Europe", emoji: "⭐" },
   "eng.1": { name: "Premier League", country: "England", emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
   "esp.1": { name: "La Liga", country: "Spain", emoji: "🇪🇸" },
   "ita.1": { name: "Serie A", country: "Italy", emoji: "🇮🇹" },
   "ger.1": { name: "Bundesliga", country: "Germany", emoji: "🇩🇪" },
 } as const;
+
+/** Leagues shown on the home page — UCL only for now */
+export const HOME_LEAGUES: (keyof typeof LEAGUES)[] = ["uefa.champions"];
 
 export type LeagueCode = keyof typeof LEAGUES;
 
