@@ -4,7 +4,8 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, ChevronRight, Trophy, Clock, Zap, Users } from "lucide-react";
+import { ArrowLeft, ChevronRight, Trophy, Clock, Zap, Users, Lock } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 import type {
   MatchPrediction,
   PredictionPhase,
@@ -93,6 +94,8 @@ export default function PredictPage() {
   const awayTeamParam = searchParams.get("away") ?? "Away Team";
   const leagueParam = searchParams.get("league") ?? "";
 
+  const { isLoggedIn, loading: authLoading } = useAuth();
+
   const [phase, setPhase] = useState<PredictionPhase>("pregame");
   const [liveData, setLiveData] = useState<LiveScoreData | null>(null);
   const [session, setSession] = useState<PredictionSession | null>(null);
@@ -101,6 +104,9 @@ export default function PredictPage() {
   const [showVotes, setShowVotes] = useState<Set<string>>(new Set());
   const [leaderboard, setLeaderboard] = useState<SimulatedRanker[]>([]);
   const [secondHalfLoaded, setSecondHalfLoaded] = useState(false);
+  // Auth gate: shown when a guest tries to answer
+  const [showAuthGate, setShowAuthGate] = useState(false);
+  const [pendingAnswer, setPendingAnswer] = useState<{ predId: string; optionId: string } | null>(null);
 
   const phaseRef = useRef(phase);
   phaseRef.current = phase;
@@ -239,32 +245,42 @@ export default function PredictPage() {
   }, [session?.matchId]);
 
   // ── Answer handler ─────────────────────────────────────────────────────────
-  const handleAnswer = useCallback(
+  const commitAnswer = useCallback(
     (predId: string, optionId: string) => {
       if (!session) return;
       const pred = session.predictions.find((p) => p.id === predId);
-      if (!pred || pred.userAnswer) return; // already answered
+      if (!pred || pred.userAnswer) return;
 
-      // Reveal vote bars
       setShowVotes((prev) => new Set(Array.from(prev).concat(predId)));
-
-      const tv = totalVotes(pred);
-      const picked = pred.options.find((o) => o.id === optionId);
-      const pickedPct = picked ? pct(picked.votes, tv) : 50;
-      // Contrarian flag tracked for future scoring
-      void (pickedPct < 35);
 
       const updated: PredictionSession = {
         ...session,
         predictions: session.predictions.map((p) =>
           p.id === predId ? { ...p, userAnswer: optionId } : p
         ),
-        // Points will be calculated at resolution — for now we track nothing
       };
       setSession(updated);
       saveSession(updated);
     },
     [session]
+  );
+
+  const handleAnswer = useCallback(
+    (predId: string, optionId: string) => {
+      if (!session) return;
+      const pred = session.predictions.find((p) => p.id === predId);
+      if (!pred || pred.userAnswer) return;
+
+      // Gate: require login to save predictions
+      if (!isLoggedIn && !authLoading) {
+        setPendingAnswer({ predId, optionId });
+        setShowAuthGate(true);
+        return;
+      }
+
+      commitAnswer(predId, optionId);
+    },
+    [session, isLoggedIn, authLoading, commitAnswer]
   );
 
   // ── Render ─────────────────────────────────────────────────────────────────
@@ -277,6 +293,54 @@ export default function PredictPage() {
 
   return (
     <div className="min-h-screen bg-black text-[#f0f0f0] flex flex-col">
+      {/* Auth gate modal */}
+      <AnimatePresence>
+        {showAuthGate && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 backdrop-blur-sm px-4 pb-8"
+            onClick={() => setShowAuthGate(false)}
+          >
+            <motion.div
+              initial={{ y: 60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 60, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-sm bg-[#0d0d0d] border border-[rgba(214,235,253,0.19)] rounded-2xl p-6"
+            >
+              <div className="flex items-center justify-center w-12 h-12 bg-[rgba(17,255,153,0.08)] border border-[rgba(17,255,153,0.2)] rounded-full mx-auto mb-4">
+                <Lock size={20} className="text-[#11ff99]" />
+              </div>
+              <h2 className="text-lg font-black text-center mb-1">Save your predictions</h2>
+              <p className="text-[#a1a4a5] text-sm text-center mb-5 leading-relaxed">
+                Create a free account to save your picks, track your score, and see how you compare to other fans.
+              </p>
+              <Link
+                href={`/auth/login?next=${encodeURIComponent(`/predict/${matchId}?home=${encodeURIComponent(homeTeamParam)}&away=${encodeURIComponent(awayTeamParam)}&league=${encodeURIComponent(leagueParam)}`)}`}
+                className="block w-full text-center bg-[#11ff99] text-black font-black py-3.5 rounded-full text-sm hover:bg-[#11ff99]/90 transition-colors"
+              >
+                Create free account
+              </Link>
+              <button
+                onClick={() => {
+                  setShowAuthGate(false);
+                  // Let them answer without saving (guest preview)
+                  if (pendingAnswer) {
+                    commitAnswer(pendingAnswer.predId, pendingAnswer.optionId);
+                    setPendingAnswer(null);
+                  }
+                }}
+                className="block w-full text-center text-[#464a4d] text-sm py-3 mt-1 hover:text-[#a1a4a5] transition-colors"
+              >
+                Continue without saving
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Header */}
       <header className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-[rgba(214,235,253,0.19)] px-4 py-3 flex items-center gap-3">
         <Link href="/" className="p-1.5 -ml-1.5 text-[#a1a4a5] hover:text-[#f0f0f0] transition-colors">

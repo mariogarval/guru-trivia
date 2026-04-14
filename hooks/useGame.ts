@@ -116,8 +116,9 @@ export function useGame(userId: string | null): UseGameReturn {
 
       // Optimistic scoring for guest mode
       if (!userId) {
-        // Guest mode: pick a random correct index to simulate (in real app, questions come pre-loaded)
-        const correctIndex = Math.floor(Math.random() * 4); // placeholder for guest
+        // Guest mode: use the real correct_answer_index returned by the questions API.
+        // (Previously used Math.random() as a placeholder — that caused all answers to appear wrong.)
+        const correctIndex = currentQuestion.correct_answer_index;
         const isCorrect =
           selectedIndex !== null && selectedIndex === correctIndex;
         const pts = isCorrect

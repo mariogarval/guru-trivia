@@ -22,9 +22,8 @@ export async function GET(request: NextRequest) {
   const category = searchParams.get("category");
   const teams = searchParams.get("teams"); // "Home Team,Away Team"
   const league = searchParams.get("league"); // "Premier League"
-  // force=1: skip DB cache and always generate fresh match-specific questions via Claude.
-  // Set by MatchCard Trivia links so players always get questions about the actual game.
-  const forceGenerate = searchParams.get("force") === "1";
+  // force=1 is accepted but handled by fetchQuestionsForGame — no shortcut here.
+  // (A previous shortcut returned fake IDs that the submit route couldn't validate.)
 
   const supabase = createRouteHandlerClient<Database>({ cookies });
   const {
@@ -66,11 +65,6 @@ export async function GET(request: NextRequest) {
             `standings=${preCtx.standings?.length ?? 0} teams, ` +
             `scorers=${preCtx.topScorers?.length ?? 0}`
           );
-        } else {
-          console.log(
-            "[questions] No pre-game context available (no FOOTBALL_DATA_API_KEY or unsupported league) — " +
-            "falling back to conservative prompt"
-          );
         }
         generateFn = (_ht, _at) =>
           generatePreGameQuestions(homeTeam, awayTeam, preCtx, count);
@@ -79,35 +73,6 @@ export async function GET(request: NextRequest) {
       // Non-ESPN match ID — use pre-game generation with no context
       generateFn = (_ht, _at) =>
         generatePreGameQuestions(homeTeam, awayTeam, null, count);
-    }
-  }
-
-  // ── Force-generate: skip DB entirely, return fresh Claude questions ──────────
-  if (forceGenerate && generateFn && teams) {
-    try {
-      const teamNames = teams.split(",").map((t) => t.trim());
-      const homeTeam = teamNames[0] ?? "";
-      const awayTeam = teamNames[1] ?? "";
-      const generated = await generateFn(homeTeam, awayTeam);
-
-      if (generated.length > 0) {
-        const now = new Date().toISOString();
-        const questions = generated.slice(0, count).map((g, i) => ({
-          id: `gen-${Date.now()}-${i}`,
-          match_id: matchId ?? null,
-          category: g.category,
-          difficulty: g.difficulty,
-          question_text: g.question,
-          options: g.options,
-          correct_answer_index: -1, // hidden from client
-          explanation: g.explanation,
-          language: "en" as const,
-          created_at: now,
-        }));
-        return NextResponse.json({ questions });
-      }
-    } catch (err) {
-      console.error("[questions] force-generate failed, falling through to DB:", err);
     }
   }
 
@@ -122,11 +87,8 @@ export async function GET(request: NextRequest) {
     generateFn
   );
 
-  // Sanitize: never expose correct_answer_index to client until answered
-  const sanitized = questions.map(({ correct_answer_index: _, ...q }) => ({
-    ...q,
-    correct_answer_index: -1, // hidden — validated server-side on submit
-  }));
-
-  return NextResponse.json({ questions: sanitized });
+  // Return correct_answer_index directly — the submit route still validates
+  // server-side for logged-in users. For guests the client uses it for feedback.
+  // Hiding it caused guests to always get random wrong answers (placeholder bug).
+  return NextResponse.json({ questions });
 }

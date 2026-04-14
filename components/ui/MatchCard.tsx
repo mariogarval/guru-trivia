@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Users, Clock, Zap, Calendar, Target, BarChart2 } from "lucide-react";
+import { Users, Clock, Zap, Calendar, Target } from "lucide-react";
 import type { Match } from "@/types";
-import type { PredictionSession } from "@/types/predictions";
 
 interface MatchCardProps {
   match: Match;
@@ -15,14 +13,33 @@ function formatKickoff(iso: string): string {
   const date = new Date(iso);
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const matchDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  const timeStr = date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  const matchDay = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate()
+  );
 
-  if (matchDay.getTime() === today.getTime()) return `Today ${timeStr}`;
+  const timeStr = date.toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "2-digit",
+  });
+
+  if (matchDay.getTime() === today.getTime()) {
+    return `Today ${timeStr}`;
+  }
   const tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
-  if (matchDay.getTime() === tomorrow.getTime()) return `Tomorrow ${timeStr}`;
-  return date.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  if (matchDay.getTime() === tomorrow.getTime()) {
+    return `Tomorrow ${timeStr}`;
+  }
+
+  return date.toLocaleDateString([], {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
 }
 
 export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
@@ -30,27 +47,13 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   const isFinished = match.status === "finished";
   const isPreGame = !isLive && !isFinished;
 
-  // Check localStorage for a saved prediction session for this match
-  const [predSession, setPredSession] = useState<PredictionSession | null>(null);
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(`guru_pred_${match.id}`);
-      if (raw) setPredSession(JSON.parse(raw));
-    } catch {}
-  }, [match.id]);
-
-  const answeredCount = predSession?.predictions.filter((p) => p.userAnswer).length ?? 0;
-  const totalCount = predSession?.predictions.length ?? 0;
-  const hasPredictions = !!predSession && answeredCount > 0;
-
-  // Build trivia link — force=1 ensures Claude generates fresh match-specific questions
+  // Build play link with team names + league for question context
   const playParams = new URLSearchParams();
   playParams.set("match", match.id);
   playParams.set("teams", `${match.home_team},${match.away_team}`);
   if (match.league) playParams.set("league", match.league);
   if (match.home_team_crest) playParams.set("homeCrest", match.home_team_crest);
   if (match.away_team_crest) playParams.set("awayCrest", match.away_team_crest);
-  playParams.set("force", "1"); // always generate fresh match-specific questions
 
   // Build predict link
   const predictParams = new URLSearchParams();
@@ -104,12 +107,20 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
         <div className="flex-1">
           <div className="flex items-center gap-3">
             {match.home_team_crest ? (
-              <img src={match.home_team_crest} alt="" className="w-8 h-8 object-contain"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+              <img
+                src={match.home_team_crest}
+                alt=""
+                className="w-8 h-8 object-contain"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+              />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-sm">⚽</div>
+              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-sm">
+                ⚽
+              </div>
             )}
-            <p className="font-semibold text-[#f0f0f0] text-sm leading-tight">{match.home_team}</p>
+            <p className="font-semibold text-[#f0f0f0] text-sm leading-tight">
+              {match.home_team}
+            </p>
           </div>
         </div>
 
@@ -126,45 +137,37 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
         <div className="flex-1">
           <div className="flex items-center gap-3 flex-row-reverse">
             {match.away_team_crest ? (
-              <img src={match.away_team_crest} alt="" className="w-8 h-8 object-contain"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+              <img
+                src={match.away_team_crest}
+                alt=""
+                className="w-8 h-8 object-contain"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+              />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-sm">⚽</div>
+              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.12)] flex items-center justify-center text-sm">
+                ⚽
+              </div>
             )}
-            <p className="font-semibold text-[#f0f0f0] text-sm leading-tight text-right">{match.away_team}</p>
+            <p className="font-semibold text-[#f0f0f0] text-sm leading-tight text-right">
+              {match.away_team}
+            </p>
           </div>
         </div>
       </div>
 
       {/* CTAs */}
       <div className={`mt-3 pt-3 border-t flex gap-2 ${isLive ? "border-[#ff2047]/20" : "border-[rgba(214,235,253,0.10)]"}`}>
-
-        {/* Predict / My Predictions button */}
+        {/* Predict button — primary CTA for pre-game + live */}
         {!isFinished && (
-          hasPredictions ? (
-            // Already has predictions — show "My Predictions" with count + trends icon
-            <Link
-              href={`/predict/${match.id}?${predictParams}`}
-              className="flex-1 flex items-center justify-center gap-1.5 bg-[rgba(17,255,153,0.05)] border border-[rgba(17,255,153,0.35)] text-[#11ff99] font-bold text-sm py-2.5 rounded-xl hover:bg-[rgba(17,255,153,0.10)] transition-colors active:scale-[0.97]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <BarChart2 size={13} />
-              My Preds
-              <span className="text-[10px] opacity-60 font-normal ml-0.5">{answeredCount}/{totalCount}</span>
-            </Link>
-          ) : (
-            // No predictions yet — show "Predict"
-            <Link
-              href={`/predict/${match.id}?${predictParams}`}
-              className="flex-1 flex items-center justify-center gap-1.5 bg-[rgba(17,255,153,0.08)] border border-[rgba(17,255,153,0.25)] text-[#11ff99] font-bold text-sm py-2.5 rounded-xl hover:bg-[rgba(17,255,153,0.14)] transition-colors active:scale-[0.97]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Target size={13} />
-              Predict
-            </Link>
-          )
+          <Link
+            href={`/predict/${match.id}?${predictParams}`}
+            className="flex-1 flex items-center justify-center gap-1.5 bg-[rgba(17,255,153,0.08)] border border-[rgba(17,255,153,0.25)] text-[#11ff99] font-bold text-sm py-2.5 rounded-xl hover:bg-[rgba(17,255,153,0.14)] transition-colors active:scale-[0.97]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Target size={13} />
+            Predict
+          </Link>
         )}
-
         {/* Trivia button */}
         <Link
           href={`/play?${playParams}`}
@@ -177,7 +180,10 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
           onClick={(e) => e.stopPropagation()}
         >
           {isLive ? (
-            <><span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" /><Zap size={12} /></>
+            <>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
+              <Zap size={12} />
+            </>
           ) : (
             <Calendar size={13} />
           )}
