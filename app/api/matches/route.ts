@@ -48,37 +48,48 @@ export async function GET(request: NextRequest) {
 
   const { data: matches } = await query.limit(30);
 
-  // If DB has matches, return them
+  const leagueFilter = searchParams.get("league"); // e.g. "ucl" or "Champions"
+
+  // Helper: apply league filter to a match list
+  const applyLeagueFilter = (list: any[]) => {
+    if (!leagueFilter) return list;
+    return list.filter((m) =>
+      m.league?.toLowerCase().includes(leagueFilter.toLowerCase()) ||
+      (leagueFilter === "ucl" && m.league?.toLowerCase().includes("champions"))
+    );
+  };
+
+  // If DB has matches, return them (with league filter)
   if (matches && matches.length > 0) {
-    return NextResponse.json({ matches });
+    return NextResponse.json({ matches: applyLeagueFilter(matches) });
   }
 
-  // Fallback: fetch directly from FotMob if DB is empty
+  // Fallback: fetch directly from ESPN if DB is empty
   try {
-    let fotmobMatches = await fetchTodayMatches();
-    if (fotmobMatches.length === 0) {
-      fotmobMatches = await fetchUpcomingMatches();
+    let espnMatches = await fetchTodayMatches();
+    if (espnMatches.length === 0) {
+      espnMatches = await fetchUpcomingMatches();
     }
 
     // Try to persist them in DB for next time
-    if (fotmobMatches.length > 0) {
+    if (espnMatches.length > 0) {
       await supabase
         .from("matches")
-        .upsert(fotmobMatches as any, { onConflict: "id" })
+        .upsert(espnMatches as any, { onConflict: "id" })
         .then(() => {});
     }
 
-    // Apply filter to the fetched matches
-    let filtered = fotmobMatches;
+    // Apply status filter
+    let filtered = espnMatches;
     if (filter === "live") {
-      filtered = fotmobMatches.filter((m) => m.status === "live");
+      filtered = espnMatches.filter((m) => m.status === "live");
     } else if (filter === "upcoming") {
-      filtered = fotmobMatches.filter((m) => m.status === "scheduled");
+      filtered = espnMatches.filter((m) => m.status === "scheduled");
     } else if (filter === "past") {
-      filtered = fotmobMatches.filter((m) => m.status === "finished");
+      filtered = espnMatches.filter((m) => m.status === "finished");
     }
 
-    return NextResponse.json({ matches: filtered });
+    return NextResponse.json({ matches: applyLeagueFilter(filtered) });
   } catch {
     return NextResponse.json({ matches: [] });
   }

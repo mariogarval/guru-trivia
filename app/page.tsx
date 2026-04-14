@@ -7,6 +7,7 @@ import { Zap, ChevronRight, Trophy, Settings } from "lucide-react";
 import MatchCard from "@/components/ui/MatchCard";
 import LivesDisplay from "@/components/ui/LivesDisplay";
 import BottomNav from "@/components/layout/BottomNav";
+import MyPredictionsSection from "@/components/ui/MyPredictionsSection";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { Match } from "@/types";
@@ -49,8 +50,8 @@ export default function HomePage() {
       .catch(() => {});
 
     Promise.all([
-      fetch("/api/matches?filter=live").then((r) => r.json()),
-      fetch("/api/matches?filter=upcoming").then((r) => r.json()),
+      fetch("/api/matches?filter=live&league=ucl").then((r) => r.json()),
+      fetch("/api/matches?filter=upcoming&league=ucl").then((r) => r.json()),
     ])
       .then(([liveData, upcomingData]) => {
         setLiveMatches(liveData.matches ?? []);
@@ -233,6 +234,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── My Predictions (saved sessions from localStorage) ── */}
+      <MyPredictionsSection />
+
       {/* ── Match sections ── */}
       <div className="px-4">
         {loadingMatches ? (
@@ -253,6 +257,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mb-3">
                   <span className="w-2 h-2 rounded-full bg-[#ff2047] live-pulse" />
                   <h2 className="font-semibold text-[#f0f0f0]">{t("home.liveMatches")}</h2>
+                  <span className="text-xs text-[#464a4d] bg-white/[0.04] border border-[rgba(214,235,253,0.1)] rounded-full px-2 py-0.5">⭐ UCL</span>
                 </div>
                 <div className="space-y-3">
                   {liveMatches.map((match) => (
@@ -266,7 +271,10 @@ export default function HomePage() {
             {upcomingMatches.length > 0 && (
               <section id="section-upcoming" className="mb-5 scroll-mt-14">
                 <div className="flex items-center justify-between mb-3">
-                  <h2 className="font-semibold text-[#f0f0f0]">{t("home.upcoming")}</h2>
+                  <div className="flex items-center gap-2">
+                    <h2 className="font-semibold text-[#f0f0f0]">{t("home.upcoming")}</h2>
+                    <span className="text-xs text-[#464a4d] bg-white/[0.04] border border-[rgba(214,235,253,0.1)] rounded-full px-2 py-0.5">⭐ UCL</span>
+                  </div>
                   <Link
                     href="/matches"
                     className="text-xs text-[#11ff99] font-medium"
@@ -284,7 +292,8 @@ export default function HomePage() {
 
             {liveMatches.length === 0 && upcomingMatches.length === 0 && (
               <div className="bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-4 text-center mb-5">
-                <p className="text-[#464a4d] text-sm">{t("home.noMatches")}</p>
+                <p className="text-[#a1a4a5] text-sm font-medium">⭐ No Champions League matches today</p>
+                <p className="text-[#464a4d] text-xs mt-1">Check back on match days</p>
               </div>
             )}
           </>
