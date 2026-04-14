@@ -1,0 +1,4482 @@
+[
+  {
+    "id": "011963a1-e1fd-449b-9ea6-053dabbeaa07",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "What is the record for most goals in a single Champions League match?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Borussia Dortmund 8-4 Legia Warsaw in 2016 produced 12 goals, a Champions League single-match record."
+  },
+  {
+    "id": "019f7052-d90a-4856-8118-75370c2535fc",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which manager has won the most Champions League titles?",
+    "options": [
+      "Pep Guardiola",
+      "Sir Alex Ferguson",
+      "Carlo Ancelotti",
+      "Zinedine Zidane"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Carlo Ancelotti has won the Champions League 5 times as a manager (2003, 2007, 2014, 2022, 2024)."
+  },
+  {
+    "id": "0a3c8d43-a472-4af5-92db-cc92d04050b4",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Which player has made the most Champions League appearances?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Iker Casillas",
+      "Xavi",
+      "Lionel Messi"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Cristiano Ronaldo holds the record for most Champions League appearances with over 180 matches."
+  },
+  {
+    "id": "0d5ffe94-cac2-4fda-90b1-13181ef96a48",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which club has won the most UEFA Champions League titles?",
+    "options": [
+      "Barcelona",
+      "AC Milan",
+      "Real Madrid",
+      "Bayern Munich"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Real Madrid has won a record 15 Champions League/European Cup titles."
+  },
+  {
+    "id": "0f9623f2-347d-437c-af79-85de79ba3286",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Which was the first English club to win the European Cup?",
+    "options": [
+      "Liverpool",
+      "Manchester United",
+      "Nottingham Forest",
+      "Celtic"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Manchester United became the first English club to win the European Cup in 1968, beating Benfica 4-1 at Wembley."
+  },
+  {
+    "id": "1ad836fa-061c-49cd-a3ac-51c6d99af96c",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Which club is the only one to win the Champions League without losing a single match in the campaign?",
+    "options": [
+      "AC Milan 1989",
+      "Barcelona 2011",
+      "Real Madrid 2017",
+      "Arsenal has never done it"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "AC Milan went through the entire 1988-89 European Cup campaign unbeaten, winning all their matches."
+  },
+  {
+    "id": "2a6e74e5-1f98-44fd-a1f4-ee9f2f875dce",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "In which season was the away goals rule abolished in the Champions League?",
+    "options": [
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "UEFA abolished the away goals rule starting from the 2021-22 season of all European competitions."
+  },
+  {
+    "id": "2d3655fd-1281-49ba-96d3-2e9422f2d262",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which club completed a historic treble including the Champions League in 2009?",
+    "options": [
+      "Manchester United",
+      "Real Madrid",
+      "Barcelona",
+      "Bayern Munich"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Barcelona won La Liga, Copa del Rey, and the Champions League in 2008-09 under Pep Guardiola."
+  },
+  {
+    "id": "364919b5-8249-4e34-90af-0c98418d8b72",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Who scored the winning goal in the 2005 Champions League final (the \"Miracle of Istanbul\")?",
+    "options": [
+      "Nobody — Liverpool won on penalties",
+      "Steven Gerrard",
+      "Xabi Alonso",
+      "Vladimir Smicer"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Liverpool came back from 3-0 down against AC Milan and won 3-2 on penalties. There was no single \"winning goal.\""
+  },
+  {
+    "id": "385d4349-124d-4eeb-aab0-59957c87a115",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "What was the aggregate score when Liverpool beat AC Milan in the 2005 semi-final?",
+    "options": [
+      "Liverpool didn't play Milan in the semi-final",
+      "3-2",
+      "4-3",
+      "Liverpool played Chelsea in the semis"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Liverpool beat Chelsea 1-0 on aggregate in the 2005 semi-finals. They faced AC Milan in the final, not the semi-final."
+  },
+  {
+    "id": "43f8cf97-740c-4a28-b74e-71d9820a4f99",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which Dutch club won the European Cup three times in a row (1971-73)?",
+    "options": [
+      "Feyenoord",
+      "PSV",
+      "Ajax",
+      "AZ Alkmaar"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Ajax won three consecutive European Cups from 1971 to 1973 under coach Rinus Michels and then Stefan Kovács."
+  },
+  {
+    "id": "452bffca-7e2f-4a33-b668-e7041ada1d75",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which player scored twice in the 2018 Champions League Final?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Gareth Bale",
+      "Karim Benzema",
+      "Sadio Mané"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Gareth Bale came off the bench and scored twice, including a spectacular bicycle kick, as Real Madrid beat Liverpool 3-1."
+  },
+  {
+    "id": "45d15a62-3125-4792-9857-0ec702f5e9b5",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which city hosted the 2023 Champions League Final?",
+    "options": [
+      "London",
+      "Paris",
+      "Istanbul",
+      "Madrid"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The 2023 Champions League Final was held at the Atatürk Olympic Stadium in Istanbul."
+  },
+  {
+    "id": "542f6c99-c6c8-4c01-9677-1bbdbf87d613",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "In which country is the Champions League final venue typically announced?",
+    "options": [
+      "It rotates between countries",
+      "Always in Switzerland",
+      "Always in France",
+      "Always in England"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The Champions League final is held at a different venue each year, rotating across UEFA member nations."
+  },
+  {
+    "id": "59524024-7ed7-48f8-acc9-ad03a676dabf",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which country has produced the most Champions League winning clubs?",
+    "options": [
+      "England",
+      "Italy",
+      "Spain",
+      "Germany"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "England has produced 6 different Champions League winners: Liverpool, Man United, Nottingham Forest, Aston Villa, Chelsea, and Man City — more than any other country."
+  },
+  {
+    "id": "5c7894a0-ddea-44ec-8163-21ca21919fd1",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "What is the record for most goals in a single Champions League season by one player?",
+    "options": [
+      "15",
+      "17",
+      "19",
+      "21"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Cristiano Ronaldo scored 17 goals in the 2013-14 Champions League season, a record."
+  },
+  {
+    "id": "5ced4aca-1dd8-46da-88bf-ec1016afc4c9",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Which club was banned from the Champions League after winning it in 1993?",
+    "options": [
+      "Marseille",
+      "AC Milan",
+      "Red Star Belgrade",
+      "Porto"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Marseille was banned from defending their 1993 title due to a match-fixing scandal in Ligue 1."
+  },
+  {
+    "id": "6c38a748-6830-4a1a-8fb1-9787deab3230",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "In which year did the Champions League introduce a league phase format with 36 teams?",
+    "options": [
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The 2024-25 season introduced the new Swiss-model league phase with 36 teams replacing the group stage."
+  },
+  {
+    "id": "6f4df82d-d439-4cb9-b9d3-a616e820db23",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Who is the all-time top scorer in Champions League history?",
+    "options": [
+      "Lionel Messi",
+      "Cristiano Ronaldo",
+      "Robert Lewandowski",
+      "Raúl"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Cristiano Ronaldo holds the record with 140 Champions League goals."
+  },
+  {
+    "id": "735874e3-26aa-4a8a-8ddb-cbd3a8a6cfda",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Which was the last team to win the European Cup before it became the Champions League?",
+    "options": [
+      "AC Milan",
+      "Marseille",
+      "Barcelona",
+      "Red Star Belgrade"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Red Star Belgrade won the last European Cup in 1991, before the competition was rebranded in 1992."
+  },
+  {
+    "id": "7e6315f9-fdf5-4bf3-9f11-28ac4ee6d368",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Which player scored a Champions League goal for 6 different clubs?",
+    "options": [
+      "Zlatan Ibrahimović",
+      "Cristiano Ronaldo",
+      "Hernán Crespo",
+      "Nicolas Anelka"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Zlatan Ibrahimović scored Champions League goals for Ajax, Juventus, Inter, Barcelona, AC Milan, and PSG."
+  },
+  {
+    "id": "81ed6f20-4a80-4eea-8b78-9e32864ce768",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which club did Pep Guardiola manage to win the 2011 Champions League?",
+    "options": [
+      "Manchester City",
+      "Bayern Munich",
+      "Barcelona",
+      "Brescia"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Pep Guardiola managed Barcelona to the Champions League title in 2011, beating Manchester United 3-1."
+  },
+  {
+    "id": "853e71a2-fd59-4f38-af4a-51755dba3b95",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which Scottish club won the European Cup in 1967?",
+    "options": [
+      "Rangers",
+      "Celtic",
+      "Aberdeen",
+      "Dundee United"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Celtic became the first British club to win the European Cup in 1967, known as the \"Lisbon Lions\"."
+  },
+  {
+    "id": "88e8094a-8642-45dc-b066-6b0bd930a04d",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which player scored the winning goal in the 1999 Champions League Final for Manchester United?",
+    "options": [
+      "David Beckham",
+      "Teddy Sheringham",
+      "Ole Gunnar Solskjær",
+      "Ryan Giggs"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Ole Gunnar Solskjær scored the dramatic injury-time winner against Bayern Munich in the 1999 final."
+  },
+  {
+    "id": "894be506-cbfc-43ba-bec6-7419fb7c845f",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which German club won the Champions League in 2013?",
+    "options": [
+      "Borussia Dortmund",
+      "Bayern Munich",
+      "Schalke 04",
+      "Bayer Leverkusen"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Bayern Munich won the 2013 Champions League, beating Borussia Dortmund 2-1 at Wembley."
+  },
+  {
+    "id": "8a282cfd-a14a-435b-ac9a-70c21eec424b",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "How many teams play in the Champions League group stage (pre-2024 format)?",
+    "options": [
+      "24",
+      "32",
+      "36",
+      "40"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Champions League traditionally featured 32 teams in the group stage before the 2024-25 format change to 36."
+  },
+  {
+    "id": "8ae6425f-841f-415f-8aef-f0de84ad5f40",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which club won the Champions League as a wild card entry in 1991-92?",
+    "options": [
+      "Red Star Belgrade",
+      "Marseille",
+      "Barcelona",
+      "Sampdoria"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Barcelona won the 1992 Champions League (first under the new name), beating Sampdoria at Wembley."
+  },
+  {
+    "id": "8cc52962-7ee5-4192-854b-86eb55238e49",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which Portuguese club won the European Cup in 1961 and 1962?",
+    "options": [
+      "Porto",
+      "Sporting CP",
+      "Benfica",
+      "Braga"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Benfica won back-to-back European Cups in 1961 and 1962 under coach Béla Guttmann."
+  },
+  {
+    "id": "8cddfa5e-5a8e-4e8d-ade6-95dee65cb203",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which trophy do Champions League winners receive?",
+    "options": [
+      "The Big Ears trophy",
+      "The Ballon d'Or",
+      "The Golden Boot",
+      "The Silver Star"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The Champions League trophy is nicknamed \"Big Ears\" due to its large handles. Its official name is the European Champion Clubs' Cup."
+  },
+  {
+    "id": "972d0c14-1c6b-4a63-8751-db31e6448f1c",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "What was the biggest comeback in Champions League history (aggregate)?",
+    "options": [
+      "Barcelona 6-1 PSG 2017",
+      "Liverpool 4-0 Barcelona 2019",
+      "Manchester United 3-3 Juventus 1999",
+      "Deportivo 4-0 AC Milan 2004"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Barcelona's 6-1 win over PSG in 2017 (6-5 aggregate after losing 4-0 away) is the biggest comeback."
+  },
+  {
+    "id": "9c9f6521-561e-49cc-b761-36224e3777f2",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "How many different clubs have won the Champions League/European Cup?",
+    "options": [
+      "15",
+      "18",
+      "22",
+      "23"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "As of 2024, 23 different clubs have won the European Cup/Champions League."
+  },
+  {
+    "id": "a1b94f32-e897-4675-8c28-833f362d3df6",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Who scored the only goal in the 2023 Champions League Final?",
+    "options": [
+      "Erling Haaland",
+      "Kevin De Bruyne",
+      "Rodri",
+      "Bernardo Silva"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Rodri scored the only goal as Manchester City beat Inter Milan 1-0 in the 2023 final."
+  },
+  {
+    "id": "a6992d4f-632f-4594-b6a1-96935e42bd61",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which team did Zinedine Zidane score his famous volley against in the 2002 final?",
+    "options": [
+      "Manchester United",
+      "Liverpool",
+      "Bayer Leverkusen",
+      "AC Milan"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Zidane scored his iconic volley against Bayer Leverkusen in the 2002 Champions League Final."
+  },
+  {
+    "id": "ac721930-8088-4fa8-812b-4b95d9a8b2c4",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which English club won the Champions League in 2005 after being 3-0 down at half-time?",
+    "options": [
+      "Manchester United",
+      "Chelsea",
+      "Liverpool",
+      "Arsenal"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Liverpool came back from 3-0 down against AC Milan in the 2005 final in Istanbul, winning on penalties."
+  },
+  {
+    "id": "b0ae0515-faf8-4367-93da-981e25aad439",
+    "category": "champions_league",
+    "difficulty": "hard",
+    "question_text": "Which goalkeeper has kept the most clean sheets in Champions League history?",
+    "options": [
+      "Iker Casillas",
+      "Gianluigi Buffon",
+      "Manuel Neuer",
+      "Edwin van der Sar"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Iker Casillas holds the record with 57 clean sheets in the Champions League."
+  },
+  {
+    "id": "b6de5e4d-6303-4dc9-b5fc-b6d385e1775c",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "How many Champions League titles does AC Milan have?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "AC Milan has won the European Cup/Champions League 7 times."
+  },
+  {
+    "id": "bf4042ea-4219-48db-bff2-7155ec2fcd91",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which team completed the treble (league, cup, Champions League) in 1999?",
+    "options": [
+      "Bayern Munich",
+      "Barcelona",
+      "Manchester United",
+      "Juventus"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Manchester United won the Premier League, FA Cup, and Champions League in 1999 under Sir Alex Ferguson."
+  },
+  {
+    "id": "bfbf634e-6e8b-4f6a-bf34-caf999ebd537",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which club won the first-ever European Cup in 1956?",
+    "options": [
+      "Benfica",
+      "AC Milan",
+      "Real Madrid",
+      "Barcelona"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Real Madrid won the inaugural European Cup in 1956, beating Stade de Reims 4-3 in the final."
+  },
+  {
+    "id": "c1cae587-4d98-4647-b01c-3302bfc6c5d7",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which Spanish club won 3 consecutive Champions League titles from 2016 to 2018?",
+    "options": [
+      "Barcelona",
+      "Atlético Madrid",
+      "Real Madrid",
+      "Sevilla"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Real Madrid won three consecutive Champions League titles in 2016, 2017, and 2018."
+  },
+  {
+    "id": "c230621a-547f-47bb-a5c0-6833d69c711d",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "What was the Champions League called before 1992?",
+    "options": [
+      "UEFA Cup",
+      "European Cup",
+      "Cup Winners' Cup",
+      "Inter-Cities Fairs Cup"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The competition was known as the European Cup from 1955 to 1992, when it was rebranded as the Champions League."
+  },
+  {
+    "id": "c5586663-31b0-4503-a991-a5790c03ef3e",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "What does UEFA stand for?",
+    "options": [
+      "Union of European Football Associations",
+      "United European Football Alliance",
+      "Universal European Football Association",
+      "Union of Elite Football Authorities"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "UEFA stands for Union of European Football Associations, founded in 1954."
+  },
+  {
+    "id": "cc26f87c-ef98-4334-9596-d09f9946b619",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "What is the Champions League anthem based on?",
+    "options": [
+      "A Handel composition",
+      "A Beethoven symphony",
+      "A Mozart concerto",
+      "An original FIFA composition"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The Champions League anthem is based on George Frideric Handel's \"Zadok the Priest\" coronation anthem."
+  },
+  {
+    "id": "d33fb27d-593d-4637-81d1-92063b7235ab",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which player has scored the most Champions League goals?",
+    "options": [
+      "Lionel Messi",
+      "Raúl",
+      "Robert Lewandowski",
+      "Cristiano Ronaldo"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Cristiano Ronaldo holds the record with 140 Champions League goals."
+  },
+  {
+    "id": "eab7fb1a-3e92-4adc-8098-8ffa4d2f3627",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which English club won the Champions League for the first time in 2012?",
+    "options": [
+      "Tottenham",
+      "Chelsea",
+      "Manchester City",
+      "Arsenal"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Chelsea won their first Champions League in 2012, beating Bayern Munich on penalties in Munich."
+  },
+  {
+    "id": "f1a005a8-2385-48f9-9c9d-2d877defbf46",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Which club won the treble (league, cup, Champions League) in 2010?",
+    "options": [
+      "Barcelona",
+      "Bayern Munich",
+      "Inter Milan",
+      "Manchester United"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Inter Milan won the Serie A, Coppa Italia, and Champions League treble in 2009-10 under José Mourinho."
+  },
+  {
+    "id": "f935ad38-18c0-4851-818c-09df26a28e71",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which color is predominantly associated with the Champions League branding?",
+    "options": [
+      "Red",
+      "Gold",
+      "Blue",
+      "Green"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The Champions League's visual identity is predominantly blue and white with silver starball motifs."
+  },
+  {
+    "id": "fa278d03-6668-4f05-b618-407eeb3bc1f3",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "What shape are the stars on the Champions League logo?",
+    "options": [
+      "5-pointed",
+      "6-pointed",
+      "8-pointed",
+      "4-pointed"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The Champions League logo features 8-pointed stars arranged in a circle."
+  },
+  {
+    "id": "fa3c67bc-7663-41f1-8480-12f9b6588991",
+    "category": "champions_league",
+    "difficulty": "medium",
+    "question_text": "Manchester City won their first Champions League in which year?",
+    "options": [
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Manchester City won their first Champions League in 2023, beating Inter Milan 1-0 in Istanbul."
+  },
+  {
+    "id": "fb41e673-c82e-46c7-ab88-99b253add5b8",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "In which year was the Champions League rebranded from the European Cup?",
+    "options": [
+      "1990",
+      "1992",
+      "1995",
+      "1998"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The competition was rebranded as the UEFA Champions League in the 1992-93 season."
+  },
+  {
+    "id": "fc25628e-f066-4e6f-bf94-c536bc3a13c6",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which French club won the Champions League in 1993?",
+    "options": [
+      "PSG",
+      "Lyon",
+      "Monaco",
+      "Marseille"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Olympique de Marseille won the Champions League in 1993, the only French club to ever win it."
+  },
+  {
+    "id": "fdb1e881-9f7a-4b4d-a252-21e0ce89a4a6",
+    "category": "champions_league",
+    "difficulty": "easy",
+    "question_text": "Which club has won the most UEFA Champions League titles?",
+    "options": [
+      "AC Milan",
+      "Barcelona",
+      "Real Madrid",
+      "Bayern Munich"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Real Madrid has won 15 Champions League/European Cup titles, more than any other club."
+  },
+  {
+    "id": "0743ac4b-4a88-4f5e-a20c-dc13642c98db",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is an \"own goal\"?",
+    "options": [
+      "A goal from outside the box",
+      "A goal scored into your own net",
+      "A goal from a free kick",
+      "A goal in extra time"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "An own goal occurs when a player accidentally scores into their own team's net, counting for the opposition."
+  },
+  {
+    "id": "10466577-6432-4981-96a4-23a841102770",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is the penalty spot distance from the goal line?",
+    "options": [
+      "10 meters",
+      "11 meters",
+      "12 meters",
+      "15 meters"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The penalty spot is 12 yards (approximately 11 meters or 10.97m) from the goal line."
+  },
+  {
+    "id": "177025e1-7af0-444d-a226-82caac298c64",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "What was the \"Calciopoli\" scandal?",
+    "options": [
+      "A doping scandal in Serie A",
+      "A match-fixing scandal in Italian football",
+      "A financial fraud at FIFA",
+      "A referee bribery case in Spain"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Calciopoli was a 2006 Italian football match-fixing scandal that resulted in Juventus being stripped of titles and relegated to Serie B."
+  },
+  {
+    "id": "1c6582f2-526c-4ae2-8e85-9a7eb2762def",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "When was the first women's football World Cup held?",
+    "options": [
+      "1988",
+      "1991",
+      "1995",
+      "1999"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The first FIFA Women's World Cup was held in China in 1991, won by the United States."
+  },
+  {
+    "id": "227a83d4-6e68-441e-8ee0-83ee5ed23baa",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "In which year was the first FIFA World Cup held?",
+    "options": [
+      "1926",
+      "1930",
+      "1934",
+      "1938"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The inaugural FIFA World Cup was held in Uruguay in 1930."
+  },
+  {
+    "id": "23e92c06-7a6d-4a8e-aef6-23a426887932",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "In which year did Germany win their 4th World Cup title?",
+    "options": [
+      "2006",
+      "2010",
+      "2014",
+      "2018"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Germany won their 4th World Cup in 2014, defeating Argentina 1-0 in the final in Brazil."
+  },
+  {
+    "id": "2401a0c6-91a3-4159-87a7-d325bb15045f",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "Which country hosted the 2022 FIFA World Cup?",
+    "options": [
+      "UAE",
+      "Saudi Arabia",
+      "Qatar",
+      "Bahrain"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Qatar hosted the 2022 FIFA World Cup, the first in the Middle East."
+  },
+  {
+    "id": "24255094-13a8-4efe-ac96-1f76075e66f1",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "The \"Treble\" in English football refers to winning which three trophies?",
+    "options": [
+      "Premier League, FA Cup, League Cup",
+      "Premier League, FA Cup, Champions League",
+      "Premier League, Champions League, League Cup",
+      "FA Cup, League Cup, Community Shield"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Treble refers to winning the Premier League, FA Cup, and UEFA Champions League in the same season. Manchester United achieved this in 1999."
+  },
+  {
+    "id": "26543c5a-eb93-49d8-9e11-7413737be36f",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "The \"Hand of God\" incident occurred in which World Cup year?",
+    "options": [
+      "1982",
+      "1986",
+      "1990",
+      "1994"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Maradona's \"Hand of God\" goal occurred during the 1986 World Cup quarter-final between Argentina and England."
+  },
+  {
+    "id": "27cb7aab-4dba-46e7-b6fb-9120170e905c",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "Which country hosted the first-ever international football match in 1872?",
+    "options": [
+      "England",
+      "Scotland",
+      "Wales",
+      "Ireland"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The first official international match was played between Scotland and England at Hamilton Crescent, Glasgow on November 30, 1872 (0-0 draw)."
+  },
+  {
+    "id": "2eebc02d-d39a-4304-9008-1194a7342d0e",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What does \"VAR\" stand for in football?",
+    "options": [
+      "Video Assist Replay",
+      "Video Assistant Referee",
+      "Virtual Analysis Review",
+      "Visual Aid Referee"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "VAR stands for Video Assistant Referee, introduced to help match officials with key decisions."
+  },
+  {
+    "id": "37f2252e-a847-48ec-9f4d-34c0d82d304b",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "Which country has appeared in the most World Cup finals without winning?",
+    "options": [
+      "Netherlands",
+      "Hungary",
+      "Czechoslovakia",
+      "Portugal"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The Netherlands have reached 3 World Cup finals (1974, 1978, 2010) without winning."
+  },
+  {
+    "id": "3cd52368-a609-41b1-8595-dbc24836d455",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What does FIFA stand for?",
+    "options": [
+      "Football International Federation Association",
+      "Fédération Internationale de Football Association",
+      "Federal Institute of Football Athletics",
+      "First International Football Assembly"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "FIFA stands for Fédération Internationale de Football Association (International Federation of Association Football)."
+  },
+  {
+    "id": "3ddad81d-841d-432f-a965-13457df13232",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "The Hillsborough disaster of 1989 led to what major change in English football?",
+    "options": [
+      "Introduction of VAR",
+      "Conversion to all-seater stadiums",
+      "Banning of alcohol",
+      "Introduction of the Premier League"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Hillsborough disaster, which killed 97 Liverpool fans, led to the Taylor Report recommending all-seater stadiums in the top two divisions."
+  },
+  {
+    "id": "4c8c3e52-e5e0-4f4d-a984-6386c29a281e",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "In which country was football (soccer) invented?",
+    "options": [
+      "Brazil",
+      "Italy",
+      "England",
+      "Spain"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Modern football originated in England, with the Football Association established in 1863."
+  },
+  {
+    "id": "53544820-bf7b-463d-a3f8-f37651f6f970",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is the standard length of a professional football match?",
+    "options": [
+      "80 minutes",
+      "90 minutes",
+      "100 minutes",
+      "120 minutes"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "A standard match is 90 minutes, split into two 45-minute halves."
+  },
+  {
+    "id": "55eadffd-407c-4b1c-bd09-23b6d87e7a68",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "What year were red and yellow cards first introduced at the World Cup?",
+    "options": [
+      "1966",
+      "1970",
+      "1974",
+      "1978"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Red and yellow cards were introduced at the 1970 World Cup in Mexico by referee Ken Aston."
+  },
+  {
+    "id": "56950224-0952-4d0a-a512-cd81398888c0",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "Which team won the first ever FIFA World Cup in 1930?",
+    "options": [
+      "Argentina",
+      "Brazil",
+      "Uruguay",
+      "USA"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Uruguay won the first World Cup, defeating Argentina 4-2 in the final on home soil."
+  },
+  {
+    "id": "58eb8183-e799-46e9-8284-7a6dcbf1ee01",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is the term for scoring three goals in one match?",
+    "options": [
+      "Triple play",
+      "Hat-trick",
+      "Three-peat",
+      "Trio"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Scoring three goals in a single match is called a hat-trick, a term borrowed from cricket."
+  },
+  {
+    "id": "5d0a5e43-673e-42c4-ae73-25c61d4ff8e4",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "Which was the first World Cup to be broadcast on television?",
+    "options": [
+      "1950 Brazil",
+      "1954 Switzerland",
+      "1958 Sweden",
+      "1962 Chile"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 1954 World Cup in Switzerland was the first to have matches broadcast on television."
+  },
+  {
+    "id": "6231b4c2-8a28-4590-8bd2-53ac6267a7e1",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "When were substitutions first allowed in World Cup matches?",
+    "options": [
+      "1958",
+      "1966",
+      "1970",
+      "1974"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Substitutions were first allowed at the 1970 World Cup in Mexico, with a maximum of two per team."
+  },
+  {
+    "id": "64e5285c-a8c2-4b98-979f-752935c0549c",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "When did the Premier League replace the old First Division?",
+    "options": [
+      "1990",
+      "1991",
+      "1992",
+      "1993"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The Premier League was founded in 1992, replacing the old Football League First Division."
+  },
+  {
+    "id": "6596bc2a-508e-4826-aafe-2da8d8ae6865",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "The \"Miracle on Ice\" equivalent in football refers to which match?",
+    "options": [
+      "USA vs England 1950",
+      "North Korea vs Italy 1966",
+      "Greece winning Euro 2004",
+      "Leicester winning the Premier League"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The USA's 1-0 victory over England at the 1950 World Cup is considered one of the greatest upsets in football history."
+  },
+  {
+    "id": "65b3d841-ba49-4052-acc8-ddfc2821f1e5",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "Who invented the \"Cruyff Turn\"?",
+    "options": [
+      "Rinus Michels",
+      "Dennis Bergkamp",
+      "Johan Cruyff",
+      "Marco van Basten"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Johan Cruyff invented his signature move during the 1974 World Cup match against Sweden."
+  },
+  {
+    "id": "683ef38e-dc20-4a69-b32b-3e54b65cbec8",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What shape is a football pitch?",
+    "options": [
+      "Square",
+      "Circle",
+      "Rectangle",
+      "Oval"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "A football pitch is rectangular, typically 100-110 meters long and 64-75 meters wide."
+  },
+  {
+    "id": "691f8607-05ed-4298-bb9c-26866c579835",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is the offside rule in simple terms?",
+    "options": [
+      "You can't be behind the ball",
+      "You can't be ahead of the second-to-last defender when the ball is played to you",
+      "You can't stand in the goal area",
+      "You must stay in your own half"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "A player is offside if they are nearer to the opponent's goal line than both the ball and the second-to-last defender when the ball is played to them."
+  },
+  {
+    "id": "6c62ad0c-a64a-4669-88ee-41bc5e937fd6",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "Which player holds the record for most goals scored in a single World Cup tournament?",
+    "options": [
+      "Ronaldo",
+      "Just Fontaine",
+      "Miroslav Klose",
+      "Sandor Kocsis"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Just Fontaine scored 13 goals for France at the 1958 World Cup — a record that still stands."
+  },
+  {
+    "id": "6cf3ff3b-9bb4-4dea-a44c-6bfeb42e71cc",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "When was the offside rule first introduced?",
+    "options": [
+      "1863",
+      "1866",
+      "1925",
+      "1930"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The offside rule has existed since the earliest codification of football rules in 1863, though it has been modified many times."
+  },
+  {
+    "id": "6f640d43-3e14-4b6f-b92b-1e561d68b086",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "The Munich air disaster of 1958 devastated which football club?",
+    "options": [
+      "Bayern Munich",
+      "Borussia Dortmund",
+      "Manchester United",
+      "Real Madrid"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The Munich air disaster killed 23 people, including 8 Manchester United players known as the \"Busby Babes\"."
+  },
+  {
+    "id": "70e83e9d-7218-434d-9d94-29e9f11b4ebf",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "When were three points for a win introduced in the English Football League?",
+    "options": [
+      "1976",
+      "1981",
+      "1990",
+      "1992"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Three points for a win was introduced in England in 1981-82, replacing the previous two-point system to encourage attacking football."
+  },
+  {
+    "id": "71a252b7-e64d-419e-9c1d-34a19f67bb56",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "Which country has won the most FIFA World Cup titles?",
+    "options": [
+      "Brazil",
+      "Germany",
+      "Italy",
+      "Argentina"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Brazil has won 5 World Cups (1958, 1962, 1970, 1994, 2002)."
+  },
+  {
+    "id": "761763b6-63ee-474f-805c-e8e7efa81eb0",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "What was the \"White Horse Final\"?",
+    "options": [
+      "1923 FA Cup Final",
+      "1950 World Cup Final",
+      "1966 World Cup Final",
+      "1989 FA Cup Final"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The 1923 FA Cup Final at Wembley is known as the \"White Horse Final\" because a police officer on a white horse helped control the massive crowd that spilled onto the pitch."
+  },
+  {
+    "id": "7fd486bf-0805-4231-9be0-fc5f1df2a29c",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "Which player was named Best Young Player at the 2022 World Cup?",
+    "options": [
+      "Gavi",
+      "Pedri",
+      "Enzo Fernández",
+      "Jamal Musiala"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Enzo Fernández won the Best Young Player award at the 2022 World Cup in Qatar."
+  },
+  {
+    "id": "833fc33b-ca84-4c66-9d09-e27955bb1470",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "What was the \"Maracanã\" originally built for?",
+    "options": [
+      "1950 World Cup",
+      "1960 Olympics",
+      "1940 Pan American Games",
+      "Brazil independence celebrations"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The Maracanã Stadium in Rio de Janeiro was built for the 1950 FIFA World Cup, with an original capacity of nearly 200,000."
+  },
+  {
+    "id": "84026b81-e5ca-4cec-b6e3-1430643abc44",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "Who scored the famous \"Hand of God\" goal in the 1986 World Cup?",
+    "options": [
+      "Pelé",
+      "Ronaldo",
+      "Diego Maradona",
+      "Zinedine Zidane"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Diego Maradona scored the controversial \"Hand of God\" goal against England in the 1986 quarterfinal."
+  },
+  {
+    "id": "85d072b4-dff9-4b71-bf57-d85782bd73de",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "How many times has the host nation won the FIFA World Cup?",
+    "options": [
+      "3",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The host nation has won the World Cup 6 times: Uruguay (1930), Italy (1934), England (1966), West Germany (1974), Argentina (1978), France (1998)."
+  },
+  {
+    "id": "86f47851-23ae-4c4a-a5d6-e84223b23aef",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "Which goalkeeper saved the most penalties in World Cup shootout history (as of 2022)?",
+    "options": [
+      "Iker Casillas",
+      "Manuel Neuer",
+      "Sergio Goycochea",
+      "Emiliano Martínez"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Sergio Goycochea of Argentina saved 5 penalties in World Cup shootouts (1990 edition)."
+  },
+  {
+    "id": "8777d1ec-c10d-48a2-95a4-acaee7fad08c",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "When were goal-line technology systems first used at a World Cup?",
+    "options": [
+      "2010",
+      "2014",
+      "2018",
+      "2022"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Goal-line technology was first used at the 2014 World Cup in Brazil after controversial incidents in previous tournaments."
+  },
+  {
+    "id": "8ebb32d4-73a7-4022-8376-440827464893",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is \"stoppage time\" or \"injury time\"?",
+    "options": [
+      "A timeout called by the coach",
+      "Additional time added at the end of each half",
+      "A break for injured players",
+      "Time between halves"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Stoppage time is additional time added by the referee at the end of each half to compensate for stoppages in play."
+  },
+  {
+    "id": "91787521-ca7c-4df1-9c93-6f013df4483e",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is a \"clean sheet\" in football?",
+    "options": [
+      "A blank scorecard",
+      "When a goalkeeper concedes no goals",
+      "A new match ball",
+      "A fresh pitch"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "A clean sheet means the goalkeeper and defense prevented the opposing team from scoring any goals."
+  },
+  {
+    "id": "92b3716f-d417-4f6d-9622-b64bb36ee928",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "The \"Golden Goal\" rule was used in major tournaments between which years?",
+    "options": [
+      "1990-2000",
+      "1993-2002",
+      "1996-2004",
+      "1998-2006"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The Golden Goal (sudden death in extra time) was used from Euro 1996 to Euro 2004, then abolished."
+  },
+  {
+    "id": "95b58317-36aa-4a93-91e2-49f401b21397",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What year was FIFA founded?",
+    "options": [
+      "1900",
+      "1904",
+      "1910",
+      "1920"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "FIFA (Fédération Internationale de Football Association) was founded on May 21, 1904 in Paris."
+  },
+  {
+    "id": "9cadea56-4938-4fc5-86c3-c7d10d3ba7bf",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "The \"Bosman ruling\" of 1995 changed football by allowing what?",
+    "options": [
+      "Unlimited substitutions",
+      "Free transfers at contract end",
+      "Video replays",
+      "Foreign player quotas to be removed"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Bosman ruling allowed players to move freely to another club at the end of their contract without a transfer fee."
+  },
+  {
+    "id": "9d450a19-1791-4f18-8cce-223f5da4d374",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What color card means a player is sent off?",
+    "options": [
+      "Yellow",
+      "Green",
+      "Blue",
+      "Red"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "A red card results in the player being sent off the pitch and their team playing with one fewer player."
+  },
+  {
+    "id": "9eb792cf-1e8f-4ff2-aab7-c8af386f9ea4",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "Which English manager introduced the \"WM\" formation that revolutionized tactics?",
+    "options": [
+      "Herbert Chapman",
+      "Brian Clough",
+      "Bill Shankly",
+      "Matt Busby"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Herbert Chapman developed the WM formation at Arsenal in the 1930s, revolutionizing tactical thinking in football."
+  },
+  {
+    "id": "a1181e58-3181-40c6-a800-03840baa317e",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "What was \"Total Football\"?",
+    "options": [
+      "A video game",
+      "A Dutch tactical philosophy",
+      "An English TV show",
+      "A type of football"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Total Football was a tactical philosophy pioneered by Ajax and the Netherlands in the 1970s where outfield players could interchange positions fluidly."
+  },
+  {
+    "id": "a1f0af5b-b8fa-462b-ab47-65e0de9ffd2c",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "What was the \"Heysel disaster\"?",
+    "options": [
+      "A stadium fire",
+      "A stampede at a Champions League final",
+      "A pitch collapse",
+      "A terrorist attack at a World Cup"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Heysel disaster in 1985 was a crowd crush at the European Cup Final in Brussels that killed 39 people, leading to a ban on English clubs from European competition."
+  },
+  {
+    "id": "a6f9adce-a034-4b44-903b-543691f22017",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "The \"Superga air disaster\" of 1949 killed players from which club?",
+    "options": [
+      "Juventus",
+      "Torino",
+      "AC Milan",
+      "Inter Milan"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Superga tragedy killed 31 people including the entire Torino team, who dominated Italian football at the time."
+  },
+  {
+    "id": "b4271900-4a38-4f93-8445-8a6c6bd015a9",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "Who was the top scorer at the 2018 FIFA World Cup in Russia?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Harry Kane",
+      "Antoine Griezmann",
+      "Romelu Lukaku"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Harry Kane won the Golden Boot at Russia 2018 with 6 goals, all scored in the group stage and Round of 16."
+  },
+  {
+    "id": "b7faf9a2-acef-40d0-a66a-42db778747d0",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "How many substitutions can a team make in a standard match (current rules)?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Since 2020, FIFA has allowed 5 substitutions per team per match across 3 windows (plus half-time)."
+  },
+  {
+    "id": "bc6a7bf8-3a38-4686-a1d1-1e8f462bb5fe",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "What was \"catenaccio\"?",
+    "options": [
+      "An Italian word for celebrations",
+      "A defensive tactical system",
+      "A type of football boot",
+      "An Italian football league"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Catenaccio (meaning \"door-bolt\") was an ultra-defensive tactical system popularized in Italian football in the 1960s."
+  },
+  {
+    "id": "ca11d0e7-83e9-4485-b7c5-c0bd5be2f3d5",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "Which was the first World Cup to be held in Asia?",
+    "options": [
+      "2010",
+      "2002",
+      "2022",
+      "1998"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 2002 World Cup was co-hosted by South Korea and Japan, the first World Cup held in Asia."
+  },
+  {
+    "id": "d1f69bce-7499-477b-ad5f-7b4e1628c659",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "Which competition did Pelé call \"the war\" after violent matches?",
+    "options": [
+      "Copa Libertadores",
+      "World Cup 1962",
+      "Copa América",
+      "Inter-continental Cup"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 1962 World Cup in Chile had particularly violent matches, with Pelé injured in the group stage and calling it brutal."
+  },
+  {
+    "id": "d7c3c275-b28f-4415-9f8f-c43f798c1ac7",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "The \"Football War\" of 1969 was between which two countries?",
+    "options": [
+      "Brazil and Argentina",
+      "Honduras and El Salvador",
+      "England and Scotland",
+      "Mexico and USA"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Football War was a brief conflict between Honduras and El Salvador, triggered by tensions during 1970 World Cup qualifying matches."
+  },
+  {
+    "id": "da911e33-b7a6-493e-863e-31611d3a5450",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "The \"Miracle of Istanbul\" refers to which match?",
+    "options": [
+      "Galatasaray winning the UEFA Cup 2000",
+      "Liverpool's 2005 Champions League Final comeback",
+      "Turkey's 2002 World Cup run",
+      "Beşiktaş beating Chelsea 2003"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Miracle of Istanbul refers to Liverpool's incredible comeback from 3-0 down at half-time to beat AC Milan on penalties in the 2005 Champions League Final."
+  },
+  {
+    "id": "dae451d0-25cf-45f2-9a31-7726d6c729e4",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "When was the back-pass rule introduced, preventing goalkeepers from picking up deliberate passes?",
+    "options": [
+      "1990",
+      "1992",
+      "1994",
+      "1996"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The back-pass rule was introduced in 1992 to speed up the game and prevent time-wasting."
+  },
+  {
+    "id": "e383ad3f-c244-4a3b-9939-291b184cbff3",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "Which was the first football club to be listed on a stock exchange?",
+    "options": [
+      "Manchester United",
+      "Tottenham Hotspur",
+      "Juventus",
+      "Ajax"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Tottenham Hotspur became the first football club to be listed on the London Stock Exchange in 1983."
+  },
+  {
+    "id": "e408b11f-b5a5-49a7-af64-30b89f9ca7e2",
+    "category": "historical",
+    "difficulty": "medium",
+    "question_text": "When was the first FIFA Ballon d'Or awarded?",
+    "options": [
+      "1950",
+      "1956",
+      "1960",
+      "1970"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The first Ballon d'Or was awarded by France Football magazine in 1956 to Stanley Matthews."
+  },
+  {
+    "id": "f2ff5561-b872-4da5-aadc-d30729554edc",
+    "category": "historical",
+    "difficulty": "hard",
+    "question_text": "Which was the first football match played under floodlights?",
+    "options": [
+      "In 1878 at Bramall Lane",
+      "In 1900 at Wembley",
+      "In 1920 at Old Trafford",
+      "In 1950 at Highbury"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The first floodlit football match was played at Bramall Lane, Sheffield in 1878."
+  },
+  {
+    "id": "fa4978fd-6e16-4db6-adc7-a7ab0c84426e",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What is a \"derby\" in football?",
+    "options": [
+      "An international match",
+      "A cup final",
+      "A match between local rivals",
+      "A pre-season friendly"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "A derby is a match between two teams from the same city or region, often the most intense fixtures of the season."
+  },
+  {
+    "id": "fb38bc70-56fc-4ac7-8b4b-10ed8659814b",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "What happens when a game ends in a draw during a knockout tournament?",
+    "options": [
+      "The match is replayed",
+      "Extra time and possibly penalties",
+      "A coin toss",
+      "The higher-seeded team advances"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "In knockout tournaments, a draw leads to 30 minutes of extra time (two 15-minute halves), then a penalty shootout if still level."
+  },
+  {
+    "id": "fb4335c5-9b2f-4ccc-8ca0-01f23aa79b56",
+    "category": "historical",
+    "difficulty": "easy",
+    "question_text": "How many players are on a football team during a match?",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Each team has 11 players on the pitch, including one goalkeeper."
+  },
+  {
+    "id": "093d36de-01bd-44f3-9a45-806cdc766e32",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which country won the first-ever European Championship in 1960?",
+    "options": [
+      "Spain",
+      "West Germany",
+      "Soviet Union",
+      "France"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The Soviet Union won the first European Championship (then called the European Nations Cup) in 1960."
+  },
+  {
+    "id": "13a9c2a0-7a2a-4665-b29e-4e5bdd2775dd",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "The \"Battle of Santiago\" took place between which two national teams?",
+    "options": [
+      "Brazil vs Argentina",
+      "Chile vs Italy",
+      "England vs Argentina",
+      "Germany vs Netherlands"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The \"Battle of Santiago\" was a notoriously violent 1962 World Cup match between Chile and Italy."
+  },
+  {
+    "id": "1a178c46-3e85-4cf3-b79c-f0193ef6efda",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which European country is known as \"Les Bleus\"?",
+    "options": [
+      "Italy",
+      "France",
+      "Germany",
+      "Spain"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "France's national team is nicknamed \"Les Bleus\" (The Blues) after their blue jerseys."
+  },
+  {
+    "id": "1b476e51-108c-476a-a964-30569096a72b",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "England's national team plays home matches at which stadium?",
+    "options": [
+      "Old Trafford",
+      "Emirates Stadium",
+      "Wembley Stadium",
+      "Stamford Bridge"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "England plays their home matches at Wembley Stadium in London."
+  },
+  {
+    "id": "25dccca1-521a-4a95-8661-4ac2ac0b378d",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which African nation won the 2021 Africa Cup of Nations?",
+    "options": [
+      "Nigeria",
+      "Egypt",
+      "Senegal",
+      "Cameroon"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Senegal won their first AFCON title in 2021, defeating Egypt on penalties in the final."
+  },
+  {
+    "id": "25e8a377-90ef-4c20-905c-9e11349b52b4",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which team is known as \"Die Mannschaft\"?",
+    "options": [
+      "Austria",
+      "Switzerland",
+      "Germany",
+      "Netherlands"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Germany's national team was commonly referred to as \"Die Mannschaft\" (The Team)."
+  },
+  {
+    "id": "2f8d5210-b97a-409c-aa72-d9930722728f",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which is the only country from Oceania to have played in a World Cup?",
+    "options": [
+      "Fiji",
+      "New Zealand",
+      "Australia",
+      "Tahiti"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "New Zealand qualified for the 1982 and 2010 World Cups. Australia moved from OFC to AFC in 2006."
+  },
+  {
+    "id": "306d7bb6-290f-4c5d-8a5c-6c6cb5d6ac68",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which Asian nation reached the 2002 World Cup semi-finals?",
+    "options": [
+      "Japan",
+      "Saudi Arabia",
+      "Iran",
+      "South Korea"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "South Korea reached the semi-finals of the 2002 World Cup as co-hosts."
+  },
+  {
+    "id": "33422cd4-ee63-48e6-abda-706e4e441596",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which country has the most appearances in a World Cup without ever winning it?",
+    "options": [
+      "Netherlands",
+      "Mexico",
+      "Portugal",
+      "Belgium"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Mexico has appeared in 17 World Cups (most of any non-winner) without ever winning the tournament."
+  },
+  {
+    "id": "3929aa10-a4af-456e-9b35-721cc916a890",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which country does Son Heung-min represent?",
+    "options": [
+      "Japan",
+      "China",
+      "South Korea",
+      "Thailand"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Son Heung-min represents South Korea and is their most famous current player."
+  },
+  {
+    "id": "39dea725-9063-4f46-adc8-acbaa024b220",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which South American nation has a team nicknamed \"La Celeste\"?",
+    "options": [
+      "Paraguay",
+      "Uruguay",
+      "Ecuador",
+      "Colombia"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Uruguay is nicknamed \"La Celeste\" (The Sky Blue) after their traditional jersey color."
+  },
+  {
+    "id": "3f885a70-345b-4a00-80da-4fd3770ac965",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which Central American team reached the 2014 World Cup quarter-finals?",
+    "options": [
+      "Honduras",
+      "Panama",
+      "Costa Rica",
+      "El Salvador"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Costa Rica topped a group with Uruguay, Italy, and England, then reached the quarter-finals in 2014."
+  },
+  {
+    "id": "46cb240b-9c25-4c97-bea8-23715d1b1b41",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which national team has the longest unbeaten run in football history?",
+    "options": [
+      "Brazil",
+      "Spain",
+      "Italy",
+      "Argentina"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Italy holds the record with a 37-match unbeaten run from October 2018 to October 2021."
+  },
+  {
+    "id": "49279d81-56d2-43ba-8b6d-fc21cc48d46c",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which country's golden generation included Laudrup, Schmeichel, and the Laudrup brothers?",
+    "options": [
+      "Sweden",
+      "Norway",
+      "Denmark",
+      "Finland"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Denmark's golden generation in the late 1980s and 1990s included Peter Schmeichel, Michael and Brian Laudrup."
+  },
+  {
+    "id": "510ddad0-d707-4395-a8a6-3ef6edc55694",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "How many times has Japan qualified for the World Cup?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Japan has qualified for 7 consecutive World Cups from 1998 to 2022."
+  },
+  {
+    "id": "52c5368f-af02-4384-b922-4e07e514e8c7",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which team won the 2021 Copa América?",
+    "options": [
+      "Brazil",
+      "Colombia",
+      "Uruguay",
+      "Argentina"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Argentina won the 2021 Copa América, beating Brazil 1-0 in the final at the Maracanã."
+  },
+  {
+    "id": "5e190be1-a95f-4aa3-9e46-b6a0e9635fb3",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "What colors does the Mexican national team wear?",
+    "options": [
+      "Blue and white",
+      "Red and white",
+      "Green and white",
+      "Yellow and green"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Mexico traditionally wears green jerseys with white shorts for their home kit."
+  },
+  {
+    "id": "63e72c4e-c70b-4ea3-8c78-2d83ad6bc8c0",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which European national team is nicknamed \"Les Bleus\"?",
+    "options": [
+      "Italy",
+      "France",
+      "Belgium",
+      "Netherlands"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "France's national team is known as \"Les Bleus\" (The Blues)."
+  },
+  {
+    "id": "67d91398-d7f0-4bcd-848a-3772c44a2a34",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "North Korea achieved which historic result at the 1966 World Cup?",
+    "options": [
+      "Beat Italy in the group stage",
+      "Drew with Brazil",
+      "Scored 5 goals in one match",
+      "Beat England"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "North Korea beat Italy 1-0 in the group stage of the 1966 World Cup, one of the biggest upsets in history."
+  },
+  {
+    "id": "69eea892-86a6-47e9-ab90-9a5bed25e0dc",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which national team is known as \"La Albiceleste\"?",
+    "options": [
+      "Uruguay",
+      "Chile",
+      "Argentina",
+      "Paraguay"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Argentina is known as \"La Albiceleste\" (The White and Sky Blue) after their jersey colors."
+  },
+  {
+    "id": "72bbaafb-ac6f-4868-b4ac-a6b810966e16",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which was the first Asian country to reach a World Cup semifinal?",
+    "options": [
+      "Japan",
+      "Saudi Arabia",
+      "South Korea",
+      "Iran"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "South Korea reached the semifinals at the 2002 World Cup, co-hosted with Japan."
+  },
+  {
+    "id": "786cd5c9-76ab-47f3-9a19-e9be73923600",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which South American country has won the most Copa América titles?",
+    "options": [
+      "Brazil",
+      "Argentina",
+      "Uruguay",
+      "Paraguay"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Argentina has won 16 Copa América titles (most recently 2024), surpassing Uruguay's 15."
+  },
+  {
+    "id": "7dba3123-0401-49a9-ae7a-90c9899d80e3",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which confederation does Australia's national team belong to?",
+    "options": [
+      "OFC (Oceania)",
+      "AFC (Asia)",
+      "UEFA (Europe)",
+      "CONMEBOL (South America)"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Australia moved from the Oceania Football Confederation (OFC) to the Asian Football Confederation (AFC) in 2006."
+  },
+  {
+    "id": "87186b36-4384-47a6-affe-d58fbc1bb997",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Who is the all-time top scorer for the Argentina national team?",
+    "options": [
+      "Diego Maradona",
+      "Gabriel Batistuta",
+      "Lionel Messi",
+      "Sergio Agüero"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Lionel Messi is Argentina's all-time top scorer with over 100 international goals."
+  },
+  {
+    "id": "8778684f-119e-4b7d-bb16-3136660ad11b",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which team scored the fastest goal in World Cup history?",
+    "options": [
+      "England",
+      "Turkey",
+      "Saudi Arabia",
+      "Germany"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Turkey's Hakan Şükür scored after 11 seconds against South Korea in the 2002 World Cup third-place match."
+  },
+  {
+    "id": "8878b1a1-3469-4603-a746-6344dfe18a00",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which national team does Mohamed Salah play for?",
+    "options": [
+      "Morocco",
+      "Tunisia",
+      "Senegal",
+      "Egypt"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Mohamed Salah represents Egypt and is their star forward."
+  },
+  {
+    "id": "89d4fce6-5ac8-4bb2-b276-53da2dd1be4a",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which team won Euro 2024?",
+    "options": [
+      "England",
+      "France",
+      "Spain",
+      "Germany"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Spain won Euro 2024, held in Germany, defeating England 2-1 in the final."
+  },
+  {
+    "id": "94601e0a-425b-4603-9a84-cfc8b86d104d",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which was the last host nation to win the World Cup?",
+    "options": [
+      "Germany 2006",
+      "Brazil 2014",
+      "France 1998",
+      "South Africa 2010"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "France in 1998 was the last host nation to win the World Cup."
+  },
+  {
+    "id": "977f5680-b6e6-499d-b7f0-8c370441414e",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "What is the nickname of the Brazilian national team?",
+    "options": [
+      "La Roja",
+      "Seleção",
+      "Die Mannschaft",
+      "The Three Lions"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Brazil's national team is known as \"Seleção\" (The Selection)."
+  },
+  {
+    "id": "9e93f757-1c07-4179-b19d-3a682c2e055a",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which country was the first from outside the British Isles to beat England at Wembley?",
+    "options": [
+      "Hungary",
+      "Brazil",
+      "Germany",
+      "Spain"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Hungary famously beat England 6-3 at Wembley in 1953, the first non-British team to win there."
+  },
+  {
+    "id": "9f16a69c-8966-4303-b98c-d58d8c7621f9",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which team is known as \"The Pharaohs\"?",
+    "options": [
+      "Morocco",
+      "Tunisia",
+      "Algeria",
+      "Egypt"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "The Egyptian national team is nicknamed \"The Pharaohs\" after the ancient Egyptian rulers."
+  },
+  {
+    "id": "aaab767b-984c-4521-8e71-e3df20f68c3a",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which country does Erling Haaland play for?",
+    "options": [
+      "Sweden",
+      "Denmark",
+      "Norway",
+      "Finland"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Erling Haaland represents Norway's national team."
+  },
+  {
+    "id": "aefe0e90-7197-48a3-8505-a863aef81d61",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Who is the all-time top scorer in international football (men)?",
+    "options": [
+      "Lionel Messi",
+      "Ali Daei",
+      "Cristiano Ronaldo",
+      "Pelé"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Cristiano Ronaldo holds the record for most international goals with over 130 goals for Portugal."
+  },
+  {
+    "id": "b0f90efe-06fc-4758-823f-80f1d4185ae2",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which African nation has won the most Africa Cup of Nations titles?",
+    "options": [
+      "Nigeria",
+      "Cameroon",
+      "Ghana",
+      "Egypt"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Egypt has won the Africa Cup of Nations a record 7 times."
+  },
+  {
+    "id": "b125a834-601f-4e45-a393-c0b6f91e7d07",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which country won Euro 2020 (played in 2021)?",
+    "options": [
+      "England",
+      "Spain",
+      "France",
+      "Italy"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Italy won Euro 2020, beating England on penalties in the final at Wembley."
+  },
+  {
+    "id": "b59d37fd-7a7d-4279-877d-2169d78f2a5b",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "The \"Miracle of Bern\" refers to which team's World Cup victory?",
+    "options": [
+      "Uruguay 1950",
+      "West Germany 1954",
+      "England 1966",
+      "Argentina 1978"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "West Germany's 3-2 victory over Hungary in the 1954 World Cup Final is known as the \"Miracle of Bern\"."
+  },
+  {
+    "id": "b9534263-ee8a-4d94-83a0-81f375a6fa7f",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which is the most successful national team in CONMEBOL?",
+    "options": [
+      "Chile",
+      "Colombia",
+      "Argentina",
+      "Brazil"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Brazil is the most successful CONMEBOL nation with 5 World Cup wins and multiple Copa América titles."
+  },
+  {
+    "id": "c3457386-120f-48fb-a6ad-64e6d117f59b",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which national team has the longest unbeaten run in football history?",
+    "options": [
+      "Brazil",
+      "Spain",
+      "Italy",
+      "Argentina"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Italy went 37 matches unbeaten from October 2018 to October 2021."
+  },
+  {
+    "id": "cbb23caf-e600-4b14-a299-78e19d9792da",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which country does Kylian Mbappé represent?",
+    "options": [
+      "Belgium",
+      "Senegal",
+      "France",
+      "Cameroon"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Kylian Mbappé plays for the French national team."
+  },
+  {
+    "id": "cd0bf619-e380-40ef-b73e-7b9e432bd2bd",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which is the highest-ranked CONCACAF team in FIFA history?",
+    "options": [
+      "USA",
+      "Mexico",
+      "Costa Rica",
+      "Canada"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Mexico has historically been the highest-ranked CONCACAF team, though the USA has also reached high rankings."
+  },
+  {
+    "id": "cfbc8e24-b368-4bd8-b927-66acabf61899",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Greece won Euro 2004 by beating which host nation in the final?",
+    "options": [
+      "Spain",
+      "Portugal",
+      "France",
+      "Italy"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Greece shocked the football world by beating host nation Portugal 1-0 in the Euro 2004 final."
+  },
+  {
+    "id": "d0e27580-5f7f-4cee-a233-b17a5c2bdaf4",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which CONCACAF team has won the most Gold Cup titles?",
+    "options": [
+      "USA",
+      "Canada",
+      "Costa Rica",
+      "Mexico"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Mexico has won the CONCACAF Gold Cup a record number of times."
+  },
+  {
+    "id": "d30c0473-957b-4158-a18f-6a4a186d3513",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Who is the all-time top scorer for the Portugal national team?",
+    "options": [
+      "Eusébio",
+      "Luís Figo",
+      "Cristiano Ronaldo",
+      "Nuno Gomes"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Cristiano Ronaldo is Portugal's all-time top scorer with over 130 international goals."
+  },
+  {
+    "id": "d5cf6731-f3aa-4e1a-83ea-acd2393fedd5",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which African country reached the 2022 World Cup semi-finals?",
+    "options": [
+      "Senegal",
+      "Ghana",
+      "Morocco",
+      "Cameroon"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Morocco became the first African and Arab nation to reach the World Cup semi-finals in 2022."
+  },
+  {
+    "id": "de7614b0-988e-4ccc-9145-76e9fca0ab25",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which nation shocked the world by beating Italy in the 2018 World Cup qualifying?",
+    "options": [
+      "North Macedonia",
+      "Sweden",
+      "Iceland",
+      "Albania"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Sweden eliminated Italy in the 2018 World Cup qualifying playoffs, causing Italy to miss the World Cup for the first time since 1958."
+  },
+  {
+    "id": "dfdf4d01-04fc-4d1d-9b07-02c0fe59db78",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which country has the most Copa América titles?",
+    "options": [
+      "Brazil",
+      "Argentina",
+      "Uruguay",
+      "Chile"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Argentina has won the Copa América a record 16 times, including their 2021 and 2024 victories. Uruguay is second with 15."
+  },
+  {
+    "id": "e10fb3c3-c18a-4c9c-a66d-9f937c513ea5",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which national team holds the record for the biggest victory in international football?",
+    "options": [
+      "Australia",
+      "Maldives",
+      "Aruba",
+      "American Samoa"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Australia beat American Samoa 31-0 in a 2001 World Cup qualifier, the largest win in international football."
+  },
+  {
+    "id": "ed20253a-4066-4858-8179-5b4e6d599ffa",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which country does Luka Modrić captain?",
+    "options": [
+      "Serbia",
+      "Bosnia",
+      "Slovenia",
+      "Croatia"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Luka Modrić is the captain of Croatia's national team and led them to the 2018 World Cup final."
+  },
+  {
+    "id": "f1a4b99a-8f9d-41a7-b954-1778310ec65c",
+    "category": "nations",
+    "difficulty": "easy",
+    "question_text": "Which country does Vinícius Jr. represent?",
+    "options": [
+      "Portugal",
+      "Argentina",
+      "Spain",
+      "Brazil"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Vinícius Jr. represents Brazil's national team."
+  },
+  {
+    "id": "f3ca0431-9b0c-4028-8bce-4264c7802bc5",
+    "category": "nations",
+    "difficulty": "medium",
+    "question_text": "Which country hosted and won Euro 1984?",
+    "options": [
+      "Italy",
+      "West Germany",
+      "France",
+      "Spain"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "France hosted and won Euro 1984, led by Michel Platini who scored 9 goals in the tournament."
+  },
+  {
+    "id": "f4bd6aaf-42c6-453f-8a31-9338a1a4f8b6",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which was the first African nation to qualify for a World Cup?",
+    "options": [
+      "Morocco",
+      "Egypt",
+      "Zaire",
+      "Cameroon"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Egypt was the first African nation to play at a World Cup, participating in 1934 in Italy."
+  },
+  {
+    "id": "fbb0c2b8-0204-42c2-8e7a-e0bb997cb136",
+    "category": "nations",
+    "difficulty": "hard",
+    "question_text": "Which nation won the 1992 European Championship as a last-minute replacement?",
+    "options": [
+      "Denmark",
+      "Greece",
+      "Czech Republic",
+      "Sweden"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Denmark replaced Yugoslavia (expelled due to war) and went on to win Euro 1992, one of football's greatest upsets."
+  },
+  {
+    "id": "00bc9866-d391-426f-a38f-c23f20beccc5",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Who was the first player to be transferred for over £1 million?",
+    "options": [
+      "Johan Cruyff",
+      "Diego Maradona",
+      "Trevor Francis",
+      "Kevin Keegan"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Trevor Francis became the first £1 million player when he moved from Birmingham City to Nottingham Forest in 1979."
+  },
+  {
+    "id": "060cd362-507d-4e3f-8de7-e9b8dda904cd",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which French forward won the World Cup at age 19?",
+    "options": [
+      "Antoine Griezmann",
+      "Thierry Henry",
+      "Kylian Mbappé",
+      "Zinedine Zidane"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Kylian Mbappé won the 2018 World Cup with France at just 19 years old, scoring in the final."
+  },
+  {
+    "id": "0f2194d1-c437-48ab-b66b-48566cf72db2",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which player has won the most Ballon d'Or awards?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Pelé",
+      "Lionel Messi",
+      "Johan Cruyff"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Lionel Messi has won the Ballon d'Or a record 8 times."
+  },
+  {
+    "id": "181e5c15-7867-4dcd-b38c-60eac64a57e1",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Which player holds the record for most career club goals?",
+    "options": [
+      "Pelé",
+      "Cristiano Ronaldo",
+      "Lionel Messi",
+      "Josef Bican"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Josef Bican is recognized by some records as having scored over 800 official club goals, though records from his era are disputed."
+  },
+  {
+    "id": "1a496a14-2084-46e9-9346-03997b068ab2",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which player captained Spain to their 2010 World Cup victory?",
+    "options": [
+      "Xavi",
+      "Andrés Iniesta",
+      "Iker Casillas",
+      "Carles Puyol"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Iker Casillas captained Spain to the 2010 World Cup title as their goalkeeper."
+  },
+  {
+    "id": "250e514a-7d25-45fd-b970-dafa742207cc",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Who won the first-ever FIFA Women's Ballon d'Or in 2018?",
+    "options": [
+      "Megan Rapinoe",
+      "Ada Hegerberg",
+      "Marta",
+      "Alex Morgan"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Ada Hegerberg (Norway/Lyon) won the inaugural Women's Ballon d'Or in 2018."
+  },
+  {
+    "id": "334ffaba-fc81-46f0-9042-4829cbbfb07f",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which player received the first-ever red card in World Cup history?",
+    "options": [
+      "Carlos Caszely",
+      "Mário Coluna",
+      "Pelé",
+      "Eusébio"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Carlos Caszely of Chile received the first red card in World Cup history in 1974."
+  },
+  {
+    "id": "33f4a047-3084-4f6b-b40a-4c142d679073",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which player is known as \"CR7\"?",
+    "options": [
+      "Carlos Reyes",
+      "Clarence Roberts",
+      "Cristiano Ronaldo",
+      "Claudio Ranieri"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "CR7 stands for Cristiano Ronaldo and his iconic number 7 jersey."
+  },
+  {
+    "id": "3df78400-f486-494c-ae6a-e41f2dcfe42e",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which player is the all-time top scorer in La Liga history?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Raúl",
+      "Telmo Zarra",
+      "Lionel Messi"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Lionel Messi is La Liga's all-time top scorer with 474 goals in 520 appearances."
+  },
+  {
+    "id": "3fa87980-1838-42b5-b474-68756e2a3220",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Who holds the record for most hat-tricks in international football?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Pelé",
+      "Lionel Messi",
+      "Sándor Kocsis"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Cristiano Ronaldo holds the record for most international hat-tricks with over 10."
+  },
+  {
+    "id": "46fd9dd4-f563-4ee4-b1b3-d24890e10297",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Which defender has scored the most goals in football history?",
+    "options": [
+      "Sergio Ramos",
+      "Roberto Carlos",
+      "Daniel Passarella",
+      "Ronald Koeman"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Sergio Ramos has scored over 100 career goals as a center-back, one of the highest-scoring defenders ever."
+  },
+  {
+    "id": "4c4070ad-e243-49bf-8da5-9a3235a88581",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Who is the youngest player to score in a World Cup Final?",
+    "options": [
+      "Pelé",
+      "Kylian Mbappé",
+      "Michael Owen",
+      "Ronaldo"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Pelé scored in the 1958 World Cup Final at age 17 years and 249 days, making him the youngest final scorer."
+  },
+  {
+    "id": "4e3b905f-63b6-4d01-900c-97cf2befaa4f",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which club did David Beckham NOT play for?",
+    "options": [
+      "Real Madrid",
+      "PSG",
+      "AC Milan",
+      "Bayern Munich"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "David Beckham played for Manchester United, Real Madrid, LA Galaxy, AC Milan, and PSG, but never Bayern Munich."
+  },
+  {
+    "id": "53c3a3ce-2ba8-493e-93f4-de59fbd16d72",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Who scored the \"Goal of the Century\" in the 1986 World Cup?",
+    "options": [
+      "Pelé",
+      "Diego Maradona",
+      "Michel Platini",
+      "Zinedine Zidane"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Maradona's solo goal against England in the 1986 World Cup quarter-final, dribbling past 5 players, was voted Goal of the Century."
+  },
+  {
+    "id": "5991c5fb-0630-4e12-8e2d-e78bcb77c974",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Luka Modrić won the Ballon d'Or in which year?",
+    "options": [
+      "2016",
+      "2017",
+      "2018",
+      "2019"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Luka Modrić won the 2018 Ballon d'Or after leading Croatia to the World Cup final."
+  },
+  {
+    "id": "5f488b9b-c030-4806-8599-1bd1eaf7584b",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which Italian defender is considered one of the greatest of all time and played for AC Milan?",
+    "options": [
+      "Fabio Cannavaro",
+      "Franco Baresi",
+      "Alessandro Nesta",
+      "Paolo Maldini"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Paolo Maldini spent his entire 25-year career at AC Milan, making over 900 appearances."
+  },
+  {
+    "id": "6a7ce19c-106b-4cbf-b23d-09f9f9954f56",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Alfredo Di Stéfano played for which national teams?",
+    "options": [
+      "Argentina only",
+      "Spain only",
+      "Argentina, Colombia, and Spain",
+      "Argentina and Spain"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Di Stéfano uniquely represented three national teams: Argentina, Colombia, and Spain."
+  },
+  {
+    "id": "70fb2bf1-fbea-4d51-915b-ea57d1aba635",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Who is the all-time top scorer in FIFA World Cup history?",
+    "options": [
+      "Pelé",
+      "Ronaldo",
+      "Miroslav Klose",
+      "Gerd Müller"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Miroslav Klose holds the record with 16 World Cup goals across 4 tournaments (2002–2014)."
+  },
+  {
+    "id": "7c4bcdc5-2257-408b-9d66-1ef833ff2460",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Which player has scored the most free kicks in football history?",
+    "options": [
+      "David Beckham",
+      "Juninho Pernambucano",
+      "Cristiano Ronaldo",
+      "Lionel Messi"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Juninho Pernambucano scored over 70 direct free kicks in his career, the most in football history."
+  },
+  {
+    "id": "7d2db29c-dacf-41e8-b131-8020a0068e7a",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which current player is known for his meditation celebration?",
+    "options": [
+      "Vinícius Jr.",
+      "Erling Haaland",
+      "Jude Bellingham",
+      "Antoine Griezmann"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Erling Haaland's meditation celebration (sitting cross-legged) became famous during his time at Borussia Dortmund."
+  },
+  {
+    "id": "8409f972-08a4-44c9-ab68-11fe069dcb66",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Jude Bellingham plays for which club?",
+    "options": [
+      "Manchester City",
+      "Barcelona",
+      "Real Madrid",
+      "Bayern Munich"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Jude Bellingham joined Real Madrid from Borussia Dortmund in 2023."
+  },
+  {
+    "id": "874ad346-e65c-4c94-bf65-23605220ff7e",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Who was the first player to score in 4 different World Cup tournaments?",
+    "options": [
+      "Pelé",
+      "Miroslav Klose",
+      "Cristiano Ronaldo",
+      "Uwe Seeler"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Uwe Seeler and Pelé were among the first to score in 4 World Cups (1958-1970)."
+  },
+  {
+    "id": "8a50c466-e59f-4c4d-b2bf-4a8c1e4b26f0",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "What is Neymar's nationality?",
+    "options": [
+      "Argentine",
+      "Portuguese",
+      "Spanish",
+      "Brazilian"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Neymar Jr. is Brazilian, born in Mogi das Cruzes, São Paulo."
+  },
+  {
+    "id": "8e9d252c-6758-48d9-962d-c8aa960bc8be",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "What position does a goalkeeper play?",
+    "options": [
+      "Forward",
+      "Midfield",
+      "Defense",
+      "Between the goalposts"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "A goalkeeper's primary role is to guard the goal and prevent the opposing team from scoring."
+  },
+  {
+    "id": "9209be6d-6258-46ad-b969-4d7eeca1183c",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which player holds the record for most assists in World Cup history?",
+    "options": [
+      "Pelé",
+      "Diego Maradona",
+      "Lionel Messi",
+      "Thomas Müller"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Lionel Messi holds the record for most assists in World Cup history."
+  },
+  {
+    "id": "92c689b1-e0ba-4481-a6be-2e4985d1a00f",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Who holds the record for the most goals in a single calendar year?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Pelé",
+      "Robert Lewandowski",
+      "Lionel Messi"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Lionel Messi scored 91 goals in 2012, breaking Gerd Müller's record of 85 set in 1972."
+  },
+  {
+    "id": "9b641157-1f2c-4efb-897d-1cee50d511f7",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Who is the only player to win the World Cup, Champions League, and Ballon d'Or in the same year?",
+    "options": [
+      "Ronaldo (1998)",
+      "Zinedine Zidane (1998)",
+      "Ronaldinho (2006)",
+      "No player has done this"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "No player has ever won all three — the World Cup, Champions League, and Ballon d'Or — in the same calendar year."
+  },
+  {
+    "id": "9cc29da5-201f-4224-bd24-99778e70d862",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which player has made the most appearances in Premier League history?",
+    "options": [
+      "Ryan Giggs",
+      "Frank Lampard",
+      "Gareth Barry",
+      "James Milner"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Gareth Barry holds the record for most Premier League appearances with 653 games."
+  },
+  {
+    "id": "a0297ceb-0c26-47a6-b546-4130cd1caec1",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Which player won the Golden Boot at both the 2010 and 2014 World Cups?",
+    "options": [
+      "Thomas Müller",
+      "James Rodríguez",
+      "David Villa",
+      "No one won both"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Thomas Müller won the Golden Boot in 2010 (5 goals), and James Rodríguez won it in 2014 (6 goals). No one won both."
+  },
+  {
+    "id": "ac880689-7828-4889-97b5-44a4637f07e6",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Erling Haaland plays for which English club?",
+    "options": [
+      "Liverpool",
+      "Arsenal",
+      "Manchester United",
+      "Manchester City"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Erling Haaland joined Manchester City in 2022 and broke the Premier League scoring record in his first season."
+  },
+  {
+    "id": "b3b4aa1f-c627-440d-955a-d454bce9138f",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "What nationality is Robert Lewandowski?",
+    "options": [
+      "German",
+      "Czech",
+      "Austrian",
+      "Polish"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Robert Lewandowski is Polish and is Poland's all-time top scorer."
+  },
+  {
+    "id": "bc84663a-eccf-4dcb-b865-15540ac272ca",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which player has won the most Premier League titles?",
+    "options": [
+      "Paul Scholes",
+      "John Terry",
+      "Ryan Giggs",
+      "Wayne Rooney"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Ryan Giggs won 13 Premier League titles with Manchester United between 1993 and 2013."
+  },
+  {
+    "id": "bff2a71e-12b1-4fff-b476-33bfbe9a77d3",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which Brazilian won the World Cup as both a player and a manager?",
+    "options": [
+      "Pelé",
+      "Zagallo",
+      "Carlos Alberto",
+      "Ronaldo"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Mário Zagallo won the World Cup as a player (1958, 1962) and as manager (1970)."
+  },
+  {
+    "id": "c0ac9ccc-40e0-4375-bed3-cb0efe8b9453",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which player is the all-time top scorer in Serie A history?",
+    "options": [
+      "Alessandro Del Piero",
+      "Francesco Totti",
+      "Silvio Piola",
+      "Gabriel Batistuta"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Silvio Piola holds the record for most goals in Serie A history with 274 goals."
+  },
+  {
+    "id": "c1efc2d1-bc19-497d-8c44-8edeae3d2594",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Who is Brazil's all-time top scorer in World Cup history?",
+    "options": [
+      "Pelé",
+      "Ronaldo",
+      "Neymar",
+      "Romário"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Ronaldo scored 15 goals across 3 World Cups (1998, 2002, 2006), more than Pelé's 12 goals."
+  },
+  {
+    "id": "c1fa3b24-4009-446e-a15d-9a064ce4c010",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Which player has scored the most goals in a single edition of the European Championship?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Michel Platini",
+      "Antoine Griezmann",
+      "Alan Shearer"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Michel Platini scored 9 goals at Euro 1984, a record for a single tournament."
+  },
+  {
+    "id": "c6b43533-d04f-4789-b2b5-36b74163a83d",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which country is Cristiano Ronaldo from?",
+    "options": [
+      "Brazil",
+      "Spain",
+      "Portugal",
+      "Italy"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Cristiano Ronaldo was born in Funchal, Madeira, Portugal."
+  },
+  {
+    "id": "cf01a54c-ae28-4441-9c00-6ca452a32d9b",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which player famously performed the \"SIUUU\" celebration?",
+    "options": [
+      "Lionel Messi",
+      "Neymar",
+      "Cristiano Ronaldo",
+      "Erling Haaland"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Cristiano Ronaldo's signature \"SIUUU\" celebration (a jumping spin) became iconic worldwide."
+  },
+  {
+    "id": "d12f7eb6-8532-4d38-b4be-0bcb9a86c722",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which Dutch player was known as \"The Flying Dutchman\"?",
+    "options": [
+      "Ruud Gullit",
+      "Marco van Basten",
+      "Johan Cruyff",
+      "Dennis Bergkamp"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Johan Cruyff was nicknamed \"The Flying Dutchman\" for his revolutionary playing style and the Cruyff Turn."
+  },
+  {
+    "id": "d21be1e3-fbaa-4f65-ad26-ebf905835f0c",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "What is Lionel Messi's shirt number for Argentina?",
+    "options": [
+      "7",
+      "9",
+      "10",
+      "30"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Lionel Messi wears the iconic number 10 jersey for Argentina."
+  },
+  {
+    "id": "d3e1ef30-e150-43ba-a45a-894447c30fdd",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which English player scored a hat-trick in the 1966 World Cup Final?",
+    "options": [
+      "Bobby Charlton",
+      "Gordon Banks",
+      "Geoff Hurst",
+      "Bobby Moore"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Geoff Hurst scored a hat-trick as England beat West Germany 4-2 in the 1966 World Cup Final — the only hat-trick in a World Cup Final."
+  },
+  {
+    "id": "d4b7b720-2a3a-4d69-80c6-e962eebd6a60",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which goalkeeper won the Ballon d'Or in 1963?",
+    "options": [
+      "Gordon Banks",
+      "Lev Yashin",
+      "Dino Zoff",
+      "Sepp Maier"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Lev Yashin remains the only goalkeeper to ever win the Ballon d'Or, receiving it in 1963."
+  },
+  {
+    "id": "dd73c75a-f55d-40e4-b62d-9f22a8316fc9",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which German striker broke the Bundesliga single-season goal record?",
+    "options": [
+      "Gerd Müller",
+      "Miroslav Klose",
+      "Robert Lewandowski",
+      "Karl-Heinz Rummenigge"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Robert Lewandowski scored 41 Bundesliga goals in 2020-21, breaking Gerd Müller's 49-year record of 40."
+  },
+  {
+    "id": "e18df908-a5af-4e83-8495-a74eade7b685",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which player is nicknamed \"The Egyptian King\"?",
+    "options": [
+      "Ahmed Hegazi",
+      "Mahmoud Hassan",
+      "Mohamed Salah",
+      "Omar Marmoush"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Mohamed Salah is nicknamed \"The Egyptian King\" for his prolific goalscoring at Liverpool."
+  },
+  {
+    "id": "e5f1b276-cece-4847-b8f0-ad2e02cb5367",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which player won the Golden Ball (best player) at the 2022 World Cup?",
+    "options": [
+      "Kylian Mbappé",
+      "Lionel Messi",
+      "Cristiano Ronaldo",
+      "Neymar"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Lionel Messi won the Golden Ball at the 2022 World Cup, capping his career with Argentina's third title."
+  },
+  {
+    "id": "eee01bfe-1163-4b5c-9cae-2b2257292f78",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which English striker plays for Bayern Munich and has scored over 200 Premier League goals?",
+    "options": [
+      "Wayne Rooney",
+      "Harry Kane",
+      "Marcus Rashford",
+      "Jamie Vardy"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Harry Kane moved to Bayern Munich in 2023 after becoming Tottenham's all-time top scorer."
+  },
+  {
+    "id": "f0394ac8-58da-46b0-a4b7-9845a0072c77",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which club does Vinícius Jr. currently play for?",
+    "options": [
+      "Barcelona",
+      "PSG",
+      "Manchester City",
+      "Real Madrid"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Vinícius Jr. plays for Real Madrid, having joined from Flamengo in 2018."
+  },
+  {
+    "id": "f4936da0-b8d4-47f3-be3b-d78d4845cda7",
+    "category": "player",
+    "difficulty": "easy",
+    "question_text": "Which Brazilian is considered one of the greatest players of all time and wore the number 10?",
+    "options": [
+      "Ronaldinho",
+      "Neymar",
+      "Kaká",
+      "Pelé"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Pelé is widely considered one of the greatest footballers ever, winning 3 World Cups with Brazil."
+  },
+  {
+    "id": "f65c58ef-d53c-4be5-91b1-d3f702310756",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Which player scored 5 goals in a single Champions League match in 2015?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Luiz Adriano",
+      "Lionel Messi",
+      "Robert Lewandowski"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Luiz Adriano scored 5 goals for Shakhtar Donetsk vs BATE Borisov in the 2014-15 Champions League group stage. Lewandowski's famous 5 goals were in a Bundesliga match."
+  },
+  {
+    "id": "fd2a4db9-f514-4839-9e3c-0ef646a1b9d8",
+    "category": "player",
+    "difficulty": "medium",
+    "question_text": "Which Brazilian midfielder won two consecutive FIFA World Player of the Year awards in 2004 and 2005?",
+    "options": [
+      "Kaká",
+      "Ronaldo",
+      "Rivaldo",
+      "Ronaldinho"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Ronaldinho won FIFA World Player of the Year in 2004 and 2005 during his peak at Barcelona."
+  },
+  {
+    "id": "fddce515-de4c-42d8-80f6-451dafddfc01",
+    "category": "player",
+    "difficulty": "hard",
+    "question_text": "Which player scored a bicycle kick goal in the 2018 Champions League Final?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Gareth Bale",
+      "Karim Benzema",
+      "Sadio Mané"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Gareth Bale scored a spectacular bicycle kick for Real Madrid against Liverpool in the 2018 Champions League Final."
+  },
+  {
+    "id": "08f361e1-e26f-43af-b8c5-1ef8b8396c5b",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "The \"Derby della Madonnina\" is between which two clubs?",
+    "options": [
+      "Roma vs Lazio",
+      "Juventus vs Torino",
+      "AC Milan vs Inter Milan",
+      "Napoli vs Roma"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The Derby della Madonnina is the Milan derby between AC Milan and Inter Milan."
+  },
+  {
+    "id": "0b185c99-e00a-43fc-a3d4-62739a1a7e87",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which Portuguese club is known as \"Os Dragões\" (The Dragons)?",
+    "options": [
+      "Benfica",
+      "Sporting CP",
+      "Braga",
+      "Porto"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "FC Porto is nicknamed \"Os Dragões\" (The Dragons) and plays at the Estádio do Dragão."
+  },
+  {
+    "id": "0b9a1d65-7557-4675-8bd1-d48b09225785",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which club holds the record for most goals scored in a single Premier League season?",
+    "options": [
+      "Liverpool",
+      "Manchester United",
+      "Chelsea",
+      "Manchester City"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Manchester City scored 106 goals in the 2017-18 Premier League season, a record."
+  },
+  {
+    "id": "0cc0e541-9964-4382-a5ac-8132635fa963",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which club won the first-ever English football league title in 1889?",
+    "options": [
+      "Aston Villa",
+      "Sunderland",
+      "Everton",
+      "Preston North End"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Preston North End won the first Football League title in 1888-89, going unbeaten (the original \"Invincibles\")."
+  },
+  {
+    "id": "1367ad46-e55a-4153-8435-21af6f7155bf",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which Spanish club plays at the Santiago Bernabéu?",
+    "options": [
+      "Barcelona",
+      "Atlético Madrid",
+      "Real Madrid",
+      "Sevilla"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Real Madrid plays their home matches at the Santiago Bernabéu Stadium in Madrid."
+  },
+  {
+    "id": "165a118d-3cf1-4943-ac52-5bd4891cc7fc",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "What animal is on the Tottenham Hotspur crest?",
+    "options": [
+      "Lion",
+      "Eagle",
+      "Rooster",
+      "Horse"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Tottenham Hotspur's crest features a cockerel (rooster) standing on a football."
+  },
+  {
+    "id": "16ca84fb-58d8-418a-8bc9-d48c1f5c9c36",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "What is the name of Tottenham Hotspur's current stadium?",
+    "options": [
+      "White Hart Lane",
+      "Wembley Stadium",
+      "Tottenham Hotspur Stadium",
+      "The Emirates"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Tottenham Hotspur Stadium opened in 2019, replacing the historic White Hart Lane."
+  },
+  {
+    "id": "1a663134-0172-4aa3-b012-42581fef0500",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "What color are Manchester City's home shirts?",
+    "options": [
+      "Red",
+      "White",
+      "Sky blue",
+      "Navy blue"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Manchester City wears sky blue home shirts, earning the nickname \"The Cityzens\" or \"Sky Blues\"."
+  },
+  {
+    "id": "1bd319af-60cc-463e-b515-1efc2596b7f9",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which Italian club plays in black and white stripes?",
+    "options": [
+      "AC Milan",
+      "Inter Milan",
+      "Roma",
+      "Juventus"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Juventus is famous for their black and white striped jerseys, earning the nickname \"The Old Lady\"."
+  },
+  {
+    "id": "1bde3f64-18f7-4e39-8d37-ee187627f27c",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Nottingham Forest won back-to-back European Cups in which years?",
+    "options": [
+      "1977 and 1978",
+      "1979 and 1980",
+      "1981 and 1982",
+      "1983 and 1984"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Nottingham Forest won the European Cup in 1979 and 1980 under Brian Clough."
+  },
+  {
+    "id": "1c1fbdcc-ec56-4870-ad05-23d7277e3564",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which club plays at Old Trafford?",
+    "options": [
+      "Manchester City",
+      "Liverpool",
+      "Chelsea",
+      "Manchester United"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Manchester United plays at Old Trafford, known as \"The Theatre of Dreams\"."
+  },
+  {
+    "id": "250aaa46-18d2-4411-bbf5-998412c33250",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which team scored the fastest goal in World Cup history (11 seconds)?",
+    "options": [
+      "Turkey",
+      "El Salvador",
+      "Russia",
+      "Algeria"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Hakan Şükür of Turkey scored after just 11 seconds against South Korea at the 2002 World Cup — the fastest ever."
+  },
+  {
+    "id": "2ac00495-7cb5-4e35-ad7e-129caebbcde9",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which English club has never been relegated from the Premier League?",
+    "options": [
+      "Manchester United",
+      "Liverpool",
+      "Arsenal",
+      "Everton"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Arsenal has played in the top flight of English football since 1919 and has never been relegated from the Premier League."
+  },
+  {
+    "id": "2b9ea163-3c2a-456b-a47c-6002d081a34f",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Borussia Dortmund's stadium is known by what nickname?",
+    "options": [
+      "The Colosseum",
+      "The Yellow Wall",
+      "Signal Iduna Park",
+      "The Cathedral"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Dortmund's Südtribüne (South Stand) is known as \"The Yellow Wall\" — the largest standing terrace in Europe with 25,000 fans."
+  },
+  {
+    "id": "2d50debb-14ef-4848-b3bf-c9198786fb30",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which club won the first Premier League title in 1992-93?",
+    "options": [
+      "Arsenal",
+      "Blackburn Rovers",
+      "Leeds United",
+      "Manchester United"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Manchester United won the inaugural Premier League season in 1992-93 under Sir Alex Ferguson."
+  },
+  {
+    "id": "2e678809-afaa-4d77-b478-b0286d348d3f",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which Japanese club did Andrés Iniesta join after leaving Barcelona?",
+    "options": [
+      "Kashima Antlers",
+      "Vissel Kobe",
+      "Yokohama F. Marinos",
+      "Urawa Red Diamonds"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Andrés Iniesta joined Vissel Kobe in Japan in 2018 after leaving Barcelona."
+  },
+  {
+    "id": "2f2b35b2-8850-4d7d-97d0-ee74c61cce56",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which club is nicknamed \"The Blues\" and plays in the Premier League?",
+    "options": [
+      "Manchester City",
+      "Everton",
+      "Chelsea",
+      "Leicester City"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Chelsea is commonly known as \"The Blues\" after their blue home kit."
+  },
+  {
+    "id": "30f8f96d-733b-4f7a-b4a7-059399b03cab",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which club won the first-ever FIFA Club World Cup?",
+    "options": [
+      "Real Madrid",
+      "Manchester United",
+      "Corinthians",
+      "São Paulo"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Corinthians won the first FIFA Club World Cup in 2000, held in Brazil."
+  },
+  {
+    "id": "32efe1bc-1303-49bc-8d01-241c2c787220",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Flamengo is the most popular club in which country?",
+    "options": [
+      "Portugal",
+      "Argentina",
+      "Colombia",
+      "Brazil"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Flamengo, based in Rio de Janeiro, is the most supported club in Brazil with over 40 million fans."
+  },
+  {
+    "id": "3420c6d2-9444-4123-9b56-a93fc654441c",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which club was the first to install undersoil heating at their stadium?",
+    "options": [
+      "Everton",
+      "Arsenal",
+      "Manchester United",
+      "Wolverhampton Wanderers"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Everton's Goodison Park was the first English ground to install undersoil heating in 1958."
+  },
+  {
+    "id": "34988d82-9bd8-40a1-99d3-c05d8a5eaddf",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which club's anthem is \"You'll Never Walk Alone\"?",
+    "options": [
+      "Everton",
+      "Manchester City",
+      "Celtic",
+      "Liverpool"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Liverpool FC's anthem \"You'll Never Walk Alone\" is sung by the Kop at Anfield before every match."
+  },
+  {
+    "id": "3e37101a-434d-4289-9001-790020e9966d",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which club won the Premier League in the 2015-16 season as 5000-1 outsiders?",
+    "options": [
+      "Burnley",
+      "Southampton",
+      "Leicester City",
+      "West Ham"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Leicester City's 2015-16 Premier League title is considered one of the greatest underdog stories in sports."
+  },
+  {
+    "id": "483c8eff-9c52-432e-9b05-305550c03e22",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which club was known as \"The Invincibles\" for going an entire Premier League season unbeaten?",
+    "options": [
+      "Chelsea",
+      "Manchester United",
+      "Arsenal",
+      "Liverpool"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Arsenal's 2003-04 squad went the entire 38-match Premier League season unbeaten, earning the \"Invincibles\" title."
+  },
+  {
+    "id": "5c17d342-65ed-46ae-b60c-d474a0e0f3af",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which London club is nicknamed \"The Gunners\"?",
+    "options": [
+      "Chelsea",
+      "Tottenham",
+      "West Ham",
+      "Arsenal"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Arsenal is nicknamed \"The Gunners\" due to the club's origins at the Royal Arsenal munitions factory."
+  },
+  {
+    "id": "5d1cf9e8-62dc-4eda-94e5-246250b06e82",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which club won the European Cup Winners' Cup the most times before it was abolished?",
+    "options": [
+      "Chelsea",
+      "Barcelona",
+      "Anderlecht",
+      "AC Milan"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Barcelona won the Cup Winners' Cup a record 4 times (1979, 1982, 1989, 1997) before it was abolished in 1999."
+  },
+  {
+    "id": "5fa6b782-23dd-464b-8954-28a33af73d7d",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which club plays at Anfield?",
+    "options": [
+      "Everton",
+      "Manchester United",
+      "Liverpool",
+      "Arsenal"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Liverpool plays at Anfield, their home since 1892."
+  },
+  {
+    "id": "6405b2b2-ef20-4f9d-a233-bf9836fab3df",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which French club has won the most Ligue 1 titles?",
+    "options": [
+      "Marseille",
+      "Monaco",
+      "Lyon",
+      "PSG"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Paris Saint-Germain has won the most Ligue 1 titles, dominating French football especially since 2012."
+  },
+  {
+    "id": "7278710e-7457-4307-8de8-bc39d1db0f9d",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which London club plays at Stamford Bridge?",
+    "options": [
+      "Arsenal",
+      "Tottenham",
+      "West Ham",
+      "Chelsea"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Chelsea plays at Stamford Bridge in Fulham, west London."
+  },
+  {
+    "id": "7f8586e9-4595-454e-96c5-7465b09c15b8",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which Dutch club plays at the Johan Cruyff Arena?",
+    "options": [
+      "PSV Eindhoven",
+      "Feyenoord",
+      "Ajax",
+      "AZ Alkmaar"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Ajax plays at the Johan Cruyff Arena in Amsterdam, renamed in 2018 in honor of Johan Cruyff."
+  },
+  {
+    "id": "879e366a-72a1-41ed-ae0d-5b64cebcd9e8",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which club has won the most Serie A titles?",
+    "options": [
+      "AC Milan",
+      "Inter Milan",
+      "Juventus",
+      "Roma"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Juventus has won the most Serie A titles with 36 (though 2 were stripped due to Calciopoli)."
+  },
+  {
+    "id": "91daf61e-d55f-4502-b108-a26ec9de6ccd",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "River Plate and Boca Juniors contest which famous derby?",
+    "options": [
+      "El Clásico",
+      "Superclásico",
+      "Derby d'Italia",
+      "Old Firm"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Superclásico between River Plate and Boca Juniors in Buenos Aires is one of the fiercest derbies in world football."
+  },
+  {
+    "id": "a632cce1-f863-42e5-b0f8-45a6c5ea139c",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which MLS team did David Beckham help found?",
+    "options": [
+      "LAFC",
+      "LA Galaxy",
+      "Inter Miami",
+      "New York City FC"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "David Beckham co-founded Inter Miami CF, which joined MLS in 2020."
+  },
+  {
+    "id": "a8b8693a-e8a7-48a8-91f2-df07300bfe40",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which club does Lionel Messi currently play for?",
+    "options": [
+      "Barcelona",
+      "PSG",
+      "Inter Miami",
+      "Al-Hilal"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Lionel Messi plays for Inter Miami in MLS, having joined in 2023."
+  },
+  {
+    "id": "a98fa74b-dc93-4cae-a4cd-c0dabf52bd71",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "What is the oldest football club in the world?",
+    "options": [
+      "Notts County",
+      "Sheffield FC",
+      "Stoke City",
+      "Queen's Park"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Sheffield FC, founded in 1857, is recognized by FIFA as the oldest football club in the world."
+  },
+  {
+    "id": "bb36ff3d-f6b7-4661-88f5-133d6297c759",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "What is the capacity of Camp Nou?",
+    "options": [
+      "80,000",
+      "85,000",
+      "99,354",
+      "105,000"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Camp Nou has a capacity of 99,354, making it the largest stadium in Europe."
+  },
+  {
+    "id": "c0ec5b9f-45b6-403c-b7fe-3927fdd78b3f",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which club has won the most FA Cup titles?",
+    "options": [
+      "Manchester United",
+      "Liverpool",
+      "Chelsea",
+      "Arsenal"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Arsenal has won the FA Cup a record 14 times."
+  },
+  {
+    "id": "c7f521b8-6567-4882-9278-d35907f53e5d",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which Mexican club has won the most Liga MX titles?",
+    "options": [
+      "Chivas",
+      "América",
+      "Cruz Azul",
+      "Pumas"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Club América has won the most Liga MX titles in Mexican football history."
+  },
+  {
+    "id": "cb7fd3a7-a611-48ba-a620-58533fd55638",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which South American club has won the most Copa Libertadores titles?",
+    "options": [
+      "Boca Juniors",
+      "Santos",
+      "Peñarol",
+      "Independiente"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Club Atlético Independiente has won the Copa Libertadores a record 7 times."
+  },
+  {
+    "id": "ce061486-9d71-4387-86a6-20fa9c4a8fe0",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "El Clásico is a match between which two clubs?",
+    "options": [
+      "AC Milan vs Inter Milan",
+      "Liverpool vs Everton",
+      "Real Madrid vs Barcelona",
+      "Arsenal vs Tottenham"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "El Clásico is the famous rivalry match between Real Madrid and FC Barcelona."
+  },
+  {
+    "id": "ce238f54-e36f-4a75-a8c9-f72b3e20c6ad",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which club is known as \"The Red Devils\"?",
+    "options": [
+      "Liverpool",
+      "Arsenal",
+      "Manchester United",
+      "AC Milan"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Manchester United is nicknamed \"The Red Devils\", a name adopted in the 1960s."
+  },
+  {
+    "id": "d424c09b-6800-45b1-8095-2a366db0b7b5",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which German club has won the most Bundesliga titles?",
+    "options": [
+      "Borussia Dortmund",
+      "Bayer Leverkusen",
+      "Bayern Munich",
+      "Schalke 04"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Bayern Munich has won over 30 Bundesliga titles, far more than any other German club."
+  },
+  {
+    "id": "d98ee267-2ff6-4bfd-956b-28dd86260775",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "What is FC Barcelona's famous motto?",
+    "options": [
+      "Hala Madrid",
+      "Més que un club",
+      "You'll Never Walk Alone",
+      "Forza"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "FC Barcelona's motto is \"Més que un club\" (More than a club)."
+  },
+  {
+    "id": "dd6e2851-3510-4e64-a054-447a15e7f216",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which Turkish club has won the most Süper Lig titles?",
+    "options": [
+      "Beşiktaş",
+      "Fenerbahçe",
+      "Trabzonspor",
+      "Galatasaray"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Galatasaray has won the most Turkish Süper Lig titles."
+  },
+  {
+    "id": "e4e7cd83-2e03-4609-ade4-fd76bec4b428",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "What is PSG short for?",
+    "options": [
+      "Paris Saint-Georges",
+      "Paris Saint-Germain",
+      "Paris Sporting Group",
+      "Paris Soccer Guild"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "PSG stands for Paris Saint-Germain Football Club, founded in 1970."
+  },
+  {
+    "id": "e98d650e-5641-427f-853a-6a94a974f0cb",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Napoli plays in which Italian city?",
+    "options": [
+      "Rome",
+      "Milan",
+      "Naples",
+      "Turin"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "SSC Napoli is based in Naples (Napoli in Italian), southern Italy."
+  },
+  {
+    "id": "e9d53ca9-f157-4b4e-ace5-c9a56b703c76",
+    "category": "team",
+    "difficulty": "medium",
+    "question_text": "Which club plays at the Allianz Arena?",
+    "options": [
+      "Borussia Dortmund",
+      "RB Leipzig",
+      "Bayern Munich",
+      "Bayer Leverkusen"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Bayern Munich plays at the Allianz Arena, which opened in 2005 with a capacity of 75,000."
+  },
+  {
+    "id": "f3eee2ba-5056-4273-839e-ba9fd0e232ea",
+    "category": "team",
+    "difficulty": "hard",
+    "question_text": "Which club became the first from the former Soviet Union to win a European trophy?",
+    "options": [
+      "Dynamo Kyiv",
+      "Spartak Moscow",
+      "Dynamo Tbilisi",
+      "CSKA Moscow"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Dynamo Kyiv won the Cup Winners' Cup in 1975, the first Soviet club to win a European trophy."
+  },
+  {
+    "id": "fa4091b0-a441-4520-9c97-2954400440ac",
+    "category": "team",
+    "difficulty": "easy",
+    "question_text": "Which African nation reached the semifinal of the 2022 World Cup — a first for an African team?",
+    "options": [
+      "Nigeria",
+      "Senegal",
+      "Morocco",
+      "Egypt"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Morocco became the first African nation to reach a World Cup semifinal, defeating Portugal in the quarterfinals."
+  },
+  {
+    "id": "144a8ce4-b99d-4171-b1b1-a91ac125f182",
+    "category": "tournament",
+    "difficulty": "medium",
+    "question_text": "What is the maximum number of teams that can qualify for the FIFA World Cup 2026?",
+    "options": [
+      "32",
+      "40",
+      "48",
+      "64"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "FIFA expanded the World Cup to 48 teams starting from the 2026 tournament, co-hosted by USA, Canada, and Mexico."
+  },
+  {
+    "id": "1d2057ef-fae5-4cb5-9403-043aef83b8a8",
+    "category": "tournament",
+    "difficulty": "hard",
+    "question_text": "How many total goals were scored in the 2022 FIFA World Cup in Qatar?",
+    "options": [
+      "163",
+      "172",
+      "185",
+      "200"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "172 goals were scored across 64 matches at the 2022 World Cup — an average of 2.69 per game."
+  },
+  {
+    "id": "0284e29b-ca24-499e-b8c0-5f820951abce",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Who won the 2022 FIFA World Cup in Qatar?",
+    "options": [
+      "France",
+      "Brazil",
+      "Argentina",
+      "Croatia"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Argentina won the 2022 World Cup, defeating France in a penalty shootout after a 3-3 draw."
+  },
+  {
+    "id": "03623090-3214-4d3d-abe9-5ba0c17d2973",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which country won back-to-back World Cups in 1958 and 1962?",
+    "options": [
+      "Germany",
+      "Italy",
+      "Argentina",
+      "Brazil"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Brazil won consecutive World Cups in 1958 (Sweden) and 1962 (Chile)."
+  },
+  {
+    "id": "03a58c0a-606d-4dd2-976f-1b7f69815509",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which continent has never had a World Cup winner?",
+    "options": [
+      "Africa",
+      "Asia",
+      "North America",
+      "All of the above"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "No team from Africa, Asia, or North America has ever won the World Cup. Winners have only come from Europe and South America."
+  },
+  {
+    "id": "07617164-fe0d-4c8f-b06f-27d720b02c6c",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which goalkeeper has kept the most clean sheets in World Cup history?",
+    "options": [
+      "Manuel Neuer",
+      "Fabien Barthez",
+      "Peter Shilton",
+      "Gianluigi Buffon"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Fabien Barthez holds the record with 10 clean sheets across the 1998 and 2006 World Cups."
+  },
+  {
+    "id": "09119fee-ab8c-4eec-9c79-f080294fdd6b",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which player scored the fastest hat-trick in World Cup history?",
+    "options": [
+      "Pelé",
+      "László Kiss",
+      "Fabienne Humm",
+      "Hakan Şükür"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "László Kiss scored a hat-trick in 7 minutes against El Salvador in the 1982 World Cup."
+  },
+  {
+    "id": "0cd56f55-6256-4df8-a1f6-5ebbde69ba65",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "How many teams will participate in the 2026 World Cup?",
+    "options": [
+      "32",
+      "40",
+      "48",
+      "64"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The 2026 World Cup will be the first to feature 48 teams, expanded from the traditional 32."
+  },
+  {
+    "id": "0d607c8a-97f9-4518-a241-7ebb7fa1624d",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "In which year did Spain win their first World Cup?",
+    "options": [
+      "2006",
+      "2010",
+      "2014",
+      "2002"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Spain won their first and only World Cup in 2010 in South Africa, defeating the Netherlands 1-0 in the final."
+  },
+  {
+    "id": "16dad224-1d78-4012-91b0-e4d979cd464b",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Who scored the fastest goal in World Cup history?",
+    "options": [
+      "Clint Dempsey",
+      "Hakan Şükür",
+      "Pelé",
+      "Ronaldo"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Hakan Şükür scored just 11 seconds into the 2002 World Cup third-place match against South Korea."
+  },
+  {
+    "id": "176985d8-eae2-416a-9a7e-0a28326c6fc2",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Who won the Golden Ball at the 2022 World Cup?",
+    "options": [
+      "Kylian Mbappé",
+      "Lionel Messi",
+      "Luka Modrić",
+      "Emi Martínez"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Lionel Messi won the Golden Ball as the best player of the 2022 World Cup in Qatar."
+  },
+  {
+    "id": "17f5ee6c-7b88-4987-90c7-2420a7a2fe7c",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "What was the \"Maracanazo\"?",
+    "options": [
+      "Brazil's 1970 victory",
+      "Uruguay beating Brazil in the 1950 final",
+      "Argentina's 1978 win",
+      "Italy's 1934 triumph"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The Maracanazo refers to Uruguay's shock 2-1 victory over Brazil in the decisive 1950 World Cup match at the Maracanã."
+  },
+  {
+    "id": "1a081be2-3cac-47d5-9f2b-9fb795b5ec97",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Lionel Messi plays for which national team?",
+    "options": [
+      "Brazil",
+      "Spain",
+      "Argentina",
+      "Portugal"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Lionel Messi represents Argentina and captained them to World Cup glory in 2022."
+  },
+  {
+    "id": "1ba5c409-38e8-473c-a7a7-43f159459f5d",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which player was sent off in the 2006 World Cup Final for a headbutt?",
+    "options": [
+      "Thierry Henry",
+      "Marco Materazzi",
+      "Zinedine Zidane",
+      "Gennaro Gattuso"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Zinedine Zidane was red-carded for headbutting Marco Materazzi in the 2006 World Cup Final."
+  },
+  {
+    "id": "1f79c323-4648-4e1a-ae42-a3a25a07fda3",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which country hosted the first FIFA World Cup in 1930?",
+    "options": [
+      "Brazil",
+      "Uruguay",
+      "Italy",
+      "France"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Uruguay hosted and won the inaugural FIFA World Cup in 1930."
+  },
+  {
+    "id": "273e484c-2052-4cf7-91dd-7ccbf21ee409",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Which World Cup match is known as the \"Game of the Century\"?",
+    "options": [
+      "Brazil vs Italy 1970",
+      "Italy vs Germany 1970",
+      "Argentina vs England 1986",
+      "Germany vs Brazil 2014"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 1970 World Cup semi-final between Italy and West Germany (4-3) is known as the \"Game of the Century\"."
+  },
+  {
+    "id": "31ce6c4b-0002-4adf-ac30-15345f37f184",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which team holds the record for the largest margin of victory in a World Cup match?",
+    "options": [
+      "Germany",
+      "Hungary",
+      "Australia",
+      "Brazil"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Australia beat American Samoa 31-0 in a 2001 World Cup qualifier, the largest margin in FIFA history."
+  },
+  {
+    "id": "3d9e31e2-20b2-4d42-adb6-fe1222cc33ad",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Which was the first Asian country to reach the World Cup semi-finals?",
+    "options": [
+      "Japan",
+      "South Korea",
+      "Iran",
+      "Saudi Arabia"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "South Korea became the first Asian team to reach the semi-finals at the 2002 World Cup as co-hosts."
+  },
+  {
+    "id": "3e9f1f87-c450-4c9e-8253-5d563be023d8",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which World Cup final had the highest number of goals scored?",
+    "options": [
+      "1958 (Brazil vs Sweden)",
+      "1966 (England vs West Germany)",
+      "2022 (Argentina vs France)",
+      "1954 (West Germany vs Hungary)"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The 1958 World Cup Final between Brazil and Sweden (5-2) produced 7 goals, the most in any World Cup Final."
+  },
+  {
+    "id": "453b15c7-ca4d-47ce-8336-2e6752c02823",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "What was the official match ball of the 2022 World Cup called?",
+    "options": [
+      "Brazuca",
+      "Telstar",
+      "Al Rihla",
+      "Jabulani"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The official ball of the 2022 World Cup was called \"Al Rihla\", meaning \"The Journey\" in Arabic."
+  },
+  {
+    "id": "4eab3b95-2c6c-433c-a0db-deab071f21dc",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which country won the first World Cup to use a penalty shootout in the final?",
+    "options": [
+      "Argentina 1978",
+      "Brazil 1994",
+      "Italy 2006",
+      "Argentina 2022"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Brazil won the 1994 World Cup Final against Italy in the first-ever penalty shootout in a World Cup Final."
+  },
+  {
+    "id": "50bb8083-568e-46e1-8238-42bc9351f8fe",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Which country has qualified for every single World Cup tournament?",
+    "options": [
+      "Germany",
+      "Argentina",
+      "Brazil",
+      "Italy"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Brazil is the only country to have qualified for and played in every World Cup since 1930."
+  },
+  {
+    "id": "5a5c88d0-dff0-4f7e-bb2c-6674abd101d2",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Who scored the fastest hat-trick in World Cup history?",
+    "options": [
+      "Gerd Müller",
+      "László Kiss",
+      "Cristiano Ronaldo",
+      "Miroslav Klose"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "László Kiss of Hungary scored a hat-trick in 7 minutes against El Salvador at the 1982 World Cup."
+  },
+  {
+    "id": "61132693-e36c-454a-b7e2-151f09e62be9",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which country won the 2014 World Cup held in Brazil?",
+    "options": [
+      "Brazil",
+      "Argentina",
+      "Germany",
+      "Netherlands"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Germany won the 2014 World Cup in Brazil, beating Argentina 1-0 in extra time with a goal by Mario Götze."
+  },
+  {
+    "id": "6669182a-3956-4f5d-924b-08abbabee8ec",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "What color is the FIFA World Cup trophy?",
+    "options": [
+      "Silver",
+      "Bronze",
+      "Gold",
+      "Platinum"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The FIFA World Cup Trophy is made of 18-karat gold and stands 36.8 cm tall."
+  },
+  {
+    "id": "6aafea27-5da8-4f58-83f8-2de07b3d82a7",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "How many FIFA World Cup tournaments have been held as of 2022?",
+    "options": [
+      "20",
+      "22",
+      "24",
+      "18"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "22 FIFA World Cup tournaments have been held from 1930 to 2022."
+  },
+  {
+    "id": "7673beee-fc85-44e1-9969-2b484391fda3",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Which player has received the most red cards in World Cup history?",
+    "options": [
+      "Zinedine Zidane",
+      "Rigobert Song",
+      "Cameroon's entire 1998 squad",
+      "None — it's a tie"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Rigobert Song is the only player to be sent off in two different World Cups (1994 and 1998)."
+  },
+  {
+    "id": "76b4b0ca-11ed-4cda-8b5b-34a0cadad230",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which team was eliminated from the 2014 World Cup after losing 7-1 to Germany?",
+    "options": [
+      "Argentina",
+      "Spain",
+      "Brazil",
+      "Netherlands"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Brazil suffered a historic 7-1 defeat to Germany in the 2014 World Cup semi-final, known as the \"Mineirazo\"."
+  },
+  {
+    "id": "7902a814-f4ce-4690-abe7-03d208082b15",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which South American country has won two World Cups?",
+    "options": [
+      "Colombia",
+      "Chile",
+      "Argentina",
+      "Uruguay"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Both Argentina (1978, 1986, 2022) and Uruguay (1930, 1950) have won multiple World Cups, but Uruguay won exactly two."
+  },
+  {
+    "id": "86930654-e984-43de-8355-29f3e104b045",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which player scored the \"Hand of God\" goal?",
+    "options": [
+      "Pelé",
+      "Diego Maradona",
+      "Zinedine Zidane",
+      "Ronaldo"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Diego Maradona scored the infamous \"Hand of God\" goal against England in the 1986 World Cup quarter-final."
+  },
+  {
+    "id": "87d4e1d0-7004-40c1-8b88-f4c332b80dc0",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which country has won the most FIFA World Cup titles?",
+    "options": [
+      "Germany",
+      "Argentina",
+      "Brazil",
+      "Italy"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Brazil has won the FIFA World Cup a record 5 times (1958, 1962, 1970, 1994, 2002)."
+  },
+  {
+    "id": "8b3f53e5-f70b-4f0e-96e6-6c8abc8a6acc",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "What is the name of the World Cup trophy?",
+    "options": [
+      "Jules Rimet Trophy",
+      "FIFA World Cup Trophy",
+      "Golden Globe",
+      "Victory Cup"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The current trophy is called the FIFA World Cup Trophy, introduced in 1974. The original was the Jules Rimet Trophy."
+  },
+  {
+    "id": "8c748ccc-69c4-43db-855c-d5ca91125b7f",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "How often is the FIFA World Cup held?",
+    "options": [
+      "Every 2 years",
+      "Every 3 years",
+      "Every 4 years",
+      "Every 5 years"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The FIFA World Cup is held every 4 years since its inception in 1930."
+  },
+  {
+    "id": "941ad84a-e9eb-4f62-80d3-c6a6c1bd7eba",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which African team first reached the World Cup quarter-finals?",
+    "options": [
+      "Nigeria",
+      "Ghana",
+      "Cameroon",
+      "Senegal"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Cameroon became the first African team to reach the World Cup quarter-finals in 1990 in Italy."
+  },
+  {
+    "id": "9a3927a9-b42b-4979-b716-d5c048b8a7ce",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "What is the record for most goals scored by one team in a single World Cup match?",
+    "options": [
+      "7",
+      "9",
+      "10",
+      "12"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Hungary beat El Salvador 10-1 in the 1982 World Cup, scoring 10 goals in a single match."
+  },
+  {
+    "id": "9fbd0502-6fd7-4dc1-8fbe-353165dac793",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Just Fontaine scored 13 goals in the 1958 World Cup. How many matches did he play?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Just Fontaine scored his record 13 goals in just 6 matches at the 1958 World Cup in Sweden."
+  },
+  {
+    "id": "a0cc07ae-be10-4899-9b1f-2ce528396ce8",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "How many World Cups were cancelled due to World War II?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Two World Cups were cancelled: 1942 and 1946, due to World War II."
+  },
+  {
+    "id": "aaf246f4-f664-4f41-8143-aed65b2b0331",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which team won the 2018 World Cup in Russia?",
+    "options": [
+      "Croatia",
+      "Belgium",
+      "France",
+      "England"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "France won the 2018 World Cup, defeating Croatia 4-2 in the final."
+  },
+  {
+    "id": "accc9f8b-6032-4b03-89b1-0dd4b7ac8f59",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Who is the oldest player to score in a World Cup match?",
+    "options": [
+      "Roger Milla",
+      "Miroslav Klose",
+      "Pelé",
+      "Obdulio Varela"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "Roger Milla scored against Russia in the 1994 World Cup at age 42 years and 39 days."
+  },
+  {
+    "id": "b08eb9ec-a82f-4511-a38c-bbe9123d28f8",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which was the first World Cup to use VAR (Video Assistant Referee)?",
+    "options": [
+      "2014 Brazil",
+      "2018 Russia",
+      "2022 Qatar",
+      "2010 South Africa"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 2018 World Cup in Russia was the first to implement VAR technology."
+  },
+  {
+    "id": "b0fc071a-0025-477b-afdc-4b98c30676fa",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which country hosted the 2010 World Cup, the first on African soil?",
+    "options": [
+      "Nigeria",
+      "Egypt",
+      "Morocco",
+      "South Africa"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "South Africa hosted the 2010 World Cup, making it the first African nation to host the tournament."
+  },
+  {
+    "id": "b36b358d-e897-47ee-b21e-1f9f67cec146",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which player has appeared in the most World Cup tournaments?",
+    "options": [
+      "Lionel Messi",
+      "Cristiano Ronaldo",
+      "Lothar Matthäus",
+      "Antonio Carbajal"
+    ],
+    "correct_answer_index": 3,
+    "explanation": "Antonio Carbajal and Lothar Matthäus both appeared in 5 World Cup tournaments."
+  },
+  {
+    "id": "b5a2f1f7-3940-4b3b-b980-f9b8c392f72c",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "In which year did the World Cup expand from 16 to 24 teams?",
+    "options": [
+      "1978",
+      "1982",
+      "1986",
+      "1990"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 1982 World Cup in Spain was the first to feature 24 teams, expanded from 16."
+  },
+  {
+    "id": "b5f312fa-221d-465c-8783-d5b95f77bc53",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "How many players are on each team during a World Cup match?",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Each team fields 11 players on the pitch during a match, including the goalkeeper."
+  },
+  {
+    "id": "b7e2f666-d48e-4560-ae7c-00085919a0fc",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Which World Cup saw the \"Disgrace of Gijón\"?",
+    "options": [
+      "1978 Argentina",
+      "1982 Spain",
+      "1986 Mexico",
+      "1990 Italy"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 1982 World Cup match between West Germany and Austria is known as the \"Disgrace of Gijón\" due to apparent match-fixing."
+  },
+  {
+    "id": "bf9b2939-e8ad-4c08-9c5a-34f99c351264",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "What was unique about the 1950 World Cup format?",
+    "options": [
+      "No final match was played",
+      "It had 13 teams",
+      "Only European teams participated",
+      "It was played in winter"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The 1950 World Cup used a final round-robin group instead of a knockout final. Uruguay topped the group to win."
+  },
+  {
+    "id": "c4534806-97e1-4945-a23f-7382df10b70a",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which city will host the 2026 World Cup Final?",
+    "options": [
+      "New York",
+      "Los Angeles",
+      "Mexico City",
+      "Toronto"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "MetLife Stadium in East Rutherford, New Jersey (New York metro area) will host the 2026 World Cup Final."
+  },
+  {
+    "id": "c81b42f3-96f0-46ce-a52e-f670664ef89e",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which player has scored the most goals in World Cup history?",
+    "options": [
+      "Ronaldo",
+      "Pelé",
+      "Miroslav Klose",
+      "Just Fontaine"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Miroslav Klose holds the record with 16 World Cup goals scored across four tournaments."
+  },
+  {
+    "id": "d05bd895-49b3-4ae6-ab85-bd6c375e4fb0",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Which World Cup introduced the golden goal rule?",
+    "options": [
+      "1994 USA",
+      "1998 France",
+      "2002 Korea/Japan",
+      "It was never used"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The golden goal (sudden death in extra time) was first used at the 1998 World Cup. Laurent Blanc scored the first one."
+  },
+  {
+    "id": "d0eebd36-f47e-4c6e-9465-0bb596303e35",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Which country has hosted the FIFA World Cup the most times?",
+    "options": [
+      "Brazil",
+      "Italy",
+      "Mexico",
+      "France"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Mexico has hosted twice (1970, 1986) and will co-host in 2026 for a record third time."
+  },
+  {
+    "id": "de7b9bd6-cad6-4acd-88c3-0e703a314811",
+    "category": "world_cup",
+    "difficulty": "hard",
+    "question_text": "Which country hosted the World Cup despite not qualifying as a team in the previous edition?",
+    "options": [
+      "South Africa 2010",
+      "Qatar 2022",
+      "USA 1994",
+      "South Korea 2002"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The USA hosted the 1994 World Cup despite not qualifying for the 1990 tournament in Italy."
+  },
+  {
+    "id": "e1a6fb61-8fcb-4013-afb5-73c790410813",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "How many countries will host the 2026 FIFA World Cup?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "The 2026 World Cup will be hosted by three countries: USA, Mexico, and Canada."
+  },
+  {
+    "id": "e3eef198-beb4-4ac3-b1cf-d54b3f006cb5",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which country will co-host the 2026 FIFA World Cup along with the USA and Mexico?",
+    "options": [
+      "Colombia",
+      "Canada",
+      "Brazil",
+      "Argentina"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "The 2026 World Cup will be co-hosted by the USA, Canada, and Mexico."
+  },
+  {
+    "id": "e509cde4-cda3-46cf-9987-ceedb6db7aac",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "What was the highest-scoring World Cup final?",
+    "options": [
+      "Brazil 5-2 Sweden 1958",
+      "England 4-2 Germany 1966",
+      "France 4-2 Croatia 2018",
+      "Argentina 3-3 France 2022"
+    ],
+    "correct_answer_index": 0,
+    "explanation": "The 1958 final (Brazil 5-2 Sweden) had 7 goals, the most in any World Cup Final. The 2022 final had 6 goals (3-3 AET)."
+  },
+  {
+    "id": "ff3686d6-95e9-415f-86fe-3dd8814288a6",
+    "category": "world_cup",
+    "difficulty": "medium",
+    "question_text": "Who was the top scorer at the 2022 World Cup?",
+    "options": [
+      "Lionel Messi",
+      "Kylian Mbappé",
+      "Olivier Giroud",
+      "Julián Álvarez"
+    ],
+    "correct_answer_index": 1,
+    "explanation": "Kylian Mbappé won the Golden Boot with 8 goals at the 2022 World Cup, including a hat-trick in the final."
+  },
+  {
+    "id": "ffb38ddb-811c-4f32-8bf1-f6bdfc3821bc",
+    "category": "world_cup",
+    "difficulty": "easy",
+    "question_text": "Which European country has won the World Cup four times?",
+    "options": [
+      "France",
+      "Spain",
+      "Germany",
+      "England"
+    ],
+    "correct_answer_index": 2,
+    "explanation": "Germany has won the World Cup four times: 1954, 1974, 1990, and 2014."
+  }
+]

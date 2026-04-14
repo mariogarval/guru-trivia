@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Users, Clock, Zap, Calendar } from "lucide-react";
+import { Users, Clock, Zap, Calendar, Target } from "lucide-react";
 import type { Match } from "@/types";
 
 interface MatchCardProps {
@@ -55,14 +55,19 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   if (match.home_team_crest) playParams.set("homeCrest", match.home_team_crest);
   if (match.away_team_crest) playParams.set("awayCrest", match.away_team_crest);
 
+  // Build predict link
+  const predictParams = new URLSearchParams();
+  predictParams.set("home", match.home_team);
+  predictParams.set("away", match.away_team);
+  if (match.league) predictParams.set("league", match.league);
+
   return (
-    <Link
-      href={`/play?${playParams}`}
+    <div
       className={[
-        "block rounded-2xl p-4 transition-all active:scale-[0.98]",
+        "block rounded-2xl p-4 transition-all",
         isLive
-          ? "bg-[#ff2047]/[0.06] border border-[#ff2047]/40 hover:border-[#ff2047]/70 hover:bg-[#ff2047]/[0.09]"
-          : "bg-white/[0.03] border border-[rgba(214,235,253,0.19)] hover:border-[#11ff99]/30",
+          ? "bg-[#ff2047]/[0.06] border border-[#ff2047]/40"
+          : "bg-white/[0.03] border border-[rgba(214,235,253,0.19)]",
       ].join(" ")}
     >
       {/* League + Status row */}
@@ -150,21 +155,41 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
         </div>
       </div>
 
-      {/* CTA — visually distinct for live vs pre-game */}
-      <div className={`mt-3 pt-3 border-t ${isLive ? "border-[#ff2047]/20" : "border-[rgba(214,235,253,0.10)]"}`}>
-        {isLive ? (
-          <div className="w-full flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold text-sm py-2.5 rounded-xl">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
-            Play Live Trivia
-            <Zap size={13} className="fill-white" />
-          </div>
-        ) : (
-          <div className="w-full flex items-center justify-center gap-2 bg-[#11ff99]/10 border border-[#11ff99]/25 text-[#11ff99] font-bold text-sm py-2.5 rounded-xl">
-            <Calendar size={13} />
-            Play Trivia
-          </div>
+      {/* CTAs */}
+      <div className={`mt-3 pt-3 border-t flex gap-2 ${isLive ? "border-[#ff2047]/20" : "border-[rgba(214,235,253,0.10)]"}`}>
+        {/* Predict button — primary CTA for pre-game + live */}
+        {!isFinished && (
+          <Link
+            href={`/predict/${match.id}?${predictParams}`}
+            className="flex-1 flex items-center justify-center gap-1.5 bg-[rgba(17,255,153,0.08)] border border-[rgba(17,255,153,0.25)] text-[#11ff99] font-bold text-sm py-2.5 rounded-xl hover:bg-[rgba(17,255,153,0.14)] transition-colors active:scale-[0.97]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Target size={13} />
+            Predict
+          </Link>
         )}
+        {/* Trivia button */}
+        <Link
+          href={`/play?${playParams}`}
+          className={[
+            "flex items-center justify-center gap-1.5 font-bold text-sm py-2.5 rounded-xl transition-colors active:scale-[0.97]",
+            isFinished
+              ? "flex-1 bg-white/[0.04] border border-[rgba(214,235,253,0.12)] text-[#a1a4a5] hover:text-[#f0f0f0]"
+              : "px-3 bg-white/[0.04] border border-[rgba(214,235,253,0.12)] text-[#a1a4a5] hover:text-[#f0f0f0]",
+          ].join(" ")}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {isLive ? (
+            <>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
+              <Zap size={12} />
+            </>
+          ) : (
+            <Calendar size={13} />
+          )}
+          {isFinished ? "Play Trivia" : "Trivia"}
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }

@@ -1,0 +1,2560 @@
+=== Q1 [champions_league] [medium] ID: 011963a1-e1fd-449b-9ea6-053dabbeaa07 ===
+Q: What is the record for most goals in a single Champions League match?
+  0: 10
+  1: 12  ✅ CORRECT
+  2: 14
+  3: 16
+Explanation: Borussia Dortmund 8-4 Legia Warsaw in 2016 produced 12 goals, a Champions League single-match record.
+
+=== Q2 [champions_league] [medium] ID: 019f7052-d90a-4856-8118-75370c2535fc ===
+Q: Which manager has won the most Champions League titles?
+  0: Pep Guardiola
+  1: Sir Alex Ferguson
+  2: Carlo Ancelotti  ✅ CORRECT
+  3: Zinedine Zidane
+Explanation: Carlo Ancelotti has won the Champions League 5 times as a manager (2003, 2007, 2014, 2022, 2024).
+
+=== Q3 [champions_league] [hard] ID: 0a3c8d43-a472-4af5-92db-cc92d04050b4 ===
+Q: Which player has made the most Champions League appearances?
+  0: Cristiano Ronaldo  ✅ CORRECT
+  1: Iker Casillas
+  2: Xavi
+  3: Lionel Messi
+Explanation: Cristiano Ronaldo holds the record for most Champions League appearances with over 180 matches.
+
+=== Q4 [champions_league] [easy] ID: 0d5ffe94-cac2-4fda-90b1-13181ef96a48 ===
+Q: Which club has won the most UEFA Champions League titles?
+  0: Barcelona
+  1: AC Milan
+  2: Real Madrid  ✅ CORRECT
+  3: Bayern Munich
+Explanation: Real Madrid has won a record 15 Champions League/European Cup titles.
+
+=== Q5 [champions_league] [hard] ID: 0f9623f2-347d-437c-af79-85de79ba3286 ===
+Q: Which was the first English club to win the European Cup?
+  0: Liverpool
+  1: Manchester United  ✅ CORRECT
+  2: Nottingham Forest
+  3: Celtic
+Explanation: Manchester United became the first English club to win the European Cup in 1968, beating Benfica 4-1 at Wembley.
+
+=== Q6 [champions_league] [hard] ID: 1ad836fa-061c-49cd-a3ac-51c6d99af96c ===
+Q: Which club is the only one to win the Champions League without losing a single match in the campaign?
+  0: AC Milan 1989  ✅ CORRECT
+  1: Barcelona 2011
+  2: Real Madrid 2017
+  3: Arsenal has never done it
+Explanation: AC Milan went through the entire 1988-89 European Cup campaign unbeaten, winning all their matches.
+
+=== Q7 [champions_league] [hard] ID: 2a6e74e5-1f98-44fd-a1f4-ee9f2f875dce ===
+Q: In which season was the away goals rule abolished in the Champions League?
+  0: 2019-20
+  1: 2020-21
+  2: 2021-22  ✅ CORRECT
+  3: 2022-23
+Explanation: UEFA abolished the away goals rule starting from the 2021-22 season of all European competitions.
+
+=== Q8 [champions_league] [medium] ID: 2d3655fd-1281-49ba-96d3-2e9422f2d262 ===
+Q: Which club completed a historic treble including the Champions League in 2009?
+  0: Manchester United
+  1: Real Madrid
+  2: Barcelona  ✅ CORRECT
+  3: Bayern Munich
+Explanation: Barcelona won La Liga, Copa del Rey, and the Champions League in 2008-09 under Pep Guardiola.
+
+=== Q9 [champions_league] [hard] ID: 364919b5-8249-4e34-90af-0c98418d8b72 ===
+Q: Who scored the winning goal in the 2005 Champions League final (the "Miracle of Istanbul")?
+  0: Nobody — Liverpool won on penalties  ✅ CORRECT
+  1: Steven Gerrard
+  2: Xabi Alonso
+  3: Vladimir Smicer
+Explanation: Liverpool came back from 3-0 down against AC Milan and won 3-2 on penalties. There was no single "winning goal."
+
+=== Q10 [champions_league] [hard] ID: 385d4349-124d-4eeb-aab0-59957c87a115 ===
+Q: What was the aggregate score when Liverpool beat AC Milan in the 2005 semi-final?
+  0: Liverpool didn't play Milan in the semi-final
+  1: 3-2
+  2: 4-3
+  3: Liverpool played Chelsea in the semis  ✅ CORRECT
+Explanation: Liverpool beat Chelsea 1-0 on aggregate in the 2005 semi-finals. They faced AC Milan in the final, not the semi-final.
+
+=== Q11 [champions_league] [medium] ID: 43f8cf97-740c-4a28-b74e-71d9820a4f99 ===
+Q: Which Dutch club won the European Cup three times in a row (1971-73)?
+  0: Feyenoord
+  1: PSV
+  2: Ajax  ✅ CORRECT
+  3: AZ Alkmaar
+Explanation: Ajax won three consecutive European Cups from 1971 to 1973 under coach Rinus Michels and then Stefan Kovács.
+
+=== Q12 [champions_league] [medium] ID: 452bffca-7e2f-4a33-b668-e7041ada1d75 ===
+Q: Which player scored twice in the 2018 Champions League Final?
+  0: Cristiano Ronaldo
+  1: Gareth Bale  ✅ CORRECT
+  2: Karim Benzema
+  3: Sadio Mané
+Explanation: Gareth Bale came off the bench and scored twice, including a spectacular bicycle kick, as Real Madrid beat Liverpool 3-1.
+
+=== Q13 [champions_league] [easy] ID: 45d15a62-3125-4792-9857-0ec702f5e9b5 ===
+Q: Which city hosted the 2023 Champions League Final?
+  0: London
+  1: Paris
+  2: Istanbul  ✅ CORRECT
+  3: Madrid
+Explanation: The 2023 Champions League Final was held at the Atatürk Olympic Stadium in Istanbul.
+
+=== Q14 [champions_league] [easy] ID: 542f6c99-c6c8-4c01-9677-1bbdbf87d613 ===
+Q: In which country is the Champions League final venue typically announced?
+  0: It rotates between countries  ✅ CORRECT
+  1: Always in Switzerland
+  2: Always in France
+  3: Always in England
+Explanation: The Champions League final is held at a different venue each year, rotating across UEFA member nations.
+
+=== Q15 [champions_league] [easy] ID: 59524024-7ed7-48f8-acc9-ad03a676dabf ===
+Q: Which country has produced the most Champions League winning clubs?
+  0: England  ✅ CORRECT
+  1: Italy
+  2: Spain
+  3: Germany
+Explanation: England has produced 6 different Champions League winners: Liverpool, Man United, Nottingham Forest, Aston Villa, Chelsea, and Man City — more than any other country.
+
+=== Q16 [champions_league] [medium] ID: 5c7894a0-ddea-44ec-8163-21ca21919fd1 ===
+Q: What is the record for most goals in a single Champions League season by one player?
+  0: 15
+  1: 17  ✅ CORRECT
+  2: 19
+  3: 21
+Explanation: Cristiano Ronaldo scored 17 goals in the 2013-14 Champions League season, a record.
+
+=== Q17 [champions_league] [hard] ID: 5ced4aca-1dd8-46da-88bf-ec1016afc4c9 ===
+Q: Which club was banned from the Champions League after winning it in 1993?
+  0: Marseille  ✅ CORRECT
+  1: AC Milan
+  2: Red Star Belgrade
+  3: Porto
+Explanation: Marseille was banned from defending their 1993 title due to a match-fixing scandal in Ligue 1.
+
+=== Q18 [champions_league] [hard] ID: 6c38a748-6830-4a1a-8fb1-9787deab3230 ===
+Q: In which year did the Champions League introduce a league phase format with 36 teams?
+  0: 2022-23
+  1: 2023-24
+  2: 2024-25  ✅ CORRECT
+  3: 2025-26
+Explanation: The 2024-25 season introduced the new Swiss-model league phase with 36 teams replacing the group stage.
+
+=== Q19 [champions_league] [medium] ID: 6f4df82d-d439-4cb9-b9d3-a616e820db23 ===
+Q: Who is the all-time top scorer in Champions League history?
+  0: Lionel Messi
+  1: Cristiano Ronaldo  ✅ CORRECT
+  2: Robert Lewandowski
+  3: Raúl
+Explanation: Cristiano Ronaldo holds the record with 140 Champions League goals.
+
+=== Q20 [champions_league] [hard] ID: 735874e3-26aa-4a8a-8ddb-cbd3a8a6cfda ===
+Q: Which was the last team to win the European Cup before it became the Champions League?
+  0: AC Milan
+  1: Marseille
+  2: Barcelona
+  3: Red Star Belgrade  ✅ CORRECT
+Explanation: Red Star Belgrade won the last European Cup in 1991, before the competition was rebranded in 1992.
+
+=== Q21 [champions_league] [hard] ID: 7e6315f9-fdf5-4bf3-9f11-28ac4ee6d368 ===
+Q: Which player scored a Champions League goal for 6 different clubs?
+  0: Zlatan Ibrahimović  ✅ CORRECT
+  1: Cristiano Ronaldo
+  2: Hernán Crespo
+  3: Nicolas Anelka
+Explanation: Zlatan Ibrahimović scored Champions League goals for Ajax, Juventus, Inter, Barcelona, AC Milan, and PSG.
+
+=== Q22 [champions_league] [easy] ID: 81ed6f20-4a80-4eea-8b78-9e32864ce768 ===
+Q: Which club did Pep Guardiola manage to win the 2011 Champions League?
+  0: Manchester City
+  1: Bayern Munich
+  2: Barcelona  ✅ CORRECT
+  3: Brescia
+Explanation: Pep Guardiola managed Barcelona to the Champions League title in 2011, beating Manchester United 3-1.
+
+=== Q23 [champions_league] [medium] ID: 853e71a2-fd59-4f38-af4a-51755dba3b95 ===
+Q: Which Scottish club won the European Cup in 1967?
+  0: Rangers
+  1: Celtic  ✅ CORRECT
+  2: Aberdeen
+  3: Dundee United
+Explanation: Celtic became the first British club to win the European Cup in 1967, known as the "Lisbon Lions".
+
+=== Q24 [champions_league] [medium] ID: 88e8094a-8642-45dc-b066-6b0bd930a04d ===
+Q: Which player scored the winning goal in the 1999 Champions League Final for Manchester United?
+  0: David Beckham
+  1: Teddy Sheringham
+  2: Ole Gunnar Solskjær  ✅ CORRECT
+  3: Ryan Giggs
+Explanation: Ole Gunnar Solskjær scored the dramatic injury-time winner against Bayern Munich in the 1999 final.
+
+=== Q25 [champions_league] [easy] ID: 894be506-cbfc-43ba-bec6-7419fb7c845f ===
+Q: Which German club won the Champions League in 2013?
+  0: Borussia Dortmund
+  1: Bayern Munich  ✅ CORRECT
+  2: Schalke 04
+  3: Bayer Leverkusen
+Explanation: Bayern Munich won the 2013 Champions League, beating Borussia Dortmund 2-1 at Wembley.
+
+=== Q26 [champions_league] [easy] ID: 8a282cfd-a14a-435b-ac9a-70c21eec424b ===
+Q: How many teams play in the Champions League group stage (pre-2024 format)?
+  0: 24
+  1: 32  ✅ CORRECT
+  2: 36
+  3: 40
+Explanation: The Champions League traditionally featured 32 teams in the group stage before the 2024-25 format change to 36.
+
+=== Q27 [champions_league] [medium] ID: 8ae6425f-841f-415f-8aef-f0de84ad5f40 ===
+Q: Which club won the Champions League as a wild card entry in 1991-92?
+  0: Red Star Belgrade
+  1: Marseille
+  2: Barcelona  ✅ CORRECT
+  3: Sampdoria
+Explanation: Barcelona won the 1992 Champions League (first under the new name), beating Sampdoria at Wembley.
+
+=== Q28 [champions_league] [medium] ID: 8cc52962-7ee5-4192-854b-86eb55238e49 ===
+Q: Which Portuguese club won the European Cup in 1961 and 1962?
+  0: Porto
+  1: Sporting CP
+  2: Benfica  ✅ CORRECT
+  3: Braga
+Explanation: Benfica won back-to-back European Cups in 1961 and 1962 under coach Béla Guttmann.
+
+=== Q29 [champions_league] [easy] ID: 8cddfa5e-5a8e-4e8d-ade6-95dee65cb203 ===
+Q: Which trophy do Champions League winners receive?
+  0: The Big Ears trophy  ✅ CORRECT
+  1: The Ballon d'Or
+  2: The Golden Boot
+  3: The Silver Star
+Explanation: The Champions League trophy is nicknamed "Big Ears" due to its large handles. Its official name is the European Champion Clubs' Cup.
+
+=== Q30 [champions_league] [hard] ID: 972d0c14-1c6b-4a63-8751-db31e6448f1c ===
+Q: What was the biggest comeback in Champions League history (aggregate)?
+  0: Barcelona 6-1 PSG 2017  ✅ CORRECT
+  1: Liverpool 4-0 Barcelona 2019
+  2: Manchester United 3-3 Juventus 1999
+  3: Deportivo 4-0 AC Milan 2004
+Explanation: Barcelona's 6-1 win over PSG in 2017 (6-5 aggregate after losing 4-0 away) is the biggest comeback.
+
+=== Q31 [champions_league] [medium] ID: 9c9f6521-561e-49cc-b761-36224e3777f2 ===
+Q: How many different clubs have won the Champions League/European Cup?
+  0: 15
+  1: 18
+  2: 22
+  3: 23  ✅ CORRECT
+Explanation: As of 2024, 23 different clubs have won the European Cup/Champions League.
+
+=== Q32 [champions_league] [medium] ID: a1b94f32-e897-4675-8c28-833f362d3df6 ===
+Q: Who scored the only goal in the 2023 Champions League Final?
+  0: Erling Haaland
+  1: Kevin De Bruyne
+  2: Rodri  ✅ CORRECT
+  3: Bernardo Silva
+Explanation: Rodri scored the only goal as Manchester City beat Inter Milan 1-0 in the 2023 final.
+
+=== Q33 [champions_league] [medium] ID: a6992d4f-632f-4594-b6a1-96935e42bd61 ===
+Q: Which team did Zinedine Zidane score his famous volley against in the 2002 final?
+  0: Manchester United
+  1: Liverpool
+  2: Bayer Leverkusen  ✅ CORRECT
+  3: AC Milan
+Explanation: Zidane scored his iconic volley against Bayer Leverkusen in the 2002 Champions League Final.
+
+=== Q34 [champions_league] [easy] ID: ac721930-8088-4fa8-812b-4b95d9a8b2c4 ===
+Q: Which English club won the Champions League in 2005 after being 3-0 down at half-time?
+  0: Manchester United
+  1: Chelsea
+  2: Liverpool  ✅ CORRECT
+  3: Arsenal
+Explanation: Liverpool came back from 3-0 down against AC Milan in the 2005 final in Istanbul, winning on penalties.
+
+=== Q35 [champions_league] [hard] ID: b0ae0515-faf8-4367-93da-981e25aad439 ===
+Q: Which goalkeeper has kept the most clean sheets in Champions League history?
+  0: Iker Casillas  ✅ CORRECT
+  1: Gianluigi Buffon
+  2: Manuel Neuer
+  3: Edwin van der Sar
+Explanation: Iker Casillas holds the record with 57 clean sheets in the Champions League.
+
+=== Q36 [champions_league] [medium] ID: b6de5e4d-6303-4dc9-b5fc-b6d385e1775c ===
+Q: How many Champions League titles does AC Milan have?
+  0: 5
+  1: 6
+  2: 7  ✅ CORRECT
+  3: 8
+Explanation: AC Milan has won the European Cup/Champions League 7 times.
+
+=== Q37 [champions_league] [medium] ID: bf4042ea-4219-48db-bff2-7155ec2fcd91 ===
+Q: Which team completed the treble (league, cup, Champions League) in 1999?
+  0: Bayern Munich
+  1: Barcelona
+  2: Manchester United  ✅ CORRECT
+  3: Juventus
+Explanation: Manchester United won the Premier League, FA Cup, and Champions League in 1999 under Sir Alex Ferguson.
+
+=== Q38 [champions_league] [medium] ID: bfbf634e-6e8b-4f6a-bf34-caf999ebd537 ===
+Q: Which club won the first-ever European Cup in 1956?
+  0: Benfica
+  1: AC Milan
+  2: Real Madrid  ✅ CORRECT
+  3: Barcelona
+Explanation: Real Madrid won the inaugural European Cup in 1956, beating Stade de Reims 4-3 in the final.
+
+=== Q39 [champions_league] [easy] ID: c1cae587-4d98-4647-b01c-3302bfc6c5d7 ===
+Q: Which Spanish club won 3 consecutive Champions League titles from 2016 to 2018?
+  0: Barcelona
+  1: Atlético Madrid
+  2: Real Madrid  ✅ CORRECT
+  3: Sevilla
+Explanation: Real Madrid won three consecutive Champions League titles in 2016, 2017, and 2018.
+
+=== Q40 [champions_league] [easy] ID: c230621a-547f-47bb-a5c0-6833d69c711d ===
+Q: What was the Champions League called before 1992?
+  0: UEFA Cup
+  1: European Cup  ✅ CORRECT
+  2: Cup Winners' Cup
+  3: Inter-Cities Fairs Cup
+Explanation: The competition was known as the European Cup from 1955 to 1992, when it was rebranded as the Champions League.
+
+=== Q41 [champions_league] [easy] ID: c5586663-31b0-4503-a991-a5790c03ef3e ===
+Q: What does UEFA stand for?
+  0: Union of European Football Associations  ✅ CORRECT
+  1: United European Football Alliance
+  2: Universal European Football Association
+  3: Union of Elite Football Authorities
+Explanation: UEFA stands for Union of European Football Associations, founded in 1954.
+
+=== Q42 [champions_league] [easy] ID: cc26f87c-ef98-4334-9596-d09f9946b619 ===
+Q: What is the Champions League anthem based on?
+  0: A Handel composition  ✅ CORRECT
+  1: A Beethoven symphony
+  2: A Mozart concerto
+  3: An original FIFA composition
+Explanation: The Champions League anthem is based on George Frideric Handel's "Zadok the Priest" coronation anthem.
+
+=== Q43 [champions_league] [easy] ID: d33fb27d-593d-4637-81d1-92063b7235ab ===
+Q: Which player has scored the most Champions League goals?
+  0: Lionel Messi
+  1: Raúl
+  2: Robert Lewandowski
+  3: Cristiano Ronaldo  ✅ CORRECT
+Explanation: Cristiano Ronaldo holds the record with 140 Champions League goals.
+
+=== Q44 [champions_league] [medium] ID: eab7fb1a-3e92-4adc-8098-8ffa4d2f3627 ===
+Q: Which English club won the Champions League for the first time in 2012?
+  0: Tottenham
+  1: Chelsea  ✅ CORRECT
+  2: Manchester City
+  3: Arsenal
+Explanation: Chelsea won their first Champions League in 2012, beating Bayern Munich on penalties in Munich.
+
+=== Q45 [champions_league] [medium] ID: f1a005a8-2385-48f9-9c9d-2d877defbf46 ===
+Q: Which club won the treble (league, cup, Champions League) in 2010?
+  0: Barcelona
+  1: Bayern Munich
+  2: Inter Milan  ✅ CORRECT
+  3: Manchester United
+Explanation: Inter Milan won the Serie A, Coppa Italia, and Champions League treble in 2009-10 under José Mourinho.
+
+=== Q46 [champions_league] [easy] ID: f935ad38-18c0-4851-818c-09df26a28e71 ===
+Q: Which color is predominantly associated with the Champions League branding?
+  0: Red
+  1: Gold
+  2: Blue  ✅ CORRECT
+  3: Green
+Explanation: The Champions League's visual identity is predominantly blue and white with silver starball motifs.
+
+=== Q47 [champions_league] [easy] ID: fa278d03-6668-4f05-b618-407eeb3bc1f3 ===
+Q: What shape are the stars on the Champions League logo?
+  0: 5-pointed
+  1: 6-pointed
+  2: 8-pointed  ✅ CORRECT
+  3: 4-pointed
+Explanation: The Champions League logo features 8-pointed stars arranged in a circle.
+
+=== Q48 [champions_league] [medium] ID: fa3c67bc-7663-41f1-8480-12f9b6588991 ===
+Q: Manchester City won their first Champions League in which year?
+  0: 2021
+  1: 2022
+  2: 2023  ✅ CORRECT
+  3: 2024
+Explanation: Manchester City won their first Champions League in 2023, beating Inter Milan 1-0 in Istanbul.
+
+=== Q49 [champions_league] [easy] ID: fb41e673-c82e-46c7-ab88-99b253add5b8 ===
+Q: In which year was the Champions League rebranded from the European Cup?
+  0: 1990
+  1: 1992  ✅ CORRECT
+  2: 1995
+  3: 1998
+Explanation: The competition was rebranded as the UEFA Champions League in the 1992-93 season.
+
+=== Q50 [champions_league] [easy] ID: fc25628e-f066-4e6f-bf94-c536bc3a13c6 ===
+Q: Which French club won the Champions League in 1993?
+  0: PSG
+  1: Lyon
+  2: Monaco
+  3: Marseille  ✅ CORRECT
+Explanation: Olympique de Marseille won the Champions League in 1993, the only French club to ever win it.
+
+=== Q51 [champions_league] [easy] ID: fdb1e881-9f7a-4b4d-a252-21e0ce89a4a6 ===
+Q: Which club has won the most UEFA Champions League titles?
+  0: AC Milan
+  1: Barcelona
+  2: Real Madrid  ✅ CORRECT
+  3: Bayern Munich
+Explanation: Real Madrid has won 15 Champions League/European Cup titles, more than any other club.
+
+=== Q52 [historical] [easy] ID: 0743ac4b-4a88-4f5e-a20c-dc13642c98db ===
+Q: What is an "own goal"?
+  0: A goal from outside the box
+  1: A goal scored into your own net  ✅ CORRECT
+  2: A goal from a free kick
+  3: A goal in extra time
+Explanation: An own goal occurs when a player accidentally scores into their own team's net, counting for the opposition.
+
+=== Q53 [historical] [easy] ID: 10466577-6432-4981-96a4-23a841102770 ===
+Q: What is the penalty spot distance from the goal line?
+  0: 10 meters
+  1: 11 meters  ✅ CORRECT
+  2: 12 meters
+  3: 15 meters
+Explanation: The penalty spot is 12 yards (approximately 11 meters or 10.97m) from the goal line.
+
+=== Q54 [historical] [hard] ID: 177025e1-7af0-444d-a226-82caac298c64 ===
+Q: What was the "Calciopoli" scandal?
+  0: A doping scandal in Serie A
+  1: A match-fixing scandal in Italian football  ✅ CORRECT
+  2: A financial fraud at FIFA
+  3: A referee bribery case in Spain
+Explanation: Calciopoli was a 2006 Italian football match-fixing scandal that resulted in Juventus being stripped of titles and relegated to Serie B.
+
+=== Q55 [historical] [medium] ID: 1c6582f2-526c-4ae2-8e85-9a7eb2762def ===
+Q: When was the first women's football World Cup held?
+  0: 1988
+  1: 1991  ✅ CORRECT
+  2: 1995
+  3: 1999
+Explanation: The first FIFA Women's World Cup was held in China in 1991, won by the United States.
+
+=== Q56 [historical] [easy] ID: 227a83d4-6e68-441e-8ee0-83ee5ed23baa ===
+Q: In which year was the first FIFA World Cup held?
+  0: 1926
+  1: 1930  ✅ CORRECT
+  2: 1934
+  3: 1938
+Explanation: The inaugural FIFA World Cup was held in Uruguay in 1930.
+
+=== Q57 [historical] [medium] ID: 23e92c06-7a6d-4a8e-aef6-23a426887932 ===
+Q: In which year did Germany win their 4th World Cup title?
+  0: 2006
+  1: 2010
+  2: 2014  ✅ CORRECT
+  3: 2018
+Explanation: Germany won their 4th World Cup in 2014, defeating Argentina 1-0 in the final in Brazil.
+
+=== Q58 [historical] [easy] ID: 2401a0c6-91a3-4159-87a7-d325bb15045f ===
+Q: Which country hosted the 2022 FIFA World Cup?
+  0: UAE
+  1: Saudi Arabia
+  2: Qatar  ✅ CORRECT
+  3: Bahrain
+Explanation: Qatar hosted the 2022 FIFA World Cup, the first in the Middle East.
+
+=== Q59 [historical] [medium] ID: 24255094-13a8-4efe-ac96-1f76075e66f1 ===
+Q: The "Treble" in English football refers to winning which three trophies?
+  0: Premier League, FA Cup, League Cup
+  1: Premier League, FA Cup, Champions League  ✅ CORRECT
+  2: Premier League, Champions League, League Cup
+  3: FA Cup, League Cup, Community Shield
+Explanation: The Treble refers to winning the Premier League, FA Cup, and UEFA Champions League in the same season. Manchester United achieved this in 1999.
+
+=== Q60 [historical] [hard] ID: 26543c5a-eb93-49d8-9e11-7413737be36f ===
+Q: The "Hand of God" incident occurred in which World Cup year?
+  0: 1982
+  1: 1986  ✅ CORRECT
+  2: 1990
+  3: 1994
+Explanation: Maradona's "Hand of God" goal occurred during the 1986 World Cup quarter-final between Argentina and England.
+
+=== Q61 [historical] [medium] ID: 27cb7aab-4dba-46e7-b6fb-9120170e905c ===
+Q: Which country hosted the first-ever international football match in 1872?
+  0: England
+  1: Scotland  ✅ CORRECT
+  2: Wales
+  3: Ireland
+Explanation: The first official international match was played between Scotland and England at Hamilton Crescent, Glasgow on November 30, 1872 (0-0 draw).
+
+=== Q62 [historical] [easy] ID: 2eebc02d-d39a-4304-9008-1194a7342d0e ===
+Q: What does "VAR" stand for in football?
+  0: Video Assist Replay
+  1: Video Assistant Referee  ✅ CORRECT
+  2: Virtual Analysis Review
+  3: Visual Aid Referee
+Explanation: VAR stands for Video Assistant Referee, introduced to help match officials with key decisions.
+
+=== Q63 [historical] [medium] ID: 37f2252e-a847-48ec-9f4d-34c0d82d304b ===
+Q: Which country has appeared in the most World Cup finals without winning?
+  0: Netherlands  ✅ CORRECT
+  1: Hungary
+  2: Czechoslovakia
+  3: Portugal
+Explanation: The Netherlands have reached 3 World Cup finals (1974, 1978, 2010) without winning.
+
+=== Q64 [historical] [easy] ID: 3cd52368-a609-41b1-8595-dbc24836d455 ===
+Q: What does FIFA stand for?
+  0: Football International Federation Association
+  1: Fédération Internationale de Football Association  ✅ CORRECT
+  2: Federal Institute of Football Athletics
+  3: First International Football Assembly
+Explanation: FIFA stands for Fédération Internationale de Football Association (International Federation of Association Football).
+
+=== Q65 [historical] [hard] ID: 3ddad81d-841d-432f-a965-13457df13232 ===
+Q: The Hillsborough disaster of 1989 led to what major change in English football?
+  0: Introduction of VAR
+  1: Conversion to all-seater stadiums  ✅ CORRECT
+  2: Banning of alcohol
+  3: Introduction of the Premier League
+Explanation: The Hillsborough disaster, which killed 97 Liverpool fans, led to the Taylor Report recommending all-seater stadiums in the top two divisions.
+
+=== Q66 [historical] [easy] ID: 4c8c3e52-e5e0-4f4d-a984-6386c29a281e ===
+Q: In which country was football (soccer) invented?
+  0: Brazil
+  1: Italy
+  2: England  ✅ CORRECT
+  3: Spain
+Explanation: Modern football originated in England, with the Football Association established in 1863.
+
+=== Q67 [historical] [easy] ID: 53544820-bf7b-463d-a3f8-f37651f6f970 ===
+Q: What is the standard length of a professional football match?
+  0: 80 minutes
+  1: 90 minutes  ✅ CORRECT
+  2: 100 minutes
+  3: 120 minutes
+Explanation: A standard match is 90 minutes, split into two 45-minute halves.
+
+=== Q68 [historical] [hard] ID: 55eadffd-407c-4b1c-bd09-23b6d87e7a68 ===
+Q: What year were red and yellow cards first introduced at the World Cup?
+  0: 1966
+  1: 1970  ✅ CORRECT
+  2: 1974
+  3: 1978
+Explanation: Red and yellow cards were introduced at the 1970 World Cup in Mexico by referee Ken Aston.
+
+=== Q69 [historical] [easy] ID: 56950224-0952-4d0a-a512-cd81398888c0 ===
+Q: Which team won the first ever FIFA World Cup in 1930?
+  0: Argentina
+  1: Brazil
+  2: Uruguay  ✅ CORRECT
+  3: USA
+Explanation: Uruguay won the first World Cup, defeating Argentina 4-2 in the final on home soil.
+
+=== Q70 [historical] [easy] ID: 58eb8183-e799-46e9-8284-7a6dcbf1ee01 ===
+Q: What is the term for scoring three goals in one match?
+  0: Triple play
+  1: Hat-trick  ✅ CORRECT
+  2: Three-peat
+  3: Trio
+Explanation: Scoring three goals in a single match is called a hat-trick, a term borrowed from cricket.
+
+=== Q71 [historical] [medium] ID: 5d0a5e43-673e-42c4-ae73-25c61d4ff8e4 ===
+Q: Which was the first World Cup to be broadcast on television?
+  0: 1950 Brazil
+  1: 1954 Switzerland  ✅ CORRECT
+  2: 1958 Sweden
+  3: 1962 Chile
+Explanation: The 1954 World Cup in Switzerland was the first to have matches broadcast on television.
+
+=== Q72 [historical] [medium] ID: 6231b4c2-8a28-4590-8bd2-53ac6267a7e1 ===
+Q: When were substitutions first allowed in World Cup matches?
+  0: 1958
+  1: 1966
+  2: 1970  ✅ CORRECT
+  3: 1974
+Explanation: Substitutions were first allowed at the 1970 World Cup in Mexico, with a maximum of two per team.
+
+=== Q73 [historical] [medium] ID: 64e5285c-a8c2-4b98-979f-752935c0549c ===
+Q: When did the Premier League replace the old First Division?
+  0: 1990
+  1: 1991
+  2: 1992  ✅ CORRECT
+  3: 1993
+Explanation: The Premier League was founded in 1992, replacing the old Football League First Division.
+
+=== Q74 [historical] [medium] ID: 6596bc2a-508e-4826-aafe-2da8d8ae6865 ===
+Q: The "Miracle on Ice" equivalent in football refers to which match?
+  0: USA vs England 1950  ✅ CORRECT
+  1: North Korea vs Italy 1966
+  2: Greece winning Euro 2004
+  3: Leicester winning the Premier League
+Explanation: The USA's 1-0 victory over England at the 1950 World Cup is considered one of the greatest upsets in football history.
+
+=== Q75 [historical] [hard] ID: 65b3d841-ba49-4052-acc8-ddfc2821f1e5 ===
+Q: Who invented the "Cruyff Turn"?
+  0: Rinus Michels
+  1: Dennis Bergkamp
+  2: Johan Cruyff  ✅ CORRECT
+  3: Marco van Basten
+Explanation: Johan Cruyff invented his signature move during the 1974 World Cup match against Sweden.
+
+=== Q76 [historical] [easy] ID: 683ef38e-dc20-4a69-b32b-3e54b65cbec8 ===
+Q: What shape is a football pitch?
+  0: Square
+  1: Circle
+  2: Rectangle  ✅ CORRECT
+  3: Oval
+Explanation: A football pitch is rectangular, typically 100-110 meters long and 64-75 meters wide.
+
+=== Q77 [historical] [easy] ID: 691f8607-05ed-4298-bb9c-26866c579835 ===
+Q: What is the offside rule in simple terms?
+  0: You can't be behind the ball
+  1: You can't be ahead of the second-to-last defender when the ball is played to you  ✅ CORRECT
+  2: You can't stand in the goal area
+  3: You must stay in your own half
+Explanation: A player is offside if they are nearer to the opponent's goal line than both the ball and the second-to-last defender when the ball is played to them.
+
+=== Q78 [historical] [medium] ID: 6c62ad0c-a64a-4669-88ee-41bc5e937fd6 ===
+Q: Which player holds the record for most goals scored in a single World Cup tournament?
+  0: Ronaldo
+  1: Just Fontaine  ✅ CORRECT
+  2: Miroslav Klose
+  3: Sandor Kocsis
+Explanation: Just Fontaine scored 13 goals for France at the 1958 World Cup — a record that still stands.
+
+=== Q79 [historical] [medium] ID: 6cf3ff3b-9bb4-4dea-a44c-6bfeb42e71cc ===
+Q: When was the offside rule first introduced?
+  0: 1863  ✅ CORRECT
+  1: 1866
+  2: 1925
+  3: 1930
+Explanation: The offside rule has existed since the earliest codification of football rules in 1863, though it has been modified many times.
+
+=== Q80 [historical] [medium] ID: 6f640d43-3e14-4b6f-b92b-1e561d68b086 ===
+Q: The Munich air disaster of 1958 devastated which football club?
+  0: Bayern Munich
+  1: Borussia Dortmund
+  2: Manchester United  ✅ CORRECT
+  3: Real Madrid
+Explanation: The Munich air disaster killed 23 people, including 8 Manchester United players known as the "Busby Babes".
+
+=== Q81 [historical] [hard] ID: 70e83e9d-7218-434d-9d94-29e9f11b4ebf ===
+Q: When were three points for a win introduced in the English Football League?
+  0: 1976
+  1: 1981  ✅ CORRECT
+  2: 1990
+  3: 1992
+Explanation: Three points for a win was introduced in England in 1981-82, replacing the previous two-point system to encourage attacking football.
+
+=== Q82 [historical] [easy] ID: 71a252b7-e64d-419e-9c1d-34a19f67bb56 ===
+Q: Which country has won the most FIFA World Cup titles?
+  0: Brazil  ✅ CORRECT
+  1: Germany
+  2: Italy
+  3: Argentina
+Explanation: Brazil has won 5 World Cups (1958, 1962, 1970, 1994, 2002).
+
+=== Q83 [historical] [medium] ID: 761763b6-63ee-474f-805c-e8e7efa81eb0 ===
+Q: What was the "White Horse Final"?
+  0: 1923 FA Cup Final  ✅ CORRECT
+  1: 1950 World Cup Final
+  2: 1966 World Cup Final
+  3: 1989 FA Cup Final
+Explanation: The 1923 FA Cup Final at Wembley is known as the "White Horse Final" because a police officer on a white horse helped control the massive crowd that spilled onto the pitch.
+
+=== Q84 [historical] [hard] ID: 7fd486bf-0805-4231-9be0-fc5f1df2a29c ===
+Q: Which player was named Best Young Player at the 2022 World Cup?
+  0: Gavi
+  1: Pedri
+  2: Enzo Fernández  ✅ CORRECT
+  3: Jamal Musiala
+Explanation: Enzo Fernández won the Best Young Player award at the 2022 World Cup in Qatar.
+
+=== Q85 [historical] [medium] ID: 833fc33b-ca84-4c66-9d09-e27955bb1470 ===
+Q: What was the "Maracanã" originally built for?
+  0: 1950 World Cup  ✅ CORRECT
+  1: 1960 Olympics
+  2: 1940 Pan American Games
+  3: Brazil independence celebrations
+Explanation: The Maracanã Stadium in Rio de Janeiro was built for the 1950 FIFA World Cup, with an original capacity of nearly 200,000.
+
+=== Q86 [historical] [easy] ID: 84026b81-e5ca-4cec-b6e3-1430643abc44 ===
+Q: Who scored the famous "Hand of God" goal in the 1986 World Cup?
+  0: Pelé
+  1: Ronaldo
+  2: Diego Maradona  ✅ CORRECT
+  3: Zinedine Zidane
+Explanation: Diego Maradona scored the controversial "Hand of God" goal against England in the 1986 quarterfinal.
+
+=== Q87 [historical] [medium] ID: 85d072b4-dff9-4b71-bf57-d85782bd73de ===
+Q: How many times has the host nation won the FIFA World Cup?
+  0: 3
+  1: 5
+  2: 6  ✅ CORRECT
+  3: 7
+Explanation: The host nation has won the World Cup 6 times: Uruguay (1930), Italy (1934), England (1966), West Germany (1974), Argentina (1978), France (1998).
+
+=== Q88 [historical] [hard] ID: 86f47851-23ae-4c4a-a5d6-e84223b23aef ===
+Q: Which goalkeeper saved the most penalties in World Cup shootout history (as of 2022)?
+  0: Iker Casillas
+  1: Manuel Neuer
+  2: Sergio Goycochea  ✅ CORRECT
+  3: Emiliano Martínez
+Explanation: Sergio Goycochea of Argentina saved 5 penalties in World Cup shootouts (1990 edition).
+
+=== Q89 [historical] [medium] ID: 8777d1ec-c10d-48a2-95a4-acaee7fad08c ===
+Q: When were goal-line technology systems first used at a World Cup?
+  0: 2010
+  1: 2014  ✅ CORRECT
+  2: 2018
+  3: 2022
+Explanation: Goal-line technology was first used at the 2014 World Cup in Brazil after controversial incidents in previous tournaments.
+
+=== Q90 [historical] [easy] ID: 8ebb32d4-73a7-4022-8376-440827464893 ===
+Q: What is "stoppage time" or "injury time"?
+  0: A timeout called by the coach
+  1: Additional time added at the end of each half  ✅ CORRECT
+  2: A break for injured players
+  3: Time between halves
+Explanation: Stoppage time is additional time added by the referee at the end of each half to compensate for stoppages in play.
+
+=== Q91 [historical] [easy] ID: 91787521-ca7c-4df1-9c93-6f013df4483e ===
+Q: What is a "clean sheet" in football?
+  0: A blank scorecard
+  1: When a goalkeeper concedes no goals  ✅ CORRECT
+  2: A new match ball
+  3: A fresh pitch
+Explanation: A clean sheet means the goalkeeper and defense prevented the opposing team from scoring any goals.
+
+=== Q92 [historical] [hard] ID: 92b3716f-d417-4f6d-9622-b64bb36ee928 ===
+Q: The "Golden Goal" rule was used in major tournaments between which years?
+  0: 1990-2000
+  1: 1993-2002
+  2: 1996-2004  ✅ CORRECT
+  3: 1998-2006
+Explanation: The Golden Goal (sudden death in extra time) was used from Euro 1996 to Euro 2004, then abolished.
+
+=== Q93 [historical] [easy] ID: 95b58317-36aa-4a93-91e2-49f401b21397 ===
+Q: What year was FIFA founded?
+  0: 1900
+  1: 1904  ✅ CORRECT
+  2: 1910
+  3: 1920
+Explanation: FIFA (Fédération Internationale de Football Association) was founded on May 21, 1904 in Paris.
+
+=== Q94 [historical] [medium] ID: 9cadea56-4938-4fc5-86c3-c7d10d3ba7bf ===
+Q: The "Bosman ruling" of 1995 changed football by allowing what?
+  0: Unlimited substitutions
+  1: Free transfers at contract end  ✅ CORRECT
+  2: Video replays
+  3: Foreign player quotas to be removed
+Explanation: The Bosman ruling allowed players to move freely to another club at the end of their contract without a transfer fee.
+
+=== Q95 [historical] [easy] ID: 9d450a19-1791-4f18-8cce-223f5da4d374 ===
+Q: What color card means a player is sent off?
+  0: Yellow
+  1: Green
+  2: Blue
+  3: Red  ✅ CORRECT
+Explanation: A red card results in the player being sent off the pitch and their team playing with one fewer player.
+
+=== Q96 [historical] [hard] ID: 9eb792cf-1e8f-4ff2-aab7-c8af386f9ea4 ===
+Q: Which English manager introduced the "WM" formation that revolutionized tactics?
+  0: Herbert Chapman  ✅ CORRECT
+  1: Brian Clough
+  2: Bill Shankly
+  3: Matt Busby
+Explanation: Herbert Chapman developed the WM formation at Arsenal in the 1930s, revolutionizing tactical thinking in football.
+
+=== Q97 [historical] [medium] ID: a1181e58-3181-40c6-a800-03840baa317e ===
+Q: What was "Total Football"?
+  0: A video game
+  1: A Dutch tactical philosophy  ✅ CORRECT
+  2: An English TV show
+  3: A type of football
+Explanation: Total Football was a tactical philosophy pioneered by Ajax and the Netherlands in the 1970s where outfield players could interchange positions fluidly.
+
+=== Q98 [historical] [hard] ID: a1f0af5b-b8fa-462b-ab47-65e0de9ffd2c ===
+Q: What was the "Heysel disaster"?
+  0: A stadium fire
+  1: A stampede at a Champions League final  ✅ CORRECT
+  2: A pitch collapse
+  3: A terrorist attack at a World Cup
+Explanation: The Heysel disaster in 1985 was a crowd crush at the European Cup Final in Brussels that killed 39 people, leading to a ban on English clubs from European competition.
+
+=== Q99 [historical] [hard] ID: a6f9adce-a034-4b44-903b-543691f22017 ===
+Q: The "Superga air disaster" of 1949 killed players from which club?
+  0: Juventus
+  1: Torino  ✅ CORRECT
+  2: AC Milan
+  3: Inter Milan
+Explanation: The Superga tragedy killed 31 people including the entire Torino team, who dominated Italian football at the time.
+
+=== Q100 [historical] [hard] ID: b4271900-4a38-4f93-8445-8a6c6bd015a9 ===
+Q: Who was the top scorer at the 2018 FIFA World Cup in Russia?
+  0: Cristiano Ronaldo
+  1: Harry Kane  ✅ CORRECT
+  2: Antoine Griezmann
+  3: Romelu Lukaku
+Explanation: Harry Kane won the Golden Boot at Russia 2018 with 6 goals, all scored in the group stage and Round of 16.
+
+=== Q101 [historical] [easy] ID: b7faf9a2-acef-40d0-a66a-42db778747d0 ===
+Q: How many substitutions can a team make in a standard match (current rules)?
+  0: 3
+  1: 4
+  2: 5  ✅ CORRECT
+  3: 6
+Explanation: Since 2020, FIFA has allowed 5 substitutions per team per match across 3 windows (plus half-time).
+
+=== Q102 [historical] [hard] ID: bc6a7bf8-3a38-4686-a1d1-1e8f462bb5fe ===
+Q: What was "catenaccio"?
+  0: An Italian word for celebrations
+  1: A defensive tactical system  ✅ CORRECT
+  2: A type of football boot
+  3: An Italian football league
+Explanation: Catenaccio (meaning "door-bolt") was an ultra-defensive tactical system popularized in Italian football in the 1960s.
+
+=== Q103 [historical] [medium] ID: ca11d0e7-83e9-4485-b7c5-c0bd5be2f3d5 ===
+Q: Which was the first World Cup to be held in Asia?
+  0: 2010
+  1: 2002  ✅ CORRECT
+  2: 2022
+  3: 1998
+Explanation: The 2002 World Cup was co-hosted by South Korea and Japan, the first World Cup held in Asia.
+
+=== Q104 [historical] [medium] ID: d1f69bce-7499-477b-ad5f-7b4e1628c659 ===
+Q: Which competition did Pelé call "the war" after violent matches?
+  0: Copa Libertadores
+  1: World Cup 1962  ✅ CORRECT
+  2: Copa América
+  3: Inter-continental Cup
+Explanation: The 1962 World Cup in Chile had particularly violent matches, with Pelé injured in the group stage and calling it brutal.
+
+=== Q105 [historical] [hard] ID: d7c3c275-b28f-4415-9f8f-c43f798c1ac7 ===
+Q: The "Football War" of 1969 was between which two countries?
+  0: Brazil and Argentina
+  1: Honduras and El Salvador  ✅ CORRECT
+  2: England and Scotland
+  3: Mexico and USA
+Explanation: The Football War was a brief conflict between Honduras and El Salvador, triggered by tensions during 1970 World Cup qualifying matches.
+
+=== Q106 [historical] [hard] ID: da911e33-b7a6-493e-863e-31611d3a5450 ===
+Q: The "Miracle of Istanbul" refers to which match?
+  0: Galatasaray winning the UEFA Cup 2000
+  1: Liverpool's 2005 Champions League Final comeback  ✅ CORRECT
+  2: Turkey's 2002 World Cup run
+  3: Beşiktaş beating Chelsea 2003
+Explanation: The Miracle of Istanbul refers to Liverpool's incredible comeback from 3-0 down at half-time to beat AC Milan on penalties in the 2005 Champions League Final.
+
+=== Q107 [historical] [medium] ID: dae451d0-25cf-45f2-9a31-7726d6c729e4 ===
+Q: When was the back-pass rule introduced, preventing goalkeepers from picking up deliberate passes?
+  0: 1990
+  1: 1992  ✅ CORRECT
+  2: 1994
+  3: 1996
+Explanation: The back-pass rule was introduced in 1992 to speed up the game and prevent time-wasting.
+
+=== Q108 [historical] [medium] ID: e383ad3f-c244-4a3b-9939-291b184cbff3 ===
+Q: Which was the first football club to be listed on a stock exchange?
+  0: Manchester United
+  1: Tottenham Hotspur  ✅ CORRECT
+  2: Juventus
+  3: Ajax
+Explanation: Tottenham Hotspur became the first football club to be listed on the London Stock Exchange in 1983.
+
+=== Q109 [historical] [medium] ID: e408b11f-b5a5-49a7-af64-30b89f9ca7e2 ===
+Q: When was the first FIFA Ballon d'Or awarded?
+  0: 1950
+  1: 1956  ✅ CORRECT
+  2: 1960
+  3: 1970
+Explanation: The first Ballon d'Or was awarded by France Football magazine in 1956 to Stanley Matthews.
+
+=== Q110 [historical] [hard] ID: f2ff5561-b872-4da5-aadc-d30729554edc ===
+Q: Which was the first football match played under floodlights?
+  0: In 1878 at Bramall Lane  ✅ CORRECT
+  1: In 1900 at Wembley
+  2: In 1920 at Old Trafford
+  3: In 1950 at Highbury
+Explanation: The first floodlit football match was played at Bramall Lane, Sheffield in 1878.
+
+=== Q111 [historical] [easy] ID: fa4978fd-6e16-4db6-adc7-a7ab0c84426e ===
+Q: What is a "derby" in football?
+  0: An international match
+  1: A cup final
+  2: A match between local rivals  ✅ CORRECT
+  3: A pre-season friendly
+Explanation: A derby is a match between two teams from the same city or region, often the most intense fixtures of the season.
+
+=== Q112 [historical] [easy] ID: fb38bc70-56fc-4ac7-8b4b-10ed8659814b ===
+Q: What happens when a game ends in a draw during a knockout tournament?
+  0: The match is replayed
+  1: Extra time and possibly penalties  ✅ CORRECT
+  2: A coin toss
+  3: The higher-seeded team advances
+Explanation: In knockout tournaments, a draw leads to 30 minutes of extra time (two 15-minute halves), then a penalty shootout if still level.
+
+=== Q113 [historical] [easy] ID: fb4335c5-9b2f-4ccc-8ca0-01f23aa79b56 ===
+Q: How many players are on a football team during a match?
+  0: 9
+  1: 10
+  2: 11  ✅ CORRECT
+  3: 12
+Explanation: Each team has 11 players on the pitch, including one goalkeeper.
+
+=== Q114 [nations] [medium] ID: 093d36de-01bd-44f3-9a45-806cdc766e32 ===
+Q: Which country won the first-ever European Championship in 1960?
+  0: Spain
+  1: West Germany
+  2: Soviet Union  ✅ CORRECT
+  3: France
+Explanation: The Soviet Union won the first European Championship (then called the European Nations Cup) in 1960.
+
+=== Q115 [nations] [hard] ID: 13a9c2a0-7a2a-4665-b29e-4e5bdd2775dd ===
+Q: The "Battle of Santiago" took place between which two national teams?
+  0: Brazil vs Argentina
+  1: Chile vs Italy  ✅ CORRECT
+  2: England vs Argentina
+  3: Germany vs Netherlands
+Explanation: The "Battle of Santiago" was a notoriously violent 1962 World Cup match between Chile and Italy.
+
+=== Q116 [nations] [easy] ID: 1a178c46-3e85-4cf3-b79c-f0193ef6efda ===
+Q: Which European country is known as "Les Bleus"?
+  0: Italy
+  1: France  ✅ CORRECT
+  2: Germany
+  3: Spain
+Explanation: France's national team is nicknamed "Les Bleus" (The Blues) after their blue jerseys.
+
+=== Q117 [nations] [easy] ID: 1b476e51-108c-476a-a964-30569096a72b ===
+Q: England's national team plays home matches at which stadium?
+  0: Old Trafford
+  1: Emirates Stadium
+  2: Wembley Stadium  ✅ CORRECT
+  3: Stamford Bridge
+Explanation: England plays their home matches at Wembley Stadium in London.
+
+=== Q118 [nations] [medium] ID: 25dccca1-521a-4a95-8661-4ac2ac0b378d ===
+Q: Which African nation won the 2021 Africa Cup of Nations?
+  0: Nigeria
+  1: Egypt
+  2: Senegal  ✅ CORRECT
+  3: Cameroon
+Explanation: Senegal won their first AFCON title in 2021, defeating Egypt on penalties in the final.
+
+=== Q119 [nations] [easy] ID: 25e8a377-90ef-4c20-905c-9e11349b52b4 ===
+Q: Which team is known as "Die Mannschaft"?
+  0: Austria
+  1: Switzerland
+  2: Germany  ✅ CORRECT
+  3: Netherlands
+Explanation: Germany's national team was commonly referred to as "Die Mannschaft" (The Team).
+
+=== Q120 [nations] [medium] ID: 2f8d5210-b97a-409c-aa72-d9930722728f ===
+Q: Which is the only country from Oceania to have played in a World Cup?
+  0: Fiji
+  1: New Zealand  ✅ CORRECT
+  2: Australia
+  3: Tahiti
+Explanation: New Zealand qualified for the 1982 and 2010 World Cups. Australia moved from OFC to AFC in 2006.
+
+=== Q121 [nations] [medium] ID: 306d7bb6-290f-4c5d-8a5c-6c6cb5d6ac68 ===
+Q: Which Asian nation reached the 2002 World Cup semi-finals?
+  0: Japan
+  1: Saudi Arabia
+  2: Iran
+  3: South Korea  ✅ CORRECT
+Explanation: South Korea reached the semi-finals of the 2002 World Cup as co-hosts.
+
+=== Q122 [nations] [hard] ID: 33422cd4-ee63-48e6-abda-706e4e441596 ===
+Q: Which country has the most appearances in a World Cup without ever winning it?
+  0: Netherlands
+  1: Mexico  ✅ CORRECT
+  2: Portugal
+  3: Belgium
+Explanation: Mexico has appeared in 17 World Cups (most of any non-winner) without ever winning the tournament.
+
+=== Q123 [nations] [easy] ID: 3929aa10-a4af-456e-9b35-721cc916a890 ===
+Q: Which country does Son Heung-min represent?
+  0: Japan
+  1: China
+  2: South Korea  ✅ CORRECT
+  3: Thailand
+Explanation: Son Heung-min represents South Korea and is their most famous current player.
+
+=== Q124 [nations] [easy] ID: 39dea725-9063-4f46-adc8-acbaa024b220 ===
+Q: Which South American nation has a team nicknamed "La Celeste"?
+  0: Paraguay
+  1: Uruguay  ✅ CORRECT
+  2: Ecuador
+  3: Colombia
+Explanation: Uruguay is nicknamed "La Celeste" (The Sky Blue) after their traditional jersey color.
+
+=== Q125 [nations] [medium] ID: 3f885a70-345b-4a00-80da-4fd3770ac965 ===
+Q: Which Central American team reached the 2014 World Cup quarter-finals?
+  0: Honduras
+  1: Panama
+  2: Costa Rica  ✅ CORRECT
+  3: El Salvador
+Explanation: Costa Rica topped a group with Uruguay, Italy, and England, then reached the quarter-finals in 2014.
+
+=== Q126 [nations] [medium] ID: 46cb240b-9c25-4c97-bea8-23715d1b1b41 ===
+Q: Which national team has the longest unbeaten run in football history?
+  0: Brazil
+  1: Spain
+  2: Italy  ✅ CORRECT
+  3: Argentina
+Explanation: Italy holds the record with a 37-match unbeaten run from October 2018 to October 2021.
+
+=== Q127 [nations] [hard] ID: 49279d81-56d2-43ba-8b6d-fc21cc48d46c ===
+Q: Which country's golden generation included Laudrup, Schmeichel, and the Laudrup brothers?
+  0: Sweden
+  1: Norway
+  2: Denmark  ✅ CORRECT
+  3: Finland
+Explanation: Denmark's golden generation in the late 1980s and 1990s included Peter Schmeichel, Michael and Brian Laudrup.
+
+=== Q128 [nations] [medium] ID: 510ddad0-d707-4395-a8a6-3ef6edc55694 ===
+Q: How many times has Japan qualified for the World Cup?
+  0: 3
+  1: 5
+  2: 7  ✅ CORRECT
+  3: 9
+Explanation: Japan has qualified for 7 consecutive World Cups from 1998 to 2022.
+
+=== Q129 [nations] [medium] ID: 52c5368f-af02-4384-b922-4e07e514e8c7 ===
+Q: Which team won the 2021 Copa América?
+  0: Brazil
+  1: Colombia
+  2: Uruguay
+  3: Argentina  ✅ CORRECT
+Explanation: Argentina won the 2021 Copa América, beating Brazil 1-0 in the final at the Maracanã.
+
+=== Q130 [nations] [easy] ID: 5e190be1-a95f-4aa3-9e46-b6a0e9635fb3 ===
+Q: What colors does the Mexican national team wear?
+  0: Blue and white
+  1: Red and white
+  2: Green and white  ✅ CORRECT
+  3: Yellow and green
+Explanation: Mexico traditionally wears green jerseys with white shorts for their home kit.
+
+=== Q131 [nations] [easy] ID: 63e72c4e-c70b-4ea3-8c78-2d83ad6bc8c0 ===
+Q: Which European national team is nicknamed "Les Bleus"?
+  0: Italy
+  1: France  ✅ CORRECT
+  2: Belgium
+  3: Netherlands
+Explanation: France's national team is known as "Les Bleus" (The Blues).
+
+=== Q132 [nations] [hard] ID: 67d91398-d7f0-4bcd-848a-3772c44a2a34 ===
+Q: North Korea achieved which historic result at the 1966 World Cup?
+  0: Beat Italy in the group stage  ✅ CORRECT
+  1: Drew with Brazil
+  2: Scored 5 goals in one match
+  3: Beat England
+Explanation: North Korea beat Italy 1-0 in the group stage of the 1966 World Cup, one of the biggest upsets in history.
+
+=== Q133 [nations] [easy] ID: 69eea892-86a6-47e9-ab90-9a5bed25e0dc ===
+Q: Which national team is known as "La Albiceleste"?
+  0: Uruguay
+  1: Chile
+  2: Argentina  ✅ CORRECT
+  3: Paraguay
+Explanation: Argentina is known as "La Albiceleste" (The White and Sky Blue) after their jersey colors.
+
+=== Q134 [nations] [hard] ID: 72bbaafb-ac6f-4868-b4ac-a6b810966e16 ===
+Q: Which was the first Asian country to reach a World Cup semifinal?
+  0: Japan
+  1: Saudi Arabia
+  2: South Korea  ✅ CORRECT
+  3: Iran
+Explanation: South Korea reached the semifinals at the 2002 World Cup, co-hosted with Japan.
+
+=== Q135 [nations] [easy] ID: 786cd5c9-76ab-47f3-9a19-e9be73923600 ===
+Q: Which South American country has won the most Copa América titles?
+  0: Brazil
+  1: Argentina  ✅ CORRECT
+  2: Uruguay
+  3: Paraguay
+Explanation: Argentina has won 16 Copa América titles (most recently 2024), surpassing Uruguay's 15.
+
+=== Q136 [nations] [medium] ID: 7dba3123-0401-49a9-ae7a-90c9899d80e3 ===
+Q: Which confederation does Australia's national team belong to?
+  0: OFC (Oceania)
+  1: AFC (Asia)  ✅ CORRECT
+  2: UEFA (Europe)
+  3: CONMEBOL (South America)
+Explanation: Australia moved from the Oceania Football Confederation (OFC) to the Asian Football Confederation (AFC) in 2006.
+
+=== Q137 [nations] [medium] ID: 87186b36-4384-47a6-affe-d58fbc1bb997 ===
+Q: Who is the all-time top scorer for the Argentina national team?
+  0: Diego Maradona
+  1: Gabriel Batistuta
+  2: Lionel Messi  ✅ CORRECT
+  3: Sergio Agüero
+Explanation: Lionel Messi is Argentina's all-time top scorer with over 100 international goals.
+
+=== Q138 [nations] [hard] ID: 8778684f-119e-4b7d-bb16-3136660ad11b ===
+Q: Which team scored the fastest goal in World Cup history?
+  0: England
+  1: Turkey  ✅ CORRECT
+  2: Saudi Arabia
+  3: Germany
+Explanation: Turkey's Hakan Şükür scored after 11 seconds against South Korea in the 2002 World Cup third-place match.
+
+=== Q139 [nations] [easy] ID: 8878b1a1-3469-4603-a746-6344dfe18a00 ===
+Q: Which national team does Mohamed Salah play for?
+  0: Morocco
+  1: Tunisia
+  2: Senegal
+  3: Egypt  ✅ CORRECT
+Explanation: Mohamed Salah represents Egypt and is their star forward.
+
+=== Q140 [nations] [easy] ID: 89d4fce6-5ac8-4bb2-b276-53da2dd1be4a ===
+Q: Which team won Euro 2024?
+  0: England
+  1: France
+  2: Spain  ✅ CORRECT
+  3: Germany
+Explanation: Spain won Euro 2024, held in Germany, defeating England 2-1 in the final.
+
+=== Q141 [nations] [medium] ID: 94601e0a-425b-4603-9a84-cfc8b86d104d ===
+Q: Which was the last host nation to win the World Cup?
+  0: Germany 2006
+  1: Brazil 2014
+  2: France 1998  ✅ CORRECT
+  3: South Africa 2010
+Explanation: France in 1998 was the last host nation to win the World Cup.
+
+=== Q142 [nations] [easy] ID: 977f5680-b6e6-499d-b7f0-8c370441414e ===
+Q: What is the nickname of the Brazilian national team?
+  0: La Roja
+  1: Seleção  ✅ CORRECT
+  2: Die Mannschaft
+  3: The Three Lions
+Explanation: Brazil's national team is known as "Seleção" (The Selection).
+
+=== Q143 [nations] [hard] ID: 9e93f757-1c07-4179-b19d-3a682c2e055a ===
+Q: Which country was the first from outside the British Isles to beat England at Wembley?
+  0: Hungary  ✅ CORRECT
+  1: Brazil
+  2: Germany
+  3: Spain
+Explanation: Hungary famously beat England 6-3 at Wembley in 1953, the first non-British team to win there.
+
+=== Q144 [nations] [medium] ID: 9f16a69c-8966-4303-b98c-d58d8c7621f9 ===
+Q: Which team is known as "The Pharaohs"?
+  0: Morocco
+  1: Tunisia
+  2: Algeria
+  3: Egypt  ✅ CORRECT
+Explanation: The Egyptian national team is nicknamed "The Pharaohs" after the ancient Egyptian rulers.
+
+=== Q145 [nations] [easy] ID: aaab767b-984c-4521-8e71-e3df20f68c3a ===
+Q: Which country does Erling Haaland play for?
+  0: Sweden
+  1: Denmark
+  2: Norway  ✅ CORRECT
+  3: Finland
+Explanation: Erling Haaland represents Norway's national team.
+
+=== Q146 [nations] [hard] ID: aefe0e90-7197-48a3-8505-a863aef81d61 ===
+Q: Who is the all-time top scorer in international football (men)?
+  0: Lionel Messi
+  1: Ali Daei
+  2: Cristiano Ronaldo  ✅ CORRECT
+  3: Pelé
+Explanation: Cristiano Ronaldo holds the record for most international goals with over 130 goals for Portugal.
+
+=== Q147 [nations] [easy] ID: b0f90efe-06fc-4758-823f-80f1d4185ae2 ===
+Q: Which African nation has won the most Africa Cup of Nations titles?
+  0: Nigeria
+  1: Cameroon
+  2: Ghana
+  3: Egypt  ✅ CORRECT
+Explanation: Egypt has won the Africa Cup of Nations a record 7 times.
+
+=== Q148 [nations] [easy] ID: b125a834-601f-4e45-a393-c0b6f91e7d07 ===
+Q: Which country won Euro 2020 (played in 2021)?
+  0: England
+  1: Spain
+  2: France
+  3: Italy  ✅ CORRECT
+Explanation: Italy won Euro 2020, beating England on penalties in the final at Wembley.
+
+=== Q149 [nations] [hard] ID: b59d37fd-7a7d-4279-877d-2169d78f2a5b ===
+Q: The "Miracle of Bern" refers to which team's World Cup victory?
+  0: Uruguay 1950
+  1: West Germany 1954  ✅ CORRECT
+  2: England 1966
+  3: Argentina 1978
+Explanation: West Germany's 3-2 victory over Hungary in the 1954 World Cup Final is known as the "Miracle of Bern".
+
+=== Q150 [nations] [easy] ID: b9534263-ee8a-4d94-83a0-81f375a6fa7f ===
+Q: Which is the most successful national team in CONMEBOL?
+  0: Chile
+  1: Colombia
+  2: Argentina
+  3: Brazil  ✅ CORRECT
+Explanation: Brazil is the most successful CONMEBOL nation with 5 World Cup wins and multiple Copa América titles.
+
+=== Q151 [nations] [medium] ID: c3457386-120f-48fb-a6ad-64e6d117f59b ===
+Q: Which national team has the longest unbeaten run in football history?
+  0: Brazil
+  1: Spain
+  2: Italy  ✅ CORRECT
+  3: Argentina
+Explanation: Italy went 37 matches unbeaten from October 2018 to October 2021.
+
+=== Q152 [nations] [easy] ID: cbb23caf-e600-4b14-a299-78e19d9792da ===
+Q: Which country does Kylian Mbappé represent?
+  0: Belgium
+  1: Senegal
+  2: France  ✅ CORRECT
+  3: Cameroon
+Explanation: Kylian Mbappé plays for the French national team.
+
+=== Q153 [nations] [medium] ID: cd0bf619-e380-40ef-b73e-7b9e432bd2bd ===
+Q: Which is the highest-ranked CONCACAF team in FIFA history?
+  0: USA
+  1: Mexico  ✅ CORRECT
+  2: Costa Rica
+  3: Canada
+Explanation: Mexico has historically been the highest-ranked CONCACAF team, though the USA has also reached high rankings.
+
+=== Q154 [nations] [medium] ID: cfbc8e24-b368-4bd8-b927-66acabf61899 ===
+Q: Greece won Euro 2004 by beating which host nation in the final?
+  0: Spain
+  1: Portugal  ✅ CORRECT
+  2: France
+  3: Italy
+Explanation: Greece shocked the football world by beating host nation Portugal 1-0 in the Euro 2004 final.
+
+=== Q155 [nations] [medium] ID: d0e27580-5f7f-4cee-a233-b17a5c2bdaf4 ===
+Q: Which CONCACAF team has won the most Gold Cup titles?
+  0: USA
+  1: Canada
+  2: Costa Rica
+  3: Mexico  ✅ CORRECT
+Explanation: Mexico has won the CONCACAF Gold Cup a record number of times.
+
+=== Q156 [nations] [medium] ID: d30c0473-957b-4158-a18f-6a4a186d3513 ===
+Q: Who is the all-time top scorer for the Portugal national team?
+  0: Eusébio
+  1: Luís Figo
+  2: Cristiano Ronaldo  ✅ CORRECT
+  3: Nuno Gomes
+Explanation: Cristiano Ronaldo is Portugal's all-time top scorer with over 130 international goals.
+
+=== Q157 [nations] [medium] ID: d5cf6731-f3aa-4e1a-83ea-acd2393fedd5 ===
+Q: Which African country reached the 2022 World Cup semi-finals?
+  0: Senegal
+  1: Ghana
+  2: Morocco  ✅ CORRECT
+  3: Cameroon
+Explanation: Morocco became the first African and Arab nation to reach the World Cup semi-finals in 2022.
+
+=== Q158 [nations] [medium] ID: de7614b0-988e-4ccc-9145-76e9fca0ab25 ===
+Q: Which nation shocked the world by beating Italy in the 2018 World Cup qualifying?
+  0: North Macedonia
+  1: Sweden  ✅ CORRECT
+  2: Iceland
+  3: Albania
+Explanation: Sweden eliminated Italy in the 2018 World Cup qualifying playoffs, causing Italy to miss the World Cup for the first time since 1958.
+
+=== Q159 [nations] [easy] ID: dfdf4d01-04fc-4d1d-9b07-02c0fe59db78 ===
+Q: Which country has the most Copa América titles?
+  0: Brazil
+  1: Argentina  ✅ CORRECT
+  2: Uruguay
+  3: Chile
+Explanation: Argentina has won the Copa América a record 16 times, including their 2021 and 2024 victories. Uruguay is second with 15.
+
+=== Q160 [nations] [hard] ID: e10fb3c3-c18a-4c9c-a66d-9f937c513ea5 ===
+Q: Which national team holds the record for the biggest victory in international football?
+  0: Australia  ✅ CORRECT
+  1: Maldives
+  2: Aruba
+  3: American Samoa
+Explanation: Australia beat American Samoa 31-0 in a 2001 World Cup qualifier, the largest win in international football.
+
+=== Q161 [nations] [easy] ID: ed20253a-4066-4858-8179-5b4e6d599ffa ===
+Q: Which country does Luka Modrić captain?
+  0: Serbia
+  1: Bosnia
+  2: Slovenia
+  3: Croatia  ✅ CORRECT
+Explanation: Luka Modrić is the captain of Croatia's national team and led them to the 2018 World Cup final.
+
+=== Q162 [nations] [easy] ID: f1a4b99a-8f9d-41a7-b954-1778310ec65c ===
+Q: Which country does Vinícius Jr. represent?
+  0: Portugal
+  1: Argentina
+  2: Spain
+  3: Brazil  ✅ CORRECT
+Explanation: Vinícius Jr. represents Brazil's national team.
+
+=== Q163 [nations] [medium] ID: f3ca0431-9b0c-4028-8bce-4264c7802bc5 ===
+Q: Which country hosted and won Euro 1984?
+  0: Italy
+  1: West Germany
+  2: France  ✅ CORRECT
+  3: Spain
+Explanation: France hosted and won Euro 1984, led by Michel Platini who scored 9 goals in the tournament.
+
+=== Q164 [nations] [hard] ID: f4bd6aaf-42c6-453f-8a31-9338a1a4f8b6 ===
+Q: Which was the first African nation to qualify for a World Cup?
+  0: Morocco
+  1: Egypt  ✅ CORRECT
+  2: Zaire
+  3: Cameroon
+Explanation: Egypt was the first African nation to play at a World Cup, participating in 1934 in Italy.
+
+=== Q165 [nations] [hard] ID: fbb0c2b8-0204-42c2-8e7a-e0bb997cb136 ===
+Q: Which nation won the 1992 European Championship as a last-minute replacement?
+  0: Denmark  ✅ CORRECT
+  1: Greece
+  2: Czech Republic
+  3: Sweden
+Explanation: Denmark replaced Yugoslavia (expelled due to war) and went on to win Euro 1992, one of football's greatest upsets.
+
+=== Q166 [player] [hard] ID: 00bc9866-d391-426f-a38f-c23f20beccc5 ===
+Q: Who was the first player to be transferred for over £1 million?
+  0: Johan Cruyff
+  1: Diego Maradona
+  2: Trevor Francis  ✅ CORRECT
+  3: Kevin Keegan
+Explanation: Trevor Francis became the first £1 million player when he moved from Birmingham City to Nottingham Forest in 1979.
+
+=== Q167 [player] [easy] ID: 060cd362-507d-4e3f-8de7-e9b8dda904cd ===
+Q: Which French forward won the World Cup at age 19?
+  0: Antoine Griezmann
+  1: Thierry Henry
+  2: Kylian Mbappé  ✅ CORRECT
+  3: Zinedine Zidane
+Explanation: Kylian Mbappé won the 2018 World Cup with France at just 19 years old, scoring in the final.
+
+=== Q168 [player] [easy] ID: 0f2194d1-c437-48ab-b66b-48566cf72db2 ===
+Q: Which player has won the most Ballon d'Or awards?
+  0: Cristiano Ronaldo
+  1: Pelé
+  2: Lionel Messi  ✅ CORRECT
+  3: Johan Cruyff
+Explanation: Lionel Messi has won the Ballon d'Or a record 8 times.
+
+=== Q169 [player] [hard] ID: 181e5c15-7867-4dcd-b38c-60eac64a57e1 ===
+Q: Which player holds the record for most career club goals?
+  0: Pelé
+  1: Cristiano Ronaldo
+  2: Lionel Messi
+  3: Josef Bican  ✅ CORRECT
+Explanation: Josef Bican is recognized by some records as having scored over 800 official club goals, though records from his era are disputed.
+
+=== Q170 [player] [medium] ID: 1a496a14-2084-46e9-9346-03997b068ab2 ===
+Q: Which player captained Spain to their 2010 World Cup victory?
+  0: Xavi
+  1: Andrés Iniesta
+  2: Iker Casillas  ✅ CORRECT
+  3: Carles Puyol
+Explanation: Iker Casillas captained Spain to the 2010 World Cup title as their goalkeeper.
+
+=== Q171 [player] [medium] ID: 250e514a-7d25-45fd-b970-dafa742207cc ===
+Q: Who won the first-ever FIFA Women's Ballon d'Or in 2018?
+  0: Megan Rapinoe
+  1: Ada Hegerberg  ✅ CORRECT
+  2: Marta
+  3: Alex Morgan
+Explanation: Ada Hegerberg (Norway/Lyon) won the inaugural Women's Ballon d'Or in 2018.
+
+=== Q172 [player] [medium] ID: 334ffaba-fc81-46f0-9042-4829cbbfb07f ===
+Q: Which player received the first-ever red card in World Cup history?
+  0: Carlos Caszely  ✅ CORRECT
+  1: Mário Coluna
+  2: Pelé
+  3: Eusébio
+Explanation: Carlos Caszely of Chile received the first red card in World Cup history in 1974.
+
+=== Q173 [player] [easy] ID: 33f4a047-3084-4f6b-b40a-4c142d679073 ===
+Q: Which player is known as "CR7"?
+  0: Carlos Reyes
+  1: Clarence Roberts
+  2: Cristiano Ronaldo  ✅ CORRECT
+  3: Claudio Ranieri
+Explanation: CR7 stands for Cristiano Ronaldo and his iconic number 7 jersey.
+
+=== Q174 [player] [medium] ID: 3df78400-f486-494c-ae6a-e41f2dcfe42e ===
+Q: Which player is the all-time top scorer in La Liga history?
+  0: Cristiano Ronaldo
+  1: Raúl
+  2: Telmo Zarra
+  3: Lionel Messi  ✅ CORRECT
+Explanation: Lionel Messi is La Liga's all-time top scorer with 474 goals in 520 appearances.
+
+=== Q175 [player] [hard] ID: 3fa87980-1838-42b5-b474-68756e2a3220 ===
+Q: Who holds the record for most hat-tricks in international football?
+  0: Cristiano Ronaldo  ✅ CORRECT
+  1: Pelé
+  2: Lionel Messi
+  3: Sándor Kocsis
+Explanation: Cristiano Ronaldo holds the record for most international hat-tricks with over 10.
+
+=== Q176 [player] [hard] ID: 46fd9dd4-f563-4ee4-b1b3-d24890e10297 ===
+Q: Which defender has scored the most goals in football history?
+  0: Sergio Ramos  ✅ CORRECT
+  1: Roberto Carlos
+  2: Daniel Passarella
+  3: Ronald Koeman
+Explanation: Sergio Ramos has scored over 100 career goals as a center-back, one of the highest-scoring defenders ever.
+
+=== Q177 [player] [medium] ID: 4c4070ad-e243-49bf-8da5-9a3235a88581 ===
+Q: Who is the youngest player to score in a World Cup Final?
+  0: Pelé  ✅ CORRECT
+  1: Kylian Mbappé
+  2: Michael Owen
+  3: Ronaldo
+Explanation: Pelé scored in the 1958 World Cup Final at age 17 years and 249 days, making him the youngest final scorer.
+
+=== Q178 [player] [easy] ID: 4e3b905f-63b6-4d01-900c-97cf2befaa4f ===
+Q: Which club did David Beckham NOT play for?
+  0: Real Madrid
+  1: PSG
+  2: AC Milan
+  3: Bayern Munich  ✅ CORRECT
+Explanation: David Beckham played for Manchester United, Real Madrid, LA Galaxy, AC Milan, and PSG, but never Bayern Munich.
+
+=== Q179 [player] [medium] ID: 53c3a3ce-2ba8-493e-93f4-de59fbd16d72 ===
+Q: Who scored the "Goal of the Century" in the 1986 World Cup?
+  0: Pelé
+  1: Diego Maradona  ✅ CORRECT
+  2: Michel Platini
+  3: Zinedine Zidane
+Explanation: Maradona's solo goal against England in the 1986 World Cup quarter-final, dribbling past 5 players, was voted Goal of the Century.
+
+=== Q180 [player] [medium] ID: 5991c5fb-0630-4e12-8e2d-e78bcb77c974 ===
+Q: Luka Modrić won the Ballon d'Or in which year?
+  0: 2016
+  1: 2017
+  2: 2018  ✅ CORRECT
+  3: 2019
+Explanation: Luka Modrić won the 2018 Ballon d'Or after leading Croatia to the World Cup final.
+
+=== Q181 [player] [medium] ID: 5f488b9b-c030-4806-8599-1bd1eaf7584b ===
+Q: Which Italian defender is considered one of the greatest of all time and played for AC Milan?
+  0: Fabio Cannavaro
+  1: Franco Baresi
+  2: Alessandro Nesta
+  3: Paolo Maldini  ✅ CORRECT
+Explanation: Paolo Maldini spent his entire 25-year career at AC Milan, making over 900 appearances.
+
+=== Q182 [player] [hard] ID: 6a7ce19c-106b-4cbf-b23d-09f9f9954f56 ===
+Q: Alfredo Di Stéfano played for which national teams?
+  0: Argentina only
+  1: Spain only
+  2: Argentina, Colombia, and Spain  ✅ CORRECT
+  3: Argentina and Spain
+Explanation: Di Stéfano uniquely represented three national teams: Argentina, Colombia, and Spain.
+
+=== Q183 [player] [medium] ID: 70fb2bf1-fbea-4d51-915b-ea57d1aba635 ===
+Q: Who is the all-time top scorer in FIFA World Cup history?
+  0: Pelé
+  1: Ronaldo
+  2: Miroslav Klose  ✅ CORRECT
+  3: Gerd Müller
+Explanation: Miroslav Klose holds the record with 16 World Cup goals across 4 tournaments (2002–2014).
+
+=== Q184 [player] [hard] ID: 7c4bcdc5-2257-408b-9d66-1ef833ff2460 ===
+Q: Which player has scored the most free kicks in football history?
+  0: David Beckham
+  1: Juninho Pernambucano  ✅ CORRECT
+  2: Cristiano Ronaldo
+  3: Lionel Messi
+Explanation: Juninho Pernambucano scored over 70 direct free kicks in his career, the most in football history.
+
+=== Q185 [player] [easy] ID: 7d2db29c-dacf-41e8-b131-8020a0068e7a ===
+Q: Which current player is known for his meditation celebration?
+  0: Vinícius Jr.
+  1: Erling Haaland  ✅ CORRECT
+  2: Jude Bellingham
+  3: Antoine Griezmann
+Explanation: Erling Haaland's meditation celebration (sitting cross-legged) became famous during his time at Borussia Dortmund.
+
+=== Q186 [player] [easy] ID: 8409f972-08a4-44c9-ab68-11fe069dcb66 ===
+Q: Jude Bellingham plays for which club?
+  0: Manchester City
+  1: Barcelona
+  2: Real Madrid  ✅ CORRECT
+  3: Bayern Munich
+Explanation: Jude Bellingham joined Real Madrid from Borussia Dortmund in 2023.
+
+=== Q187 [player] [medium] ID: 874ad346-e65c-4c94-bf65-23605220ff7e ===
+Q: Who was the first player to score in 4 different World Cup tournaments?
+  0: Pelé
+  1: Miroslav Klose
+  2: Cristiano Ronaldo
+  3: Uwe Seeler  ✅ CORRECT
+Explanation: Uwe Seeler and Pelé were among the first to score in 4 World Cups (1958-1970).
+
+=== Q188 [player] [easy] ID: 8a50c466-e59f-4c4d-b2bf-4a8c1e4b26f0 ===
+Q: What is Neymar's nationality?
+  0: Argentine
+  1: Portuguese
+  2: Spanish
+  3: Brazilian  ✅ CORRECT
+Explanation: Neymar Jr. is Brazilian, born in Mogi das Cruzes, São Paulo.
+
+=== Q189 [player] [easy] ID: 8e9d252c-6758-48d9-962d-c8aa960bc8be ===
+Q: What position does a goalkeeper play?
+  0: Forward
+  1: Midfield
+  2: Defense
+  3: Between the goalposts  ✅ CORRECT
+Explanation: A goalkeeper's primary role is to guard the goal and prevent the opposing team from scoring.
+
+=== Q190 [player] [medium] ID: 9209be6d-6258-46ad-b969-4d7eeca1183c ===
+Q: Which player holds the record for most assists in World Cup history?
+  0: Pelé
+  1: Diego Maradona
+  2: Lionel Messi  ✅ CORRECT
+  3: Thomas Müller
+Explanation: Lionel Messi holds the record for most assists in World Cup history.
+
+=== Q191 [player] [medium] ID: 92c689b1-e0ba-4481-a6be-2e4985d1a00f ===
+Q: Who holds the record for the most goals in a single calendar year?
+  0: Cristiano Ronaldo
+  1: Pelé
+  2: Robert Lewandowski
+  3: Lionel Messi  ✅ CORRECT
+Explanation: Lionel Messi scored 91 goals in 2012, breaking Gerd Müller's record of 85 set in 1972.
+
+=== Q192 [player] [hard] ID: 9b641157-1f2c-4efb-897d-1cee50d511f7 ===
+Q: Who is the only player to win the World Cup, Champions League, and Ballon d'Or in the same year?
+  0: Ronaldo (1998)
+  1: Zinedine Zidane (1998)
+  2: Ronaldinho (2006)
+  3: No player has done this  ✅ CORRECT
+Explanation: No player has ever won all three — the World Cup, Champions League, and Ballon d'Or — in the same calendar year.
+
+=== Q193 [player] [medium] ID: 9cc29da5-201f-4224-bd24-99778e70d862 ===
+Q: Which player has made the most appearances in Premier League history?
+  0: Ryan Giggs
+  1: Frank Lampard
+  2: Gareth Barry  ✅ CORRECT
+  3: James Milner
+Explanation: Gareth Barry holds the record for most Premier League appearances with 653 games.
+
+=== Q194 [player] [hard] ID: a0297ceb-0c26-47a6-b546-4130cd1caec1 ===
+Q: Which player won the Golden Boot at both the 2010 and 2014 World Cups?
+  0: Thomas Müller
+  1: James Rodríguez
+  2: David Villa
+  3: No one won both  ✅ CORRECT
+Explanation: Thomas Müller won the Golden Boot in 2010 (5 goals), and James Rodríguez won it in 2014 (6 goals). No one won both.
+
+=== Q195 [player] [easy] ID: ac880689-7828-4889-97b5-44a4637f07e6 ===
+Q: Erling Haaland plays for which English club?
+  0: Liverpool
+  1: Arsenal
+  2: Manchester United
+  3: Manchester City  ✅ CORRECT
+Explanation: Erling Haaland joined Manchester City in 2022 and broke the Premier League scoring record in his first season.
+
+=== Q196 [player] [easy] ID: b3b4aa1f-c627-440d-955a-d454bce9138f ===
+Q: What nationality is Robert Lewandowski?
+  0: German
+  1: Czech
+  2: Austrian
+  3: Polish  ✅ CORRECT
+Explanation: Robert Lewandowski is Polish and is Poland's all-time top scorer.
+
+=== Q197 [player] [medium] ID: bc84663a-eccf-4dcb-b865-15540ac272ca ===
+Q: Which player has won the most Premier League titles?
+  0: Paul Scholes
+  1: John Terry
+  2: Ryan Giggs  ✅ CORRECT
+  3: Wayne Rooney
+Explanation: Ryan Giggs won 13 Premier League titles with Manchester United between 1993 and 2013.
+
+=== Q198 [player] [medium] ID: bff2a71e-12b1-4fff-b476-33bfbe9a77d3 ===
+Q: Which Brazilian won the World Cup as both a player and a manager?
+  0: Pelé
+  1: Zagallo  ✅ CORRECT
+  2: Carlos Alberto
+  3: Ronaldo
+Explanation: Mário Zagallo won the World Cup as a player (1958, 1962) and as manager (1970).
+
+=== Q199 [player] [medium] ID: c0ac9ccc-40e0-4375-bed3-cb0efe8b9453 ===
+Q: Which player is the all-time top scorer in Serie A history?
+  0: Alessandro Del Piero
+  1: Francesco Totti
+  2: Silvio Piola  ✅ CORRECT
+  3: Gabriel Batistuta
+Explanation: Silvio Piola holds the record for most goals in Serie A history with 274 goals.
+
+=== Q200 [player] [easy] ID: c1efc2d1-bc19-497d-8c44-8edeae3d2594 ===
+Q: Who is Brazil's all-time top scorer in World Cup history?
+  0: Pelé
+  1: Ronaldo  ✅ CORRECT
+  2: Neymar
+  3: Romário
+Explanation: Ronaldo scored 15 goals across 3 World Cups (1998, 2002, 2006), more than Pelé's 12 goals.
+
+=== Q201 [player] [hard] ID: c1fa3b24-4009-446e-a15d-9a064ce4c010 ===
+Q: Which player has scored the most goals in a single edition of the European Championship?
+  0: Cristiano Ronaldo
+  1: Michel Platini  ✅ CORRECT
+  2: Antoine Griezmann
+  3: Alan Shearer
+Explanation: Michel Platini scored 9 goals at Euro 1984, a record for a single tournament.
+
+=== Q202 [player] [easy] ID: c6b43533-d04f-4789-b2b5-36b74163a83d ===
+Q: Which country is Cristiano Ronaldo from?
+  0: Brazil
+  1: Spain
+  2: Portugal  ✅ CORRECT
+  3: Italy
+Explanation: Cristiano Ronaldo was born in Funchal, Madeira, Portugal.
+
+=== Q203 [player] [easy] ID: cf01a54c-ae28-4441-9c00-6ca452a32d9b ===
+Q: Which player famously performed the "SIUUU" celebration?
+  0: Lionel Messi
+  1: Neymar
+  2: Cristiano Ronaldo  ✅ CORRECT
+  3: Erling Haaland
+Explanation: Cristiano Ronaldo's signature "SIUUU" celebration (a jumping spin) became iconic worldwide.
+
+=== Q204 [player] [medium] ID: d12f7eb6-8532-4d38-b4be-0bcb9a86c722 ===
+Q: Which Dutch player was known as "The Flying Dutchman"?
+  0: Ruud Gullit
+  1: Marco van Basten
+  2: Johan Cruyff  ✅ CORRECT
+  3: Dennis Bergkamp
+Explanation: Johan Cruyff was nicknamed "The Flying Dutchman" for his revolutionary playing style and the Cruyff Turn.
+
+=== Q205 [player] [easy] ID: d21be1e3-fbaa-4f65-ad26-ebf905835f0c ===
+Q: What is Lionel Messi's shirt number for Argentina?
+  0: 7
+  1: 9
+  2: 10  ✅ CORRECT
+  3: 30
+Explanation: Lionel Messi wears the iconic number 10 jersey for Argentina.
+
+=== Q206 [player] [medium] ID: d3e1ef30-e150-43ba-a45a-894447c30fdd ===
+Q: Which English player scored a hat-trick in the 1966 World Cup Final?
+  0: Bobby Charlton
+  1: Gordon Banks
+  2: Geoff Hurst  ✅ CORRECT
+  3: Bobby Moore
+Explanation: Geoff Hurst scored a hat-trick as England beat West Germany 4-2 in the 1966 World Cup Final — the only hat-trick in a World Cup Final.
+
+=== Q207 [player] [medium] ID: d4b7b720-2a3a-4d69-80c6-e962eebd6a60 ===
+Q: Which goalkeeper won the Ballon d'Or in 1963?
+  0: Gordon Banks
+  1: Lev Yashin  ✅ CORRECT
+  2: Dino Zoff
+  3: Sepp Maier
+Explanation: Lev Yashin remains the only goalkeeper to ever win the Ballon d'Or, receiving it in 1963.
+
+=== Q208 [player] [medium] ID: dd73c75a-f55d-40e4-b62d-9f22a8316fc9 ===
+Q: Which German striker broke the Bundesliga single-season goal record?
+  0: Gerd Müller
+  1: Miroslav Klose
+  2: Robert Lewandowski  ✅ CORRECT
+  3: Karl-Heinz Rummenigge
+Explanation: Robert Lewandowski scored 41 Bundesliga goals in 2020-21, breaking Gerd Müller's 49-year record of 40.
+
+=== Q209 [player] [easy] ID: e18df908-a5af-4e83-8495-a74eade7b685 ===
+Q: Which player is nicknamed "The Egyptian King"?
+  0: Ahmed Hegazi
+  1: Mahmoud Hassan
+  2: Mohamed Salah  ✅ CORRECT
+  3: Omar Marmoush
+Explanation: Mohamed Salah is nicknamed "The Egyptian King" for his prolific goalscoring at Liverpool.
+
+=== Q210 [player] [easy] ID: e5f1b276-cece-4847-b8f0-ad2e02cb5367 ===
+Q: Which player won the Golden Ball (best player) at the 2022 World Cup?
+  0: Kylian Mbappé
+  1: Lionel Messi  ✅ CORRECT
+  2: Cristiano Ronaldo
+  3: Neymar
+Explanation: Lionel Messi won the Golden Ball at the 2022 World Cup, capping his career with Argentina's third title.
+
+=== Q211 [player] [easy] ID: eee01bfe-1163-4b5c-9cae-2b2257292f78 ===
+Q: Which English striker plays for Bayern Munich and has scored over 200 Premier League goals?
+  0: Wayne Rooney
+  1: Harry Kane  ✅ CORRECT
+  2: Marcus Rashford
+  3: Jamie Vardy
+Explanation: Harry Kane moved to Bayern Munich in 2023 after becoming Tottenham's all-time top scorer.
+
+=== Q212 [player] [easy] ID: f0394ac8-58da-46b0-a4b7-9845a0072c77 ===
+Q: Which club does Vinícius Jr. currently play for?
+  0: Barcelona
+  1: PSG
+  2: Manchester City
+  3: Real Madrid  ✅ CORRECT
+Explanation: Vinícius Jr. plays for Real Madrid, having joined from Flamengo in 2018.
+
+=== Q213 [player] [easy] ID: f4936da0-b8d4-47f3-be3b-d78d4845cda7 ===
+Q: Which Brazilian is considered one of the greatest players of all time and wore the number 10?
+  0: Ronaldinho
+  1: Neymar
+  2: Kaká
+  3: Pelé  ✅ CORRECT
+Explanation: Pelé is widely considered one of the greatest footballers ever, winning 3 World Cups with Brazil.
+
+=== Q214 [player] [hard] ID: f65c58ef-d53c-4be5-91b1-d3f702310756 ===
+Q: Which player scored 5 goals in a single Champions League match in 2015?
+  0: Cristiano Ronaldo
+  1: Luiz Adriano  ✅ CORRECT
+  2: Lionel Messi
+  3: Robert Lewandowski
+Explanation: Luiz Adriano scored 5 goals for Shakhtar Donetsk vs BATE Borisov in the 2014-15 Champions League group stage. Lewandowski's famous 5 goals were in a Bundesliga match.
+
+=== Q215 [player] [medium] ID: fd2a4db9-f514-4839-9e3c-0ef646a1b9d8 ===
+Q: Which Brazilian midfielder won two consecutive FIFA World Player of the Year awards in 2004 and 2005?
+  0: Kaká
+  1: Ronaldo
+  2: Rivaldo
+  3: Ronaldinho  ✅ CORRECT
+Explanation: Ronaldinho won FIFA World Player of the Year in 2004 and 2005 during his peak at Barcelona.
+
+=== Q216 [player] [hard] ID: fddce515-de4c-42d8-80f6-451dafddfc01 ===
+Q: Which player scored a bicycle kick goal in the 2018 Champions League Final?
+  0: Cristiano Ronaldo
+  1: Gareth Bale  ✅ CORRECT
+  2: Karim Benzema
+  3: Sadio Mané
+Explanation: Gareth Bale scored a spectacular bicycle kick for Real Madrid against Liverpool in the 2018 Champions League Final.
+
+=== Q217 [team] [medium] ID: 08f361e1-e26f-43af-b8c5-1ef8b8396c5b ===
+Q: The "Derby della Madonnina" is between which two clubs?
+  0: Roma vs Lazio
+  1: Juventus vs Torino
+  2: AC Milan vs Inter Milan  ✅ CORRECT
+  3: Napoli vs Roma
+Explanation: The Derby della Madonnina is the Milan derby between AC Milan and Inter Milan.
+
+=== Q218 [team] [medium] ID: 0b185c99-e00a-43fc-a3d4-62739a1a7e87 ===
+Q: Which Portuguese club is known as "Os Dragões" (The Dragons)?
+  0: Benfica
+  1: Sporting CP
+  2: Braga
+  3: Porto  ✅ CORRECT
+Explanation: FC Porto is nicknamed "Os Dragões" (The Dragons) and plays at the Estádio do Dragão.
+
+=== Q219 [team] [hard] ID: 0b9a1d65-7557-4675-8bd1-d48b09225785 ===
+Q: Which club holds the record for most goals scored in a single Premier League season?
+  0: Liverpool
+  1: Manchester United
+  2: Chelsea
+  3: Manchester City  ✅ CORRECT
+Explanation: Manchester City scored 106 goals in the 2017-18 Premier League season, a record.
+
+=== Q220 [team] [hard] ID: 0cc0e541-9964-4382-a5ac-8132635fa963 ===
+Q: Which club won the first-ever English football league title in 1889?
+  0: Aston Villa
+  1: Sunderland
+  2: Everton
+  3: Preston North End  ✅ CORRECT
+Explanation: Preston North End won the first Football League title in 1888-89, going unbeaten (the original "Invincibles").
+
+=== Q221 [team] [easy] ID: 1367ad46-e55a-4153-8435-21af6f7155bf ===
+Q: Which Spanish club plays at the Santiago Bernabéu?
+  0: Barcelona
+  1: Atlético Madrid
+  2: Real Madrid  ✅ CORRECT
+  3: Sevilla
+Explanation: Real Madrid plays their home matches at the Santiago Bernabéu Stadium in Madrid.
+
+=== Q222 [team] [easy] ID: 165a118d-3cf1-4943-ac52-5bd4891cc7fc ===
+Q: What animal is on the Tottenham Hotspur crest?
+  0: Lion
+  1: Eagle
+  2: Rooster  ✅ CORRECT
+  3: Horse
+Explanation: Tottenham Hotspur's crest features a cockerel (rooster) standing on a football.
+
+=== Q223 [team] [medium] ID: 16ca84fb-58d8-418a-8bc9-d48c1f5c9c36 ===
+Q: What is the name of Tottenham Hotspur's current stadium?
+  0: White Hart Lane
+  1: Wembley Stadium
+  2: Tottenham Hotspur Stadium  ✅ CORRECT
+  3: The Emirates
+Explanation: Tottenham Hotspur Stadium opened in 2019, replacing the historic White Hart Lane.
+
+=== Q224 [team] [easy] ID: 1a663134-0172-4aa3-b012-42581fef0500 ===
+Q: What color are Manchester City's home shirts?
+  0: Red
+  1: White
+  2: Sky blue  ✅ CORRECT
+  3: Navy blue
+Explanation: Manchester City wears sky blue home shirts, earning the nickname "The Cityzens" or "Sky Blues".
+
+=== Q225 [team] [easy] ID: 1bd319af-60cc-463e-b515-1efc2596b7f9 ===
+Q: Which Italian club plays in black and white stripes?
+  0: AC Milan
+  1: Inter Milan
+  2: Roma
+  3: Juventus  ✅ CORRECT
+Explanation: Juventus is famous for their black and white striped jerseys, earning the nickname "The Old Lady".
+
+=== Q226 [team] [hard] ID: 1bde3f64-18f7-4e39-8d37-ee187627f27c ===
+Q: Nottingham Forest won back-to-back European Cups in which years?
+  0: 1977 and 1978
+  1: 1979 and 1980  ✅ CORRECT
+  2: 1981 and 1982
+  3: 1983 and 1984
+Explanation: Nottingham Forest won the European Cup in 1979 and 1980 under Brian Clough.
+
+=== Q227 [team] [easy] ID: 1c1fbdcc-ec56-4870-ad05-23d7277e3564 ===
+Q: Which club plays at Old Trafford?
+  0: Manchester City
+  1: Liverpool
+  2: Chelsea
+  3: Manchester United  ✅ CORRECT
+Explanation: Manchester United plays at Old Trafford, known as "The Theatre of Dreams".
+
+=== Q228 [team] [medium] ID: 250aaa46-18d2-4411-bbf5-998412c33250 ===
+Q: Which team scored the fastest goal in World Cup history (11 seconds)?
+  0: Turkey  ✅ CORRECT
+  1: El Salvador
+  2: Russia
+  3: Algeria
+Explanation: Hakan Şükür of Turkey scored after just 11 seconds against South Korea at the 2002 World Cup — the fastest ever.
+
+=== Q229 [team] [medium] ID: 2ac00495-7cb5-4e35-ad7e-129caebbcde9 ===
+Q: Which English club has never been relegated from the Premier League?
+  0: Manchester United
+  1: Liverpool
+  2: Arsenal  ✅ CORRECT
+  3: Everton
+Explanation: Arsenal has played in the top flight of English football since 1919 and has never been relegated from the Premier League.
+
+=== Q230 [team] [medium] ID: 2b9ea163-3c2a-456b-a47c-6002d081a34f ===
+Q: Borussia Dortmund's stadium is known by what nickname?
+  0: The Colosseum
+  1: The Yellow Wall  ✅ CORRECT
+  2: Signal Iduna Park
+  3: The Cathedral
+Explanation: Dortmund's Südtribüne (South Stand) is known as "The Yellow Wall" — the largest standing terrace in Europe with 25,000 fans.
+
+=== Q231 [team] [medium] ID: 2d50debb-14ef-4848-b3bf-c9198786fb30 ===
+Q: Which club won the first Premier League title in 1992-93?
+  0: Arsenal
+  1: Blackburn Rovers
+  2: Leeds United
+  3: Manchester United  ✅ CORRECT
+Explanation: Manchester United won the inaugural Premier League season in 1992-93 under Sir Alex Ferguson.
+
+=== Q232 [team] [medium] ID: 2e678809-afaa-4d77-b478-b0286d348d3f ===
+Q: Which Japanese club did Andrés Iniesta join after leaving Barcelona?
+  0: Kashima Antlers
+  1: Vissel Kobe  ✅ CORRECT
+  2: Yokohama F. Marinos
+  3: Urawa Red Diamonds
+Explanation: Andrés Iniesta joined Vissel Kobe in Japan in 2018 after leaving Barcelona.
+
+=== Q233 [team] [easy] ID: 2f2b35b2-8850-4d7d-97d0-ee74c61cce56 ===
+Q: Which club is nicknamed "The Blues" and plays in the Premier League?
+  0: Manchester City
+  1: Everton
+  2: Chelsea  ✅ CORRECT
+  3: Leicester City
+Explanation: Chelsea is commonly known as "The Blues" after their blue home kit.
+
+=== Q234 [team] [hard] ID: 30f8f96d-733b-4f7a-b4a7-059399b03cab ===
+Q: Which club won the first-ever FIFA Club World Cup?
+  0: Real Madrid
+  1: Manchester United
+  2: Corinthians  ✅ CORRECT
+  3: São Paulo
+Explanation: Corinthians won the first FIFA Club World Cup in 2000, held in Brazil.
+
+=== Q235 [team] [medium] ID: 32efe1bc-1303-49bc-8d01-241c2c787220 ===
+Q: Flamengo is the most popular club in which country?
+  0: Portugal
+  1: Argentina
+  2: Colombia
+  3: Brazil  ✅ CORRECT
+Explanation: Flamengo, based in Rio de Janeiro, is the most supported club in Brazil with over 40 million fans.
+
+=== Q236 [team] [hard] ID: 3420c6d2-9444-4123-9b56-a93fc654441c ===
+Q: Which club was the first to install undersoil heating at their stadium?
+  0: Everton  ✅ CORRECT
+  1: Arsenal
+  2: Manchester United
+  3: Wolverhampton Wanderers
+Explanation: Everton's Goodison Park was the first English ground to install undersoil heating in 1958.
+
+=== Q237 [team] [easy] ID: 34988d82-9bd8-40a1-99d3-c05d8a5eaddf ===
+Q: Which club's anthem is "You'll Never Walk Alone"?
+  0: Everton
+  1: Manchester City
+  2: Celtic
+  3: Liverpool  ✅ CORRECT
+Explanation: Liverpool FC's anthem "You'll Never Walk Alone" is sung by the Kop at Anfield before every match.
+
+=== Q238 [team] [medium] ID: 3e37101a-434d-4289-9001-790020e9966d ===
+Q: Which club won the Premier League in the 2015-16 season as 5000-1 outsiders?
+  0: Burnley
+  1: Southampton
+  2: Leicester City  ✅ CORRECT
+  3: West Ham
+Explanation: Leicester City's 2015-16 Premier League title is considered one of the greatest underdog stories in sports.
+
+=== Q239 [team] [hard] ID: 483c8eff-9c52-432e-9b05-305550c03e22 ===
+Q: Which club was known as "The Invincibles" for going an entire Premier League season unbeaten?
+  0: Chelsea
+  1: Manchester United
+  2: Arsenal  ✅ CORRECT
+  3: Liverpool
+Explanation: Arsenal's 2003-04 squad went the entire 38-match Premier League season unbeaten, earning the "Invincibles" title.
+
+=== Q240 [team] [easy] ID: 5c17d342-65ed-46ae-b60c-d474a0e0f3af ===
+Q: Which London club is nicknamed "The Gunners"?
+  0: Chelsea
+  1: Tottenham
+  2: West Ham
+  3: Arsenal  ✅ CORRECT
+Explanation: Arsenal is nicknamed "The Gunners" due to the club's origins at the Royal Arsenal munitions factory.
+
+=== Q241 [team] [hard] ID: 5d1cf9e8-62dc-4eda-94e5-246250b06e82 ===
+Q: Which club won the European Cup Winners' Cup the most times before it was abolished?
+  0: Chelsea
+  1: Barcelona  ✅ CORRECT
+  2: Anderlecht
+  3: AC Milan
+Explanation: Barcelona won the Cup Winners' Cup a record 4 times (1979, 1982, 1989, 1997) before it was abolished in 1999.
+
+=== Q242 [team] [easy] ID: 5fa6b782-23dd-464b-8954-28a33af73d7d ===
+Q: Which club plays at Anfield?
+  0: Everton
+  1: Manchester United
+  2: Liverpool  ✅ CORRECT
+  3: Arsenal
+Explanation: Liverpool plays at Anfield, their home since 1892.
+
+=== Q243 [team] [medium] ID: 6405b2b2-ef20-4f9d-a233-bf9836fab3df ===
+Q: Which French club has won the most Ligue 1 titles?
+  0: Marseille
+  1: Monaco
+  2: Lyon
+  3: PSG  ✅ CORRECT
+Explanation: Paris Saint-Germain has won the most Ligue 1 titles, dominating French football especially since 2012.
+
+=== Q244 [team] [easy] ID: 7278710e-7457-4307-8de8-bc39d1db0f9d ===
+Q: Which London club plays at Stamford Bridge?
+  0: Arsenal
+  1: Tottenham
+  2: West Ham
+  3: Chelsea  ✅ CORRECT
+Explanation: Chelsea plays at Stamford Bridge in Fulham, west London.
+
+=== Q245 [team] [medium] ID: 7f8586e9-4595-454e-96c5-7465b09c15b8 ===
+Q: Which Dutch club plays at the Johan Cruyff Arena?
+  0: PSV Eindhoven
+  1: Feyenoord
+  2: Ajax  ✅ CORRECT
+  3: AZ Alkmaar
+Explanation: Ajax plays at the Johan Cruyff Arena in Amsterdam, renamed in 2018 in honor of Johan Cruyff.
+
+=== Q246 [team] [medium] ID: 879e366a-72a1-41ed-ae0d-5b64cebcd9e8 ===
+Q: Which club has won the most Serie A titles?
+  0: AC Milan
+  1: Inter Milan
+  2: Juventus  ✅ CORRECT
+  3: Roma
+Explanation: Juventus has won the most Serie A titles with 36 (though 2 were stripped due to Calciopoli).
+
+=== Q247 [team] [medium] ID: 91daf61e-d55f-4502-b108-a26ec9de6ccd ===
+Q: River Plate and Boca Juniors contest which famous derby?
+  0: El Clásico
+  1: Superclásico  ✅ CORRECT
+  2: Derby d'Italia
+  3: Old Firm
+Explanation: The Superclásico between River Plate and Boca Juniors in Buenos Aires is one of the fiercest derbies in world football.
+
+=== Q248 [team] [medium] ID: a632cce1-f863-42e5-b0f8-45a6c5ea139c ===
+Q: Which MLS team did David Beckham help found?
+  0: LAFC
+  1: LA Galaxy
+  2: Inter Miami  ✅ CORRECT
+  3: New York City FC
+Explanation: David Beckham co-founded Inter Miami CF, which joined MLS in 2020.
+
+=== Q249 [team] [easy] ID: a8b8693a-e8a7-48a8-91f2-df07300bfe40 ===
+Q: Which club does Lionel Messi currently play for?
+  0: Barcelona
+  1: PSG
+  2: Inter Miami  ✅ CORRECT
+  3: Al-Hilal
+Explanation: Lionel Messi plays for Inter Miami in MLS, having joined in 2023.
+
+=== Q250 [team] [hard] ID: a98fa74b-dc93-4cae-a4cd-c0dabf52bd71 ===
+Q: What is the oldest football club in the world?
+  0: Notts County
+  1: Sheffield FC  ✅ CORRECT
+  2: Stoke City
+  3: Queen's Park
+Explanation: Sheffield FC, founded in 1857, is recognized by FIFA as the oldest football club in the world.
+
+=== Q251 [team] [medium] ID: bb36ff3d-f6b7-4661-88f5-133d6297c759 ===
+Q: What is the capacity of Camp Nou?
+  0: 80,000
+  1: 85,000
+  2: 99,354  ✅ CORRECT
+  3: 105,000
+Explanation: Camp Nou has a capacity of 99,354, making it the largest stadium in Europe.
+
+=== Q252 [team] [medium] ID: c0ec5b9f-45b6-403c-b7fe-3927fdd78b3f ===
+Q: Which club has won the most FA Cup titles?
+  0: Manchester United
+  1: Liverpool
+  2: Chelsea
+  3: Arsenal  ✅ CORRECT
+Explanation: Arsenal has won the FA Cup a record 14 times.
+
+=== Q253 [team] [medium] ID: c7f521b8-6567-4882-9278-d35907f53e5d ===
+Q: Which Mexican club has won the most Liga MX titles?
+  0: Chivas
+  1: América  ✅ CORRECT
+  2: Cruz Azul
+  3: Pumas
+Explanation: Club América has won the most Liga MX titles in Mexican football history.
+
+=== Q254 [team] [hard] ID: cb7fd3a7-a611-48ba-a620-58533fd55638 ===
+Q: Which South American club has won the most Copa Libertadores titles?
+  0: Boca Juniors
+  1: Santos
+  2: Peñarol
+  3: Independiente  ✅ CORRECT
+Explanation: Club Atlético Independiente has won the Copa Libertadores a record 7 times.
+
+=== Q255 [team] [easy] ID: ce061486-9d71-4387-86a6-20fa9c4a8fe0 ===
+Q: El Clásico is a match between which two clubs?
+  0: AC Milan vs Inter Milan
+  1: Liverpool vs Everton
+  2: Real Madrid vs Barcelona  ✅ CORRECT
+  3: Arsenal vs Tottenham
+Explanation: El Clásico is the famous rivalry match between Real Madrid and FC Barcelona.
+
+=== Q256 [team] [easy] ID: ce238f54-e36f-4a75-a8c9-f72b3e20c6ad ===
+Q: Which club is known as "The Red Devils"?
+  0: Liverpool
+  1: Arsenal
+  2: Manchester United  ✅ CORRECT
+  3: AC Milan
+Explanation: Manchester United is nicknamed "The Red Devils", a name adopted in the 1960s.
+
+=== Q257 [team] [easy] ID: d424c09b-6800-45b1-8095-2a366db0b7b5 ===
+Q: Which German club has won the most Bundesliga titles?
+  0: Borussia Dortmund
+  1: Bayer Leverkusen
+  2: Bayern Munich  ✅ CORRECT
+  3: Schalke 04
+Explanation: Bayern Munich has won over 30 Bundesliga titles, far more than any other German club.
+
+=== Q258 [team] [easy] ID: d98ee267-2ff6-4bfd-956b-28dd86260775 ===
+Q: What is FC Barcelona's famous motto?
+  0: Hala Madrid
+  1: Més que un club  ✅ CORRECT
+  2: You'll Never Walk Alone
+  3: Forza
+Explanation: FC Barcelona's motto is "Més que un club" (More than a club).
+
+=== Q259 [team] [hard] ID: dd6e2851-3510-4e64-a054-447a15e7f216 ===
+Q: Which Turkish club has won the most Süper Lig titles?
+  0: Beşiktaş
+  1: Fenerbahçe
+  2: Trabzonspor
+  3: Galatasaray  ✅ CORRECT
+Explanation: Galatasaray has won the most Turkish Süper Lig titles.
+
+=== Q260 [team] [easy] ID: e4e7cd83-2e03-4609-ade4-fd76bec4b428 ===
+Q: What is PSG short for?
+  0: Paris Saint-Georges
+  1: Paris Saint-Germain  ✅ CORRECT
+  2: Paris Sporting Group
+  3: Paris Soccer Guild
+Explanation: PSG stands for Paris Saint-Germain Football Club, founded in 1970.
+
+=== Q261 [team] [easy] ID: e98d650e-5641-427f-853a-6a94a974f0cb ===
+Q: Napoli plays in which Italian city?
+  0: Rome
+  1: Milan
+  2: Naples  ✅ CORRECT
+  3: Turin
+Explanation: SSC Napoli is based in Naples (Napoli in Italian), southern Italy.
+
+=== Q262 [team] [medium] ID: e9d53ca9-f157-4b4e-ace5-c9a56b703c76 ===
+Q: Which club plays at the Allianz Arena?
+  0: Borussia Dortmund
+  1: RB Leipzig
+  2: Bayern Munich  ✅ CORRECT
+  3: Bayer Leverkusen
+Explanation: Bayern Munich plays at the Allianz Arena, which opened in 2005 with a capacity of 75,000.
+
+=== Q263 [team] [hard] ID: f3eee2ba-5056-4273-839e-ba9fd0e232ea ===
+Q: Which club became the first from the former Soviet Union to win a European trophy?
+  0: Dynamo Kyiv  ✅ CORRECT
+  1: Spartak Moscow
+  2: Dynamo Tbilisi
+  3: CSKA Moscow
+Explanation: Dynamo Kyiv won the Cup Winners' Cup in 1975, the first Soviet club to win a European trophy.
+
+=== Q264 [team] [easy] ID: fa4091b0-a441-4520-9c97-2954400440ac ===
+Q: Which African nation reached the semifinal of the 2022 World Cup — a first for an African team?
+  0: Nigeria
+  1: Senegal
+  2: Morocco  ✅ CORRECT
+  3: Egypt
+Explanation: Morocco became the first African nation to reach a World Cup semifinal, defeating Portugal in the quarterfinals.
+
+=== Q265 [tournament] [medium] ID: 144a8ce4-b99d-4171-b1b1-a91ac125f182 ===
+Q: What is the maximum number of teams that can qualify for the FIFA World Cup 2026?
+  0: 32
+  1: 40
+  2: 48  ✅ CORRECT
+  3: 64
+Explanation: FIFA expanded the World Cup to 48 teams starting from the 2026 tournament, co-hosted by USA, Canada, and Mexico.
+
+=== Q266 [tournament] [hard] ID: 1d2057ef-fae5-4cb5-9403-043aef83b8a8 ===
+Q: How many total goals were scored in the 2022 FIFA World Cup in Qatar?
+  0: 163
+  1: 172  ✅ CORRECT
+  2: 185
+  3: 200
+Explanation: 172 goals were scored across 64 matches at the 2022 World Cup — an average of 2.69 per game.
+
+=== Q267 [world_cup] [easy] ID: 0284e29b-ca24-499e-b8c0-5f820951abce ===
+Q: Who won the 2022 FIFA World Cup in Qatar?
+  0: France
+  1: Brazil
+  2: Argentina  ✅ CORRECT
+  3: Croatia
+Explanation: Argentina won the 2022 World Cup, defeating France in a penalty shootout after a 3-3 draw.
+
+=== Q268 [world_cup] [medium] ID: 03623090-3214-4d3d-abe9-5ba0c17d2973 ===
+Q: Which country won back-to-back World Cups in 1958 and 1962?
+  0: Germany
+  1: Italy
+  2: Argentina
+  3: Brazil  ✅ CORRECT
+Explanation: Brazil won consecutive World Cups in 1958 (Sweden) and 1962 (Chile).
+
+=== Q269 [world_cup] [easy] ID: 03a58c0a-606d-4dd2-976f-1b7f69815509 ===
+Q: Which continent has never had a World Cup winner?
+  0: Africa
+  1: Asia
+  2: North America
+  3: All of the above  ✅ CORRECT
+Explanation: No team from Africa, Asia, or North America has ever won the World Cup. Winners have only come from Europe and South America.
+
+=== Q270 [world_cup] [medium] ID: 07617164-fe0d-4c8f-b06f-27d720b02c6c ===
+Q: Which goalkeeper has kept the most clean sheets in World Cup history?
+  0: Manuel Neuer
+  1: Fabien Barthez  ✅ CORRECT
+  2: Peter Shilton
+  3: Gianluigi Buffon
+Explanation: Fabien Barthez holds the record with 10 clean sheets across the 1998 and 2006 World Cups.
+
+=== Q271 [world_cup] [medium] ID: 09119fee-ab8c-4eec-9c79-f080294fdd6b ===
+Q: Which player scored the fastest hat-trick in World Cup history?
+  0: Pelé
+  1: László Kiss  ✅ CORRECT
+  2: Fabienne Humm
+  3: Hakan Şükür
+Explanation: László Kiss scored a hat-trick in 7 minutes against El Salvador in the 1982 World Cup.
+
+=== Q272 [world_cup] [easy] ID: 0cd56f55-6256-4df8-a1f6-5ebbde69ba65 ===
+Q: How many teams will participate in the 2026 World Cup?
+  0: 32
+  1: 40
+  2: 48  ✅ CORRECT
+  3: 64
+Explanation: The 2026 World Cup will be the first to feature 48 teams, expanded from the traditional 32.
+
+=== Q273 [world_cup] [easy] ID: 0d607c8a-97f9-4518-a241-7ebb7fa1624d ===
+Q: In which year did Spain win their first World Cup?
+  0: 2006
+  1: 2010  ✅ CORRECT
+  2: 2014
+  3: 2002
+Explanation: Spain won their first and only World Cup in 2010 in South Africa, defeating the Netherlands 1-0 in the final.
+
+=== Q274 [world_cup] [medium] ID: 16dad224-1d78-4012-91b0-e4d979cd464b ===
+Q: Who scored the fastest goal in World Cup history?
+  0: Clint Dempsey
+  1: Hakan Şükür  ✅ CORRECT
+  2: Pelé
+  3: Ronaldo
+Explanation: Hakan Şükür scored just 11 seconds into the 2002 World Cup third-place match against South Korea.
+
+=== Q275 [world_cup] [medium] ID: 176985d8-eae2-416a-9a7e-0a28326c6fc2 ===
+Q: Who won the Golden Ball at the 2022 World Cup?
+  0: Kylian Mbappé
+  1: Lionel Messi  ✅ CORRECT
+  2: Luka Modrić
+  3: Emi Martínez
+Explanation: Lionel Messi won the Golden Ball as the best player of the 2022 World Cup in Qatar.
+
+=== Q276 [world_cup] [hard] ID: 17f5ee6c-7b88-4987-90c7-2420a7a2fe7c ===
+Q: What was the "Maracanazo"?
+  0: Brazil's 1970 victory
+  1: Uruguay beating Brazil in the 1950 final  ✅ CORRECT
+  2: Argentina's 1978 win
+  3: Italy's 1934 triumph
+Explanation: The Maracanazo refers to Uruguay's shock 2-1 victory over Brazil in the decisive 1950 World Cup match at the Maracanã.
+
+=== Q277 [world_cup] [easy] ID: 1a081be2-3cac-47d5-9f2b-9fb795b5ec97 ===
+Q: Lionel Messi plays for which national team?
+  0: Brazil
+  1: Spain
+  2: Argentina  ✅ CORRECT
+  3: Portugal
+Explanation: Lionel Messi represents Argentina and captained them to World Cup glory in 2022.
+
+=== Q278 [world_cup] [medium] ID: 1ba5c409-38e8-473c-a7a7-43f159459f5d ===
+Q: Which player was sent off in the 2006 World Cup Final for a headbutt?
+  0: Thierry Henry
+  1: Marco Materazzi
+  2: Zinedine Zidane  ✅ CORRECT
+  3: Gennaro Gattuso
+Explanation: Zinedine Zidane was red-carded for headbutting Marco Materazzi in the 2006 World Cup Final.
+
+=== Q279 [world_cup] [easy] ID: 1f79c323-4648-4e1a-ae42-a3a25a07fda3 ===
+Q: Which country hosted the first FIFA World Cup in 1930?
+  0: Brazil
+  1: Uruguay  ✅ CORRECT
+  2: Italy
+  3: France
+Explanation: Uruguay hosted and won the inaugural FIFA World Cup in 1930.
+
+=== Q280 [world_cup] [hard] ID: 273e484c-2052-4cf7-91dd-7ccbf21ee409 ===
+Q: Which World Cup match is known as the "Game of the Century"?
+  0: Brazil vs Italy 1970
+  1: Italy vs Germany 1970  ✅ CORRECT
+  2: Argentina vs England 1986
+  3: Germany vs Brazil 2014
+Explanation: The 1970 World Cup semi-final between Italy and West Germany (4-3) is known as the "Game of the Century".
+
+=== Q281 [world_cup] [medium] ID: 31ce6c4b-0002-4adf-ac30-15345f37f184 ===
+Q: Which team holds the record for the largest margin of victory in a World Cup match?
+  0: Germany
+  1: Hungary
+  2: Australia  ✅ CORRECT
+  3: Brazil
+Explanation: Australia beat American Samoa 31-0 in a 2001 World Cup qualifier, the largest margin in FIFA history.
+
+=== Q282 [world_cup] [hard] ID: 3d9e31e2-20b2-4d42-adb6-fe1222cc33ad ===
+Q: Which was the first Asian country to reach the World Cup semi-finals?
+  0: Japan
+  1: South Korea  ✅ CORRECT
+  2: Iran
+  3: Saudi Arabia
+Explanation: South Korea became the first Asian team to reach the semi-finals at the 2002 World Cup as co-hosts.
+
+=== Q283 [world_cup] [medium] ID: 3e9f1f87-c450-4c9e-8253-5d563be023d8 ===
+Q: Which World Cup final had the highest number of goals scored?
+  0: 1958 (Brazil vs Sweden)  ✅ CORRECT
+  1: 1966 (England vs West Germany)
+  2: 2022 (Argentina vs France)
+  3: 1954 (West Germany vs Hungary)
+Explanation: The 1958 World Cup Final between Brazil and Sweden (5-2) produced 7 goals, the most in any World Cup Final.
+
+=== Q284 [world_cup] [medium] ID: 453b15c7-ca4d-47ce-8336-2e6752c02823 ===
+Q: What was the official match ball of the 2022 World Cup called?
+  0: Brazuca
+  1: Telstar
+  2: Al Rihla  ✅ CORRECT
+  3: Jabulani
+Explanation: The official ball of the 2022 World Cup was called "Al Rihla", meaning "The Journey" in Arabic.
+
+=== Q285 [world_cup] [medium] ID: 4eab3b95-2c6c-433c-a0db-deab071f21dc ===
+Q: Which country won the first World Cup to use a penalty shootout in the final?
+  0: Argentina 1978
+  1: Brazil 1994  ✅ CORRECT
+  2: Italy 2006
+  3: Argentina 2022
+Explanation: Brazil won the 1994 World Cup Final against Italy in the first-ever penalty shootout in a World Cup Final.
+
+=== Q286 [world_cup] [hard] ID: 50bb8083-568e-46e1-8238-42bc9351f8fe ===
+Q: Which country has qualified for every single World Cup tournament?
+  0: Germany
+  1: Argentina
+  2: Brazil  ✅ CORRECT
+  3: Italy
+Explanation: Brazil is the only country to have qualified for and played in every World Cup since 1930.
+
+=== Q287 [world_cup] [hard] ID: 5a5c88d0-dff0-4f7e-bb2c-6674abd101d2 ===
+Q: Who scored the fastest hat-trick in World Cup history?
+  0: Gerd Müller
+  1: László Kiss  ✅ CORRECT
+  2: Cristiano Ronaldo
+  3: Miroslav Klose
+Explanation: László Kiss of Hungary scored a hat-trick in 7 minutes against El Salvador at the 1982 World Cup.
+
+=== Q288 [world_cup] [easy] ID: 61132693-e36c-454a-b7e2-151f09e62be9 ===
+Q: Which country won the 2014 World Cup held in Brazil?
+  0: Brazil
+  1: Argentina
+  2: Germany  ✅ CORRECT
+  3: Netherlands
+Explanation: Germany won the 2014 World Cup in Brazil, beating Argentina 1-0 in extra time with a goal by Mario Götze.
+
+=== Q289 [world_cup] [easy] ID: 6669182a-3956-4f5d-924b-08abbabee8ec ===
+Q: What color is the FIFA World Cup trophy?
+  0: Silver
+  1: Bronze
+  2: Gold  ✅ CORRECT
+  3: Platinum
+Explanation: The FIFA World Cup Trophy is made of 18-karat gold and stands 36.8 cm tall.
+
+=== Q290 [world_cup] [easy] ID: 6aafea27-5da8-4f58-83f8-2de07b3d82a7 ===
+Q: How many FIFA World Cup tournaments have been held as of 2022?
+  0: 20
+  1: 22  ✅ CORRECT
+  2: 24
+  3: 18
+Explanation: 22 FIFA World Cup tournaments have been held from 1930 to 2022.
+
+=== Q291 [world_cup] [hard] ID: 7673beee-fc85-44e1-9969-2b484391fda3 ===
+Q: Which player has received the most red cards in World Cup history?
+  0: Zinedine Zidane
+  1: Rigobert Song  ✅ CORRECT
+  2: Cameroon's entire 1998 squad
+  3: None — it's a tie
+Explanation: Rigobert Song is the only player to be sent off in two different World Cups (1994 and 1998).
+
+=== Q292 [world_cup] [medium] ID: 76b4b0ca-11ed-4cda-8b5b-34a0cadad230 ===
+Q: Which team was eliminated from the 2014 World Cup after losing 7-1 to Germany?
+  0: Argentina
+  1: Spain
+  2: Brazil  ✅ CORRECT
+  3: Netherlands
+Explanation: Brazil suffered a historic 7-1 defeat to Germany in the 2014 World Cup semi-final, known as the "Mineirazo".
+
+=== Q293 [world_cup] [easy] ID: 7902a814-f4ce-4690-abe7-03d208082b15 ===
+Q: Which South American country has won two World Cups?
+  0: Colombia
+  1: Chile
+  2: Argentina
+  3: Uruguay  ✅ CORRECT
+Explanation: Both Argentina (1978, 1986, 2022) and Uruguay (1930, 1950) have won multiple World Cups, but Uruguay won exactly two.
+
+=== Q294 [world_cup] [medium] ID: 86930654-e984-43de-8355-29f3e104b045 ===
+Q: Which player scored the "Hand of God" goal?
+  0: Pelé
+  1: Diego Maradona  ✅ CORRECT
+  2: Zinedine Zidane
+  3: Ronaldo
+Explanation: Diego Maradona scored the infamous "Hand of God" goal against England in the 1986 World Cup quarter-final.
+
+=== Q295 [world_cup] [easy] ID: 87d4e1d0-7004-40c1-8b88-f4c332b80dc0 ===
+Q: Which country has won the most FIFA World Cup titles?
+  0: Germany
+  1: Argentina
+  2: Brazil  ✅ CORRECT
+  3: Italy
+Explanation: Brazil has won the FIFA World Cup a record 5 times (1958, 1962, 1970, 1994, 2002).
+
+=== Q296 [world_cup] [easy] ID: 8b3f53e5-f70b-4f0e-96e6-6c8abc8a6acc ===
+Q: What is the name of the World Cup trophy?
+  0: Jules Rimet Trophy
+  1: FIFA World Cup Trophy  ✅ CORRECT
+  2: Golden Globe
+  3: Victory Cup
+Explanation: The current trophy is called the FIFA World Cup Trophy, introduced in 1974. The original was the Jules Rimet Trophy.
+
+=== Q297 [world_cup] [easy] ID: 8c748ccc-69c4-43db-855c-d5ca91125b7f ===
+Q: How often is the FIFA World Cup held?
+  0: Every 2 years
+  1: Every 3 years
+  2: Every 4 years  ✅ CORRECT
+  3: Every 5 years
+Explanation: The FIFA World Cup is held every 4 years since its inception in 1930.
+
+=== Q298 [world_cup] [medium] ID: 941ad84a-e9eb-4f62-80d3-c6a6c1bd7eba ===
+Q: Which African team first reached the World Cup quarter-finals?
+  0: Nigeria
+  1: Ghana
+  2: Cameroon  ✅ CORRECT
+  3: Senegal
+Explanation: Cameroon became the first African team to reach the World Cup quarter-finals in 1990 in Italy.
+
+=== Q299 [world_cup] [medium] ID: 9a3927a9-b42b-4979-b716-d5c048b8a7ce ===
+Q: What is the record for most goals scored by one team in a single World Cup match?
+  0: 7
+  1: 9
+  2: 10  ✅ CORRECT
+  3: 12
+Explanation: Hungary beat El Salvador 10-1 in the 1982 World Cup, scoring 10 goals in a single match.
+
+=== Q300 [world_cup] [hard] ID: 9fbd0502-6fd7-4dc1-8fbe-353165dac793 ===
+Q: Just Fontaine scored 13 goals in the 1958 World Cup. How many matches did he play?
+  0: 4
+  1: 5
+  2: 6  ✅ CORRECT
+  3: 7
+Explanation: Just Fontaine scored his record 13 goals in just 6 matches at the 1958 World Cup in Sweden.
+
+=== Q301 [world_cup] [hard] ID: a0cc07ae-be10-4899-9b1f-2ce528396ce8 ===
+Q: How many World Cups were cancelled due to World War II?
+  0: 1
+  1: 2  ✅ CORRECT
+  2: 3
+  3: 4
+Explanation: Two World Cups were cancelled: 1942 and 1946, due to World War II.
+
+=== Q302 [world_cup] [easy] ID: aaf246f4-f664-4f41-8143-aed65b2b0331 ===
+Q: Which team won the 2018 World Cup in Russia?
+  0: Croatia
+  1: Belgium
+  2: France  ✅ CORRECT
+  3: England
+Explanation: France won the 2018 World Cup, defeating Croatia 4-2 in the final.
+
+=== Q303 [world_cup] [hard] ID: accc9f8b-6032-4b03-89b1-0dd4b7ac8f59 ===
+Q: Who is the oldest player to score in a World Cup match?
+  0: Roger Milla  ✅ CORRECT
+  1: Miroslav Klose
+  2: Pelé
+  3: Obdulio Varela
+Explanation: Roger Milla scored against Russia in the 1994 World Cup at age 42 years and 39 days.
+
+=== Q304 [world_cup] [medium] ID: b08eb9ec-a82f-4511-a38c-bbe9123d28f8 ===
+Q: Which was the first World Cup to use VAR (Video Assistant Referee)?
+  0: 2014 Brazil
+  1: 2018 Russia  ✅ CORRECT
+  2: 2022 Qatar
+  3: 2010 South Africa
+Explanation: The 2018 World Cup in Russia was the first to implement VAR technology.
+
+=== Q305 [world_cup] [easy] ID: b0fc071a-0025-477b-afdc-4b98c30676fa ===
+Q: Which country hosted the 2010 World Cup, the first on African soil?
+  0: Nigeria
+  1: Egypt
+  2: Morocco
+  3: South Africa  ✅ CORRECT
+Explanation: South Africa hosted the 2010 World Cup, making it the first African nation to host the tournament.
+
+=== Q306 [world_cup] [medium] ID: b36b358d-e897-47ee-b21e-1f9f67cec146 ===
+Q: Which player has appeared in the most World Cup tournaments?
+  0: Lionel Messi
+  1: Cristiano Ronaldo
+  2: Lothar Matthäus
+  3: Antonio Carbajal  ✅ CORRECT
+Explanation: Antonio Carbajal and Lothar Matthäus both appeared in 5 World Cup tournaments.
+
+=== Q307 [world_cup] [medium] ID: b5a2f1f7-3940-4b3b-b980-f9b8c392f72c ===
+Q: In which year did the World Cup expand from 16 to 24 teams?
+  0: 1978
+  1: 1982  ✅ CORRECT
+  2: 1986
+  3: 1990
+Explanation: The 1982 World Cup in Spain was the first to feature 24 teams, expanded from 16.
+
+=== Q308 [world_cup] [easy] ID: b5f312fa-221d-465c-8783-d5b95f77bc53 ===
+Q: How many players are on each team during a World Cup match?
+  0: 9
+  1: 10
+  2: 11  ✅ CORRECT
+  3: 12
+Explanation: Each team fields 11 players on the pitch during a match, including the goalkeeper.
+
+=== Q309 [world_cup] [hard] ID: b7e2f666-d48e-4560-ae7c-00085919a0fc ===
+Q: Which World Cup saw the "Disgrace of Gijón"?
+  0: 1978 Argentina
+  1: 1982 Spain  ✅ CORRECT
+  2: 1986 Mexico
+  3: 1990 Italy
+Explanation: The 1982 World Cup match between West Germany and Austria is known as the "Disgrace of Gijón" due to apparent match-fixing.
+
+=== Q310 [world_cup] [medium] ID: bf9b2939-e8ad-4c08-9c5a-34f99c351264 ===
+Q: What was unique about the 1950 World Cup format?
+  0: No final match was played  ✅ CORRECT
+  1: It had 13 teams
+  2: Only European teams participated
+  3: It was played in winter
+Explanation: The 1950 World Cup used a final round-robin group instead of a knockout final. Uruguay topped the group to win.
+
+=== Q311 [world_cup] [medium] ID: c4534806-97e1-4945-a23f-7382df10b70a ===
+Q: Which city will host the 2026 World Cup Final?
+  0: New York  ✅ CORRECT
+  1: Los Angeles
+  2: Mexico City
+  3: Toronto
+Explanation: MetLife Stadium in East Rutherford, New Jersey (New York metro area) will host the 2026 World Cup Final.
+
+=== Q312 [world_cup] [easy] ID: c81b42f3-96f0-46ce-a52e-f670664ef89e ===
+Q: Which player has scored the most goals in World Cup history?
+  0: Ronaldo
+  1: Pelé
+  2: Miroslav Klose  ✅ CORRECT
+  3: Just Fontaine
+Explanation: Miroslav Klose holds the record with 16 World Cup goals scored across four tournaments.
+
+=== Q313 [world_cup] [hard] ID: d05bd895-49b3-4ae6-ab85-bd6c375e4fb0 ===
+Q: Which World Cup introduced the golden goal rule?
+  0: 1994 USA
+  1: 1998 France  ✅ CORRECT
+  2: 2002 Korea/Japan
+  3: It was never used
+Explanation: The golden goal (sudden death in extra time) was first used at the 1998 World Cup. Laurent Blanc scored the first one.
+
+=== Q314 [world_cup] [medium] ID: d0eebd36-f47e-4c6e-9465-0bb596303e35 ===
+Q: Which country has hosted the FIFA World Cup the most times?
+  0: Brazil
+  1: Italy
+  2: Mexico  ✅ CORRECT
+  3: France
+Explanation: Mexico has hosted twice (1970, 1986) and will co-host in 2026 for a record third time.
+
+=== Q315 [world_cup] [hard] ID: de7b9bd6-cad6-4acd-88c3-0e703a314811 ===
+Q: Which country hosted the World Cup despite not qualifying as a team in the previous edition?
+  0: South Africa 2010
+  1: Qatar 2022
+  2: USA 1994  ✅ CORRECT
+  3: South Korea 2002
+Explanation: The USA hosted the 1994 World Cup despite not qualifying for the 1990 tournament in Italy.
+
+=== Q316 [world_cup] [easy] ID: e1a6fb61-8fcb-4013-afb5-73c790410813 ===
+Q: How many countries will host the 2026 FIFA World Cup?
+  0: 1
+  1: 2
+  2: 3  ✅ CORRECT
+  3: 4
+Explanation: The 2026 World Cup will be hosted by three countries: USA, Mexico, and Canada.
+
+=== Q317 [world_cup] [easy] ID: e3eef198-beb4-4ac3-b1cf-d54b3f006cb5 ===
+Q: Which country will co-host the 2026 FIFA World Cup along with the USA and Mexico?
+  0: Colombia
+  1: Canada  ✅ CORRECT
+  2: Brazil
+  3: Argentina
+Explanation: The 2026 World Cup will be co-hosted by the USA, Canada, and Mexico.
+
+=== Q318 [world_cup] [medium] ID: e509cde4-cda3-46cf-9987-ceedb6db7aac ===
+Q: What was the highest-scoring World Cup final?
+  0: Brazil 5-2 Sweden 1958  ✅ CORRECT
+  1: England 4-2 Germany 1966
+  2: France 4-2 Croatia 2018
+  3: Argentina 3-3 France 2022
+Explanation: The 1958 final (Brazil 5-2 Sweden) had 7 goals, the most in any World Cup Final. The 2022 final had 6 goals (3-3 AET).
+
+=== Q319 [world_cup] [medium] ID: ff3686d6-95e9-415f-86fe-3dd8814288a6 ===
+Q: Who was the top scorer at the 2022 World Cup?
+  0: Lionel Messi
+  1: Kylian Mbappé  ✅ CORRECT
+  2: Olivier Giroud
+  3: Julián Álvarez
+Explanation: Kylian Mbappé won the Golden Boot with 8 goals at the 2022 World Cup, including a hat-trick in the final.
+
+=== Q320 [world_cup] [easy] ID: ffb38ddb-811c-4f32-8bf1-f6bdfc3821bc ===
+Q: Which European country has won the World Cup four times?
+  0: France
+  1: Spain
+  2: Germany  ✅ CORRECT
+  3: England
+Explanation: Germany has won the World Cup four times: 1954, 1974, 1990, and 2014.
+
