@@ -4,9 +4,9 @@
 
 ## Project overview
 
-**GURU** is a mobile-first Next.js football fan engagement app with two core experiences:
-1. **Trivia mode** — timed Q&A questions about football history, players, and matches
-2. **Match Predictions mode** — pre-game and halftime prediction cards for live matches (new feature on `feature/match-predictions` branch)
+**GURU** is a mobile-first Next.js football fan engagement app. Core hierarchy:
+1. **Match Predictions** (primary) — community prediction trends + pre-game / halftime prediction cards for UCL, Premier League, La Liga
+2. **Trivia mode** (secondary) — timed Q&A questions about football history, players, and matches
 
 **Stack:** Next.js 14 (App Router), TypeScript, Tailwind CSS, Supabase, Anthropic SDK, Framer Motion  
 **Deployment:** Vercel  
@@ -44,7 +44,7 @@ All UI must follow `DESIGN.md` at the root. Key rules:
 
 ```
 app/
-  page.tsx              — Home (tabs: Play, Live, Upcoming, Ranks)
+  page.tsx              — Home (tabs: Predict ★, My Picks, Ranks, Trivia)
   play/page.tsx         — Trivia game screen
   live/page.tsx         — Simulated in-game prediction engine (old)
   matches/page.tsx      — Match browser
@@ -103,6 +103,31 @@ types/
 
 **ESPN event IDs** are stored in our match IDs as `espn-{eventId}` (e.g., `espn-726294`).  
 The live-score API strips the prefix: `espnId = matchId.replace('espn-', '')`.
+
+---
+
+## Home page UX (predictions-first)
+
+The home page tab order reflects product priority:
+1. **Predict** (default) — today's matches from UCL + Premier League + La Liga, each showing community prediction bars when the user hasn't predicted yet
+2. **My Picks** — saved prediction sessions from `localStorage`
+3. **Ranks** — leaderboard teaser with fake users for FOMO
+4. **Trivia** — demoted; visually muted (lower opacity, "Secondary" badge)
+
+### Community prediction bars (`components/ui/MatchCard.tsx`)
+Shown on every scheduled match card where the user has no saved prediction.  
+- 3 bars: Home Win (green), Draw (gray), Away Win (yellow)  
+- Leading option is highlighted bold  
+- Numbers come from `lib/fake-data.ts → getCommunityPrediction(matchId)` — deterministic hash so the same match always shows the same numbers
+- Fan count (e.g., "3,241 fans") also from fake-data
+
+### Fake users (`lib/fake-data.ts`)
+- `getCommunityPrediction(matchId)` — stable fake percentages for community trend bars
+- `FAKE_LEADERBOARD_USERS` — 20 fake users with realistic names, countries, and points
+- Global leaderboard always shows these; if the real user has points they're spliced in at the right rank
+
+### Featured leagues
+Home page shows only `["uefa.champions", "eng.1", "esp.1"]` (Champions League, Premier League, La Liga). Configured in `lib/matches.ts → HOME_LEAGUES`. Matches are fetched without a league filter then filtered client-side using league name string matching.
 
 ---
 

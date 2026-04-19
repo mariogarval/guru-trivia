@@ -58,3 +58,40 @@ export interface SimulatedRanker {
   correct: number;
   isYou?: boolean;
 }
+
+/**
+ * A single real-time prediction shown during live match play.
+ * Options are always ["Yes", "No"] and resolved from score changes.
+ */
+export interface LivePrediction {
+  id: string;
+  question: string;
+  options: string[];          // e.g. ["Yes", "No"]
+  windowSeconds: number;      // how long the user has to answer
+  resolutionHint: string;     // "any_goal" | "home_goal" | "away_goal" | "void"
+  simulatedVotes: number[];   // % per option, sums to 100
+  scoreAtCreation: { home: number; away: number };
+  minuteAtCreation: number;
+  // Populated after answer / resolution
+  userAnswer?: number;           // option index (0 = Yes, 1 = No)
+  resolvedCorrectIdx?: number;   // -1 = void/unresolvable
+  pointsEarned?: number;
+}
+
+/** Resolve a live prediction hint against score delta. Returns correct option index or -1 for void. */
+export function resolveHint(
+  hint: string,
+  scoreAtCreation: { home: number; away: number },
+  currentScore: { home: number; away: number }
+): number {
+  const homeScored = currentScore.home > scoreAtCreation.home;
+  const awayScored = currentScore.away > scoreAtCreation.away;
+  const anyGoal = homeScored || awayScored;
+  // All live predictions use options[0]=Yes, options[1]=No
+  switch (hint) {
+    case "any_goal":  return anyGoal     ? 0 : 1;
+    case "home_goal": return homeScored  ? 0 : 1;
+    case "away_goal": return awayScored  ? 0 : 1;
+    default:          return -1;
+  }
+}

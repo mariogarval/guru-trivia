@@ -12,8 +12,8 @@ export const LEAGUES = {
   "ger.1": { name: "Bundesliga", country: "Germany", emoji: "🇩🇪" },
 } as const;
 
-/** Leagues shown on the home page — UCL only for now */
-export const HOME_LEAGUES: (keyof typeof LEAGUES)[] = ["uefa.champions"];
+/** Leagues featured on the home page */
+export const HOME_LEAGUES: (keyof typeof LEAGUES)[] = ["uefa.champions", "eng.1", "esp.1"];
 
 export type LeagueCode = keyof typeof LEAGUES;
 

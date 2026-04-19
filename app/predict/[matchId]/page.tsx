@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, ChevronRight, Trophy, Clock, Zap, Users, Lock } from "lucide-react";
+import { ArrowLeft, ChevronRight, Trophy, Clock, Zap, Users, Lock, CheckCircle, XCircle } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import type {
   MatchPrediction,
@@ -12,7 +12,9 @@ import type {
   PredictionSession,
   LiveScoreData,
   SimulatedRanker,
+  LivePrediction,
 } from "@/types/predictions";
+import { resolveHint } from "@/types/predictions";
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
@@ -93,6 +95,8 @@ export default function PredictPage() {
   const homeTeamParam = searchParams.get("home") ?? "Home Team";
   const awayTeamParam = searchParams.get("away") ?? "Away Team";
   const leagueParam = searchParams.get("league") ?? "";
+  const homeCrestParam = searchParams.get("homeCrest") ?? "";
+  const awayCrestParam = searchParams.get("awayCrest") ?? "";
 
   const { isLoggedIn, loading: authLoading } = useAuth();
 
@@ -342,32 +346,42 @@ export default function PredictPage() {
         )}
       </AnimatePresence>
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-[rgba(214,235,253,0.19)] px-4 py-3 flex items-center gap-3">
-        <Link href="/" className="p-1.5 -ml-1.5 text-[#a1a4a5] hover:text-[#f0f0f0] transition-colors">
-          <ArrowLeft size={20} strokeWidth={2} />
-        </Link>
-        <div className="flex-1 min-w-0">
-          <p className="text-xs text-[#464a4d] uppercase tracking-wider font-medium truncate">
+      <header className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-[rgba(214,235,253,0.19)] px-4 py-3">
+        {/* Top row: back + league */}
+        <div className="flex items-center gap-2 mb-2">
+          <Link href="/" className="p-1 -ml-1 text-[#a1a4a5] hover:text-[#f0f0f0] transition-colors">
+            <ArrowLeft size={18} strokeWidth={2} />
+          </Link>
+          <p className="text-[10px] text-[#464a4d] uppercase tracking-widest font-semibold truncate flex-1">
             {leagueParam || "Match Predictions"}
           </p>
-          <p className="text-sm font-bold leading-tight truncate">
-            {homeTeamParam} <span className="text-[#464a4d]">vs</span> {awayTeamParam}
-          </p>
+          {/* Live score pill — right of league label */}
+          {liveData && liveData.status !== "scheduled" && (
+            <div className="flex items-center gap-1.5 bg-white/[0.04] border border-[rgba(214,235,253,0.12)] rounded-full px-2.5 py-1 flex-shrink-0">
+              {liveData.status === "live" && (
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
+              )}
+              <span className="font-mono text-sm font-black tabular-nums">
+                {liveData.home_score} – {liveData.away_score}
+              </span>
+              {liveData.clock && (
+                <span className="text-[#464a4d] text-xs">{liveData.clock}&prime;</span>
+              )}
+            </div>
+          )}
         </div>
-        {/* Live score pill */}
-        {liveData && liveData.status !== "scheduled" && (
-          <div className="flex items-center gap-2 bg-white/[0.04] border border-[rgba(214,235,253,0.12)] rounded-full px-3 py-1">
-            {liveData.status === "live" && (
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
-            )}
-            <span className="font-mono text-sm font-bold tabular-nums">
-              {liveData.home_score} – {liveData.away_score}
-            </span>
-            {liveData.clock && (
-              <span className="text-[#464a4d] text-xs">{liveData.clock}&prime;</span>
-            )}
+        {/* Team row: crest + name — vs — name + crest */}
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 flex-1 min-w-0">
+            <TeamCrest src={homeCrestParam} name={homeTeamParam} />
+            <span className="font-bold text-[#f0f0f0] text-sm truncate">{homeTeamParam}</span>
           </div>
-        )}
+          <span className="text-[#464a4d] text-xs font-medium flex-shrink-0 px-1">vs</span>
+          <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
+            <span className="font-bold text-[#f0f0f0] text-sm truncate text-right">{awayTeamParam}</span>
+            <TeamCrest src={awayCrestParam} name={awayTeamParam} />
+          </div>
+        </div>
       </header>
 
       <AnimatePresence mode="wait">
@@ -384,14 +398,22 @@ export default function PredictPage() {
           />
         )}
         {phase === "live_first_half" && (
-          <LiveWatchScreen
+          <LiveGameEngine
             key="live_first"
-            half="first"
-            liveData={liveData}
+            matchId={matchId}
             homeTeam={homeTeamParam}
             awayTeam={awayTeamParam}
-            answeredCount={firstHalfAnswered}
-            totalCount={firstHalfPreds.length}
+            liveData={liveData}
+            initialPoints={session?.totalPoints ?? 0}
+            onPointsEarned={(pts) => {
+              setSession((prev) =>
+                prev ? { ...prev, totalPoints: prev.totalPoints + pts, correctCount: prev.correctCount + 1 } : prev
+              );
+              // Persist to profile if logged in
+              if (isLoggedIn) {
+                fetch("/api/predictions/score", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ points: pts }) }).catch(() => {});
+              }
+            }}
           />
         )}
         {phase === "halftime" && (
@@ -410,14 +432,21 @@ export default function PredictPage() {
           />
         )}
         {phase === "live_second_half" && (
-          <LiveWatchScreen
+          <LiveGameEngine
             key="live_second"
-            half="second"
-            liveData={liveData}
+            matchId={matchId}
             homeTeam={homeTeamParam}
             awayTeam={awayTeamParam}
-            answeredCount={secondHalfPreds.filter((p) => p.userAnswer).length}
-            totalCount={secondHalfPreds.length}
+            liveData={liveData}
+            initialPoints={session?.totalPoints ?? 0}
+            onPointsEarned={(pts) => {
+              setSession((prev) =>
+                prev ? { ...prev, totalPoints: prev.totalPoints + pts, correctCount: prev.correctCount + 1 } : prev
+              );
+              if (isLoggedIn) {
+                fetch("/api/predictions/score", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ points: pts }) }).catch(() => {});
+              }
+            }}
           />
         )}
         {phase === "fulltime" && (
@@ -433,6 +462,28 @@ export default function PredictPage() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+// ── Team Crest ─────────────────────────────────────────────────────────────────
+
+function TeamCrest({ src, name }: { src: string; name: string }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) {
+    return (
+      <div className="w-7 h-7 rounded-full bg-white/[0.08] border border-[rgba(214,235,253,0.15)] flex items-center justify-center text-xs flex-shrink-0">
+        {name.charAt(0)}
+      </div>
+    );
+  }
+  return (
+    <img
+      src={src}
+      alt={name}
+      className="w-7 h-7 object-contain flex-shrink-0"
+      onError={() => setFailed(true)}
+      referrerPolicy="no-referrer"
+    />
   );
 }
 
@@ -534,78 +585,402 @@ function PregameScreen({
   );
 }
 
-// ── Live Watch Screen ─────────────────────────────────────────────────────────
+// ── Live Game Engine ──────────────────────────────────────────────────────────
 
-function LiveWatchScreen({
-  half, liveData, homeTeam, awayTeam, answeredCount, totalCount,
-}: {
-  half: "first" | "second";
-  liveData: LiveScoreData | null;
+type LiveEngineState = "loading" | "question" | "result" | "done";
+
+interface LiveGameEngineProps {
+  matchId: string;
   homeTeam: string;
   awayTeam: string;
-  answeredCount: number;
-  totalCount: number;
-}) {
+  liveData: LiveScoreData | null;
+  initialPoints: number;
+  onPointsEarned: (pts: number) => void;
+}
+
+function LiveGameEngine({ matchId, homeTeam, awayTeam, liveData, initialPoints, onPointsEarned }: LiveGameEngineProps) {
+  const [preds, setPreds] = useState<LivePrediction[]>([]);
+  const [idx, setIdx] = useState(0);
+  const [engState, setEngState] = useState<LiveEngineState>("loading");
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [userAnswer, setUserAnswer] = useState<number | null>(null);
+  const [result, setResult] = useState<{ correct: boolean; correctIdx: number; pts: number; isVoid: boolean } | null>(null);
+  const [totalPts, setTotalPts] = useState(initialPoints);
+  const [streak, setStreak] = useState(0);
+  const resolveInProgress = useRef(false);
+
+  const currentScore = useCallback(() => ({
+    home: parseInt(liveData?.home_score ?? "0"),
+    away: parseInt(liveData?.away_score ?? "0"),
+  }), [liveData]);
+
+  // Generate live predictions on mount
+  useEffect(() => {
+    const score = currentScore();
+    const minute = parseInt(liveData?.clock?.split(":")[0] ?? "0");
+
+    fetch("/api/predictions/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        mode: "live",
+        matchId,
+        homeTeam,
+        awayTeam,
+        minute,
+        homeScore: score.home,
+        awayScore: score.away,
+      }),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        const raw: Omit<LivePrediction, "scoreAtCreation" | "minuteAtCreation">[] = data.livePredictions ?? [];
+        const full: LivePrediction[] = raw.map((p) => ({
+          ...p,
+          scoreAtCreation: score,
+          minuteAtCreation: minute,
+        }));
+        if (full.length > 0) {
+          setPreds(full);
+          setTimeLeft(full[0]!.windowSeconds);
+          setEngState("question");
+        }
+      })
+      .catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Countdown
+  useEffect(() => {
+    if (engState !== "question") return;
+    if (timeLeft <= 0) {
+      if (!resolveInProgress.current) handleWindowClose();
+      return;
+    }
+    const t = setTimeout(() => setTimeLeft((prev) => prev - 1), 1000);
+    return () => clearTimeout(t);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [engState, timeLeft]);
+
+  const handleAnswer = useCallback((optIdx: number) => {
+    if (engState !== "question" || userAnswer !== null) return;
+    setUserAnswer(optIdx);
+    // Don't lock countdown — let it run out for full community effect
+  }, [engState, userAnswer]);
+
+  const handleWindowClose = useCallback(async () => {
+    if (resolveInProgress.current) return;
+    resolveInProgress.current = true;
+
+    const pred = preds[idx];
+    if (!pred) return;
+
+    // Fetch fresh score for resolution
+    let freshScore = currentScore();
+    try {
+      const res = await fetch(`/api/matches/live-score?id=${matchId}`, { cache: "no-store" });
+      if (res.ok) {
+        const d = await res.json();
+        freshScore = { home: parseInt(d.home_score ?? "0"), away: parseInt(d.away_score ?? "0") };
+      }
+    } catch {}
+
+    const correctIdx = resolveHint(pred.resolutionHint, pred.scoreAtCreation, freshScore);
+    const isVoid = correctIdx === -1;
+    const ua = userAnswer;
+    const correct = !isVoid && ua !== null && ua === correctIdx;
+
+    // Speed bonus: answered quicker = more points
+    const answeredAfter = pred.windowSeconds - timeLeft;
+    let pts = 0;
+    if (correct) {
+      if (answeredAfter <= 20) pts = 150;
+      else if (answeredAfter <= 45) pts = 125;
+      else pts = 100;
+
+      const newStreak = streak + 1;
+      setStreak(newStreak);
+      if (newStreak >= 3) pts = Math.round(pts * 1.5);
+      setTotalPts((prev) => prev + pts);
+      onPointsEarned(pts);
+    } else if (!isVoid) {
+      setStreak(0);
+    }
+
+    // Save resolution on pred
+    setPreds((prev) =>
+      prev.map((p, i) =>
+        i === idx
+          ? { ...p, userAnswer: ua ?? undefined, resolvedCorrectIdx: correctIdx, pointsEarned: pts }
+          : p
+      )
+    );
+    setResult({ correct, correctIdx, pts, isVoid });
+    setEngState("result");
+
+    setTimeout(() => {
+      const nextIdx = idx + 1;
+      resolveInProgress.current = false;
+      if (nextIdx >= preds.length) {
+        setEngState("done");
+      } else {
+        setIdx(nextIdx);
+        setUserAnswer(null);
+        setResult(null);
+        setTimeLeft(preds[nextIdx]!.windowSeconds);
+        setEngState("question");
+      }
+    }, 3500);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preds, idx, userAnswer, timeLeft, streak, currentScore, matchId, onPointsEarned]);
+
+  if (engState === "loading") {
+    return (
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex-1 flex flex-col items-center justify-center gap-5 px-6 py-16">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-2 h-2 rounded-full bg-[#ff2047] live-pulse" />
+          <span className="text-xs font-bold uppercase tracking-widest text-[#ff2047]">Live</span>
+        </div>
+        {liveData && (
+          <LiveScoreBar liveData={liveData} homeTeam={homeTeam} awayTeam={awayTeam} />
+        )}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
+          className="w-8 h-8 rounded-full border-2 border-[rgba(214,235,253,0.19)] border-t-[#11ff99]"
+        />
+        <p className="text-[#464a4d] text-sm">Loading live predictions…</p>
+      </motion.div>
+    );
+  }
+
+  if (engState === "done") {
+    return (
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex-1 flex flex-col items-center justify-center gap-5 px-6 py-16 text-center">
+        <p className="text-3xl">⚽</p>
+        <h2 className="text-xl font-black">All caught up!</h2>
+        <p className="text-[#464a4d] text-sm">More predictions coming at the next phase.</p>
+        <div className="bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-2xl px-6 py-4 mt-2">
+          <p className="text-[10px] text-[#464a4d] uppercase tracking-wider mb-1">Session Points</p>
+          <p className="text-3xl font-black text-[#11ff99]">{totalPts.toLocaleString()}</p>
+          <p className="text-xs text-[#464a4d] mt-1">{streak > 0 ? `${streak} streak 🔥` : ""}</p>
+        </div>
+        {liveData && <LiveScoreBar liveData={liveData} homeTeam={homeTeam} awayTeam={awayTeam} />}
+      </motion.div>
+    );
+  }
+
+  const activePred = preds[idx];
+  if (!activePred) return null;
+
+  const pct = Math.round((timeLeft / activePred.windowSeconds) * 100);
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="flex-1 flex flex-col items-center justify-center px-6 py-12 gap-6"
-    >
-      {/* Live indicator */}
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-[#ff2047] live-pulse" />
-        <span className="text-xs font-bold uppercase tracking-widest text-[#ff2047]">Live</span>
-        <span className="text-[#464a4d] text-xs">· {half === "first" ? "First" : "Second"} Half</span>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex-1 flex flex-col pb-8">
+      {/* Live score + minute bar */}
+      <div className="px-4 pt-4 pb-3">
+        {liveData && <LiveScoreBar liveData={liveData} homeTeam={homeTeam} awayTeam={awayTeam} />}
       </div>
 
-      {/* Score */}
-      {liveData && (
-        <div className="bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-2xl px-8 py-5 text-center">
-          <div className="flex items-center gap-6 justify-center">
-            <div className="text-center">
-              <p className="text-xs text-[#464a4d] mb-1 uppercase tracking-wider">{homeTeam}</p>
-              <p className="text-4xl font-black tabular-nums">{liveData.home_score}</p>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-[#464a4d] text-2xl font-thin">–</span>
-              {liveData.clock && (
-                <span className="text-xs font-mono text-[#11ff99]">{liveData.clock}&prime;</span>
+      {/* Points + streak strip */}
+      <div className="flex items-center gap-2 px-4 mb-4">
+        <div className="flex items-center gap-1.5 bg-white/[0.04] border border-[rgba(214,235,253,0.12)] rounded-full px-3 py-1.5">
+          <Zap size={11} className="text-[#11ff99]" />
+          <span className="text-xs font-bold text-[#11ff99]">{totalPts.toLocaleString()} pts</span>
+        </div>
+        {streak >= 2 && (
+          <div className="flex items-center gap-1.5 bg-white/[0.04] border border-[rgba(255,197,61,0.25)] rounded-full px-3 py-1.5">
+            <span className="text-xs font-bold text-[#ffc53d]">{streak} streak 🔥</span>
+          </div>
+        )}
+        <div className="flex-1" />
+        <span className="text-[10px] text-[#464a4d]">{idx + 1}/{preds.length}</span>
+      </div>
+
+      {/* Active prediction card */}
+      <div className="px-4">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+          >
+            <div className={[
+              "rounded-2xl border overflow-hidden",
+              result
+                ? result.isVoid
+                  ? "border-[rgba(214,235,253,0.19)] bg-white/[0.03]"
+                  : result.correct
+                  ? "border-[rgba(17,255,153,0.3)] bg-[rgba(17,255,153,0.04)]"
+                  : "border-[rgba(255,32,71,0.3)] bg-[rgba(255,32,71,0.04)]"
+                : "border-[rgba(214,235,253,0.19)] bg-white/[0.03]",
+            ].join(" ")}>
+
+              {/* Countdown bar */}
+              {engState === "question" && (
+                <div className="h-1 bg-white/[0.06]">
+                  <motion.div
+                    className={`h-full rounded-r-full transition-colors ${pct > 40 ? "bg-[#11ff99]" : pct > 15 ? "bg-[#ffc53d]" : "bg-[#ff2047]"}`}
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
               )}
+
+              <div className="px-4 pt-4 pb-4">
+                {/* Meta */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse" />
+                    <span className="text-[10px] font-bold uppercase tracking-[1.5px] text-[#ff2047]">Live Prediction</span>
+                  </div>
+                  {engState === "question" && (
+                    <span className={`text-sm font-mono font-bold tabular-nums ${timeLeft <= 10 ? "text-[#ff2047]" : "text-[#a1a4a5]"}`}>
+                      {timeLeft}s
+                    </span>
+                  )}
+                </div>
+
+                {/* Question */}
+                <p className="text-lg font-black leading-snug mb-4">{activePred.question}</p>
+
+                {/* Answer buttons or result */}
+                {engState === "question" && (
+                  <div className="flex gap-3">
+                    {activePred.options.map((opt, i) => {
+                      const isPicked = userAnswer === i;
+                      return (
+                        <button
+                          key={i}
+                          onClick={() => handleAnswer(i)}
+                          className={[
+                            "flex-1 py-4 rounded-xl border text-sm font-black transition-all active:scale-[0.97]",
+                            isPicked
+                              ? "border-[#11ff99] bg-[rgba(17,255,153,0.12)] text-[#11ff99]"
+                              : "border-[rgba(214,235,253,0.19)] bg-transparent text-[#f0f0f0] hover:border-[#11ff99]/50 hover:text-[#11ff99]",
+                          ].join(" ")}
+                        >
+                          {opt}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {result && (
+                  <div>
+                    {/* Community vote bars */}
+                    <div className="space-y-2.5 mb-4">
+                      {activePred.options.map((opt, i) => {
+                        const vPct = activePred.simulatedVotes[i] ?? 50;
+                        const isCorrect = i === result.correctIdx;
+                        const isPicked = userAnswer === i;
+                        return (
+                          <div key={i}>
+                            <div className="flex items-center justify-between mb-1">
+                              <div className="flex items-center gap-1.5">
+                                <span className={`text-xs font-semibold ${isPicked ? "text-[#f0f0f0]" : "text-[#a1a4a5]"}`}>{opt}</span>
+                                {isPicked && <span className="text-[9px] bg-white/[0.08] rounded-full px-1.5 py-0.5 text-[#a1a4a5] font-bold">YOUR PICK</span>}
+                                {isCorrect && !result.isVoid && (
+                                  <span className="text-[9px] bg-[rgba(17,255,153,0.12)] text-[#11ff99] border border-[rgba(17,255,153,0.25)] rounded-full px-1.5 py-0.5 font-bold">CORRECT</span>
+                                )}
+                              </div>
+                              <span className="text-xs font-mono font-bold text-[#464a4d]">{vPct}%</span>
+                            </div>
+                            <div className="h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
+                              <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: `${vPct}%` }}
+                                transition={{ duration: 0.6, ease: "easeOut" }}
+                                className={[
+                                  "h-full rounded-full",
+                                  isCorrect && !result.isVoid ? "bg-[#11ff99]" : "bg-white/20",
+                                ].join(" ")}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Result verdict */}
+                    {result.isVoid ? (
+                      <div className="flex items-center gap-2 bg-white/[0.04] border border-[rgba(214,235,253,0.12)] rounded-xl px-3 py-3">
+                        <Clock size={14} className="text-[#464a4d]" />
+                        <span className="text-sm text-[#464a4d]">No goal in window — prediction voided</span>
+                      </div>
+                    ) : result.correct ? (
+                      <div className="flex items-center justify-between bg-[rgba(17,255,153,0.06)] border border-[rgba(17,255,153,0.25)] rounded-xl px-3 py-3">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle size={16} className="text-[#11ff99]" />
+                          <span className="text-sm font-bold text-[#11ff99]">Correct!</span>
+                        </div>
+                        <span className="text-sm font-black text-[#11ff99]">+{result.pts} pts</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 bg-[rgba(255,32,71,0.06)] border border-[rgba(255,32,71,0.25)] rounded-xl px-3 py-3">
+                        <XCircle size={16} className="text-[#ff2047]" />
+                        <span className="text-sm font-bold text-[#ff2047]">
+                          {userAnswer === null ? "Time's up!" : "Wrong pick"}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="text-center">
-              <p className="text-xs text-[#464a4d] mb-1 uppercase tracking-wider">{awayTeam}</p>
-              <p className="text-4xl font-black tabular-nums">{liveData.away_score}</p>
-            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Resolved history */}
+      {idx > 0 && (
+        <div className="px-4 mt-5">
+          <p className="text-[10px] text-[#464a4d] uppercase tracking-wider mb-2">Earlier this half</p>
+          <div className="space-y-2">
+            {preds.slice(0, idx).reverse().map((p) => (
+              <div key={p.id} className="flex items-center gap-3 bg-white/[0.02] border border-[rgba(214,235,253,0.08)] rounded-xl px-3 py-2.5">
+                {p.resolvedCorrectIdx === -1 ? (
+                  <span className="text-[#464a4d] text-xs">–</span>
+                ) : p.userAnswer === p.resolvedCorrectIdx ? (
+                  <CheckCircle size={14} className="text-[#11ff99] flex-shrink-0" />
+                ) : (
+                  <XCircle size={14} className="text-[#ff2047] flex-shrink-0" />
+                )}
+                <span className="text-xs text-[#a1a4a5] flex-1 truncate">{p.question}</span>
+                {(p.pointsEarned ?? 0) > 0 && (
+                  <span className="text-xs font-bold text-[#11ff99]">+{p.pointsEarned}</span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       )}
-
-      {/* Predictions status */}
-      <div className="text-center">
-        <p className="text-lg font-bold mb-1">
-          {answeredCount < totalCount
-            ? `${answeredCount}/${totalCount} predictions answered`
-            : "Your predictions are locked in ✓"}
-        </p>
-        <p className="text-[#464a4d] text-sm">
-          {half === "first"
-            ? "Results will be revealed at half time"
-            : "Results will be revealed at full time"}
-        </p>
-      </div>
-
-      {/* Waiting animation */}
-      <div className="flex gap-2 mt-2">
-        {[0, 1, 2].map((i) => (
-          <motion.div
-            key={i}
-            className="w-2 h-2 rounded-full bg-[#464a4d]"
-            animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }}
-            transition={{ repeat: Infinity, duration: 1.5, delay: i * 0.25 }}
-          />
-        ))}
-      </div>
     </motion.div>
+  );
+}
+
+// ── Live Score Bar ─────────────────────────────────────────────────────────────
+
+function LiveScoreBar({ liveData, homeTeam, awayTeam }: { liveData: LiveScoreData; homeTeam: string; awayTeam: string }) {
+  return (
+    <div className="flex items-center gap-4 bg-white/[0.04] border border-[rgba(214,235,253,0.12)] rounded-2xl px-4 py-3 w-full">
+      <div className="flex items-center gap-1.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse flex-shrink-0" />
+        <span className="text-[10px] font-bold uppercase tracking-widest text-[#ff2047]">Live</span>
+      </div>
+      <div className="flex-1 flex items-center justify-center gap-4">
+        <span className="text-xs font-semibold truncate text-right flex-1">{homeTeam}</span>
+        <span className="text-xl font-black font-mono tabular-nums text-[#ff6b7a] whitespace-nowrap">
+          {liveData.home_score} – {liveData.away_score}
+        </span>
+        <span className="text-xs font-semibold truncate flex-1">{awayTeam}</span>
+      </div>
+      {liveData.clock && (
+        <span className="text-xs font-mono text-[#464a4d] flex-shrink-0">{liveData.clock}&prime;</span>
+      )}
+    </div>
   );
 }
 

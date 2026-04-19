@@ -2,25 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Trophy, User, Zap } from "lucide-react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { Home, Trophy, User, Users } from "lucide-react";
 
 const links = [
-  { href: "/", labelKey: "nav.home", icon: Home },
-  { href: "/play", labelKey: "nav.quickPlay", icon: Zap },
-  { href: "/leaderboard", labelKey: "nav.ranks", icon: Trophy },
-  { href: "/profile", labelKey: "nav.profile", icon: User },
+  { href: "/",          label: "Home",    icon: Home },
+  { href: "/leagues",   label: "Leagues", icon: Users },
+  { href: "/leaderboard", label: "Ranks", icon: Trophy },
+  { href: "/profile",   label: "Profile", icon: User },
 ];
 
 export default function BottomNav() {
   const pathname = usePathname();
-  const { t } = useLanguage();
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-t border-[rgba(214,235,253,0.19)] safe-bottom">
       <div className="mx-auto max-w-md flex items-center justify-around h-16">
-        {links.map(({ href, labelKey, icon: Icon }) => {
-          const isActive = pathname === href;
+        {links.map(({ href, label, icon: Icon }) => {
+          const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
           return (
             <Link
               key={href}
@@ -38,7 +36,7 @@ export default function BottomNav() {
                 className="shrink-0"
               />
               <span className="text-[10px] font-medium tracking-wider uppercase">
-                {t(labelKey)}
+                {label}
               </span>
             </Link>
           );

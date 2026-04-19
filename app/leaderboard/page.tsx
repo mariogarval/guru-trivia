@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, Flag, Users, Plus, Copy, Check, Share2, X, ChevronDown } from "lucide-react";
 import BottomNav from "@/components/layout/BottomNav";
 import { useAuth } from "@/hooks/useAuth";
 import { useLanguage } from "@/hooks/useLanguage";
 import type { LeaderboardEntry } from "@/types";
+import { FAKE_LEADERBOARD_USERS } from "@/lib/fake-data";
 
 type TabType = "global" | "country" | "friends";
 
@@ -193,6 +194,25 @@ export default function LeaderboardPage() {
 
   const activeLeague = leagues.find((l) => l.id === activeLeagueId);
 
+  // For the global tab, pad with fake users to create FOMO.
+  // If the current user has real points, splice them into the right position.
+  const displayEntries = useMemo((): LeaderboardEntry[] => {
+    if (activeTab !== "global") return entries;
+
+    const base: LeaderboardEntry[] = FAKE_LEADERBOARD_USERS.map((u) => ({ ...u, country_rank: 0 }));
+
+    if (userRank && userRank.total_points > 0) {
+      const insertIdx = base.findIndex((u) => u.total_points < userRank.total_points);
+      if (insertIdx >= 0) {
+        base.splice(insertIdx, 0, { ...userRank, username: "You" });
+        base.forEach((u, i) => { u.global_rank = i + 1; });
+      }
+      // If user is below all fake users, they'll show in the sticky footer
+    }
+
+    return base;
+  }, [activeTab, entries, userRank]);
+
   const tabs = [
     { id: "global" as const, label: t("lb.global"), icon: Globe },
     { id: "country" as const, label: t("lb.country"), icon: Flag },
@@ -315,7 +335,7 @@ export default function LeaderboardPage() {
               className="h-16 bg-white/[0.03] border border-[rgba(214,235,253,0.10)] rounded-2xl animate-pulse"
             />
           ))
-        ) : entries.length === 0 ? (
+        ) : displayEntries.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-[#464a4d] text-sm">
               {activeTab === "friends"
@@ -326,7 +346,7 @@ export default function LeaderboardPage() {
             </p>
           </div>
         ) : (
-          entries.map((entry, i) => {
+          displayEntries.map((entry, i) => {
             const isUser = userRank?.user_id === entry.user_id;
             return (
               <motion.div

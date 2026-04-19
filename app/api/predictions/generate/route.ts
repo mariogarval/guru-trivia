@@ -2,21 +2,90 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { fetchPreGameContext } from "@/lib/sports-data";
-import type { MatchPrediction, PredictionHalf, PredictionOption } from "@/types/predictions";
+import type { MatchPrediction, PredictionHalf, PredictionOption, LivePrediction } from "@/types/predictions";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 /**
  * POST /api/predictions/generate
  * Body: { matchId, homeTeam, awayTeam, league, half }
+ *   OR: { matchId, homeTeam, awayTeam, mode: "live", minute, homeScore, awayScore }
  *
- * Returns an array of MatchPrediction objects for the requested half.
- * Uses Claude to generate match-specific, resolvable predictions.
- * Falls back to a curated template set if the API is unavailable.
+ * In live mode: returns { livePredictions: LivePrediction[] } — 5 goal-resolvable predictions.
+ * In pregame/halftime mode: returns { predictions: MatchPrediction[] }.
+ * Falls back to curated templates if Claude is unavailable.
  */
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+
+    // ── Live mode ─────────────────────────────────────────────────────────────
+    if (body.mode === "live") {
+      const { homeTeam, awayTeam, league, minute = 0, homeScore = 0, awayScore = 0 } = body as {
+        matchId: string;
+        homeTeam: string;
+        awayTeam: string;
+        league?: string;
+        mode: "live";
+        minute: number;
+        homeScore: number;
+        awayScore: number;
+      };
+
+      let livePredictions: Omit<LivePrediction, "scoreAtCreation" | "minuteAtCreation">[] = [];
+
+      try {
+        const message = await anthropic.messages.create({
+          model: "claude-haiku-4-5-20251001",
+          max_tokens: 1200,
+          messages: [{
+            role: "user",
+            content: `You generate real-time football prediction questions for an in-match game.
+
+Match: ${homeTeam} vs ${awayTeam}${league ? ` (${league})` : ""}
+Current score: ${homeTeam} ${homeScore} - ${awayScore} ${awayTeam}
+Minute: ${minute}'
+
+Generate exactly 5 predictions. Rules:
+- Each question must be answerable YES or NO
+- Must be resolvable from score changes alone (goals only)
+- Short and punchy (under 10 words)
+- windowSeconds: 90 to 180
+- resolutionHint: one of "any_goal", "home_goal", "away_goal"
+- simulatedVotes: [yesPercent, noPercent] that sum to 100
+- Use short team names (last word of team name)
+
+Return ONLY a valid JSON array with this exact shape:
+[
+  {
+    "id": "<8-char alphanumeric>",
+    "question": "<question>",
+    "options": ["Yes", "No"],
+    "windowSeconds": <number>,
+    "resolutionHint": "<hint>",
+    "simulatedVotes": [<yesPercent>, <noPercent>]
+  }
+]`,
+          }],
+        });
+
+        const raw = message.content[0]?.type === "text" ? message.content[0].text : "";
+        const parsed = JSON.parse(raw.trim());
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          livePredictions = parsed;
+        }
+      } catch {
+        // fall through to fallback
+      }
+
+      if (livePredictions.length === 0) {
+        livePredictions = buildLiveFallback(homeTeam, awayTeam, minute);
+      }
+
+      return NextResponse.json({ livePredictions });
+    }
+
+    // ── Pregame / halftime mode ───────────────────────────────────────────────
     const { homeTeam, awayTeam, league, half } = body as {
       matchId: string;
       homeTeam: string;
@@ -264,4 +333,59 @@ function buildFallback(homeTeam: string, awayTeam: string, half: PredictionHalf)
       ];
 
   return templates.map((t) => ({ ...t, half }));
+}
+
+// ── Live fallback predictions ──────────────────────────────────────────────────
+
+function buildLiveFallback(
+  homeTeam: string,
+  awayTeam: string,
+  minute: number
+): Omit<LivePrediction, "scoreAtCreation" | "minuteAtCreation">[] {
+  const h = homeTeam.split(" ").pop() ?? homeTeam;
+  const a = awayTeam.split(" ").pop() ?? awayTeam;
+  const nextMark = Math.min(minute + 5, minute < 45 ? 45 : 90);
+
+  return [
+    {
+      id: "lv1",
+      question: "Goal in the next 2 minutes?",
+      options: ["Yes", "No"],
+      windowSeconds: 120,
+      resolutionHint: "any_goal",
+      simulatedVotes: [35, 65],
+    },
+    {
+      id: "lv2",
+      question: `Will ${h} score next?`,
+      options: ["Yes", "No"],
+      windowSeconds: 180,
+      resolutionHint: "home_goal",
+      simulatedVotes: [42, 58],
+    },
+    {
+      id: "lv3",
+      question: `Will ${a} score in the next 3 minutes?`,
+      options: ["Yes", "No"],
+      windowSeconds: 180,
+      resolutionHint: "away_goal",
+      simulatedVotes: [30, 70],
+    },
+    {
+      id: "lv4",
+      question: `Any goal before the ${nextMark}' mark?`,
+      options: ["Yes", "No"],
+      windowSeconds: Math.max(90, (nextMark - minute) * 60),
+      resolutionHint: "any_goal",
+      simulatedVotes: [48, 52],
+    },
+    {
+      id: "lv5",
+      question: `Will ${h} be first to score?`,
+      options: ["Yes", "No"],
+      windowSeconds: 300,
+      resolutionHint: "home_goal",
+      simulatedVotes: [55, 45],
+    },
+  ];
 }

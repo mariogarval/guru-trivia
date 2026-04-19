@@ -1,78 +1,92 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Zap, ChevronRight, Trophy, Settings } from "lucide-react";
+import { ChevronRight, Trophy, Settings, Target, Users } from "lucide-react";
 import MatchCard from "@/components/ui/MatchCard";
-import LivesDisplay from "@/components/ui/LivesDisplay";
 import BottomNav from "@/components/layout/BottomNav";
 import MyPredictionsSection from "@/components/ui/MyPredictionsSection";
 import { useAuth } from "@/hooks/useAuth";
-import { useLanguage } from "@/hooks/useLanguage";
 import type { Match } from "@/types";
-
-interface LivesData {
-  lives: number;
-  nextLifeInMs: number | null;
-}
+import { FAKE_LEADERBOARD_USERS } from "@/lib/fake-data";
 
 const TABS = [
-  { id: "play",     label: "Play",     icon: "⚡" },
-  { id: "live",     label: "Live",     icon: null }, // pulsing dot
-  { id: "upcoming", label: "Upcoming", icon: "📅" },
-  { id: "ranks",    label: "Ranks",    icon: "🏆" },
+  { id: "predict", label: "Predict", icon: "⚽" },
+  { id: "picks",   label: "My Picks", icon: "⚡" },
+  { id: "ranks",   label: "Ranks",    icon: "🏆" },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
 
+// Featured leagues shown on home, in display order
+const LEAGUE_GROUPS = [
+  {
+    key: "ucl",
+    label: "Champions League",
+    emoji: "⭐",
+    test: (l: string) => l.toLowerCase().includes("champions"),
+  },
+  {
+    key: "epl",
+    label: "Premier League",
+    emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    test: (l: string) => l.toLowerCase().includes("premier"),
+  },
+  {
+    key: "lla",
+    label: "La Liga",
+    emoji: "🇪🇸",
+    test: (l: string) => l.toLowerCase().includes("la liga"),
+  },
+] as const;
+
+function isFeatured(league: string | null | undefined): boolean {
+  if (!league) return false;
+  return LEAGUE_GROUPS.some((g) => g.test(league));
+}
+
+function countryFlag(country: string): string {
+  const flags: Record<string, string> = {
+    Spain: "🇪🇸", Argentina: "🇦🇷", England: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", France: "🇫🇷",
+    Germany: "🇩🇪", Portugal: "🇵🇹", Netherlands: "🇳🇱", Belgium: "🇧🇪",
+    Brazil: "🇧🇷", Japan: "🇯🇵", Italy: "🇮🇹", Mexico: "🇲🇽",
+    Uruguay: "🇺🇾", Morocco: "🇲🇦",
+  };
+  return flags[country] ?? "🌍";
+}
+
 export default function HomePage() {
-  const { isLoggedIn, loading: authLoading, avatarUrl } = useAuth();
-  const { t } = useLanguage();
+  const { avatarUrl } = useAuth();
   const [liveMatches, setLiveMatches] = useState<Match[]>([]);
   const [upcomingMatches, setUpcomingMatches] = useState<Match[]>([]);
-  const [livesData, setLivesData] = useState<LivesData>({ lives: 5, nextLifeInMs: null });
-  const [totalPoints, setTotalPoints] = useState(0);
   const [loadingMatches, setLoadingMatches] = useState(true);
-  const [activeTab, setActiveTab] = useState<TabId>("play");
+  const [activeTab, setActiveTab] = useState<TabId>("predict");
 
   useEffect(() => {
-    fetch("/api/game/lives")
-      .then((r) => r.json())
-      .then((d) => setLivesData(d))
-      .catch(() => {});
-
-    fetch("/api/profile")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (data?.profile) setTotalPoints(data.profile.total_points ?? 0);
-      })
-      .catch(() => {});
-
+    // Fetch all live + upcoming, filter to featured leagues client-side
     Promise.all([
-      fetch("/api/matches?filter=live&league=ucl").then((r) => r.json()),
-      fetch("/api/matches?filter=upcoming&league=ucl").then((r) => r.json()),
+      fetch("/api/matches?filter=live").then((r) => r.json()),
+      fetch("/api/matches?filter=upcoming").then((r) => r.json()),
     ])
       .then(([liveData, upcomingData]) => {
-        setLiveMatches(liveData.matches ?? []);
-        setUpcomingMatches(upcomingData.matches ?? []);
+        setLiveMatches((liveData.matches ?? []).filter((m: Match) => isFeatured(m.league)));
+        setUpcomingMatches((upcomingData.matches ?? []).filter((m: Match) => isFeatured(m.league)));
       })
       .catch(() => {})
       .finally(() => setLoadingMatches(false));
   }, []);
 
-  // Track which section is in view and update active tab
+  // IntersectionObserver — updates active tab as user scrolls
   useEffect(() => {
-    const ids: TabId[] = ["play", "live", "upcoming", "ranks"];
+    const ids: TabId[] = ["predict", "picks", "ranks"];
     const observers: IntersectionObserver[] = [];
 
     ids.forEach((id) => {
       const el = document.getElementById(`section-${id}`);
       if (!el) return;
       const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveTab(id);
-        },
+        ([entry]) => { if (entry.isIntersecting) setActiveTab(id); },
         { threshold: 0.25, rootMargin: "-56px 0px -40% 0px" }
       );
       obs.observe(el);
@@ -85,24 +99,29 @@ export default function HomePage() {
   const scrollToSection = useCallback((id: TabId) => {
     const el = document.getElementById(`section-${id}`);
     if (!el) return;
-    // Offset for the sticky tab bar (56px)
     const top = el.getBoundingClientRect().top + window.scrollY - 56;
     window.scrollTo({ top, behavior: "smooth" });
     setActiveTab(id);
   }, []);
 
-  const visibleTabs = TABS.filter(
-    (tab) => tab.id !== "live" || liveMatches.length > 0
-  );
+  // Group matches by league for the predict section
+  const matchesByLeague = useMemo(() => {
+    const all = [...liveMatches, ...upcomingMatches];
+    return LEAGUE_GROUPS.map((g) => ({
+      ...g,
+      matches: all.filter((m) => g.test(m.league ?? "")),
+    })).filter((g) => g.matches.length > 0);
+  }, [liveMatches, upcomingMatches]);
+
+  const totalFans = 4_829 + liveMatches.length * 312;
 
   return (
     <div className="flex-1 flex flex-col pb-20">
-      {/* ── Top header (GURU logo + profile) ── */}
+
+      {/* ── Header ── */}
       <div className="px-4 pt-8 pb-3">
         <div className="flex items-center justify-between mb-1">
-          <h1 className="text-3xl font-black tracking-tighter text-[#11ff99]">
-            GURU
-          </h1>
+          <h1 className="text-3xl font-black tracking-tighter text-[#11ff99]">GURU</h1>
           <Link href="/profile" className="-mr-1">
             {avatarUrl ? (
               <img
@@ -118,13 +137,13 @@ export default function HomePage() {
             )}
           </Link>
         </div>
-        <p className="text-xs text-[#464a4d] tracking-wider uppercase">{t("home.subtitle")}</p>
+        <p className="text-xs text-[#464a4d] tracking-wider uppercase">Live Match Predictions</p>
       </div>
 
-      {/* ── Sticky section tab bar ── */}
+      {/* ── Sticky tabs ── */}
       <div className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-white/[0.06]">
         <div className="flex gap-1.5 px-4 py-2.5 overflow-x-auto no-scrollbar">
-          {visibleTabs.map((tab) => {
+          {TABS.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
@@ -137,11 +156,7 @@ export default function HomePage() {
                     : "text-[#a1a4a5] font-medium hover:text-[#f0f0f0]",
                 ].join(" ")}
               >
-                {tab.id === "live" ? (
-                  <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${isActive ? "bg-[#ff2047]" : "bg-[#ff2047]/60"} live-pulse`} />
-                ) : tab.icon ? (
-                  <span className="text-xs leading-none">{tab.icon}</span>
-                ) : null}
+                <span className="text-xs leading-none">{tab.icon}</span>
                 {tab.label}
               </button>
             );
@@ -149,175 +164,148 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ── Play section: stats card + quick play + categories ── */}
-      <section id="section-play" className="px-4 pt-4 pb-4">
-        {/* Stats card */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-2xl p-4 mb-4"
-        >
-          <div className="flex items-center justify-between mb-3">
-            <div>
-              <p className="text-[11px] text-[#464a4d] mb-1.5 uppercase tracking-wider font-medium">{t("home.yourLives")}</p>
-              <LivesDisplay
-                lives={livesData.lives}
-                nextLifeInMs={livesData.nextLifeInMs}
-              />
-            </div>
-            <div className="text-right">
-              <p className="text-[11px] text-[#464a4d] mb-1.5 uppercase tracking-wider font-medium">{t("home.totalPoints")}</p>
-              <p className="text-2xl font-black text-[#ffc53d]">
-                {totalPoints.toLocaleString()}
-              </p>
-            </div>
-          </div>
-          {!authLoading && !isLoggedIn && (
-            <Link
-              href="/auth/login"
-              className="text-xs text-[#a1a4a5] hover:text-[#f0f0f0] transition-colors"
-            >
-              {t("home.signInPrompt")}
-            </Link>
-          )}
-        </motion.div>
+      {/* ══════════════════════════════════════════════════
+          SECTION: Predict — today's featured league games
+          ══════════════════════════════════════════════════ */}
+      <section id="section-predict" className="px-4 pt-5 pb-2 scroll-mt-14">
 
-        {/* Quick Play CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05 }}
-          className="mb-4"
-        >
+        {loadingMatches ? (
+          <div className="space-y-3">
+            <div className="h-5 w-36 bg-white/[0.03] rounded animate-pulse mb-4" />
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-36 bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl animate-pulse" />
+            ))}
+          </div>
+        ) : matchesByLeague.length === 0 ? (
+          <div className="bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-6 text-center">
+            <p className="text-2xl mb-2">⚽</p>
+            <p className="text-[#a1a4a5] text-sm font-medium">No featured matches today</p>
+            <p className="text-[#464a4d] text-xs mt-1">UCL · Premier League · La Liga</p>
+            <Link href="/matches" className="mt-3 inline-block text-xs text-[#11ff99] font-medium">
+              Browse all matches →
+            </Link>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {matchesByLeague.map((group) => (
+              <div key={group.key}>
+                {/* League header */}
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-sm">{group.emoji}</span>
+                  <h2 className="font-semibold text-[#f0f0f0] text-sm">{group.label}</h2>
+                  {group.matches.some((m) => m.status === "live") && (
+                    <span className="flex items-center gap-1 text-[10px] text-[#ff2047] font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff2047] live-pulse" />
+                      LIVE
+                    </span>
+                  )}
+                </div>
+                <div className="space-y-3">
+                  {group.matches.map((match) => (
+                    <MatchCard
+                      key={match.id}
+                      match={match}
+                      activeGurus={match.status === "live" ? Math.floor(Math.random() * 2000 + 100) : 0}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            <Link
+              href="/matches"
+              className="flex items-center justify-center gap-1.5 text-xs text-[#464a4d] hover:text-[#a1a4a5] transition-colors py-1"
+            >
+              See all matches <ChevronRight size={13} />
+            </Link>
+          </div>
+        )}
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          SECTION: My Picks
+          ══════════════════════════════════════════════════ */}
+      <section id="section-picks" className="scroll-mt-14 pt-4">
+        <MyPredictionsSection />
+        {/* Empty state CTA */}
+        <div className="px-4 mb-4">
           <Link
-            href="/play"
-            className="flex items-center justify-between bg-[#11ff99] text-black rounded-full p-4 px-6 font-bold hover:bg-[#11ff99]/90 transition-colors active:scale-[0.98]"
+            href="/matches"
+            className="flex items-center justify-between bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-4 hover:border-[#11ff99]/25 transition-all"
           >
             <div className="flex items-center gap-3">
-              <Zap size={22} className="fill-black" />
+              <Target size={18} className="text-[#11ff99]" />
               <div>
-                <p className="text-base font-black">{t("home.quickPlay")}</p>
-                <p className="text-xs opacity-60 font-medium">
-                  {t("home.quickPlaySub")}
-                </p>
+                <p className="font-semibold text-[#f0f0f0] text-sm">Make your predictions</p>
+                <p className="text-xs text-[#464a4d]">Pick winners before kick-off</p>
               </div>
             </div>
-            <ChevronRight size={22} />
+            <ChevronRight size={18} className="text-[#464a4d]" />
           </Link>
-        </motion.div>
-
-        {/* Category grid */}
-        <div className="grid grid-cols-2 gap-2">
-          {[
-            { id: "player", label: t("cat.player"), icon: "⚽" },
-            { id: "team", label: t("cat.team"), icon: "🏟️" },
-            { id: "world_cup", label: t("cat.world_cup"), icon: "🏆" },
-            { id: "champions_league", label: t("cat.champions_league"), icon: "⭐" },
-            { id: "nations", label: t("cat.nations"), icon: "🌍" },
-            { id: "historical", label: t("cat.historical"), icon: "📜" },
-          ].map((cat, i) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.08 + i * 0.03 }}
-            >
-              <Link
-                href={`/play?category=${cat.id}`}
-                className="flex items-center gap-2.5 bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-3.5 hover:border-[rgba(214,235,253,0.25)] transition-all active:scale-[0.97]"
-              >
-                <span className="text-lg">{cat.icon}</span>
-                <span className="text-sm font-medium text-[#f0f0f0]">{cat.label}</span>
-              </Link>
-            </motion.div>
-          ))}
         </div>
       </section>
 
-      {/* ── My Predictions (saved sessions from localStorage) ── */}
-      <MyPredictionsSection />
-
-      {/* ── Match sections ── */}
-      <div className="px-4">
-        {loadingMatches ? (
-          <div className="space-y-3 mb-5">
-            <div className="h-6 w-32 bg-white/[0.03] rounded animate-pulse mb-3" />
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="h-28 bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl animate-pulse"
-              />
-            ))}
-          </div>
-        ) : (
-          <>
-            {/* Live Matches */}
-            {liveMatches.length > 0 && (
-              <section id="section-live" className="mb-5 scroll-mt-14">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-2 h-2 rounded-full bg-[#ff2047] live-pulse" />
-                  <h2 className="font-semibold text-[#f0f0f0]">{t("home.liveMatches")}</h2>
-                  <span className="text-xs text-[#464a4d] bg-white/[0.04] border border-[rgba(214,235,253,0.1)] rounded-full px-2 py-0.5">⭐ UCL</span>
-                </div>
-                <div className="space-y-3">
-                  {liveMatches.map((match) => (
-                    <MatchCard key={match.id} match={match} activeGurus={Math.floor(Math.random() * 2000 + 100)} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Upcoming Matches */}
-            {upcomingMatches.length > 0 && (
-              <section id="section-upcoming" className="mb-5 scroll-mt-14">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <h2 className="font-semibold text-[#f0f0f0]">{t("home.upcoming")}</h2>
-                    <span className="text-xs text-[#464a4d] bg-white/[0.04] border border-[rgba(214,235,253,0.1)] rounded-full px-2 py-0.5">⭐ UCL</span>
-                  </div>
-                  <Link
-                    href="/matches"
-                    className="text-xs text-[#11ff99] font-medium"
-                  >
-                    {t("home.seeAll")}
-                  </Link>
-                </div>
-                <div className="space-y-3">
-                  {upcomingMatches.slice(0, 5).map((match) => (
-                    <MatchCard key={match.id} match={match} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {liveMatches.length === 0 && upcomingMatches.length === 0 && (
-              <div className="bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-4 text-center mb-5">
-                <p className="text-[#a1a4a5] text-sm font-medium">⭐ No Champions League matches today</p>
-                <p className="text-[#464a4d] text-xs mt-1">Check back on match days</p>
-              </div>
-            )}
-          </>
-        )}
-      </div>
-
-      {/* ── Leaderboard peek ── */}
-      <section id="section-ranks" className="px-4 mb-4 scroll-mt-14">
+      {/* ══════════════════════════════════════════════════
+          SECTION: Ranks — leaderboard teaser with fake users
+          ══════════════════════════════════════════════════ */}
+      <section id="section-ranks" className="px-4 mb-5 scroll-mt-14">
         <div className="flex items-center justify-between mb-3">
-          <h2 className="font-semibold text-[#f0f0f0]">Top Gurus</h2>
+          <div>
+            <h2 className="font-semibold text-[#f0f0f0]">Top Gurus</h2>
+            <p className="text-xs text-[#464a4d] mt-0.5">{totalFans.toLocaleString()} fans competing</p>
+          </div>
           <Link href="/leaderboard" className="text-xs text-[#11ff99] font-medium">
-            Full ranking
+            Full ranking →
           </Link>
         </div>
+
+        <div className="space-y-2 mb-3">
+          {FAKE_LEADERBOARD_USERS.slice(0, 5).map((user, i) => (
+            <motion.div
+              key={user.user_id}
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.05 }}
+              className="flex items-center gap-3 bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl px-3.5 py-2.5"
+            >
+              <span className="text-base w-6 text-center flex-shrink-0">
+                {i === 0 ? "👑" : i === 1 ? "🥈" : i === 2 ? "🥉" : `#${i + 1}`}
+              </span>
+              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-[rgba(214,235,253,0.10)] flex items-center justify-center text-sm flex-shrink-0">
+                {countryFlag(user.country)}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-semibold text-[#f0f0f0] text-sm truncate">{user.username}</p>
+                <p className="text-[10px] text-[#464a4d]">{user.country}</p>
+              </div>
+              <p className="font-bold text-[#ffc53d] tabular-nums text-sm">
+                {user.total_points.toLocaleString()}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
         <Link
           href="/leaderboard"
-          className="bg-white/[0.03] border border-[rgba(214,235,253,0.19)] rounded-2xl p-4 flex items-center gap-3 hover:border-[#11ff99]/25 transition-all"
+          className="flex items-center justify-center gap-2 w-full bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-full py-3 text-sm font-semibold text-[#a1a4a5] hover:text-[#f0f0f0] hover:border-[rgba(214,235,253,0.25)] transition-all mb-3"
         >
-          <Trophy size={20} className="text-[#ffc53d]" />
-          <div>
-            <p className="font-semibold text-[#f0f0f0] text-sm">See global rankings</p>
-            <p className="text-xs text-[#464a4d]">Compete with players worldwide</p>
+          <Trophy size={15} className="text-[#ffc53d]" />
+          Join the competition
+        </Link>
+
+        {/* Private leagues teaser */}
+        <Link
+          href="/leagues"
+          className="flex items-center justify-between bg-white/[0.03] border border-[rgba(214,235,253,0.12)] rounded-2xl p-4 hover:border-[rgba(17,255,153,0.2)] transition-all"
+        >
+          <div className="flex items-center gap-3">
+            <Users size={18} className="text-[#11ff99]" />
+            <div>
+              <p className="font-semibold text-[#f0f0f0] text-sm">Private Leagues</p>
+              <p className="text-xs text-[#464a4d]">Compete with friends</p>
+            </div>
           </div>
-          <ChevronRight size={18} className="text-[#464a4d] ml-auto" />
+          <ChevronRight size={18} className="text-[#464a4d]" />
         </Link>
       </section>
 

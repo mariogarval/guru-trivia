@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Users, Clock, Zap, Calendar, Target, BarChart2 } from "lucide-react";
 import type { Match } from "@/types";
 import type { PredictionSession } from "@/types/predictions";
+import { getCommunityPrediction } from "@/lib/fake-data";
 
 interface MatchCardProps {
   match: Match;
@@ -25,12 +26,33 @@ function formatKickoff(iso: string): string {
   return date.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 }
 
+function CommunityBar({ label, pct, color, isLeading }: { label: string; pct: number; color: string; isLeading: boolean }) {
+  return (
+    <div className="flex items-center gap-2">
+      <span className={`text-[10px] w-14 truncate shrink-0 ${isLeading ? "font-semibold text-[#f0f0f0]" : "text-[#a1a4a5]"}`}>
+        {label}
+      </span>
+      <div className="flex-1 h-1 bg-white/[0.06] rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all duration-700"
+          style={{ width: `${pct}%`, backgroundColor: color, opacity: isLeading ? 1 : 0.45 }}
+        />
+      </div>
+      <span
+        className={`text-[10px] w-8 text-right tabular-nums ${isLeading ? "font-bold" : "font-medium text-[#464a4d]"}`}
+        style={{ color: isLeading ? color : undefined }}
+      >
+        {pct}%
+      </span>
+    </div>
+  );
+}
+
 export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   const isLive = match.status === "live";
   const isFinished = match.status === "finished";
   const isPreGame = !isLive && !isFinished;
 
-  // Check localStorage for a saved prediction session for this match
   const [predSession, setPredSession] = useState<PredictionSession | null>(null);
   useEffect(() => {
     try {
@@ -43,20 +65,27 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
   const totalCount = predSession?.predictions.length ?? 0;
   const hasPredictions = !!predSession && answeredCount > 0;
 
-  // Build trivia link — force=1 ensures Claude generates fresh match-specific questions
+  const cp = getCommunityPrediction(match.id);
+  const leadingPct = Math.max(cp.homeWin, cp.draw, cp.awayWin);
+
+  // Short label: last word of team name, or "Draw"
+  const homeLabel = match.home_team.split(" ").at(-1) ?? match.home_team;
+  const awayLabel = match.away_team.split(" ").at(-1) ?? match.away_team;
+
   const playParams = new URLSearchParams();
   playParams.set("match", match.id);
   playParams.set("teams", `${match.home_team},${match.away_team}`);
   if (match.league) playParams.set("league", match.league);
   if (match.home_team_crest) playParams.set("homeCrest", match.home_team_crest);
   if (match.away_team_crest) playParams.set("awayCrest", match.away_team_crest);
-  playParams.set("force", "1"); // always generate fresh match-specific questions
+  playParams.set("force", "1");
 
-  // Build predict link
   const predictParams = new URLSearchParams();
   predictParams.set("home", match.home_team);
   predictParams.set("away", match.away_team);
   if (match.league) predictParams.set("league", match.league);
+  if (match.home_team_crest) predictParams.set("homeCrest", match.home_team_crest);
+  if (match.away_team_crest) predictParams.set("awayCrest", match.away_team_crest);
 
   return (
     <div
@@ -136,13 +165,26 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
         </div>
       </div>
 
+      {/* Community prediction trends — only when user hasn't predicted yet */}
+      {!hasPredictions && isPreGame && (
+        <div className="mt-3 pt-3 border-t border-[rgba(214,235,253,0.08)]">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-[10px] text-[#464a4d] uppercase tracking-wider font-medium">Community predicts</span>
+            <span className="text-[10px] text-[#464a4d]">{cp.totalPredictors.toLocaleString()} fans</span>
+          </div>
+          <div className="space-y-1.5">
+            <CommunityBar label={homeLabel} pct={cp.homeWin} color="#11ff99" isLeading={cp.homeWin === leadingPct} />
+            <CommunityBar label="Draw" pct={cp.draw} color="#a1a4a5" isLeading={cp.draw === leadingPct} />
+            <CommunityBar label={awayLabel} pct={cp.awayWin} color="#ffc53d" isLeading={cp.awayWin === leadingPct} />
+          </div>
+        </div>
+      )}
+
       {/* CTAs */}
       <div className={`mt-3 pt-3 border-t flex gap-2 ${isLive ? "border-[#ff2047]/20" : "border-[rgba(214,235,253,0.10)]"}`}>
 
-        {/* Predict / My Predictions button */}
         {!isFinished && (
           hasPredictions ? (
-            // Already has predictions — show "My Predictions" with count + trends icon
             <Link
               href={`/predict/${match.id}?${predictParams}`}
               className="flex-1 flex items-center justify-center gap-1.5 bg-[rgba(17,255,153,0.05)] border border-[rgba(17,255,153,0.35)] text-[#11ff99] font-bold text-sm py-2.5 rounded-xl hover:bg-[rgba(17,255,153,0.10)] transition-colors active:scale-[0.97]"
@@ -153,7 +195,6 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
               <span className="text-[10px] opacity-60 font-normal ml-0.5">{answeredCount}/{totalCount}</span>
             </Link>
           ) : (
-            // No predictions yet — show "Predict"
             <Link
               href={`/predict/${match.id}?${predictParams}`}
               className="flex-1 flex items-center justify-center gap-1.5 bg-[rgba(17,255,153,0.08)] border border-[rgba(17,255,153,0.25)] text-[#11ff99] font-bold text-sm py-2.5 rounded-xl hover:bg-[rgba(17,255,153,0.14)] transition-colors active:scale-[0.97]"
@@ -165,7 +206,7 @@ export default function MatchCard({ match, activeGurus = 0 }: MatchCardProps) {
           )
         )}
 
-        {/* Trivia button */}
+        {/* Trivia — secondary action */}
         <Link
           href={`/play?${playParams}`}
           className={[
